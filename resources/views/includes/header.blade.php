@@ -14,6 +14,7 @@
         data-bs-toggle="dropdown"aria-expanded="false">
         <img class="avatar" src="./img/avatar.png" alt="Avatar main">
         <div class="fullname ms-2">Hoàng Hải Long</div>
+        <i class="bi bi-caret-down-fill"></i>
         <ul class="dropdown-menu nav-item dropdown">
             <li><a class="dropdown-item" href="#"><i class="me-2 bi bi-box-arrow-right"></i>Đăng xuất</a></li>
             <li><a class="dropdown-item" href="#"><i class="me-2 bi bi-pen"></i>Chỉnh sửa thông tin</a></li>
