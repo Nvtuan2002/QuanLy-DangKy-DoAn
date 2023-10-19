@@ -10,9 +10,16 @@
     <!-- /left -->
 
     <!-- right -->
-    <div class="info center-between t-14 fw-700 ">
+    <div class="info center-between t-14 fw-700 " class="nav-link dropdown-toggle" href="#" role="button"
+        data-bs-toggle="dropdown"aria-expanded="false">
         <img class="avatar" src="./img/avatar.png" alt="Avatar main">
         <div class="fullname ms-2">Hoàng Hải Long</div>
+        <ul class="dropdown-menu nav-item dropdown">
+            <li><a class="dropdown-item" href="#"><i class="me-2 bi bi-box-arrow-right"></i>Đăng xuất</a></li>
+            <li><a class="dropdown-item" href="#"><i class="me-2 bi bi-pen"></i>Chỉnh sửa thông tin</a></li>
+            <li><a class="dropdown-item" href="#"><i class="me-2 bi bi-gear"></i>Cài đặt</a></li>
+        </ul>
+        </li>
     </div>
     <!-- right -->
 </nav>
