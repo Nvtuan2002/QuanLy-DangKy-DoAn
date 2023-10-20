@@ -8,6 +8,19 @@ ul{
     list-style-type: none;
 }
 
+a{
+    text-decoration: none;
+    color: black;
+}
+
+i{
+    margin-right: 0.5rem;
+}
+
+svg{
+    margin-right: 0.5rem;
+}
+
 body {
     background-image: linear-gradient(to right, #4daf54, #3d8880);
 }
@@ -20,7 +33,7 @@ body {
 .navbar .container-fluid .logo img {
     object-fit: cover;
     max-width: 135px;
-    filter: drop-shadow(2px 4px 6px black);
+    /* filter: drop-shadow(2px 4px 6px black); */
 }
 
 
@@ -56,7 +69,22 @@ body {
     color: red;
 }
 
-
-
-
 /* End NavBar */
+
+/* Footer */
+.footer{
+    background: var(--third-color, #D2E0FB);
+}
+
+.footer .logo img{
+    height: 49px;
+    object-fit: cover;
+}
+
+/* End Footer */
+
+/* Siderbar Left */
+.siderbar{
+    background: var(--second-color, #8EACCD);
+}
+/* End Siderbar Left */

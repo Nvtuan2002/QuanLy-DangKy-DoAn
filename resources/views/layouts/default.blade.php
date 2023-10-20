@@ -10,11 +10,9 @@
         <header>
             @include('includes.header')
         </header>
-        <main>
+        <main class="d-flex">
             <aside class="col-md-3">
-                @section('sidebar')
-                    <b>Sidebar</b>
-                @show
+                @include('includes.sidebar')
             </aside>
             <article class="col-md-9">
                 @yield('content')

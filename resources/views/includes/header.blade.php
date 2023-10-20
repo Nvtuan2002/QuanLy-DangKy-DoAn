@@ -3,7 +3,7 @@
     <div class="container-fluid">
         <div class="center-center">
             <div class="logo">
-                <img src="./img/phenikaa_logo_new.png" alt="Logo Header">
+                <img src="./img/logo.png" alt="Logo Header">
             </div>
         </div>
     </div>
