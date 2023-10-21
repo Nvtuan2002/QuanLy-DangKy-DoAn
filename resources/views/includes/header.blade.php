@@ -1,4 +1,4 @@
-<nav class="navbar navbar-expand-lg p-2">
+<nav class="navbar navbar-expand-lg p-2 position-sticky">
     <!-- left -->
     <div class="container-fluid">
         <div class="center-center">
