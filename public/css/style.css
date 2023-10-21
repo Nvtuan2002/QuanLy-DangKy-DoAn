@@ -7,8 +7,10 @@
 :root {
     --header-background: linear-gradient(0deg, rgba(0, 0, 0, 0.20) 0%, rgba(0, 0, 0, 0.20) 100%), #D7E5CA;
     --card-background: #D2E0FB;
-
-
+    --cancel-background: linear-gradient(0deg, rgba(0, 0, 0, 0.20) 0%, rgba(0, 0, 0, 0.20) 100%), #D7E5CA;
+    --invite-background: #D2E0FB;
+    --request-background: linear-gradient(0deg, rgba(0, 0, 0, 0.20) 0%, rgba(0, 0, 0, 0.20) 100%), #D7E5CA;
+    --box-valuate-background: #8EACCD;
 }
 
 ul {
@@ -88,9 +90,13 @@ svg {
 /* End Footer */
 
 /* Sidebar Left */
+.sidebar{
+    height: 100%;
+}
+
 .sidebar .nav {
     background: var(--second-color, #8EACCD);
-    height: 70vh;
+    height: 100%;
 }
 
 .sidebar .nav li {
@@ -101,7 +107,7 @@ svg {
 /* End Sidebar Left */
 
 /* Home */
-.home nav{
+.home nav {
     display: inline-block;
     margin: 50px 0px 0px 20px;
 }
@@ -142,6 +148,58 @@ svg {
 .home .popular img {
     width: 160px;
     height: 160px;
+    background: var(--card-background);
+    box-shadow: 0px 7px 4px 0px rgba(0, 0, 0, 0.25);
 }
 
 /* Home */
+
+/* GroupsSV */
+.cancel {
+    border: none;
+    border-radius: 15px;
+    background: var(--cancel-background);
+    padding: 7px 15px;
+    width: 110px;
+}
+
+.invite {
+    border: none;
+    border-radius: 15px;
+    background: var(--invite-background);
+    padding: 7px 15px;
+}
+
+.request{
+    padding: 7px 15px;
+    border-radius: 15px;
+    background: var(--request-background);
+    border: none;
+}
+
+.groups{
+    position: relative;
+}
+
+.groups>img{
+    position: absolute;
+    object-fit: cover;
+    transform: scale(0.5);
+    background-position: center;
+}
+
+
+.groups .history-update ul,
+.groups .history-update ul li{
+    margin-bottom: 1rem;
+    padding-left: unset;
+
+}
+
+.groups .mx-3 .col-md-4 table tr td{
+    background: var(--box-valuate-background);
+    border: 1px solid black;
+    padding: 5px 10px;
+}
+
+/* GroupsSV */

@@ -3,11 +3,10 @@
 use Illuminate\Support\Facades\Route;
 
 
-Route::get('/', function()
-{
+Route::get('/', function () {
    return view('pages.home');
-});
-Route::get('/contact', function()
-{
-   return view('pages.contact');
-});
+})->name('home');
+
+Route::get('/groupsSV', function () {
+   return view('pages.groupsSV');
+})->name('groupsSV');
