@@ -31,7 +31,20 @@ svg {
     fill: black;
 }
 
+li {
+    margin-bottom: 0.5rem;
+}
+
+header {
+    position: relative;
+    z-index: 3;
+}
+
 /* NavBar */
+
+
+
+
 .navbar {
     background: var(--header-background);
 }
@@ -80,6 +93,7 @@ svg {
 /* Footer */
 .footer {
     background: var(--third-color, #D2E0FB);
+    padding: 10px 0px;
 }
 
 .footer .logo img {
@@ -90,13 +104,14 @@ svg {
 /* End Footer */
 
 /* Sidebar Left */
-.sidebar{
+.sidebar {
     height: 100%;
 }
 
 .sidebar .nav {
     background: var(--second-color, #8EACCD);
     height: 100%;
+    min-height: 70vh;
 }
 
 .sidebar .nav li {
@@ -160,7 +175,6 @@ svg {
     border-radius: 15px;
     background: var(--cancel-background);
     padding: 7px 15px;
-    width: 110px;
 }
 
 .invite {
@@ -170,36 +184,57 @@ svg {
     padding: 7px 15px;
 }
 
-.request{
+.request {
     padding: 7px 15px;
     border-radius: 15px;
     background: var(--request-background);
     border: none;
 }
 
-.groups{
+.groups {
     position: relative;
 }
 
-.groups>img{
+.groups>img {
     position: absolute;
-    object-fit: cover;
-    transform: scale(0.5);
     background-position: center;
+    object-fit: contain;
+    z-index: -1;
+    width: 100%;
+    height: 70%;
+    top: 18%;
 }
 
-
 .groups .history-update ul,
-.groups .history-update ul li{
+.groups .history-update ul li {
     margin-bottom: 1rem;
     padding-left: unset;
 
 }
 
-.groups .mx-3 .col-md-4 table tr td{
+.groups .mx-3 .col-md-4 table tr td {
     background: var(--box-valuate-background);
     border: 1px solid black;
     padding: 5px 10px;
 }
 
 /* GroupsSV */
+
+
+/* GroupsSV Detail*/
+.groups_detail ul img {
+    width: 55px !important;
+    padding: unset;
+}
+
+.groups_detail .row {
+    padding: unset;
+    margin-bottom: 20px !important;
+}
+
+.groups_detail .row li {
+    white-space: nowrap !important;
+}
+
+
+/* End GroupsSV Detail*/

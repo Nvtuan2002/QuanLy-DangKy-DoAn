@@ -33,12 +33,12 @@
                     <li><i class="bi bi-file-earmark-arrow-up"></i>Hoàng Hải Long đã tải lên file abc.pdf</li>
                 </ul>
                 <div class="d-flex flex-wrap justify-content-center" style="width: 420px; gap: 20px 40px;">
-                    <button class="request">Cập nhật tiến độ nhóm</button>
-                    <button class="request">Xem thông tin nhóm</button>
-                    <button class="request">Các yêu cầu vào nhóm</button>
+                    <a class="request" href="{{ route('groupSV_update') }}">Cập nhật tiến độ nhóm</a>
+                    <a class="request" href="{{ route('groupSV_detail') }}">Xem thông tin nhóm</a>
+                    <a class="request">Các yêu cầu vào nhóm</a>
                 </div>
             </div>
-            <div class="col-md-4 d-flex justify-content-end flex-column" style="width: 300px;">
+            <div class="col-md-4 d-flex justify-content-end flex-column" style="width: 280px;">
                 <p class="fw-bold" style="text-align: center;">Đánh giá của giảng viên</p>
                 <table>
                     <tr>

@@ -1,13 +1,13 @@
 <div class="sidebar">
     <ul class="nav nav-pills flex-column mb-auto justify-content-center">
-        <li class="nav-item">
-            <a href="{{ route('home') }}" class="nav-link active" aria-current="page">
+        <li>
+            <a href="{{ route('home') }}" class="nav-link link-body-emphasis">
                 <i class="bi bi-house-door"></i>
                 Trang chủ
             </a>
         </li>
         <li>
-            <a href="{{ route('groupsSV') }}" class="nav-link link-body-emphasis">
+            <a href="{{ route('groupSV') }}" class="nav-link link-body-emphasis">
                 <i class="bi bi-people-fill"></i>
                 Nhóm của bạn
             </a>
@@ -26,13 +26,13 @@
             </a>
         </li>
         <li>
-            <a href="{{ route('groupsSV') }}" class="nav-link link-body-emphasis">
+            <a href="{{ route('groupSV') }}" class="nav-link link-body-emphasis">
                 <i class="bi bi-calendar4-range"></i>
                 Lịch thống kê báo cáo
             </a>
         </li>
         <li>
-            <a href="{{ route('groupsSV') }}" class="nav-link link-body-emphasis">
+            <a href="{{ route('groupSV') }}" class="nav-link link-body-emphasis">
                 <i class="bi bi-chat-dots"></i>
                 Liên hệ với giảng viên
             </a>
