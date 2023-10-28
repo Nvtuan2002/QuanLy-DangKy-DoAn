@@ -22,9 +22,9 @@
             <div class="d-flex justify-content-between">
                 <p class="fw-bold">File của bạn</p>
                 <div>
-                    <button class="cancel">Truy Cập</button>
+                    <button class="btn-invisible">Truy Cập</button>
                     <!-- Button trigger modal -->
-                    <button type="button" class="cancel btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                    <button type="button" class="btn-invisible btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
                         Thêm File mới
                     </button>
 

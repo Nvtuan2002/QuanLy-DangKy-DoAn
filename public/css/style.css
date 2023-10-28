@@ -7,10 +7,12 @@
 :root {
     --header-background: linear-gradient(0deg, rgba(0, 0, 0, 0.20) 0%, rgba(0, 0, 0, 0.20) 100%), #D7E5CA;
     --card-background: #D2E0FB;
+    --box-valuate-background: #8EACCD;
+    --request-background: linear-gradient(0deg, rgba(0, 0, 0, 0.20) 0%, rgba(0, 0, 0, 0.20) 100%), #D7E5CA;
     --cancel-background: linear-gradient(0deg, rgba(0, 0, 0, 0.20) 0%, rgba(0, 0, 0, 0.20) 100%), #D7E5CA;
     --invite-background: #D2E0FB;
-    --request-background: linear-gradient(0deg, rgba(0, 0, 0, 0.20) 0%, rgba(0, 0, 0, 0.20) 100%), #D7E5CA;
-    --box-valuate-background: #8EACCD;
+    --accept-background: #D2E0FB;
+    --reject-background: #B42E2E;
 }
 
 ul {
@@ -121,6 +123,10 @@ header {
 
 /* End Sidebar Left */
 
+/* Article */
+
+/* End Article */
+
 /* Home */
 .home nav {
     display: inline-block;
@@ -218,7 +224,6 @@ header {
     padding: 5px 10px;
 }
 
-/* GroupsSV */
 
 
 /* GroupsSV Detail*/
@@ -238,3 +243,313 @@ header {
 
 
 /* End GroupsSV Detail*/
+
+/*  GroupsSV Request*/
+
+.groups_request>img{
+    position: absolute;
+    width: 80%;
+    object-fit: cover;
+    z-index: -1
+    ;
+}
+
+.groups_request .list_request_title{
+    margin-top: 53px;
+    margin-bottom: 25px;
+}
+
+.groups_request .list_request_title h5:nth-child(1) {
+    border-right: 2px solid black;
+    margin: auto 0px auto 80px;
+    padding-right: 58px;
+}
+
+.groups_request .list_request_title h5:nth-child(2) {
+    margin: auto 0;
+    margin-left: 58px;
+}
+
+.groups_request .list_request {
+    height: 41px;
+    margin-bottom: 25px;
+}
+
+.groups_request .list_request button {
+    border-radius: 9px;
+    padding: 8px 24px 8px 23px;
+    border: none;
+    margin-right: 10px;
+}
+
+.groups_request .list_request p {
+    margin: auto 40px auto 40px;
+}
+
+.groups_request .list_request i {
+    border-right: 2px solid black;
+    padding-right: 15px;
+    margin: auto 0;
+}
+
+.accept{
+    background-color: var(--accept-background);
+}
+
+.reject{
+    background-color: var(--reject-background);
+}
+
+.btn-invisible{
+    border-radius: 15px;
+    background-color: unset;
+    padding: 7px 15px;
+    border: 1px solid black;
+}
+
+.groups_request .list_request button:nth-child(3) {
+    margin-left: 50px;
+}
+
+
+/* End GroupsSV Request*/
+/* End GroupsSV */
+
+
+/* Đăng ký đồ án ( REGISTER) */
+    .register form .input {
+        color: black;
+        font: 1em/1.5 Hind, sans-serif;
+        cursor: pointer;
+      }
+      
+      .register form, .input, .caret {
+        margin: auto;
+      }
+      
+      .register form {
+        max-width: 20em;
+        float: right;
+        width: 100%;
+      }
+      
+      .register form .input, .caret {
+        display: block;
+        transition: all calc(1s * 0.5) linear;
+      }
+      
+      .register form .input {
+        background: transparent;
+        border-radius: 50%;
+        box-shadow: 0 0 0 0.25em inset;
+        caret-color: #255ff4;
+        width: 2em;
+        height: 2em;
+      }
+      
+      .register form .input:focus, .input:valid {
+        background: powderblue;
+        border-radius: 0.25em;
+        box-shadow: none;
+        padding: 0.75em 1em;
+        transition-duration: calc(1s * 0.25);
+        transition-delay: calc(1s * 0.25);
+        width: 100%;
+        height: 3em;
+      }
+      
+      .register form .input:focus {
+        animation: showCaret 1s steps(1);
+        outline: transparent;
+      }
+      
+      .register form .input:focus + .caret, .input:valid + .caret {
+        animation: handleToCaret 1s linear;
+        background: transparent;
+        width: 1px;
+        height: 1.5em;
+        transform: translate(0,-1em) rotate(-180deg) translate(7.5em,-0.25em);
+      }
+
+      .register form .caret {
+        background: black;
+        border-radius: 0 0 0.125em 0.125em;
+        margin-bottom: -0.6em;
+        width: 0.25em;
+        height: 1em;
+        transform: translate(0,-1em) rotate(-45deg) translate(0,0.875em);
+        transform-origin: 50% 0;
+      }
+      
+      /* Animations */
+      @keyframes showCaret {
+        from {
+          caret-color: transparent;
+        }
+      
+        to {
+          caret-color: #255ff4;
+        }
+      }
+      
+      @keyframes handleToCaret {
+        from {
+          background: currentColor;
+          width: 0.25em;
+          height: 1em;
+          transform: translate(0,-1em) rotate(-45deg) translate(0,0.875em);
+        }
+      
+        25% {
+          background: currentColor;
+          width: 0.25em;
+          height: 1em;
+          transform: translate(0,-1em) rotate(-180deg) translate(0,0.875em);
+        }
+      
+        50%, 62.5% {
+          background: #255ff4;
+          width: 1px;
+          height: 1.5em;
+          transform: translate(0,-1em) rotate(-180deg) translate(7.5em,2.5em);
+        }
+      
+        75%, 99% {
+          background: #255ff4;
+          width: 1px;
+          height: 1.5em;
+          transform: translate(0,-1em) rotate(-180deg) translate(7.5em,-0.25em);
+        }
+      
+        87.5% {
+          background: #255ff4;
+          width: 1px;
+          height: 1.5em;
+          transform: translate(0,-1em) rotate(-180deg) translate(7.5em,0.125em);
+        }
+      
+        to {
+          background: transparent;
+          width: 1px;
+          height: 1.5em;
+          transform: translate(0,-1em) rotate(-180deg) translate(7.5em,-0.25em);
+        }
+      }
+
+.register table{
+    border: 1px solid black;
+    clear: both;
+    border-collapse: separate;
+    border-spacing: 3px;
+    padding: unset;
+    margin-bottom: 20px;
+}
+
+.register table tr{
+    padding: 7px;
+}
+
+.register table tr td {
+    background: #AB6B6B;
+    /* width: calc(100%/6); */
+    text-align: start;
+    padding: 10px;
+}
+
+.register table tr td:nth-child(1) {
+    width: 15%;
+}
+.register table tr td:nth-child(2) {
+    width: 15%;
+}
+.register table tr td:nth-child(3) {
+    width: 30%;
+}
+.register table tr td:nth-child(4) {
+    width: 10%;
+}
+.register table tr td:nth-child(5) {
+    width: 15%;
+}
+.register table tr td:nth-child(6) {
+    width: 15% ;
+}
+
+.register table tr td button {
+    margin: 15px;
+}
+
+.register>h5{
+    float: right;
+}
+
+svg {
+    width: 3.25em;
+    transform-origin: center;
+    animation: rotate4 2s linear infinite;
+   }
+   
+   circle {
+    fill: none;
+    stroke: hsl(214, 97%, 59%);
+    stroke-width: 2;
+    stroke-dasharray: 1, 200;
+    stroke-dashoffset: 0;
+    stroke-linecap: round;
+    animation: dash4 1.5s ease-in-out infinite;
+   }
+   
+   @keyframes rotate4 {
+    100% {
+     transform: rotate(360deg);
+    }
+   }
+   
+   @keyframes dash4 {
+    0% {
+     stroke-dasharray: 1, 200;
+     stroke-dashoffset: 0;
+    }
+   
+    50% {
+     stroke-dasharray: 90, 200;
+     stroke-dashoffset: -35px;
+    }
+   
+    100% {
+     stroke-dashoffset: -125px;
+    }
+   }
+   
+/* create Groúp  */
+
+.register_create {
+    text-align: center;
+}
+
+.register_create form {
+    border: 1px solid black;
+    margin-top: 40px;
+    padding: 40px 0;
+    display: inline-block;
+    text-align: left; /* Reset text alignment within the form */
+}
+
+.register_create > h5 {
+    position: absolute;
+    right: 30px;
+}
+
+.register_create form > label {
+    display: inline-block; /* Set labels to display as inline-block elements */
+    width: 150px;
+    margin-bottom: 10px;
+    padding: 10px;
+}
+
+
+
+
+/* End create Groúp    */
+
+/* Đăng ký đồ án ( END REGISTER) */

@@ -35,7 +35,7 @@
                 <div class="d-flex flex-wrap justify-content-center" style="width: 420px; gap: 20px 40px;">
                     <a class="request" href="{{ route('groupSV_update') }}">Cập nhật tiến độ nhóm</a>
                     <a class="request" href="{{ route('groupSV_detail') }}">Xem thông tin nhóm</a>
-                    <a class="request">Các yêu cầu vào nhóm</a>
+                    <a class="request" href="{{ route('groupSV_request') }}">Các yêu cầu vào nhóm</a>
                 </div>
             </div>
             <div class="col-md-4 d-flex justify-content-end flex-column" style="width: 280px;">
