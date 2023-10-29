@@ -26,13 +26,13 @@
             </a>
         </li>
         <li>
-            <a href="{{ route('groupSV') }}" class="nav-link link-body-emphasis">
+            <a href="{{ route('calendar') }}" class="nav-link link-body-emphasis">
                 <i class="bi bi-calendar4-range"></i>
                 Lịch thống kê báo cáo
             </a>
         </li>
         <li>
-            <a href="{{ route('groupSV') }}" class="nav-link link-body-emphasis">
+            <a href="{{ route('contact') }}" class="nav-link link-body-emphasis">
                 <i class="bi bi-chat-dots"></i>
                 Liên hệ với giảng viên
             </a>

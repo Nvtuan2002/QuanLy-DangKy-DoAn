@@ -35,3 +35,11 @@ Route::get('/register_attend', function () {
 Route::get('/register_create', function () {
    return view('register.register_create');
 })->name('register_create');
+
+Route::get('/calendar', function () {
+   return view('calendar.calendar');
+})->name('calendar');
+
+Route::get('/contact', function () {
+   return view('contact.contact');
+})->name('contact');

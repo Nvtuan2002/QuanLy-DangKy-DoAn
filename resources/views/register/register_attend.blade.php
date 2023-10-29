@@ -5,7 +5,7 @@
             <li class="breadcrumb-item active" aria-current="page">Đăng ký đồ án > Tham gia nhóm</li>
         </ol>
     </nav>
-    <div class="" style="text-align:center;">
+    <div id="loading" style="text-align:center;">
         <p>Đơn yêu cầu gia nhập nhóm đang được phê duyệt</p>
         <svg viewBox="25 25 50 50">
             <circle r="20" cy="50" cx="50"></circle>
@@ -25,7 +25,6 @@
                 <td style="text-align: center">Số lượng tham gia</td>
                 <td style="text-align: center">Lựa chọn</td>
             </tr>
-
         </table>
         <table class="container">
             <tr>
@@ -64,6 +63,14 @@
                 <a class="cancel px-5" href="{{ route('register_create') }}">Tạo nhóm</a>
             </div>
         </div>
-
     </div>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            document.querySelector('.register').style.display = 'none';
+            setTimeout(function() {
+                document.getElementById('loading').style.display = 'none';
+                document.querySelector('.register').style.display = 'block';
+            }, 3000);
+        });
+    </script>
 @stop

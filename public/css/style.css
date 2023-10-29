@@ -246,15 +246,14 @@ header {
 
 /*  GroupsSV Request*/
 
-.groups_request>img{
+.groups_request>img {
     position: absolute;
     width: 80%;
     object-fit: cover;
-    z-index: -1
-    ;
+    z-index: -1;
 }
 
-.groups_request .list_request_title{
+.groups_request .list_request_title {
     margin-top: 53px;
     margin-bottom: 25px;
 }
@@ -292,15 +291,15 @@ header {
     margin: auto 0;
 }
 
-.accept{
+.accept {
     background-color: var(--accept-background);
 }
 
-.reject{
+.reject {
     background-color: var(--reject-background);
 }
 
-.btn-invisible{
+.btn-invisible {
     border-radius: 15px;
     background-color: unset;
     padding: 7px 15px;
@@ -317,126 +316,133 @@ header {
 
 
 /* Đăng ký đồ án ( REGISTER) */
-    .register form .input {
-        color: black;
-        font: 1em/1.5 Hind, sans-serif;
-        cursor: pointer;
-      }
-      
-      .register form, .input, .caret {
-        margin: auto;
-      }
-      
-      .register form {
-        max-width: 20em;
-        float: right;
-        width: 100%;
-      }
-      
-      .register form .input, .caret {
-        display: block;
-        transition: all calc(1s * 0.5) linear;
-      }
-      
-      .register form .input {
-        background: transparent;
-        border-radius: 50%;
-        box-shadow: 0 0 0 0.25em inset;
+.register form .input {
+    color: black;
+    font: 1em/1.5 Hind, sans-serif;
+    cursor: pointer;
+}
+
+.register form,
+.input,
+.caret {
+    margin: auto;
+}
+
+.register form {
+    max-width: 20em;
+    float: right;
+    width: 100%;
+}
+
+.register form .input,
+.caret {
+    display: block;
+    transition: all calc(1s * 0.5) linear;
+}
+
+.register form .input {
+    background: transparent;
+    border-radius: 50%;
+    box-shadow: 0 0 0 0.25em inset;
+    caret-color: #255ff4;
+    width: 2em;
+    height: 2em;
+}
+
+.register form .input:focus,
+.input:valid {
+    background: powderblue;
+    border-radius: 0.25em;
+    box-shadow: none;
+    padding: 0.75em 1em;
+    transition-duration: calc(1s * 0.25);
+    transition-delay: calc(1s * 0.25);
+    width: 100%;
+    height: 3em;
+}
+
+.register form .input:focus {
+    animation: showCaret 1s steps(1);
+    outline: transparent;
+}
+
+.register form .input:focus+.caret,
+.input:valid+.caret {
+    animation: handleToCaret 1s linear;
+    background: transparent;
+    width: 1px;
+    height: 1.5em;
+    transform: translate(0, -1em) rotate(-180deg) translate(7.5em, -0.25em);
+}
+
+.register form .caret {
+    background: black;
+    border-radius: 0 0 0.125em 0.125em;
+    margin-bottom: -0.6em;
+    width: 0.25em;
+    height: 1em;
+    transform: translate(0, -1em) rotate(-45deg) translate(0, 0.875em);
+    transform-origin: 50% 0;
+}
+
+/* Animations */
+@keyframes showCaret {
+    from {
+        caret-color: transparent;
+    }
+
+    to {
         caret-color: #255ff4;
-        width: 2em;
-        height: 2em;
-      }
-      
-      .register form .input:focus, .input:valid {
-        background: powderblue;
-        border-radius: 0.25em;
-        box-shadow: none;
-        padding: 0.75em 1em;
-        transition-duration: calc(1s * 0.25);
-        transition-delay: calc(1s * 0.25);
-        width: 100%;
-        height: 3em;
-      }
-      
-      .register form .input:focus {
-        animation: showCaret 1s steps(1);
-        outline: transparent;
-      }
-      
-      .register form .input:focus + .caret, .input:valid + .caret {
-        animation: handleToCaret 1s linear;
+    }
+}
+
+@keyframes handleToCaret {
+    from {
+        background: currentColor;
+        width: 0.25em;
+        height: 1em;
+        transform: translate(0, -1em) rotate(-45deg) translate(0, 0.875em);
+    }
+
+    25% {
+        background: currentColor;
+        width: 0.25em;
+        height: 1em;
+        transform: translate(0, -1em) rotate(-180deg) translate(0, 0.875em);
+    }
+
+    50%,
+    62.5% {
+        background: #255ff4;
+        width: 1px;
+        height: 1.5em;
+        transform: translate(0, -1em) rotate(-180deg) translate(7.5em, 2.5em);
+    }
+
+    75%,
+    99% {
+        background: #255ff4;
+        width: 1px;
+        height: 1.5em;
+        transform: translate(0, -1em) rotate(-180deg) translate(7.5em, -0.25em);
+    }
+
+    87.5% {
+        background: #255ff4;
+        width: 1px;
+        height: 1.5em;
+        transform: translate(0, -1em) rotate(-180deg) translate(7.5em, 0.125em);
+    }
+
+    to {
         background: transparent;
         width: 1px;
         height: 1.5em;
-        transform: translate(0,-1em) rotate(-180deg) translate(7.5em,-0.25em);
-      }
+        transform: translate(0, -1em) rotate(-180deg) translate(7.5em, -0.25em);
+    }
+}
 
-      .register form .caret {
-        background: black;
-        border-radius: 0 0 0.125em 0.125em;
-        margin-bottom: -0.6em;
-        width: 0.25em;
-        height: 1em;
-        transform: translate(0,-1em) rotate(-45deg) translate(0,0.875em);
-        transform-origin: 50% 0;
-      }
-      
-      /* Animations */
-      @keyframes showCaret {
-        from {
-          caret-color: transparent;
-        }
-      
-        to {
-          caret-color: #255ff4;
-        }
-      }
-      
-      @keyframes handleToCaret {
-        from {
-          background: currentColor;
-          width: 0.25em;
-          height: 1em;
-          transform: translate(0,-1em) rotate(-45deg) translate(0,0.875em);
-        }
-      
-        25% {
-          background: currentColor;
-          width: 0.25em;
-          height: 1em;
-          transform: translate(0,-1em) rotate(-180deg) translate(0,0.875em);
-        }
-      
-        50%, 62.5% {
-          background: #255ff4;
-          width: 1px;
-          height: 1.5em;
-          transform: translate(0,-1em) rotate(-180deg) translate(7.5em,2.5em);
-        }
-      
-        75%, 99% {
-          background: #255ff4;
-          width: 1px;
-          height: 1.5em;
-          transform: translate(0,-1em) rotate(-180deg) translate(7.5em,-0.25em);
-        }
-      
-        87.5% {
-          background: #255ff4;
-          width: 1px;
-          height: 1.5em;
-          transform: translate(0,-1em) rotate(-180deg) translate(7.5em,0.125em);
-        }
-      
-        to {
-          background: transparent;
-          width: 1px;
-          height: 1.5em;
-          transform: translate(0,-1em) rotate(-180deg) translate(7.5em,-0.25em);
-        }
-      }
-
-.register table{
+.register table {
     border: 1px solid black;
     clear: both;
     border-collapse: separate;
@@ -445,7 +451,7 @@ header {
     margin-bottom: 20px;
 }
 
-.register table tr{
+.register table tr {
     padding: 7px;
 }
 
@@ -459,37 +465,43 @@ header {
 .register table tr td:nth-child(1) {
     width: 15%;
 }
+
 .register table tr td:nth-child(2) {
     width: 15%;
 }
+
 .register table tr td:nth-child(3) {
     width: 30%;
 }
+
 .register table tr td:nth-child(4) {
     width: 10%;
 }
+
 .register table tr td:nth-child(5) {
     width: 15%;
 }
+
 .register table tr td:nth-child(6) {
-    width: 15% ;
+    width: 15%;
 }
 
 .register table tr td button {
-    margin: 15px;
+    margin: 20px;
 }
 
-.register>h5{
+.register>h5 {
     float: right;
+    margin-right: 30px;
 }
 
-svg {
+#loading svg {
     width: 3.25em;
     transform-origin: center;
     animation: rotate4 2s linear infinite;
-   }
-   
-   circle {
+}
+
+circle {
     fill: none;
     stroke: hsl(214, 97%, 59%);
     stroke-width: 2;
@@ -497,30 +509,30 @@ svg {
     stroke-dashoffset: 0;
     stroke-linecap: round;
     animation: dash4 1.5s ease-in-out infinite;
-   }
-   
-   @keyframes rotate4 {
+}
+
+@keyframes rotate4 {
     100% {
-     transform: rotate(360deg);
+        transform: rotate(360deg);
     }
-   }
-   
-   @keyframes dash4 {
+}
+
+@keyframes dash4 {
     0% {
-     stroke-dasharray: 1, 200;
-     stroke-dashoffset: 0;
+        stroke-dasharray: 1, 200;
+        stroke-dashoffset: 0;
     }
-   
+
     50% {
-     stroke-dasharray: 90, 200;
-     stroke-dashoffset: -35px;
+        stroke-dasharray: 90, 200;
+        stroke-dashoffset: -35px;
     }
-   
+
     100% {
-     stroke-dashoffset: -125px;
+        stroke-dashoffset: -125px;
     }
-   }
-   
+}
+
 /* create Groúp  */
 
 .register_create {
@@ -532,24 +544,213 @@ svg {
     margin-top: 40px;
     padding: 40px 0;
     display: inline-block;
-    text-align: left; /* Reset text alignment within the form */
+    text-align: left;
+    /* Reset text alignment within the form */
 }
 
-.register_create > h5 {
+.register_create>h5 {
     position: absolute;
     right: 30px;
 }
 
-.register_create form > label {
-    display: inline-block; /* Set labels to display as inline-block elements */
+.register_create form>label {
+    display: inline-block;
+    /* Set labels to display as inline-block elements */
     width: 150px;
     margin-bottom: 10px;
     padding: 10px;
 }
 
+.register_create form>input {
+    border-radius: 5px;
+    outline: none;
+    border: none;
+}
 
+.register_create form>input:nth-child(7) {
+    background-color: unset;
+}
 
+/* img */
+.avatar-preview {
+    width: 150px;
+    height: 150px;
+    margin: 20px auto;
+    border: 2px solid #ccc;
+    border-radius: 50%;
+    overflow: hidden;
+}
+
+#previewImage {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
 
 /* End create Groúp    */
+
+/* Calendảr */
+.calendar table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.calendar table,
+th,
+td {
+    border: 1px solid #ccc;
+}
+
+.calendar th,
+td {
+    padding: 10px;
+    text-align: center;
+}
+
+.calendar th {
+    background-color: var(--invite-background)
+}
+
+.calendar td {
+    background-color: #f7f7f7;
+}
+
+.calendar td:first-child {
+    background-color: var(--invite-background)
+}
+
+.calendar th:first-child,
+td:first-child {
+    width: 10%;
+}
+
+.calendar th:nth-child(2),
+td:nth-child(2),
+th:nth-child(3),
+td:nth-child(3),
+th:nth-child(4),
+td:nth-child(4),
+th:nth-child(5),
+td:nth-child(5),
+th:nth-child(6),
+td:nth-child(6),
+th:nth-child(7),
+td:nth-child(7),
+th:nth-child(8),
+td:nth-child(8) {
+    width: 12.5%;
+    /* 100% / 8 */
+}
+
+.calendar {
+    text-align: center;
+}
+
+.calendar table {
+    border-collapse: separate;
+    border-spacing: 3px;
+}
+
+.calendar th,
+.calendar td {
+    border: 1px solid #ccc;
+    padding: 10px;
+}
+
+.calendar input[type="datetime-local"] {
+    padding: 5px;
+    background-color: var(--invite-background);
+    outline: none;
+    border: none;
+    float: right;
+}
+
+.select-date {
+    float: right;
+    display: flex;
+    margin-bottom: 10px;
+}
+
+.select-date>p {
+    margin: auto 0;
+
+}
+
+/*  End Calendảr */
+
+/* Contact Teacher */
+.contact {
+    width: 50vw;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+}
+
+.contact input {
+    outline: none;
+    border: none;
+    width: 85%;
+}
+
+.contact button {
+    outline: none;
+    border: none;
+    background: unset;
+    font-size: 25px;
+    float: right;
+    margin-left: 5px;
+}
+
+.contact i {
+    font-size: 25px;
+}
+
+.contact label {
+    cursor: pointer;
+}
+
+.messenger-header {
+    background-color: #007bff;
+    color: #fff;
+    padding: 10px;
+}
+
+.messenger-body {
+    padding: 10px;
+    min-height: 450px;
+    background-color: pink;
+}
+
+.message {
+    background-color: #007bff;
+    color: #fff;
+    padding: 5px;
+    border-radius: 5px;
+    margin-bottom: 5px;
+}
+
+.user {
+    float: right;
+}
+
+.user-message {
+    background-color: #4CAF50;
+}
+
+.input-box {
+    width: 100%;
+    padding: 10px;
+    border: none;
+    border-top: 1px solid #ccc;
+}
+
+.your-message select {
+    outline: none;
+    border: 1px solid #eaeaea;
+}
+
+
+
+/* End Contact Teacher */
 
 /* Đăng ký đồ án ( END REGISTER) */

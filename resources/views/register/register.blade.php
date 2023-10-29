@@ -50,9 +50,6 @@
                     <td style="all:unset"><button class="invite"><a href="{{ route('register_attend') }}">Tham gia nhóm</a></button></td>
                 </tr>
         </table>
-        {{-- <div class="d-flex justify-content-center mt-5">
-            <a class="cancel px-5" href="{{ route('groupSV') }}">Quay lại</a>
-        </div> --}}
 
     </div>
 @stop
