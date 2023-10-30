@@ -44,9 +44,6 @@ header {
 
 /* NavBar */
 
-
-
-
 .navbar {
     background: var(--header-background);
 }
@@ -78,16 +75,55 @@ header {
     white-space: nowrap;
 }
 
-.navbar .info .dropdown-menu[data-bs-popper] {
-    left: unset;
-    right: 0;
-    background: var(--third-color, #D2E0FB);
+#userDropdownMenu{
+    position: absolute;
+    background: #D2E0FB;
+    border-radius: 7px;
+    right: -250px;
+    top: 55px;
+    opacity: 0;
+    padding: 8px 0;
+    border: 1px solid rgba(0, 0, 0, 0.175);
+    transition: right 0.3s, opacity 0.3s;
 }
+
+#subSettingsMenu {
+    position: absolute;
+    background: #D2E0FB;
+    border-radius: 7px;
+    right: -250px;
+    top: 115px;
+    opacity: 0;
+    padding: 8px 0;
+    border: 1px solid rgba(0, 0, 0, 0.175);
+    transition: right 0.3s, opacity 0.3s;
+}
+
+#userDropdownMenu.active {
+    top: 55px;
+    right: 0;
+    opacity: 1;
+}
+
+#subSettingsMenu.active {
+    top: 115px;
+    right: 0;
+    opacity: 1;
+}
+
 
 .navbar .info ul li a:hover {
     background: var(--third-color, #D2E0FB);
     opacity: 0.7;
     color: red;
+}
+
+.navbar .info ul li {
+    margin-bottom: 0.5rem;
+}
+
+.navbar .info ul li a {
+    padding: 4px 16px;
 }
 
 /* End NavBar */

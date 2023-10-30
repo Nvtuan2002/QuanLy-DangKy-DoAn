@@ -45,7 +45,6 @@ Route::get('/contact', function () {
 })->name('contact');
 
 
-//SInh Vien
 Route::get('/infoStudent', function () {
    return view('infoStudent.infoStudent');
 })->name('infoStudent');
