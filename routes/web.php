@@ -44,6 +44,13 @@ Route::get('/contact', function () {
    return view('contact.contact');
 })->name('contact');
 
+
+//SInh Vien
+Route::get('/infoStudent', function () {
+   return view('infoStudent.infoStudent');
+})->name('infoStudent');
+
+
 //Giảng viên
 Route::get('/dashboard', function () {
    return view('TE_dashboard.dashboard');
