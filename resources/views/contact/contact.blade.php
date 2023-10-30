@@ -38,15 +38,17 @@
                 <img id="previewImage" src="./img/avatar.png" alt="">
             </div>
             <p>Nguyễn Thành Trung</p>
-            <select name="" id="" style="margin-bottom: 20px;">
+            <select name="" id="">
                 <option value="">Ảnh</option>
                 <option value="">Link</option>
                 <option value="">File đính kèm</option>
             </select> <br>
             <select name="" id="">
                 <option value="">Custome Chat</option>
+            </select> <br>
+            <select name="" id="">
+                <option value="">Thành viên nhóm</option>
             </select>
-
         </div>
     </div>
     <script>

@@ -43,3 +43,33 @@ Route::get('/calendar', function () {
 Route::get('/contact', function () {
    return view('contact.contact');
 })->name('contact');
+
+//Giảng viên
+Route::get('/dashboard', function () {
+   return view('TE_dashboard.dashboard');
+})->name('dashboard');
+
+Route::get('/register_list', function () {
+   return view('TE_register.register_list');
+})->name('register_list');
+
+Route::get('/register_wait', function () {
+   return view('TE_register.register_wait');
+})->name('register_wait');
+
+Route::get('/update', function () {
+   return view('TE_update.update');
+})->name('update');
+
+Route::get('/update_new', function () {
+   return view('TE_update.update_new');
+})->name('update_new');
+
+Route::get('/monitor_process', function () {
+   return view('TE_monitor_process.monitor_process');
+})->name('monitor_process');
+
+Route::get('/monitor_group', function () {
+   return view('TE_monitor_process.monitor_group');
+})->name('monitor_group');
+

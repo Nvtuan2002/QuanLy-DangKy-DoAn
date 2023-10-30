@@ -12,7 +12,9 @@
         </header>
         <main class="d-flex">
             <aside class="col-md-2">
-                @include('includes.sidebar')
+                {{-- @include('includes.sidebar')  --}}
+                {{-- Giảng viên --}}
+                @include('includes.sidebarTeacher')
             </aside>
             <article class="col-md-10">
                 @yield('content')
