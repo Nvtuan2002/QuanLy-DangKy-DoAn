@@ -39,7 +39,7 @@
         </li>
         <li>
             <a href="{{ route('monitor_process') }}" class="nav-link link-body-emphasis">
-                <i class="bi bi-chat-dots"></i>
+                <i class="bi bi-ui-radios"></i>
                 Theo dõi tiến trình
             </a>
         </li>

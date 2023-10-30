@@ -3,7 +3,7 @@
     <div class="container-fluid">
         <div class="center-center">
             <div class="logo">
-                <a href="{{ route('home') }}"><img src="./img/logo.png" alt="Logo Header"></a>
+                <a href="#"><img src="./img/logo.png" alt="Logo Header"></a>
             </div>
         </div>
     </div>

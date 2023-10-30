@@ -2,10 +2,13 @@
 
 use Illuminate\Support\Facades\Route;
 
-
 Route::get('/', function () {
-   return view('home');
-})->name('home');
+   return view('login');
+})->name('login');
+
+Route::get('/dashboard', function () {
+   return view('dashboard');
+})->name('dashboard');
 
 // Nhom cua ban
 Route::get('/groupSV', function () {
@@ -44,10 +47,14 @@ Route::get('/contact', function () {
    return view('contact.contact');
 })->name('contact');
 
-
+//Info Edit
 Route::get('/infoStudent', function () {
    return view('infoStudent.infoStudent');
 })->name('infoStudent');
+
+Route::get('/infoTeacher', function () {
+   return view('infoTeacher.infoTeacher');
+})->name('infoTeacher');
 
 
 //Giảng viên

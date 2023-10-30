@@ -75,7 +75,7 @@ header {
     white-space: nowrap;
 }
 
-#userDropdownMenu{
+#userDropdownMenu {
     position: absolute;
     background: #D2E0FB;
     border-radius: 7px;
@@ -902,5 +902,54 @@ td:nth-child(8) {
     height: 90%;
 }
 
-
 /* ENd Teacher Monitor */
+
+/* Info Student */
+.info_img img {
+    height: 150px;
+    width: 150px;
+    border-radius: 50%;
+    object-fit: cover;
+    background-color: #dfdfdf;
+}
+
+.info_img i {
+    position: absolute;
+    font-size: 23px;
+    bottom: 0px;
+    right: 0px;
+    cursor: pointer;
+}
+
+label[for="file-input"] {
+    cursor: pointer;
+    position: relative;
+}
+
+label[for="file-input"] img {
+    cursor: pointer;
+}
+
+label[for="file-input"]:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+}
+
+.input_info {
+    background-color: #8EACCD;
+    padding: 7px 15px;
+    outline: none;
+    border: none;
+    border-radius: 7px;
+}
+
+.input_info:nth-child(2n+1) {
+    margin-right: 40px;
+}
+
+.input_info input {
+    outline: none;
+    border: none;
+    background-color: #8EACCD;
+    width: 50%;
+}
+

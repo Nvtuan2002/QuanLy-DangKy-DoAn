@@ -4,20 +4,30 @@
         {{-- <img src="../img/background-primary.png" alt=""> --}}
         <nav aria-label="breadcrumb">
             <ol class="breadcrumb">
-                <li class="breadcrumb-item active" aria-current="page">Chỉnh sửa thông tin cá nhân</li>
+                <li class="breadcrumb-item active" aria-current="page">Thông tin giảng viên > Nguyễn Thành Trung</li>
             </ol>
         </nav>
-        <div class="text-center">
-            <div class="info_img">
-                <input type="file" id="file-input" style="display: none">
-                <label for="file-input">
-                    <img src="https://scontent.fhan17-1.fna.fbcdn.net/v/t1.15752-9/385533421_871168748062380_2297325553142698699_n.jpg?_nc_cat=108&ccb=1-7&_nc_sid=8cd0a2&_nc_ohc=hMrzd7xiheoAX8b1D2l&_nc_ht=scontent.fhan17-1.fna&oh=03_AdRXIvodPzcdkIF_kKiJJEj-CY7dVqC24dt5W08MLkSU3g&oe=656765F7"
-                        alt="" id="image">
-                    <i class="bi bi-camera-fill"></i>
-                </label>
+        <div class="row justify-content-center">
+            <div class="text-center col-4">
+                <div class="info_img">
+                    <input type="file" id="file-input" style="display: none">
+                    <label for="file-input">
+                        <img src="https://scontent.fhan17-1.fna.fbcdn.net/v/t1.15752-9/385533421_871168748062380_2297325553142698699_n.jpg?_nc_cat=108&ccb=1-7&_nc_sid=8cd0a2&_nc_ohc=hMrzd7xiheoAX8b1D2l&_nc_ht=scontent.fhan17-1.fna&oh=03_AdRXIvodPzcdkIF_kKiJJEj-CY7dVqC24dt5W08MLkSU3g&oe=656765F7"
+                            alt="" id="image">
+                        <i class="bi bi-camera-fill"></i>
+                    </label>
+                </div>
+                <h5
+                    style="margin-top: 10px; background: #8EACCD; padding: 3px 3px; display:inline-block; border-radius: 5px;">
+                    Nguyễn Thành Trung</h5>
             </div>
-            <h5 style="margin-top: 10px; background: #8EACCD; padding: 3px 3px; display:inline-block; border-radius: 5px;">
-                Hoàng Hải Long</h5>
+            <div class="col-7">
+                <p class="fw-bold">Thông tin nổi bật</p>
+                <p><i class="bi bi-award"></i>Tốt nghiệp Đại học Bách Khoa Hà Nội.</p>
+                <p><i class="bi bi-award"></i>Đạt thành tích xuất sắc trong lĩnh vực AI</p>
+                <p><i class="bi bi-award"></i>Cán bộ đoàn xuất sắc năm học 2022-2023 Đại Học Phenikaa</p>
+                <p><i class="bi bi-award"></i>Đạt giải thưởng sáng tạo về thành tích học tập sinh viên</p>
+            </div>
         </div>
         <div class="row text-center" style="margin-bottom: 30px;">
             <div class="col-5">
@@ -36,7 +46,7 @@
                         </div>
                     </div>
                     <div class="col-6 text-start">
-                        <label class="ms-3">Nhác học</label>
+                        <label class="ms-3">Làm Việc Nhóm</label>
                         <div class="progress col-9" role="progressbar" aria-label="Info example" aria-valuenow="50"
                             aria-valuemin="0" aria-valuemax="100">
                             <div class="progress-bar bg-info text-dark" style="width: 99%">99%</div>
@@ -64,7 +74,7 @@
             <div class="col-5 input_info d-flex justify-content-between" style="">
                 <div>
                     <label for="" style="width: 100px;">Họ và tên: </label>
-                    <input type="text" value="Hoàng Hải Long">
+                    <input type="text" value="Nguyễn Thành Trung">
                 </div>
                 <i class="bi bi-pencil-square"></i>
 
