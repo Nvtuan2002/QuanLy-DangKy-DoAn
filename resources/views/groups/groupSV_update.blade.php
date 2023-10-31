@@ -42,9 +42,9 @@
                                     <input type="file" class="form-control" id="dokumen" required="">
                                 </div>
                                 <div class="modal-footer">
-                                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Quay
+                                    <button type="button" class="btn comeback" data-bs-dismiss="modal">Quay
                                         lại</button>
-                                    <button type="button" class="btn btn-primary">Cập nhật</button>
+                                    <button type="button" class="btn request">Cập nhật</button>
                                 </div>
                             </div>
                         </div>

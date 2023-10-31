@@ -8,29 +8,30 @@
             </ol>
         </nav>
         <div class="d-flex justify-content-between">
-            <div class="p-3" style="margin-left:20vw ;width: 50%; background: #F9F3CC; border: 1px solid rgba(0, 0, 0, 0.20);">
+            <div class="p-3"
+                style="margin-left:20vw ;width: 50%;box-shadow: 0px 7px 4px 0px rgba(0, 0, 0, 0.25); border: 1px solid rgba(0, 0, 0, 0.20);">
                 <ul class="row">
-                    <p class="col-6">Ảnh Đại diện</p>
-                    <img class="col-6" src="./img/avatar-groups.png" alt="">
+                    <p class="col-4">Ảnh Đại diện</p>
+                    <img class="col-8" src="./img/avatar-groups.png" alt="">
                 </ul>
                 <ul class="row">
-                    <p class="col-6">Tên nhóm: </p>
-                    <p class="col-6">Team Hắc Cơ</p>
+                    <p class="col-4">Tên nhóm: </p>
+                    <p class="col-8">Team Hắc Cơ</p>
                 </ul>
                 <ul class="row">
-                    <p class="col-6">Tên đề tài: </p>
-                    <p class="col-6">Xây dựng Web quản lí đăng ký đồ án</p>
+                    <p class="col-4">Tên đề tài: </p>
+                    <p class="col-8">Xây dựng Web quản lí đăng ký đồ án</p>
                 </ul>
                 <ul class="row">
-                    <p class="col-6">Giảng Viên: </p>
-                    <p class="col-6">Nguyễn Thành Trung</p>
+                    <p class="col-4">Giảng Viên: </p>
+                    <p class="col-8">Nguyễn Thành Trung</p>
                 </ul>
                 <ul class="row">
-                    <p class="col-6">Thành viên nhóm: </p>
-                    <div class="col-6">
+                    <p class="col-4">Thành viên nhóm: </p>
+                    <div class="col-8">
                         <ul class="row d-flex align-items-center">
                             <img class="col-6" src="./img/avatar.png" alt="">
-                            <li class="col-6">Hoàng Hải Long</li>
+                            <li class="col-6">Hoàng Hải Long (Nhóm trưởng)</li>
                         </ul>
                         <ul class="row d-flex align-items-center">
                             <img class="col-6" src="./img/avatar.png" alt="">
@@ -43,12 +44,12 @@
                     </div>
                 </ul>
                 <ul class="row">
-                    <p class="col-6">Nhóm số: </p>
-                    <p class="col-6">1</p>
+                    <p class="col-4">Nhóm số: </p>
+                    <p class="col-8">1</p>
                 </ul>
                 <ul class="row">
-                    <p class="col-6">Điểm số trung bình: </p>
-                    <p class="col-6">10</p>
+                    <p class="col-4">Điểm số trung bình: </p>
+                    <p class="col-8">10</p>
                 </ul>
             </div>
             <div class="d-flex flex-column me-5 align-items-end">

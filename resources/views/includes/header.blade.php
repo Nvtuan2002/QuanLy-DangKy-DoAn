@@ -15,7 +15,7 @@
         <div class="fullname ms-2">Hoàng Hải Long</div>
         <i class="bi bi-caret-down-fill"></i>
         <ul id="userDropdownMenu">
-            <li><a href=""><i class="me-2 bi bi-box-arrow-right"></i>Đăng xuất</a></li>
+            <li><a href="{{ route('login') }}"><i class="me-2 bi bi-box-arrow-right"></i>Đăng xuất</a></li>
             <li><a href="{{ route('infoStudent') }}"><i class="me-2 bi bi-pen"></i>Chỉnh sửa thông tin</a></li>
             <li class="has-submenu" id="settingsMenu"> <!-- Add a class for submenu and an id -->
                 <a class="submenu-trigger" role="button">

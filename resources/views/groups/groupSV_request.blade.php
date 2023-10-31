@@ -8,7 +8,7 @@
             </ol>
         </nav>
         <div class="d-flex list_request_title">
-            <h5>Thông tin</h5>
+            <h5 style="width: 141px">Thông tin</h5>
             <h5>Lựa chọn</h5>
         </div>
         <div>

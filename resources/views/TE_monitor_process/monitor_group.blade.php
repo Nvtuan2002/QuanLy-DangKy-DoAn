@@ -120,7 +120,7 @@
 
 
             </div>
-            <div class="col-md-4">
+            <div class="">
                 <div class="mt-4">
                     <h6 class="fw-bold">Giới thiệu</h6>
                     <p>Website xây dựng quản lý đồ án</p>

@@ -35,9 +35,9 @@
                     <td>Lập trình WEbssite</td>
                     <td>15/15</td>
                     <td style="all:unset">
-                        <button class="invite"><a href="{{ route('register_attend') }}">Xóa</a></button>
-                        <button class="invite"><a href="{{ route('register_attend') }}">Chỉnh sửa</a></button>
-                        <button class="invite"><a href="{{ route('register_attend') }}">Chuyển nhóm</a></button>
+                        <button class="invite"><a href="#">Xóa</a></button>
+                        <button class="invite"><a href="#">Chỉnh sửa</a></button>
+                        <button class="invite"><a href="#">Chuyển nhóm</a></button>
                     </td>
                 </tr>
                 <tr>
@@ -47,9 +47,9 @@
                     <td>Lập trình WEbssite</td>
                     <td>15/15</td>
                     <td style="all:unset">
-                        <button class="invite"><a href="{{ route('register_attend') }}">Xóa</a></button>
-                        <button class="invite"><a href="{{ route('register_attend') }}">Chỉnh sửa</a></button>
-                        <button class="invite"><a href="{{ route('register_attend') }}">Chuyển nhóm</a></button>
+                        <button class="invite"><a href="#">Xóa</a></button>
+                        <button class="invite"><a href="#">Chỉnh sửa</a></button>
+                        <button class="invite"><a href="#">Chuyển nhóm</a></button>
                     </td>
                 </tr>
                 <tr>
@@ -59,9 +59,9 @@
                     <td>Lập trình WEbssite</td>
                     <td>15/15</td>
                     <td style="all:unset">
-                        <button class="invite"><a href="{{ route('register_attend') }}">Xóa</a></button>
-                        <button class="invite"><a href="{{ route('register_attend') }}">Chỉnh sửa</a></button>
-                        <button class="invite"><a href="{{ route('register_attend') }}">Chuyển nhóm</a></button>
+                        <button class="invite"><a href="#">Xóa</a></button>
+                        <button class="invite"><a href="#">Chỉnh sửa</a></button>
+                        <button class="invite"><a href="#">Chuyển nhóm</a></button>
                     </td>
                 </tr>
         </table>

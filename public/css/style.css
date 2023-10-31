@@ -2,6 +2,8 @@
     box-sizing: border-box;
     margin: 0;
     padding: 0;
+    font-family: system-ui, 'Segoe UI', 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-size: 16px;
 }
 
 :root {
@@ -13,6 +15,7 @@
     --invite-background: #D2E0FB;
     --accept-background: #D2E0FB;
     --reject-background: #B42E2E;
+    --comeback-btn: #6c757d;
 }
 
 ul {
@@ -37,9 +40,32 @@ li {
     margin-bottom: 0.5rem;
 }
 
+h5 {
+    color: #1F1E1E;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 1.2;
+}
+
+p {
+    color: #000;
+    font-size: 15px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+}
+
+img{
+    margin-right: 10px;
+}
+
 header {
-    position: relative;
+    position: fixed;
     z-index: 3;
+    top: 0;
+    left: 0;
+    right: 0;
 }
 
 /* NavBar */
@@ -128,15 +154,35 @@ header {
 
 /* End NavBar */
 
+body {
+    overflow: auto;
+}
+
+main {
+    margin-top: 50px;
+}
+
+article {
+    margin-bottom: 50px;
+}
+
 /* Footer */
 .footer {
     background: var(--third-color, #D2E0FB);
     padding: 10px 0px;
+    bottom: 0;
+    right: 0;
+    left: 0;
 }
 
 .footer .logo img {
     height: 49px;
     object-fit: cover;
+}
+
+.footer .role p:hover{
+    opacity: 0.8;
+    color: rgb(200, 40, 40);
 }
 
 /* End Footer */
@@ -159,31 +205,24 @@ header {
 
 /* End Sidebar Left */
 
-/* Article */
-
-/* End Article */
-
 /* Home */
-.home nav {
-    display: inline-block;
-    margin: 50px 0px 0px 20px;
-}
 
 .home .info .card img {
     width: 81px;
     height: 66px;
 }
 
-.home .info>div {
+.home .info>div>div {
+    height: 150px;
+}
+
+.home .info>div>div {
+    
     padding: 10px;
-    min-width: 190px;
+    max-width: 250px;
     border-radius: 11px;
     background: var(--card-background);
     box-shadow: 0px 7px 4px 0px rgba(0, 0, 0, 0.25)
-}
-
-.home .about {
-    margin: 50px;
 }
 
 .home .about>div {
@@ -199,7 +238,7 @@ header {
 }
 
 .home .about .des>h5 {
-    margin-bottom: 0.5rem;
+    margin-bottom: 1.5rem;
 }
 
 .home .popular img {
@@ -207,6 +246,14 @@ header {
     height: 160px;
     background: var(--card-background);
     box-shadow: 0px 7px 4px 0px rgba(0, 0, 0, 0.25);
+}
+
+ol li {
+    color: #000;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
 }
 
 /* Home */
@@ -224,6 +271,13 @@ header {
     border-radius: 15px;
     background: var(--invite-background);
     padding: 7px 15px;
+}
+
+.comeback {
+    padding: 7px 15px;
+    border-radius: 15px;
+    background: var(--comeback-btn);
+    border: none;
 }
 
 .request {
@@ -297,12 +351,12 @@ header {
 .groups_request .list_request_title h5:nth-child(1) {
     border-right: 2px solid black;
     margin: auto 0px auto 80px;
-    padding-right: 58px;
+    padding-right: 68px;
 }
 
 .groups_request .list_request_title h5:nth-child(2) {
     margin: auto 0;
-    margin-left: 58px;
+    margin-left: 50px;
 }
 
 .groups_request .list_request {
@@ -319,12 +373,14 @@ header {
 
 .groups_request .list_request p {
     margin: auto 40px auto 40px;
+    width: 110px;
 }
 
 .groups_request .list_request i {
     border-right: 2px solid black;
     padding-right: 15px;
     margin: auto 0;
+    width: 31px;
 }
 
 .accept {
@@ -580,12 +636,13 @@ circle {
 }
 
 .register_create form {
-    border: 1px solid black;
+    box-shadow: 0px 7px 4px 0px rgba(0, 0, 0, 0.25);
+    border: 1px solid #c7c7c7;
     margin-top: 40px;
-    padding: 40px 0;
+    padding: 40px 0px;
+    padding-left: 10px;
     display: inline-block;
     text-align: left;
-    /* Reset text alignment within the form */
 }
 
 .register_create>h5 {
@@ -598,13 +655,14 @@ circle {
     /* Set labels to display as inline-block elements */
     width: 150px;
     margin-bottom: 10px;
-    padding: 10px;
+    padding: 10px 1px;
 }
 
 .register_create form>input {
     border-radius: 5px;
     outline: none;
     border: none;
+    width: 57%;
 }
 
 .register_create form>input:nth-child(7) {
@@ -718,6 +776,18 @@ td:nth-child(8) {
 
 /*  End Calendảr */
 
+/* teacher dashboard */
+.h5_dashboard {
+    margin: 10px 0;
+}
+
+.te_dashboard a {
+    color: #007bff;
+}
+
+/* END teacher dashboard */
+
+
 /* Contact Teacher */
 .contact {
     width: 50vw;
@@ -797,7 +867,7 @@ td:nth-child(8) {
 /* DashBoard Teacher */
 .home .container .info>div {
     height: 130px;
-    margin-left: 90px;
+    margin-left: 75px;
     margin-bottom: 70px;
 }
 
@@ -952,4 +1022,3 @@ label[for="file-input"]:hover {
     background-color: #8EACCD;
     width: 50%;
 }
-

@@ -17,12 +17,12 @@
                      </svg>Vĩnh Ngọc, Đông Anh, Hà Nội</p>
          </div>
          <div class="role">
-             <H3>Trang</H3>
-             <p class="t-16"><a href=""><i class="bi bi-caret-right"></i>Tổng quan</a></p>
-             <p class="t-16"><a href=""><i class="bi bi-caret-right"></i>Nhóm của bạn</a></p>
-             <p class="t-16"><a href=""><i class="bi bi-caret-right"></i>Đăng ký đồ án</a></p>
-             <p class="t-16"><a href=""><i class="bi bi-caret-right"></i>Lịch báo cáo</a></p>
-             <p class="t-16"><a href=""><i class="bi bi-caret-right"></i>Chat</a></p>
+             <H3>................</H3>
+             <p class="t-16"><a href=""><i class="bi bi-caret-right"></i>.................</a></p>
+             <p class="t-16"><a href=""><i class="bi bi-caret-right"></i>.................</a></p>
+             <p class="t-16"><a href=""><i class="bi bi-caret-right"></i>.................</a></p>
+             <p class="t-16"><a href=""><i class="bi bi-caret-right"></i>.................</a></p>
+             <p class="t-16"><a href=""><i class="bi bi-caret-right"></i>.................</a></p>
 
          </div>
          <div class="role">

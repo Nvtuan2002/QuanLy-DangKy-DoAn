@@ -8,7 +8,7 @@
             </ol>
         </nav>
         <div class="d-flex justify-content-between">
-            <div class="alert">
+            <div class="alert" style="padding: unset">
                 <p class="fw-bold">Chào mừng, Hoàng Hải Long</p>
                 <p class="">Thông báo của giảng viên: </p>
                 <p class="">15/10/2023 9:54PM: Nhóm cần hoàn thành chi tiết hơn</p>

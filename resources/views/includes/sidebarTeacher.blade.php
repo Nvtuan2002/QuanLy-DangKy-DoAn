@@ -1,7 +1,7 @@
 <div class="sidebar">
     <ul class="nav nav-pills flex-column mb-auto justify-content-center">
         <li>
-            <a href="{{ route('dashboard') }}" class="nav-link link-body-emphasis">
+            <a href="{{ route('TE_dashboard') }}" class="nav-link link-body-emphasis">
                 <i class="bi bi-house-door"></i>
                 Tổng quan
             </a>

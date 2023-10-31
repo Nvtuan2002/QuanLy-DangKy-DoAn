@@ -19,15 +19,17 @@
             <h5 style="margin-top: 10px; background: #8EACCD; padding: 3px 3px; display:inline-block; border-radius: 5px;">
                 Hoàng Hải Long</h5>
         </div>
-        <div class="row text-center" style="margin-bottom: 30px;">
-            <div class="col-5">
-                <h4>Thông tin cá nhân</h4>
-                <textarea name="" id="" cols="30" rows="5">Hello everyone I am now I am studying IT, and I have Desire</textarea>
-                <i class="bi bi-pencil-square text-end"></i>
+        <div class="row justify-content-evenly" style="margin: 30px 0px;">
+            <div class="col-5" style="margin-top: -36px; padding:unset; ">
+                <h4 class="fw-bold">Thông tin cá nhân</h4>
+                <div class="d-flex flex-column" style="border: 1px solid rgb(106, 89, 89); ">
+                    <textarea name="" id="" cols="30" rows="10" style="outline: none; border: none; height: 123px;"></textarea>
+                    <i class="bi bi-pencil-square text-end" style="float: right"></i>
+                </div>
             </div>
-            <div class="col-5">
+            <div class="col-5" style="border: 1px solid rgb(106, 89, 89); height: 150px;">
                 <h5>Kỹ năng cá nhân</h5>
-                <div class="row" style="border: 1px solid rgb(106, 89, 89); padding: 20px 0px;">
+                <div class="row" style="">
                     <div class="col-6 text-start">
                         <label class="ms-3">Giao tiếp</label>
                         <div class="progress col-9" role="progressbar" aria-label="Info example" aria-valuenow="50"

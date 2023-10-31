@@ -7,7 +7,7 @@ Route::get('/', function () {
 })->name('login');
 
 Route::get('/dashboard', function () {
-   return view('dashboard');
+   return view('dashboard.dashboard');
 })->name('dashboard');
 
 // Nhom cua ban
@@ -58,9 +58,9 @@ Route::get('/infoTeacher', function () {
 
 
 //Giảng viên
-Route::get('/dashboard', function () {
-   return view('TE_dashboard.dashboard');
-})->name('dashboard');
+Route::get('/TE_dashboard', function () {
+   return view('TE_dashboard.TE_dashboard');
+})->name('TE_dashboard');
 
 Route::get('/register_list', function () {
    return view('TE_register.register_list');

@@ -12,6 +12,7 @@
         </header>
         <main class="d-flex">
             <aside class="col-md-2">
+                {{-- Sinh Vien --}}
                 {{-- @include('includes.sidebar')  --}}
                 {{-- Giảng viên --}}
                 @include('includes.sidebarTeacher')
