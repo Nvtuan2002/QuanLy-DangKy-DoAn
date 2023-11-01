@@ -9,7 +9,8 @@
             margin: 0;
             padding: 0;
         }
-        main{
+
+        main {
             margin: unset;
         }
 
@@ -185,6 +186,8 @@
         img {
             background: center bottom no-repeat;
             background-size: cover;
+            width: 100vw;
+            height: 100vh;
         }
     </style>
 </head>
@@ -192,7 +195,7 @@
 <body id="body">
     <div>
         <main>
-            <article class="">
+            <article style="margin: 0;">
                 <img src="https://qldtbeta.phenikaa-uni.edu.vn/congsinhvien/assets/images/bg-login.jpg" alt="">
                 @yield('content')
             </article>

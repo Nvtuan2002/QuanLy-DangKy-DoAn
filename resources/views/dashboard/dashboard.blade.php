@@ -11,13 +11,15 @@
                 <div class="col-xl-3 col-lg-3 text-center">
                     <div style="height: 130px;">
                         <img src="./img/noto_teacher.png" class="" alt="Icon Teacher">
-                        <h5 class="card-title h5_dashboard">Thông tin giảng viên</h5>
+                        <h5 class="card-title h5_dashboard"><a href="{{ route('infoAllTeacher') }}">Thông tin giảng viên</a>
+                        </h5>
                     </div>
                 </div>
                 <div class="col-xl-3 col-lg-3 text-center">
                     <div style="height: 130px;">
                         <img src="./img/home_profile.png" class="" alt="Icon Profile">
-                        <h5 class="card-title h5_dashboard">Thông tin cá nhân</h5>
+                        <h5 class="card-title h5_dashboard"><a href="{{ route('infoStudent') }}">Thông tin cá nhân</a>
+                        </h5>
                     </div>
                 </div>
                 <div class="col-xl-3 col-lg-3 text-center">

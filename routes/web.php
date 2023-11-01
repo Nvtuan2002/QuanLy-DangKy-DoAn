@@ -55,6 +55,10 @@ Route::get('/infoStudent', function () {
 Route::get('/infoTeacher', function () {
    return view('infoTeacher.infoTeacher');
 })->name('infoTeacher');
+//Show
+Route::get('/infoAllTeacher', function () {
+   return view('infoTeacher.infoAllTeacher');
+})->name('infoAllTeacher');
 
 
 //Giảng viên

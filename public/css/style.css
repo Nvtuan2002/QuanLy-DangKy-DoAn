@@ -56,10 +56,6 @@ p {
     line-height: normal;
 }
 
-img{
-    margin-right: 10px;
-}
-
 header {
     position: fixed;
     z-index: 3;
@@ -180,7 +176,7 @@ article {
     object-fit: cover;
 }
 
-.footer .role p:hover{
+.footer .role p:hover {
     opacity: 0.8;
     color: rgb(200, 40, 40);
 }
@@ -217,7 +213,7 @@ article {
 }
 
 .home .info>div>div {
-    
+
     padding: 10px;
     max-width: 250px;
     border-radius: 11px;
@@ -1021,4 +1017,21 @@ label[for="file-input"]:hover {
     border: none;
     background-color: #8EACCD;
     width: 50%;
+}
+
+/* Info Teacher */
+.infoAllTeacher>div>div>div {
+    margin-bottom: 30px;
+}
+
+.infoAllTeacher a {
+    width: 150px;
+    line-height: 37px;
+    margin: unset;
+    text-align: start;
+}
+
+
+.infoAllTeacher>div>div>div>img {
+    margin-right: 10px;
 }
