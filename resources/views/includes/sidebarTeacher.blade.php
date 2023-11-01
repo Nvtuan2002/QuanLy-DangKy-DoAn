@@ -1,5 +1,5 @@
 <div class="sidebar">
-    <ul class="nav nav-pills flex-column mb-auto justify-content-center">
+    <ul class="nav nav-pills flex-column mb-auto " style="padding-top: 50px;">
         <li>
             <a href="{{ route('TE_dashboard') }}" class="nav-link link-body-emphasis">
                 <i class="bi bi-house-door"></i>

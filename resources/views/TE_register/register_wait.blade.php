@@ -1,6 +1,6 @@
-@extends('layouts.default')
+@extends('layouts.teacher')
 @section('content')
-    <div class="register m-2 register_list">
+    <div class="register_list search col-lg-10">
         <nav aria-label="breadcrumb">
             <ol class="breadcrumb">
                 <li class="breadcrumb-item active" aria-current="page">Danh sách sinh viên > hàng chờ</li>
@@ -18,12 +18,12 @@
         </div>
         <table class="container">
                 <tr>
-                    <td style="text-align: center">Tên sinh viên</td>
-                    <td style="text-align: center">Mã số sinh viên</td>
-                    <td style="text-align: center">Giảng viên phụ trách</td>
-                    <td style="text-align: center">Đề tài tham gia</td>
-                    <td style="text-align: center">Nhóm</td>
-                    <td style="text-align: center">Lựa chọn</td>
+                    <th style="text-align: center">Tên sinh viên</th>
+                    <th style="text-align: center">Mã số sinh viên</th>
+                    <th style="text-align: center">Giảng viên phụ trách</th>
+                    <th style="text-align: center">Đề tài tham gia</th>
+                    <th style="text-align: center">Nhóm</th>
+                    <th style="text-align: center">Lựa chọn</th>
                 </tr>
 
         </table>
@@ -34,7 +34,7 @@
                     <td>Nguyễn Thành Trung</td>
                     <td>Chuyên Ngành</td>
                     <td>1</td>
-                    <td style="all:unset">
+                    <td>
                         <button class="invite">Từ chối</button>
                         <button class="invite">Duyệt</button>
                     </td>
@@ -45,7 +45,7 @@
                     <td>Nguyễn Thành Trung</td>
                     <td>Chuyên Ngành</td>
                     <td>2</td>
-                    <td style="all:unset">
+                    <td>
                         <button class="invite">Từ chối</button>
                         <button class="invite">Duyệt</button>
                     </td>
@@ -56,7 +56,7 @@
                     <td>Nguyễn Thành Trung</td>
                     <td>Chuyên Ngành</td>
                     <td>3</td>
-                    <td style="all:unset">
+                    <td>
                         <button class="invite">Từ chối</button>
                         <button class="invite">Duyệt</button>
                     </td>

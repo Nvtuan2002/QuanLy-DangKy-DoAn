@@ -3,6 +3,7 @@
 <meta name="Saquib" content="Blade">
 <title>Đăng ký đồ án</title>
 <link rel="icon" href="{{ url('../img/phenikaa_logo.png') }}">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <!-- load bootstrap from a cdn -->
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">

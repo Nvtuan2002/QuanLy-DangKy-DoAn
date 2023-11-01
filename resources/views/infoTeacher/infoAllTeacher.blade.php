@@ -1,6 +1,6 @@
 @extends('layouts.default')
 @section('content')
-    <div class="infoAllTeacher m-2">
+    <div class="infoAllTeacher col-lg-10">
         {{-- <img src="../img/background-primary.png" alt=""> --}}
         <nav aria-label="breadcrumb">
             <ol class="breadcrumb">

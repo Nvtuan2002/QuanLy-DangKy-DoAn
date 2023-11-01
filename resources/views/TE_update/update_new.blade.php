@@ -1,6 +1,6 @@
-@extends('layouts.default')
+@extends('layouts.teacher')
 @section('content')
-    <div class="m-2">
+    <div class="col-lg-10">
         <nav aria-label="breadcrumb">
             <ol class="breadcrumb">
                 <li class="breadcrumb-item active" aria-current="page"> Cập nhật đồ án > Tạo nhóm mới</li>

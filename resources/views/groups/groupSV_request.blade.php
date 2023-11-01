@@ -1,6 +1,6 @@
 @extends('layouts.default')
 @section('content')
-    <div class="groups_request m-2">
+    <div class="groups_request col-lg-10">
         <img src="../img/background-primary.png" alt="">
         <nav aria-label="breadcrumb">
             <ol class="breadcrumb">

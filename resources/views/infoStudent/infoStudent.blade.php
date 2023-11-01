@@ -1,6 +1,6 @@
 @extends('layouts.default')
 @section('content')
-    <div class="groups m-2">
+    <div class="groups col-lg-10">
         {{-- <img src="../img/background-primary.png" alt=""> --}}
         <nav aria-label="breadcrumb">
             <ol class="breadcrumb">
@@ -63,44 +63,44 @@
             </div>
         </div>
         <div class="row justify-content-center gy-3" style="">
-            <div class="col-5 input_info d-flex justify-content-between" style="">
-                <div>
+            <div class="col-lg-5 col-xl-5 input_info d-flex justify-content-between" style="">
+                <div style="width: 85%;">
                     <label for="" style="width: 100px;">Họ và tên: </label>
                     <input type="text" value="Hoàng Hải Long">
                 </div>
                 <i class="bi bi-pencil-square"></i>
 
             </div>
-            <div class="col-5 input_info d-flex justify-content-between" style="">
-                <div>
+            <div class="col-lg-5 col-xl-5 input_info d-flex justify-content-between" style="">
+                <div style="width: 85%;">
                     <label for="" style="width: 100px;">Số điện thoại: </label>
                     <input type="text" value="0967846423">
                 </div>
                 <i class="bi bi-pencil-square"></i>
             </div>
-            <div class="col-5 input_info d-flex justify-content-between" style="">
-                <div>
+            <div class="col-lg-5 col-xl-5 input_info d-flex justify-content-between" style="">
+                <div style="width: 85%;">
                     <label for="" style="width: 100px;">Email: </label>
                     <input type="text" value="long19092k2@gmail.com">
                 </div>
                 <i class="bi bi-pencil-square"></i>
             </div>
-            <div class="col-5 input_info d-flex justify-content-between" style="">
-                <div>
+            <div class="col-lg-5 col-xl-5 input_info d-flex justify-content-between" style="">
+                <div style="width: 85%;">
                     <label for="" style="width: 100px;">Ngày Sinh: </label>
                     <input type="date" value="2002-09-19">
                 </div>
                 <i class="bi bi-pencil-square"></i>
             </div>
-            <div class="col-5 input_info d-flex justify-content-between" style="">
-                <div>
+            <div class="col-lg-5 col-xl-5 input_info d-flex justify-content-between" style="">
+                <div style="width: 85%;">
                     <label for="" style="width: 100px;">Khoa: </label>
                     <input type="text" value="Công Nghệ Thông Tin">
                 </div>
                 <i class="bi bi-pencil-square"></i>
             </div>
-            <div class="col-5 input_info d-flex justify-content-between" style="">
-                <div>
+            <div class="col-lg-5 col-xl-5 input_info d-flex justify-content-between" style="">
+                <div style="width: 85%;">
                     <label for="" style="width: 100px;">NickName: </label>
                     <input type="text" value="LongNotDevVipPro">
                 </div>

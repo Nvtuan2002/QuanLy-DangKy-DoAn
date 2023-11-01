@@ -1,6 +1,6 @@
 @extends('layouts.default')
 @section('content')
-    <div class="m-2">
+    <div class="col-lg-10">
         <nav aria-label="breadcrumb">
             <ol class="breadcrumb">
                 <li class="breadcrumb-item active" aria-current="page">Lịch thống kêu báo cáo ></li>

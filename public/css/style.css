@@ -25,6 +25,7 @@ ul {
 a {
     text-decoration: none;
     color: black;
+    font-size: 16px;
 }
 
 i {
@@ -62,6 +63,10 @@ header {
     top: 0;
     left: 0;
     right: 0;
+}
+
+i {
+    font-size: 21px;
 }
 
 /* NavBar */
@@ -128,7 +133,7 @@ header {
 }
 
 #subSettingsMenu.active {
-    top: 115px;
+    top: 155px;
     right: 0;
     opacity: 1;
 }
@@ -162,6 +167,21 @@ article {
     margin-bottom: 50px;
 }
 
+article>div {
+    margin: 0 auto;
+    margin-top: 15px;
+}
+
+.img-background {
+    position: absolute;
+    background-position: center;
+    object-fit: contain;
+    z-index: -1;
+    width: 100%;
+    height: 70%;
+    top: 18%;
+}
+
 /* Footer */
 .footer {
     background: var(--third-color, #D2E0FB);
@@ -181,6 +201,10 @@ article {
     color: rgb(200, 40, 40);
 }
 
+.footer .role {
+    width: 45%;
+}
+
 /* End Footer */
 
 /* Sidebar Left */
@@ -195,8 +219,14 @@ article {
 }
 
 .sidebar .nav li {
-    padding: 8px 5px 8px 5px;
-    gap: 16px;
+    margin: 5px 10px 5px 10px;
+    cursor: pointer;
+    border-radius: 15px;
+
+}
+
+.sidebar .nav li:hover {
+    background-color: #F9F3CC;
 }
 
 /* End Sidebar Left */
@@ -215,7 +245,7 @@ article {
 .home .info>div>div {
 
     padding: 10px;
-    max-width: 250px;
+    width: 240px;
     border-radius: 11px;
     background: var(--card-background);
     box-shadow: 0px 7px 4px 0px rgba(0, 0, 0, 0.25)
@@ -231,6 +261,8 @@ article {
 
 .home .about img {
     margin-right: 0.5rem;
+    width: 150px;
+    height: 150px;
 }
 
 .home .about .des>h5 {
@@ -334,7 +366,7 @@ ol li {
 
 .groups_request>img {
     position: absolute;
-    width: 80%;
+    width: 70%;
     object-fit: cover;
     z-index: -1;
 }
@@ -404,31 +436,30 @@ ol li {
 
 
 /* Đăng ký đồ án ( REGISTER) */
-.register form .input {
+form .input {
     color: black;
     font: 1em/1.5 Hind, sans-serif;
     cursor: pointer;
 }
 
-.register form,
+form,
 .input,
 .caret {
     margin: auto;
 }
-
-.register form {
+.search form{
     max-width: 20em;
     float: right;
     width: 100%;
 }
 
-.register form .input,
+form .input,
 .caret {
     display: block;
     transition: all calc(1s * 0.5) linear;
 }
 
-.register form .input {
+form .input {
     background: transparent;
     border-radius: 50%;
     box-shadow: 0 0 0 0.25em inset;
@@ -437,7 +468,7 @@ ol li {
     height: 2em;
 }
 
-.register form .input:focus,
+form .input:focus,
 .input:valid {
     background: powderblue;
     border-radius: 0.25em;
@@ -449,12 +480,12 @@ ol li {
     height: 3em;
 }
 
-.register form .input:focus {
+form .input:focus {
     animation: showCaret 1s steps(1);
     outline: transparent;
 }
 
-.register form .input:focus+.caret,
+form .input:focus+.caret,
 .input:valid+.caret {
     animation: handleToCaret 1s linear;
     background: transparent;
@@ -463,7 +494,7 @@ ol li {
     transform: translate(0, -1em) rotate(-180deg) translate(7.5em, -0.25em);
 }
 
-.register form .caret {
+form .caret {
     background: black;
     border-radius: 0 0 0.125em 0.125em;
     margin-bottom: -0.6em;
@@ -530,56 +561,82 @@ ol li {
     }
 }
 
-.register table {
+table {
     border: 1px solid black;
-    clear: both;
     border-collapse: separate;
     border-spacing: 3px;
     padding: unset;
+    clear: both;
     margin-bottom: 20px;
 }
 
-.register table tr {
-    padding: 7px;
+table tr {
+    padding: 5px;
+    display: inline-flex;
+    width: 100%;
+    gap: 10px;
 }
 
-.register table tr td {
+table tr th,
+table tr td {
     background: #D2E0FB;
-    /* width: calc(100%/6); */
     text-align: start;
     padding: 10px;
+    display: inline-block;
+    border-radius: 30px;
+
 }
 
-.register table tr td:first-child {
+table tr td:first-child,
+table tr th:first-child {
     background-color: #ECE3CE;
+    text-align: center;
 }
 
-.register table tr td:nth-child(1) {
+.register table tr td:nth-child(1),
+.register table tr th:nth-child(1) {
     width: 15%;
+    height: 100%;
+
 }
 
-.register table tr td:nth-child(2) {
-    width: 15%;
+.register table tr td:nth-child(2),
+.register table tr th:nth-child(2) {
+    width: 20%;
+    height: 100%;
 }
 
-.register table tr td:nth-child(3) {
+.register table tr td:nth-child(3),
+.register table tr th:nth-child(3) {
     width: 30%;
+    height: 100%;
 }
 
-.register table tr td:nth-child(4) {
+.register table tr td:nth-child(4),
+.register table tr th:nth-child(4) {
     width: 10%;
+    height: 100%;
 }
 
-.register table tr td:nth-child(5) {
-    width: 15%;
+.register table tr td:nth-child(5),
+.register table tr th:nth-child(5) {
+    width: 10%;
+    height: 100%;
 }
 
-.register table tr td:nth-child(6) {
+.register table tr td:nth-child(6),
+.register table tr th:nth-child(6) {
     width: 15%;
+    height: 100%;
+    text-align: center;
 }
 
 .register table tr td button {
-    margin: 20px;
+    padding: unset;
+}
+
+table tr td button {
+    text-align: center;
 }
 
 .register>h5 {
@@ -625,6 +682,50 @@ circle {
     }
 }
 
+/* Register Attend */
+.register_attend table tr td:nth-child(1),
+.register_attend table tr th:nth-child(1) {
+    width: 15%;
+    height: 100%;
+
+}
+
+.register_attend table tr td:nth-child(2),
+.register_attend table tr th:nth-child(2) {
+    width: 20%;
+    height: 100%;
+}
+
+.register_attend table tr td:nth-child(3),
+.register_attend table tr th:nth-child(3) {
+    width: 30%;
+    height: 100%;
+}
+
+.register_attend table tr td:nth-child(4),
+.register_attend table tr th:nth-child(4) {
+    width: 10%;
+    height: 100%;
+}
+
+.register_attend table tr td:nth-child(5),
+.register_attend table tr th:nth-child(5) {
+    width: 10%;
+    height: 100%;
+}
+
+.register_attend table tr td:nth-child(6),
+.register_attend table tr th:nth-child(6) {
+    width: 15%;
+    height: 100%;
+    text-align: center;
+}
+
+.register_attend table tr td button {
+    padding: unset;
+}
+/* Register Attend */
+
 /* create Groúp  */
 
 .register_create {
@@ -643,7 +744,7 @@ circle {
 
 .register_create>h5 {
     position: absolute;
-    right: 30px;
+    right: 70px;
 }
 
 .register_create form>label {
@@ -772,6 +873,32 @@ td:nth-child(8) {
 
 /*  End Calendảr */
 
+
+/* Button contact */
+.btn-expand {
+    border: none;
+    outline: none;
+    background-color: unset;
+    font-size: 15px;
+}
+
+.button-invisible {
+    display: block;
+    background-color: unset;
+    padding: 7px 15px;
+    outline: none;
+    border: none;
+    width: 100%;
+    text-align: start;
+    font-size: 13px;
+}
+
+.button-invisible:hover {
+    background-color: #F0F2F5;
+}
+
+/* Button contact */
+
 /* teacher dashboard */
 .h5_dashboard {
     margin: 10px 0;
@@ -787,9 +914,11 @@ td:nth-child(8) {
 /* Contact Teacher */
 .contact {
     width: 50vw;
+    height: 545px;
     border: 1px solid #ccc;
     border-radius: 5px;
     box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+    position: relative;
 }
 
 .contact input {
@@ -816,15 +945,21 @@ td:nth-child(8) {
 }
 
 .messenger-header {
-    background-color: #007bff;
+    background-color: #D2E0FB;
     color: #fff;
     padding: 10px;
 }
 
 .messenger-body {
     padding: 10px;
-    min-height: 450px;
-    background-color: pink;
+    min-height: 500px;
+}
+
+.messenger-footer {
+    position: absolute;
+    bottom: 5px;
+    right: 0;
+    left: 0;
 }
 
 .message {
@@ -833,6 +968,11 @@ td:nth-child(8) {
     padding: 5px;
     border-radius: 5px;
     margin-bottom: 5px;
+}
+
+select,
+option {
+    cursor: pointer;
 }
 
 .user {
@@ -863,7 +1003,6 @@ td:nth-child(8) {
 /* DashBoard Teacher */
 .home .container .info>div {
     height: 130px;
-    margin-left: 75px;
     margin-bottom: 70px;
 }
 
@@ -878,54 +1017,119 @@ td:nth-child(8) {
     padding: 7px 15px;
 }
 
-.register_list table tr td:nth-child(1) {
+/* Register List fix Width */
+.register_list table tr td:nth-child(1),
+.register_list table tr th:nth-child(1) {
     width: 15%;
+    height: 100%;
+
 }
 
-.register_list table tr td:nth-child(2) {
-    width: 18%;
-}
-
-.register_list table tr td:nth-child(3) {
-    width: 18%;
-}
-
-.register_list table tr td:nth-child(4) {
-    width: 17%;
-}
-
-.register_list table tr td:nth-child(5) {
-    width: 17%;
-}
-
-.register_list table tr td:nth-child(6) {
+.register_list table tr td:nth-child(2),
+.register_list table tr th:nth-child(2) {
     width: 15%;
+    height: 100%;
+}
+
+.register_list table tr td:nth-child(3),
+.register_list table tr th:nth-child(3) {
+    width: 20%;
+    height: 100%;
+}
+
+.register_list table tr td:nth-child(4),
+.register_list table tr th:nth-child(4) {
+    width: 25%;
+    height: 100%;
+}
+
+.register_list table tr td:nth-child(5),
+.register_list table tr th:nth-child(5) {
+    width: 10%;
+    height: 100%;
+}
+
+.register_list table tr td:nth-child(6),
+.register_list table tr th:nth-child(6) {
+    width: 15%;
+    height: 100%;
+    text-align: center;
+}
+
+.register_list table tr td button {
+    width: 145px;
+    margin-bottom: 12px;
+}
+
+.register_list table tr td:nth-child(6){
+    padding: unset;
+    background-color: unset;
+    border: unset;
 }
 
 .register_list table tr td:nth-child(6) button:nth-child(1) {
-    margin: 10px;
-    width: 90%;
-    height: 90%;
     background-color: var(--reject-background);
 }
 
 .register_list table tr td:nth-child(6) button:nth-child(2) {
-    margin: 10px;
-    width: 90%;
-    height: 90%;
     background-color: #ECE3CE;
 }
 
 .register_list table tr td:nth-child(6) button:nth-child(3) {
-    margin: 10px;
-    width: 90%;
-    height: 90%;
     background-color: #F2E358;
 }
 
 /*End List Register Teacher */
 
 /* Update Đồ án */
+.update table tr td:nth-child(1),
+.update table tr th:nth-child(1) {
+    width: 15%;
+    height: 100%;
+
+}
+
+.update table tr td:nth-child(2),
+.update table tr th:nth-child(2) {
+    width: 20%;
+    height: 100%;
+}
+
+.update table tr td:nth-child(3),
+.update table tr th:nth-child(3) {
+    width: 20%;
+    height: 100%;
+}
+
+.update table tr td:nth-child(4),
+.update table tr th:nth-child(4) {
+    width: 20%;
+    height: 100%;
+}
+
+.update table tr td:nth-child(5),
+.update table tr th:nth-child(5) {
+    width: 10%;
+    height: 100%;
+}
+
+.update table tr td:nth-child(6),
+.update table tr th:nth-child(6) {
+    width: 15%;
+    height: 100%;
+    text-align: center;
+}
+
+.update table tr td button {
+    width: 145px;
+    margin-bottom: 12px;
+}
+
+.update table tr td:nth-child(6){
+    padding: unset;
+    background-color: unset;
+    border: unset;
+}
 .update table tr td:nth-child(6) button:nth-child(1) {
     background-color: #ECE3CE;
 }
@@ -937,35 +1141,46 @@ td:nth-child(8) {
 /* End Update Đồ án */
 
 /*  Teacher Monitor */
-.monitor table tr td:nth-child(1) {
+.monitor table tr td:nth-child(1),
+.monitor table tr th:nth-child(1) {
     width: 15%;
+    height: 100%;
+
 }
 
-.monitor table tr td:nth-child(2) {
+.monitor table tr td:nth-child(2),
+.monitor table tr th:nth-child(2) {
     width: 15%;
+    height: 100%;
 }
 
-.monitor table tr td:nth-child(3) {
+.monitor table tr td:nth-child(3),
+.monitor table tr th:nth-child(3) {
     width: 15%;
+    height: 100%;
 }
 
-.monitor table tr td:nth-child(4) {
-    width: 25%;
+.monitor table tr td:nth-child(4),
+.monitor table tr th:nth-child(4) {
+    width: 20%;
+    height: 100%;
 }
 
-.monitor table tr td:nth-child(5) {
+.monitor table tr td:nth-child(5),
+.monitor table tr th:nth-child(5) {
+    width: 20%;
+    height: 100%;
+}
+
+.monitor table tr td:nth-child(6),
+.monitor table tr th:nth-child(6) {
     width: 15%;
+    height: 100%;
+    text-align: center;
 }
 
-.monitor table tr td:nth-child(6) {
-    width: 15%;
-}
-
-.monitor table tr td:nth-child(6) button:nth-child(1) {
-    background-color: #ECE3CE;
-    margin: 10px;
-    width: 90%;
-    height: 90%;
+.monitor table tr td button {
+    padding: unset;
 }
 
 /* ENd Teacher Monitor */
@@ -1016,7 +1231,7 @@ label[for="file-input"]:hover {
     outline: none;
     border: none;
     background-color: #8EACCD;
-    width: 50%;
+    width: 60%;
 }
 
 /* Info Teacher */
@@ -1035,3 +1250,9 @@ label[for="file-input"]:hover {
 .infoAllTeacher>div>div>div>img {
     margin-right: 10px;
 }
+
+/* Ipad and Laptop 1024 */
+@media only screen and (min-device-width : 768px) and (max-device-width : 1024px) {}
+
+/* Laptop 1024 and Pc 1440px */
+@media only screen and (min-device-width : 1024px) and (max-device-width : 1440px) {}

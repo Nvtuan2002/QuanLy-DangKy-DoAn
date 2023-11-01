@@ -11,7 +11,7 @@
                 <input type="password" name="" required="">
                 <label>Mật khẩu</label>
             </div>
-            <a href="{{ route('dashboard') }}">
+            <a href="{{ route('TE_dashboard') }}">
                 <span></span>
                 <span></span>
                 <span></span>
