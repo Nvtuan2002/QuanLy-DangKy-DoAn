@@ -1,4 +1,5 @@
 @extends('layouts.teacher')
+@section('title', 'Theo dõi tiến trình')
 @section('content')
     <div class="register monitor col-lg-10">
         <nav aria-label="breadcrumb">

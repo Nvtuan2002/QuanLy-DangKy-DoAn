@@ -1,4 +1,5 @@
 @extends('layouts.default')
+@section('title', 'Xem thông tin nhóm')
 @section('content')
     <div class="groups_detail col-lg-10" style="position: relative;">
         {{-- <img class="img-background" src="../img/background-primary.png" alt="" style="position: absolute;"> --}}

@@ -3,6 +3,8 @@
 
 <head>
     @include('includes.head')
+    <title>@yield('title')</title>
+
 </head>
 
 <body>
@@ -13,7 +15,7 @@
         <main class="d-flex">
             <aside class="col-md-2">
                 {{-- Sinh Vien --}}
-                @include('includes.sidebar') 
+                @include('includes.sidebar')
             </aside>
             <article class="col-md-10">
                 @yield('content')

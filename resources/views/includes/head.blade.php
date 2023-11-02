@@ -1,7 +1,6 @@
 <meta charset="utf-8">
 <meta name="description" content="">
 <meta name="Saquib" content="Blade">
-<title>Đăng ký đồ án</title>
 <link rel="icon" href="{{ url('../img/phenikaa_logo.png') }}">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <!-- load bootstrap from a cdn -->

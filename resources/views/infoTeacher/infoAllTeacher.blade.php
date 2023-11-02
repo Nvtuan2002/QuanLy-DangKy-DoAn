@@ -1,10 +1,11 @@
 @extends('layouts.default')
+@section('title', 'Tất cả giảng viên')
 @section('content')
     <div class="infoAllTeacher col-lg-10">
         {{-- <img src="../img/background-primary.png" alt=""> --}}
         <nav aria-label="breadcrumb">
             <ol class="breadcrumb">
-                <li class="breadcrumb-item active" aria-current="page">Thông tin giảng viên </li>
+                <li class="breadcrumb-item active" aria-current="page">Tất cả giảng viên </li>
             </ol>
         </nav>
         <div class="text-center">

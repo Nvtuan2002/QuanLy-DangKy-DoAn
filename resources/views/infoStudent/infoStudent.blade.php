@@ -1,4 +1,5 @@
 @extends('layouts.default')
+@section('title', 'Chỉnh sửa thông tin cá nhân')
 @section('content')
     <div class="groups col-lg-10">
         {{-- <img src="../img/background-primary.png" alt=""> --}}

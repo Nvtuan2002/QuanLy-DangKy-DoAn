@@ -1,4 +1,5 @@
 @extends('layouts.teacher')
+@section('title', 'Hàng chờ')
 @section('content')
     <div class="register_list search col-lg-10">
         <nav aria-label="breadcrumb">

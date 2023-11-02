@@ -1,4 +1,5 @@
 @extends('layouts.default')
+@section('title', 'Đăng ký đồ án')
 @section('content')
     <div class="register search col-lg-10">
         <nav aria-label="breadcrumb">

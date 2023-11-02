@@ -1,4 +1,5 @@
 @extends('layouts.default')
+@section('title', 'Yêu cầu vào nhóm')
 @section('content')
     <div class="groups_request col-lg-10">
         <img src="../img/background-primary.png" alt="">

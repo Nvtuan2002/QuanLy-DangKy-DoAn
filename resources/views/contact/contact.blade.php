@@ -1,4 +1,5 @@
 @extends('layouts.default')
+@section('title', 'Liên hệ với giảng viên')
 @section('content')
     <div class="col-lg-10">
         <nav aria-label="breadcrumb">

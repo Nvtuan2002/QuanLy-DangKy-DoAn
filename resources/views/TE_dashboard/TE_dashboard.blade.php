@@ -1,4 +1,5 @@
 @extends('layouts.teacher')
+@section('title', 'Tổng quan')
 @section('content')
     <div class="home te_dashboard col-lg-10">
         <nav aria-label="breadcrumb">
