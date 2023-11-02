@@ -13,7 +13,7 @@
             @include('includes.header')
         </header>
         <main class="d-flex">
-            <aside class="col-md-2">
+            <aside class="">
                 {{-- Sinh Vien --}}
                 @include('includes.sidebar')
             </aside>

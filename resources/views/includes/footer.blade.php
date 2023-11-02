@@ -1,9 +1,9 @@
  <div class="footer">
-     <div class="container d-flex justify-content-between">
-         <div class="logo d-flex align-items-center">
+     <div class="row container justify-content-around">
+         <div class="logo d-flex align-items-center justify-content-center col-lg-3">
              <img src="./img/logo.png" alt="Logo Footer">
          </div>
-         <div class="about_us">
+         <div class="about_us col-lg-4"">
              <H3>Giới thiệu</H3>
              <p class="t-16">Chúng tôi quá tự hào khi xây dựng hệ thống này, điều này <br>sẽ giúp sinh viên truy cập dễ
                  dàng hơn để dự án</p>
@@ -15,7 +15,7 @@
                          fill="black" />
                  </svg>Vĩnh Ngọc, Đông Anh, Hà Nội</p>
          </div>
-         <div class="role" style="margin-left: 20px;">
+         <div class="role col-lg-5"" style="">
              <H3>Giáo Viên</H3>
              <div class="row">
                  <p class="t-16 col-lg-6"><a href=""><i class="bi bi-caret-right"></i>Vũ Thị Ngọc Anh</a></p>

@@ -8,10 +8,10 @@
                 <li class="breadcrumb-item active" aria-current="page">Nhóm của bạn > Xem thông tin nhóm</li>
             </ol>
         </nav>
-        <div class="d-flex flex-column me-5 align-items-end">
+        <div class="me-5" style="float: right;">
             <button class="cancel mb-4 ">Rời nhóm</button>
         </div>
-        <div class="d-flex justify-content-between">
+        <div class="d-flex" style="clear: both;">
             <div class="p-3"
                 style="margin:0 auto; width: 60% ;box-shadow: 0px 7px 4px 0px rgba(0, 0, 0, 0.25); border: 1px solid rgba(0, 0, 0, 0.20);">
                 <ul class="row">

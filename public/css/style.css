@@ -201,10 +201,6 @@ article>div {
     color: rgb(200, 40, 40);
 }
 
-.footer .role {
-    width: 45%;
-}
-
 /* End Footer */
 
 /* Sidebar Left */
@@ -218,16 +214,34 @@ article>div {
     min-height: 70vh;
 }
 
-.sidebar .nav li {
+.sidebar .nav li,
+#sidebar_mobile .nav li {
     margin: 5px 10px 5px 10px;
     cursor: pointer;
     border-radius: 15px;
 
 }
 
-.sidebar .nav li:hover {
+.sidebar .nav li:hover,
+#sidebar_mobile .nav li:hover {
     background-color: #F9F3CC;
 }
+
+#sidebar_mobile {
+    display: none;
+    background: var(--header-background);
+    width: 10%;
+    padding: 13px 0px 0px 0px;
+    margin-left: 15px;
+    position: fixed;
+    top: 0;
+    z-index: 100;
+}
+
+#sidebar_mobile .nav {
+    background: var(--second-color, #8EACCD);
+}
+
 
 /* End Sidebar Left */
 
@@ -266,7 +280,7 @@ article>div {
 }
 
 .home .about .des>h5 {
-    margin-bottom: 1.5rem;
+    margin-bottom: .5rem;
 }
 
 .home .popular img {
@@ -336,10 +350,13 @@ ol li {
 
 }
 
-.groups .mx-3 .col-md-4 table tr td {
-    background: var(--box-valuate-background);
-    border: 1px solid black;
-    padding: 5px 10px;
+#groupSV tr td:nth-child(1) {
+    width: 50% !important;
+}
+
+#groupSV tr td:nth-child(2) {
+    width: 50% !important;
+    text-align: center;
 }
 
 
@@ -447,7 +464,8 @@ form,
 .caret {
     margin: auto;
 }
-.search form{
+
+.search form {
     max-width: 20em;
     float: right;
     width: 100%;
@@ -724,6 +742,7 @@ circle {
 .register_attend table tr td button {
     padding: unset;
 }
+
 /* Register Attend */
 
 /* create Groúp  */
@@ -913,6 +932,7 @@ td:nth-child(8) {
 
 /* Contact Teacher */
 .contact {
+    padding: unset;
     width: 50vw;
     height: 545px;
     border: 1px solid #ccc;
@@ -947,7 +967,7 @@ td:nth-child(8) {
 .messenger-header {
     background-color: #D2E0FB;
     color: #fff;
-    padding: 10px;
+    padding: 10px 0px;
 }
 
 .messenger-body {
@@ -990,10 +1010,9 @@ option {
     border-top: 1px solid #ccc;
 }
 
-.your-message select {
-    margin-bottom: 20px;
-    outline: none;
-    border: 1px solid #eaeaea;
+.contact-hidden{
+    display: none;
+    order: -2;
 }
 
 /* End Contact Teacher */
@@ -1003,7 +1022,7 @@ option {
 /* DashBoard Teacher */
 .home .container .info>div {
     height: 130px;
-    margin-bottom: 70px;
+    margin-bottom: 30px;
 }
 
 /* DashBoard Teacher */
@@ -1057,11 +1076,11 @@ option {
 }
 
 .register_list table tr td button {
-    width: 145px;
+    width: 130px;
     margin-bottom: 12px;
 }
 
-.register_list table tr td:nth-child(6){
+.register_list table tr td:nth-child(6) {
     padding: unset;
     background-color: unset;
     border: unset;
@@ -1125,11 +1144,12 @@ option {
     margin-bottom: 12px;
 }
 
-.update table tr td:nth-child(6){
+.update table tr td:nth-child(6) {
     padding: unset;
     background-color: unset;
     border: unset;
 }
+
 .update table tr td:nth-child(6) button:nth-child(1) {
     background-color: #ECE3CE;
 }
@@ -1250,9 +1270,3 @@ label[for="file-input"]:hover {
 .infoAllTeacher>div>div>div>img {
     margin-right: 10px;
 }
-
-/* Ipad and Laptop 1024 */
-@media only screen and (min-device-width : 768px) and (max-device-width : 1024px) {}
-
-/* Laptop 1024 and Pc 1440px */
-@media only screen and (min-device-width : 1024px) and (max-device-width : 1440px) {}

@@ -19,8 +19,8 @@
                 <button class="invite me-4"><i class="bi bi-plus-square"></i>Mời bạn tham gia</button>
             </div>
         </div>
-        <div class="mx-3 d-flex">
-            <div class="col-md-8 history-update">
+        <div class="mx-3 row">
+            <div class="col-lg-8 col-sm-12 history-update">
                 <p><img class="avatar me-4" src="./img/avatar-groups.png" alt="Avatar groups">Nhóm 04</p>
                 <p class="fw-bold"><i class="bi bi-clock-history"></i>Lịch sử cập nhật</p>
                 <ul>
@@ -39,9 +39,9 @@
                     <a class="request" href="{{ route('groupSV_request') }}">Các yêu cầu vào nhóm</a>
                 </div>
             </div>
-            <div class="col-md-4 d-flex justify-content-end flex-column" style="width: 280px;">
+            <div class="col-lg-4 col-sm-12 d-flex justify-content-end flex-column" style="width: 280px; height: 630px;">
                 <p class="fw-bold" style="text-align: center;">Đánh giá của giảng viên</p>
-                <table>
+                <table id="groupSV">
                     <tr>
                         <td>Ngày</td>
                         <td>Điểm đánh giá</td>

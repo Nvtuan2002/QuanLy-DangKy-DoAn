@@ -1,20 +1,20 @@
 @extends('layouts.teacher')
 @section('title', 'Theo dõi tiến trình')
 @section('content')
-    <div class="groups col-lg-10">
+    <div class="groups col-lg-10 monitor_groups">
         {{-- <img src="../img/background-primary.png" alt=""> --}}
         <nav aria-label="breadcrumb">
             <ol class="breadcrumb">
                 <li class="breadcrumb-item active" aria-current="page">Theo dõi tiến trình > Nhóm 04</li>
             </ol>
         </nav>
-        <div class="d-flex justify-content-between">
+        <div class="d-flex justify-content-between" style="margin-bottom: -30px;">
             <div class="alert">
                 <p class="fw-bold">Chào mừng, Nguyễn Thành Trung</p>
             </div>
         </div>
-        <div class="mx-3 d-flex">
-            <div class="col-md-8 history-update" style="border-right: 1px solid black; margin-right: 50px;">
+        <div class="mx-3 row">
+            <div class="col-md-8 col-sm-12 history-update" style="border-right: 1px solid black; margin-right: 50px;">
                 <h6 class=" fw-bold"><img class="avatar me-4" src="./img/avatar-groups.png" alt="Avatar groups">Nhóm 04</h6>
                 <div class="row">
                     <ul class="col-6">
@@ -51,7 +51,7 @@
                         <li></i>9: 56</li>
                     </ul>
                 </div>
-                <div class="d-flex flex-wrap justify-content-around" style="">
+                <div class="d-flex flex-wrap justify-content-around monitor_group" style="">
                     <a class="request" href="{{ route('monitor_process') }}">Quay lại</a>
                     <button class="request" id="modal_monitor">Đưa ra thông báo</button>
                     <button class="request">Đánh giá tiến độ</button>
@@ -118,10 +118,8 @@
                         </div>
                     </div>
                 </div>
-
-
             </div>
-            <div class="">
+            <div class="col-md-3 col-sm-12">
                 <div class="mt-4">
                     <h6 class="fw-bold">Giới thiệu</h6>
                     <p>Website xây dựng quản lý đồ án</p>

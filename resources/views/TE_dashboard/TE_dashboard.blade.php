@@ -9,36 +9,36 @@
         </nav>
         <div class="container">
             <div class="info row">
-                <div class="col-xl-4 col-lg-4 text-center d-flex justify-content-center">
-                    <div>
+                <div class="col-xl-4 col-lg-4 col-md-6 col-sm-12 text-center d-flex justify-content-center">
+                    <div style="height: 130px;">
                         <img src="./img/carbon_summary-kpi.png" class="" alt="Icon Teacher">
                         <h5 class="card-title h5_dashboard">Tổng số sinh viên đăng ký</h5>
                         <p>100</p>
                     </div>
                 </div>
-                <div class="col-xl-4 col-lg-4 text-center d-flex justify-content-center">
-                    <div>
+                <div class="col-xl-4 col-lg-4 col-md-6 col-sm-12 text-center d-flex justify-content-center">
+                    <div style="height: 130px;">
                         <img src="./img/codicon_project.png" class="" alt="Icon Profile">
                         <h5 class="card-title h5_dashboard">Tổng số đề tài đồ án</h5>
                         <p>100</p>
                     </div>
                 </div>
-                <div class="col-xl-4 col-lg-4 text-center d-flex justify-content-center">
-                    <div>
+                <div class="col-xl-4 col-lg-4 col-md-6 col-sm-12 text-center d-flex justify-content-center">
+                    <div style="height: 130px;">
                         <img src="./img/mdi_teacher.png" class="" alt="Icon Finance">
                         <h5 class="card-title h5_dashboard">Tổng số giảng viên</h5>
                         <p>100</p>
                     </div>
                 </div>
-                <div class="col-xl-4 col-lg-4 text-center d-flex justify-content-center">
-                    <div>
+                <div class="col-xl-4 col-lg-4 col-md-6 col-sm-12 text-center d-flex justify-content-center">
+                    <div style="height: 130px;">
                         <img src="./img/mdi_teacher.png" class="" alt="Icon Finance">
                         <h5 class="card-title h5_dashboard">Tổng số học sinh không đủ điều kiện </h5>
                         <p>100</p>
                     </div>
                 </div>
-                <div class="col-xl-4 col-lg-4 text-center d-flex justify-content-center">
-                    <div>
+                <div class="col-xl-4 col-lg-4 col-md-6 col-sm-12 text-center d-flex justify-content-center">
+                    <div style="height: 130px;">
                         <img src="./img/uil_calender.png" class="" alt="Icon Finance">
                         <h5 class="card-title h5_dashboard">Lịch báo cáo thống kê</h5>
                         <p>100</p>

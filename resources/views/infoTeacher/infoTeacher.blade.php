@@ -1,7 +1,7 @@
 @extends('layouts.default')
 @section('title', 'Thông tin giảng viên')
 @section('content')
-    <div class="groups col-lg-10">
+    <div class="groups col-lg-10 infoTeacher">
         {{-- <img src="../img/background-primary.png" alt=""> --}}
         <nav aria-label="breadcrumb">
             <ol class="breadcrumb">
@@ -9,7 +9,7 @@
             </ol>
         </nav>
         <div class="row justify-content-start">
-            <div class="text-center col-3" style="margin-left: 35px;">
+            <div class="text-center col-lg-3" style="">
                 <div class="info_img">
                     <input type="file" id="file-input" style="display: none">
                     <label for="file-input">
@@ -22,7 +22,7 @@
                     style="margin-top: 10px; background: #8EACCD; padding: 3px 3px; display:inline-block; border-radius: 5px;">
                     Nguyễn Thành Trung</h5>
             </div>
-            <div class="col-6">
+            <div class="col-lg-6">
                 <p class="fw-bold">Thông tin nổi bật</p>
                 <p><i class="bi bi-award"></i>Tốt nghiệp Đại học Bách Khoa Hà Nội.</p>
                 <p><i class="bi bi-award"></i>Đạt thành tích xuất sắc trong lĩnh vực AI</p>
@@ -100,7 +100,7 @@
             <div class="col-4 input_info d-flex justify-content-between" style="">
                 <div>
                     <label for="" style="width: 100px;">Ngày Sinh: </label>
-                    <input type="date" value="2002-09-19">
+                    <input style="width: 50%;" type="date" value="2002-09-19">
                 </div>
                 <i class="bi bi-pencil-square"></i>
             </div>
