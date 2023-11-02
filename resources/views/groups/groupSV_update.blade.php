@@ -1,5 +1,5 @@
 @extends('layouts.default')
-@section
+@section('title', 'Cập nhật tiến độ nhóm')
 @section('content')
     <div class="groups col-lg-10">
         {{-- <img src="../img/background-primary.png" alt=""> --}}
