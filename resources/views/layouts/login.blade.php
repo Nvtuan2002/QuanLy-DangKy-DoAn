@@ -10,29 +10,65 @@
             padding: 0;
         }
 
+        #image-main {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 100vw;
+            height: 100vh;
+            background-image: url('https://plus.unsplash.com/premium_photo-1673480195911-3075a87738b0?auto=format&fit=crop&q=80&w=2070&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');
+            background-size: cover;
+        }
+
+        #login {
+            width: 70vw;
+            height: 70vh;
+            background-color: rgb(255, 255, 255);
+            border-radius: 50px;
+            overflow: hidden;
+        }
+
+        .img-box {
+            height: 100%;
+            background-image: url("{{ asset('images/login.jpg') }}");
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            padding: unset;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .img-box img {
+            border-radius: 40px;
+            width: 88%;
+            height: 90%;
+            object-fit: cover;
+        }
+
         main {
             margin: unset;
         }
 
         /* FORM LOGIN */
         .login-box {
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            width: 400px;
+            height: 100%;
             padding: 40px;
-            transform: translate(-50%, -50%);
-            background: rgba(0, 0, 0, .5);
             box-sizing: border-box;
-            box-shadow: 0 15px 25px rgba(0, 0, 0, .6);
             border-radius: 10px;
         }
 
-        .login-box h2 {
-            margin: 0 0 30px;
+        .login-box h2,
+        h5 {
+            margin: 0 0 20px;
             padding: 0;
-            color: #fff;
+            color: black;
             text-align: center;
+        }
+
+        h5 {
+            margin-bottom: 50px;
         }
 
         .login-box .user-box {
@@ -40,13 +76,14 @@
         }
 
         .login-box .user-box input {
+            height: 55px;
             width: 100%;
             padding: 10px 0;
             font-size: 16px;
-            color: #fff;
-            margin-bottom: 30px;
+            color: black;
+            margin-bottom: 50px;
             border: none;
-            border-bottom: 1px solid #fff;
+            border-bottom: 1px solid black;
             outline: none;
             background: transparent;
         }
@@ -56,38 +93,69 @@
             top: 0;
             left: 0;
             padding: 10px 0;
-            font-size: 16px;
-            color: #fff;
+            font-size: 18px;
+            color: black;
             pointer-events: none;
-            transition: .5s;
+            transition: .3s;
         }
 
         .login-box .user-box input:focus~label,
         .login-box .user-box input:valid~label {
-            top: -20px;
+            top: -25px;
             left: 0;
-            color: #03e9f4;
-            font-size: 12px;
+            color: black;
+            font-size: 17px;
+            opacity: 0.8;
         }
 
-        .login-box form a {
+        .login-box form a:nth-child(3) {
+            float: right;
+        }
+
+        .login-box form a:nth-child(4) {
             position: relative;
-            display: inline-block;
-            padding: 10px 20px;
-            color: #03e9f4;
+            display: block;
+            padding: 10px 15px;
+            color: white;
             font-size: 16px;
             text-decoration: none;
             text-transform: uppercase;
             overflow: hidden;
             transition: .5s;
             margin-top: 40px;
-            letter-spacing: 4px
+            letter-spacing: 5px;
+            background: #626d77;
+            border-radius: 5px;
+            text-align: center;
+            margin-left: auto;
+            margin-right: auto;
+            width: 40%;
+        }
+
+        @media (min-width: 1024px) and (max-width: 1440px) {
+            .login-box form a:nth-child(4) {
+                width: 60%;
+            }
+        }
+
+        @media (min-width: 425px) and (max-width: 768px) {
+            #login {
+                height: 80vh;
+            }
+
+            .img-box {
+                display: none;
+            }
+
+            .login-box form a:nth-child(4) {
+                width: 77%;
+            }
         }
 
         .login-box a:hover {
-            background: #03e9f4;
+            background: #6c757d;
             color: #fff;
-            border-radius: 5px;
+            border-radius: 6px;
             box-shadow: 0 0 5px #03e9f4,
                 0 0 25px #03e9f4,
                 0 0 50px #03e9f4,
@@ -103,7 +171,7 @@
             top: 0;
             left: -100%;
             width: 100%;
-            height: 2px;
+            height: 3px;
             background: linear-gradient(90deg, transparent, #03e9f4);
             animation: btn-anim1 1s linear infinite;
         }
@@ -122,7 +190,7 @@
         .login-box a span:nth-child(2) {
             top: -100%;
             right: 0;
-            width: 2px;
+            width: 3px;
             height: 100%;
             background: linear-gradient(180deg, transparent, #03e9f4);
             animation: btn-anim2 1s linear infinite;
@@ -144,7 +212,7 @@
             bottom: 0;
             right: -100%;
             width: 100%;
-            height: 2px;
+            height: 3px;
             background: linear-gradient(270deg, transparent, #03e9f4);
             animation: btn-anim3 1s linear infinite;
             animation-delay: .5s
@@ -164,7 +232,7 @@
         .login-box a span:nth-child(4) {
             bottom: -100%;
             left: 0;
-            width: 2px;
+            width: 3px;
             height: 100%;
             background: linear-gradient(360deg, transparent, #03e9f4);
             animation: btn-anim4 1s linear infinite;
@@ -183,11 +251,9 @@
         }
 
         /* END FORM LOGIN */
-        img {
-            background: center bottom no-repeat;
-            background-size: cover;
-            width: 100vw;
-            height: 100vh;
+
+        article>div {
+            margin: unset;
         }
     </style>
 </head>
@@ -195,8 +261,7 @@
 <body id="body">
     <div>
         <main>
-            <article style="margin: 0;">
-                <img src="https://qldtbeta.phenikaa-uni.edu.vn/congsinhvien/assets/images/bg-login.jpg" alt="">
+            <article style="margin: unset;">
                 @yield('content')
             </article>
         </main>
