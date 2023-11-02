@@ -21,8 +21,8 @@
         }
 
         #login {
-            width: 70vw;
-            height: 70vh;
+            width: 60vw;
+            height: 65vh;
             background-color: rgb(255, 255, 255);
             border-radius: 50px;
             overflow: hidden;
@@ -135,6 +135,22 @@
         @media (min-width: 1024px) and (max-width: 1440px) {
             .login-box form a:nth-child(4) {
                 width: 60%;
+            }
+
+            .img-box {
+                width: 55%;
+            }
+
+            .login-box {
+                width: 45%;
+                padding: 40px 20px 40px 0px;
+
+            }
+        }
+
+        @media (min-width: 768px) and (max-width: 1024px) {
+            .img-box {
+                display: none;
             }
         }
 

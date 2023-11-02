@@ -2,11 +2,11 @@
 @section('content')
     <div id="image-main">
         <div class="row" id="login">
-            <div class="img-box col-lg-6">
+            <div class="img-box col-lg-7">
                 <img src="https://media-cdn-v2.laodong.vn/Storage/NewsPortal/2023/9/8/1238811/Tung-Buoc-Truong-Tha.jpg"
                     alt="">
             </div>
-            <div class="login-box col-lg-6">
+            <div class="login-box col-lg-5">
                 <h2>CHÀO MỪNG</h2>
                 <h5>Chúng tôi rất vui khi thấy bạn trở lại với chúng tôi</h5>
                 <form>
