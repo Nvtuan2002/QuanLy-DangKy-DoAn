@@ -27,4 +27,7 @@
     .collapse:not(.show)[id="flush-collapseOne5"] {
         display: block !important;
     }
+    .login-box{
+        padding: 40px 40px 40px 10px !important;
+    }
 }
