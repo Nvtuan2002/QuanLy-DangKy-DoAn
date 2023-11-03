@@ -3,6 +3,7 @@
 
 <head>
     @include('includes.head')
+    <title>@yield('title')</title>
     <style>
         * {
             box-sizing: border-box;

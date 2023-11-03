@@ -1,4 +1,5 @@
 @extends('layouts.login')
+@section('title', 'Đăng nhập')
 @section('content')
     <div id="image-main">
         <div class="row" id="login">
