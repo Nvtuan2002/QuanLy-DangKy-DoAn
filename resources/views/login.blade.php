@@ -7,7 +7,7 @@
                 <img src="https://media-cdn-v2.laodong.vn/Storage/NewsPortal/2023/9/8/1238811/Tung-Buoc-Truong-Tha.jpg"
                     alt="">
             </div>
-            <div class="login-box col-lg-5">
+            <div class="login-box col-lg-5 col-md-12">
                 <h2>CHÀO MỪNG</h2>
                 <h5>Chúng tôi rất vui khi thấy bạn trở lại với chúng tôi</h5>
                 <form>

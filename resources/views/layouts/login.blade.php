@@ -135,7 +135,7 @@
 
         @media (min-width: 1024px) and (max-width: 1440px) {
             .login-box form a:nth-child(4) {
-                width: 60%;
+                width: 65%;
             }
 
             .img-box {
@@ -149,9 +149,12 @@
             }
         }
 
-        @media (min-width: 768px) and (max-width: 1024px) {
+        @media (min-width: 768px) and (max-width: 1023px) {
             .img-box {
                 display: none;
+            }
+            .login-box{
+                width: 100%;
             }
         }
 
