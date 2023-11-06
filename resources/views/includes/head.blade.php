@@ -6,7 +6,9 @@
 <!-- load bootstrap from a cdn -->
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
-<link rel="stylesheet" href="./css/style.css">
-<link rel="stylesheet" href="./css/responsive_mobile.css">
-<link rel="stylesheet" href="./css/responsive_desktop.css">
+<link rel="stylesheet" href="{{asset('css/responsive_mobile.css')}}">
+<link rel="stylesheet" href="{{asset('css/responsive_desktop.css')}}">
 <script src="https://kit.fontawesome.com/fa53f0fa43.js" crossorigin="anonymous"></script>
+<title>@yield('title')</title>
+@yield('css')
+

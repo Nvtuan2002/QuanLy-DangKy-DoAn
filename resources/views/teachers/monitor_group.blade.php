@@ -1,5 +1,14 @@
-@extends('layouts.teacher')
+@extends('layouts.default')
 @section('title', 'Theo dõi tiến trình')
+
+@section('css')
+    <link rel="stylesheet" href="{{asset('css/style.css')}}">
+@endsection
+
+@section('sidebar')
+    @include('includes.sidebar')
+@endsection
+
 @section('content')
     <div class="groups col-lg-10 monitor_groups">
         {{-- <img src="../img/background-primary.png" alt=""> --}}

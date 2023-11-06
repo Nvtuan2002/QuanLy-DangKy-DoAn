@@ -1,10 +1,20 @@
 @extends('layouts.default')
-@section('title', 'Liên hệ với giảng viên')
+@section('title', 'Liên hệ với sinh viên')
+
+@section('css')
+    <link rel="stylesheet" href="{{ asset('css/style.css') }}">
+    
+@endsection
+
+@section('sidebar')
+@include('includes.sidebarTeacher')
+@endsection
+
 @section('content')
     <div class="col-lg-10">
         <nav aria-label="breadcrumb">
             <ol class="breadcrumb">
-                <li class="breadcrumb-item active" aria-current="page">Liên hệ với giảng viên ></li>
+                <li class="breadcrumb-item active" aria-current="page">Liên hệ với sinh viên ></li>
             </ol>
         </nav>
         <div class="container row justify-content-around">
@@ -19,12 +29,12 @@
                 </div>
                 <div class="messenger-body">
                     <div>
-                        <img src="./img/avatar.png" alt="">
+                        <img src="{{ asset('./img/avatar.png') }}" alt="">
                         <span class="message">Xin chào </span>
                     </div>
                     <div class="user">
                         <span class="message user-message">Chào bạn!</span>
-                        <img src="./img/avatar.png" alt="">
+                        <img src="{{ asset('./img/avatar.png') }}" alt="">
                     </div>
                 </div>
                 <div class="messenger-footer d-flex justify-content-center">
@@ -41,16 +51,19 @@
                 </div>
             </div>
             <button class="contact-hidden" data-bs-target="#flush-collapseOne5" data-bs-toggle="collapse"
-                aria-expanded="false" aria-controls="flush-collapseOne"><i class="bi bi-arrow-down-right-square"></i></button>
-            <div id="flush-collapseOne5" class="accordion-collapse collapse col-lg-3 col-sm-12" data-bs-parent="#accordionFlushExample">
+                aria-expanded="false" aria-controls="flush-collapseOne"><i
+                    class="bi bi-arrow-down-right-square"></i></button>
+            <div id="flush-collapseOne5" class="accordion-collapse collapse col-lg-3 col-sm-12"
+                data-bs-parent="#accordionFlushExample">
                 <div class="your-message">
                     <div class="avatar-preview">
                         <img id="previewImage"
-                            src="https://scontent.fhan17-1.fna.fbcdn.net/v/t1.15752-9/385533421_871168748062380_2297325553142698699_n.jpg?_nc_cat=108&ccb=1-7&_nc_sid=8cd0a2&_nc_ohc=Gknv9e23wqcAX-scTrX&_nc_ht=scontent.fhan17-1.fna&oh=03_AdRRXo6Arrs3SrPnu3_fdbR9VvlAbCuin7cdjshNo1fIuw&oe=65687F37"
+                            src="{{ asset('https://scontent.fhan17-1.fna.fbcdn.net/v/t1.15752-9/385533421_871168748062380_2297325553142698699_n.jpg?_nc_cat=108&ccb=1-7&_nc_sid=8cd0a2&_nc_ohc=Gknv9e23wqcAX-scTrX&_nc_ht=scontent.fhan17-1.fna&oh=03_AdRRXo6Arrs3SrPnu3_fdbR9VvlAbCuin7cdjshNo1fIuw&oe=65687F37') }}"
                             alt="">
                     </div>
                     <h5 class="text-center">Nguyễn Thành Trung</h5>
-                    <a style="margin-left: 20px;" href="{{ route('infoStudent') }}"><i class="bi bi-person-square"></i>Trang
+                    <a style="margin-left: 20px;" href="{{ route('student.infoStudent') }}"><i
+                            class="bi bi-person-square"></i>Trang
                         cá nhân</a> <br>
                     <div class="accordion" id="" style="margin-top: 10px; margin-left:20px;">
                         <button class="btn-expand" type="button" data-bs-toggle="collapse"

@@ -1,5 +1,14 @@
-@extends('layouts.teacher')
+@extends('layouts.default')
 @section('title', 'Tạo nhóm mới')
+
+@section('css')
+    <link rel="stylesheet" href="{{asset('css/style.css')}}">
+@endsection
+
+@section('sidebar')
+    @include('includes.sidebarTeacher')
+@endsection
+
 @section('content')
     <div class="col-lg-10">
         <nav aria-label="breadcrumb">
@@ -24,7 +33,7 @@
         </div>
         <div class="d-flex justify-content-around" style="clear: both">
             <div class="d-flex justify-content-center mt-5">
-                <a class="cancel px-5" href="{{ route('update') }}">Quay lại</a>
+                <a class="cancel px-5" href="{{ route('teacher.update') }}">Quay lại</a>
             </div>
         </div>
     </div>

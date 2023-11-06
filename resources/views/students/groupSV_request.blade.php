@@ -1,5 +1,14 @@
 @extends('layouts.default')
 @section('title', 'Yêu cầu vào nhóm')
+
+@section('css')
+    <link rel="stylesheet" href="{{asset('css/style.css')}}">
+@endsection
+
+@section('sidebar')
+    @include('includes.sidebar')
+@endsection
+
 @section('content')
     <div class="groups_request col-lg-10">
         <img src="../img/background-primary.png" alt="">
@@ -40,7 +49,7 @@
             
         </div>
         <div class="d-flex justify-content-center mt-5">
-            <a class="cancel px-5" href="{{ route('groupSV') }}">Quay lại</a>
+            <a class="cancel px-5" href="{{ route('student.groupSV') }}">Quay lại</a>
         </div>
 
     </div>

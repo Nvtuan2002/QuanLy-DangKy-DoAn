@@ -1,5 +1,14 @@
-@extends('layouts.teacher')
+@extends('layouts.default')
 @section('title', 'Theo dõi tiến trình')
+
+@section('css')
+    <link rel="stylesheet" href="{{asset('css/style.css')}}">
+@endsection
+
+@section('sidebar')
+    @include('includes.sidebarTeacher')
+@endsection
+
 @section('content')
     <div class="register monitor col-lg-10">
         <nav aria-label="breadcrumb">
@@ -25,7 +34,7 @@
                     <td>Hoàng Hải Long</td>
                     <td>Website Facebôk</td>
                     <td>Web đánh giá</td>
-                    <td><button class="invite"><a href="{{ route('monitor_group') }}">Theo dõi nhóm</a></button></td>
+                    <td><button class="invite"><a href="{{ route('teacher.monitor_group') }}">Theo dõi nhóm</a></button></td>
                 </tr>
                 <tr>
                     <td>Nhóm số 4</td>
@@ -33,7 +42,7 @@
                     <td>Hoàng Hải Long</td>
                     <td>Website Youte</td>
                     <td>Web đánh giá</td>
-                    <td><button class="invite"><a href="{{ route('monitor_group') }}">Theo dõi nhóm</a></button></td>
+                    <td><button class="invite"><a href="{{ route('teacher.monitor_group') }}">Theo dõi nhóm</a></button></td>
                 </tr>
                 <tr>
                     <td>Nhóm số 4</td>
@@ -41,7 +50,7 @@
                     <td>Hoàng Hải Long</td>
                     <td>Website Facebôk</td>
                     <td>Web đánh giá</td>
-                    <td><button class="invite"><a href="{{ route('monitor_group') }}">Theo dõi nhóm</a></button></td>
+                    <td><button class="invite"><a href="{{ route('teacher.monitor_group') }}">Theo dõi nhóm</a></button></td>
                 </tr>
         </table>
 

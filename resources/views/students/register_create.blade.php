@@ -1,5 +1,14 @@
 @extends('layouts.default')
 @section('title', 'Tạo nhóm mới')
+
+@section('css')
+    <link rel="stylesheet" href="{{asset('css/style.css')}}">
+@endsection
+
+@section('sidebar')
+    @include('includes.sidebar')
+@endsection
+
 @section('content')
     <div class="col-lg-10">
         <nav aria-label="breadcrumb">
@@ -26,16 +35,16 @@
                 <label for="">Ảnh đại diện: </label>
                 <input type="file" id="avatarInput" accept="image/*" placeholder="">
                 <div class="avatar-preview">
-                    <img id="previewImage" src="https://images.unsplash.com/photo-1576267423445-b2e0074d68a4?auto=format&fit=crop&q=80&w=2070&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="">
+                    <img id="previewImage" src="{{asset('https://images.unsplash.com/photo-1576267423445-b2e0074d68a4?auto=format&fit=crop&q=80&w=2070&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D')}}" alt="">
                 </div>
             </form>
         </div>
         <div class="d-flex justify-content-around" style="clear: both">
             <div class="d-flex justify-content-center mt-5">
-                <a class="cancel px-5" href="{{ route('register_attend') }}">Quay lại</a>
+                <a class="cancel px-5" href="{{ route('student.register_attend') }}">Quay lại</a>
             </div>
             <div class="d-flex justify-content-center mt-5">
-                <a class="cancel px-5" href="{{ route('register_create') }}">Tạo nhóm</a>
+                <a class="cancel px-5" href="{{ route('student.register_create') }}">Tạo nhóm</a>
             </div>
         </div>
     </div>

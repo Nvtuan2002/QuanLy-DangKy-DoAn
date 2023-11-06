@@ -1,5 +1,14 @@
 @extends('layouts.default')
 @section('title', 'Lịch thống kê báo cáo')
+
+@section('css')
+    <link rel="stylesheet" href="{{ asset('css/style.css') }}">
+@endsection
+
+@section('sidebar')
+    @include('includes.sidebarTeacher')
+@endsection
+
 @section('content')
     <div class="col-lg-10">
         <nav aria-label="breadcrumb">

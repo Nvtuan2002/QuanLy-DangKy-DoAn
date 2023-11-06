@@ -3,6 +3,7 @@
 
 @section('css')
     <link rel="stylesheet" href="{{asset('css/style.css')}}">
+    
 @endsection
 
 @section('sidebar')
@@ -22,14 +23,14 @@
             <div class="col-xl-4 col-lg-4 col-md-6 col-sm-12 text-center d-flex justify-content-center">
                 <div style="height: 130px;">
                     <img src="{{asset('img/noto_teacher.png ')}}" class="" alt="Icon Teacher">
-                    <h5 class="card-title h5_dashboard"><a href="{{ route('infoAllTeacher') }}">Thông tin giảng viên</a>
+                    <h5 class="card-title h5_dashboard"><a href="{{ route('student.infoAllTeacher') }}">Thông tin giảng viên</a>
                     </h5>
                 </div>
             </div>
             <div class="col-xl-4 col-lg-4 col-md-6 col-sm-12 text-center d-flex justify-content-center">
                 <div style="height: 130px;">
                     <img src="{{asset('img/home_profile.png')}}" class="" alt="Icon Profile">
-                    <h5 class="card-title h5_dashboard"><a href="{{ route('infoStudent') }}">Thông tin cá nhân</a>
+                    <h5 class="card-title h5_dashboard"><a href="{{ route('student.infoStudent') }}">Thông tin cá nhân</a>
                     </h5>
                 </div>
             </div>
@@ -41,7 +42,7 @@
             </div>
         </div>
         <div class="about d-flex justify-content-around">
-            <div class="row col-lg-6 col-md-6 col-sm-12">
+            <div class="row col-xl-6 col-lg-6">
                 <img src="{{asset('img/home_build_phenikaa.png')}}" class="col-lg-6 col-sm-6" alt="Icon Build">
                 <div class="des row align-self-start col-lg-6 col-sm-6">
                     <h5 class="card-title h5_dashboard">Giới thiệu </h5>
@@ -50,7 +51,7 @@
                     </h5>
                 </div>
             </div>
-            <div class="row col-lg-6 col-md-6 col-sm-12">
+            <div class="row col-xl-6 col-lg-6">
                 <img src="{{asset('img/home_event.png')}}" class="col-lg-6 col-sm-6" alt="Icon Event">
                 <div class="des row align-self-start col-lg-6 col-sm-6">
                     <h5 class="card-title h5_dashboard">Tin tức </h5>

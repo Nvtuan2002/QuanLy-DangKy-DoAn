@@ -1,8 +1,17 @@
 @extends('layouts.default')
 @section('title', 'Nhóm của bạn')
+
+@section('css')
+    <link rel="stylesheet" href="{{ asset('css/style.css') }}">
+@endsection
+
+@section('sidebar')
+    @include('includes.sidebar')
+@endsection
+
 @section('content')
     <div class="groups col-lg-10">
-        <img src="../img/background-primary.png" alt="">
+        <img src="{{asset('../img/background-primary.png')}}" alt="">
         <nav aria-label="breadcrumb">
             <ol class="breadcrumb">
                 <li class="breadcrumb-item active" aria-current="page">Nhóm của bạn</li>
@@ -21,7 +30,7 @@
         </div>
         <div class="mx-3 row">
             <div class="col-lg-8 col-sm-12 history-update">
-                <p><img class="avatar me-4" src="./img/avatar-groups.png" alt="Avatar groups">Nhóm 04</p>
+                <p><img class="avatar me-4" src="{{asset('./img/avatar-groups.png')}}" alt="Avatar groups">Nhóm 04</p>
                 <p class="fw-bold"><i class="bi bi-clock-history"></i>Lịch sử cập nhật</p>
                 <ul>
                     <li><i class="bi bi-file-earmark-arrow-up"></i>Hoàng Hải Long đã tải lên file abc.pdf</li>
@@ -34,9 +43,9 @@
                     <li><i class="bi bi-file-earmark-arrow-up"></i>Hoàng Hải Long đã tải lên file abc.pdf</li>
                 </ul>
                 <div class="d-flex flex-wrap justify-content-center" style="width: 420px; gap: 20px 40px;">
-                    <a class="request" href="{{ route('groupSV_update') }}">Cập nhật tiến độ nhóm</a>
-                    <a class="request" href="{{ route('groupSV_detail') }}">Xem thông tin nhóm</a>
-                    <a class="request" href="{{ route('groupSV_request') }}">Các yêu cầu vào nhóm</a>
+                    <a class="request" href="{{ route('student.groupSV_update') }}">Cập nhật tiến độ nhóm</a>
+                    <a class="request" href="{{ route('student.groupSV_detail') }}">Xem thông tin nhóm</a>
+                    <a class="request" href="{{ route('student.groupSV_request') }}">Các yêu cầu vào nhóm</a>
                 </div>
             </div>
             <div class="col-lg-4 col-sm-12 d-flex justify-content-end flex-column" style="width: 280px; height: 630px;">

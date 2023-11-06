@@ -30,7 +30,7 @@ col-xl : 1200px */
     }
 
     #sidebar_mobile {
-        display: block;
+        display: block !important;
     }
 
     .logo {

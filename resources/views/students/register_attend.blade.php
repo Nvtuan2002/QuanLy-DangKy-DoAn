@@ -1,5 +1,14 @@
 @extends('layouts.default')
 @section('title', 'Tham gia nhóm')
+
+@section('css')
+    <link rel="stylesheet" href="{{asset('css/style.css')}}">
+@endsection
+
+@section('sidebar')
+    @include('includes.sidebar')
+@endsection
+
 @section('content')
     <div class="col-lg-10">
         <nav class="container" aria-label="breadcrumb">
@@ -13,7 +22,7 @@
                 <circle r="20" cy="50" cx="50"></circle>
             </svg>
             <div class="d-flex justify-content-center mt-5">
-                <a class="cancel px-5" href="{{ route('register') }}">Quay lại</a>
+                <a class="cancel px-5" href="{{ route('student.register') }}">Quay lại</a>
             </div>
         </div>
         <div class="register_attend m-2">
@@ -36,7 +45,7 @@
                         + Yêu cầu chăm học hỏi kiến thức mới</td>
                     <td>1</td>
                     <td>15/15</td>
-                    <td><button class="invite" href="{{ route('register') }}">Tham gia nhóm</button></td>
+                    <td><button class="invite" href="{{ route('student.register') }}">Tham gia nhóm</button></td>
                 </tr>
                 <tr>
                     <td>Nguyễn Thành Trung</td>
@@ -45,7 +54,7 @@
                         + Yêu cầu chăm học hỏi kiến thức mới</td>
                     <td>2</td>
                     <td>15/15</td>
-                    <td><button class="invite" href="{{ route('register') }}">Tham gia nhóm</button></td>
+                    <td><button class="invite" href="{{ route('student.register') }}">Tham gia nhóm</button></td>
                 </tr>
                 <tr>
                     <td>Nguyễn Thành Trung</td>
@@ -54,15 +63,15 @@
                         + Yêu cầu chăm học hỏi kiến thức mới</td>
                     <td>3</td>
                     <td>15/15</td>
-                    <td><button class="invite" href="{{ route('register') }}">Tham gia nhóm</button></td>
+                    <td><button class="invite" href="{{ route('student.register') }}">Tham gia nhóm</button></td>
                 </tr>
             </table>
             <div class="d-flex justify-content-around">
                 <div class="d-flex justify-content-center mt-5">
-                    <a class="cancel px-5" href="{{ route('register') }}">Quay lại</a>
+                    <a class="cancel px-5" href="{{ route('student.register') }}">Quay lại</a>
                 </div>
                 <div class="d-flex justify-content-center mt-5">
-                    <a class="cancel px-5" href="{{ route('register_create') }}">Tạo nhóm</a>
+                    <a class="cancel px-5" href="{{ route('student.register_create') }}">Tạo nhóm</a>
                 </div>
             </div>
         </div>

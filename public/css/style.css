@@ -933,7 +933,7 @@ td:nth-child(8) {
 /* Contact Teacher */
 .contact {
     padding: unset;
-    width: 50vw;
+    min-width: 60%;
     height: 545px;
     border: 1px solid #ccc;
     border-radius: 5px;

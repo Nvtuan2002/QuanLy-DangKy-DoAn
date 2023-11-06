@@ -1,5 +1,14 @@
-@extends('layouts.teacher')
+@extends('layouts.default')
 @section('title', 'Cập nhật đồ án')
+
+@section('css')
+    <link rel="stylesheet" href="{{asset('css/style.css')}}">
+@endsection
+
+@section('sidebar')
+    @include('includes.sidebarTeacher')
+@endsection
+
 @section('content')
     <div class="col-lg-10">
         <nav aria-label="breadcrumb">
@@ -11,7 +20,7 @@
             <div>
                 <div style="float: left;">
                     <a class="btn_list_register">Đồ án hiện có</a>
-                    <a class="invite" href="{{ route('update_new') }}">Tạo đồ án mới</a>
+                    <a class="invite" href="{{ route('teacher.update_new') }}">Tạo đồ án mới</a>
                 </div>
                 <form class="container" style="margin-bottom: 10px">
                     <input placeholder="Nhập từ khóa muốn tìm kiếm" required="" pattern=".*\S.*" type="search"

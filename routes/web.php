@@ -11,93 +11,98 @@ Route::get('/', function () {
 Route::prefix('student')->name('student.')->group(function () {
 
    Route::get('/dashboard', function () {
-      return view('dashboard.dashboard');
+      return view('students.dashboard');
    })->name('dashboard');
 
    Route::get('/groupSV', function () {
-      return view('groups.groupSV');
+      return view('students.groupSV');
    })->name('groupSV');
 
    Route::get('/groupSV_update', function () {
-      return view('groups.groupSV_update');
+      return view('students.groupSV_update');
    })->name('groupSV_update');
 
    Route::get('/groupSV_detail', function () {
-      return view('groups.groupSV_detail');
+      return view('students.groupSV_detail');
    })->name('groupSV_detail');
 
    Route::get('/groupSV_request', function () {
-      return view('groups.groupSV_request');
+      return view('students.groupSV_request');
    })->name('groupSV_request');
 
-
    Route::get('/register', function () {
-      return view('register.register');
+      return view('students.register');
    })->name('register');
 
    Route::get('/register_attend', function () {
-      return view('register.register_attend');
+      return view('students.register_attend');
    })->name('register_attend');
 
    Route::get('/register_create', function () {
-      return view('register.register_create');
+      return view('students.register_create');
    })->name('register_create');
 
    Route::get('/calendar', function () {
-      return view('calendar.calendar');
+      return view('students.calendar');
    })->name('calendar');
 
    Route::get('/contact', function () {
-      return view('contact.contact');
+      return view('students.contact');
    })->name('contact');
+
+   Route::get('/infoStudent', function () {
+      return view('students.infoStudent');
+   })->name('infoStudent');
+
+   Route::get('/infoTeacher', function () {
+      return view('students.infoTeacher');
+   })->name('infoTeacher');
+
+   Route::get('/infoAllTeacher', function () {
+      return view('students.infoAllTeacher');
+   })->name('infoAllTeacher');
 });
 
 
 
 Route::prefix('teacher')->name('teacher.')->group(function () {
-   
-   //Info Edit
-   Route::get('/infoStudent', function () {
-      return view('infoStudent.infoStudent');
-   })->name('infoStudent');
-   
-   Route::get('/infoTeacher', function () {
-      return view('infoTeacher.infoTeacher');
-   })->name('infoTeacher');
-   //Show
-   Route::get('/infoAllTeacher', function () {
-      return view('infoTeacher.infoAllTeacher');
-   })->name('infoAllTeacher');
-   
-   
+
    //Giảng viên
    Route::get('/TE_dashboard', function () {
-      return view('TE_dashboard.TE_dashboard');
+      return view('teachers.TE_dashboard');
    })->name('TE_dashboard');
-   
+
    Route::get('/register_list', function () {
-      return view('TE_register.register_list');
+      return view('teachers.register_list');
    })->name('register_list');
-   
+
    Route::get('/register_wait', function () {
-      return view('TE_register.register_wait');
+      return view('teachers.register_wait');
    })->name('register_wait');
-   
+
    Route::get('/update', function () {
-      return view('TE_update.update');
+      return view('teachers.update');
    })->name('update');
-   
+
    Route::get('/update_new', function () {
-      return view('TE_update.update_new');
+      return view('teachers.update_new');
    })->name('update_new');
-   
+
    Route::get('/monitor_process', function () {
-      return view('TE_monitor_process.monitor_process');
+      return view('teachers.monitor_process');
    })->name('monitor_process');
-   
+
    Route::get('/monitor_group', function () {
-      return view('TE_monitor_process.monitor_group');
+      return view('teachers.monitor_group');
    })->name('monitor_group');
+
+   Route::get('/calendar', function () {
+      return view('teachers.calendar');
+   })->name('calendar');
+
+   Route::get('/contact', function () {
+      return view('teachers.contact');
+   })->name('contact');
 });
 
 

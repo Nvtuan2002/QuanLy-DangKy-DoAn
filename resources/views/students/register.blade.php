@@ -1,5 +1,14 @@
 @extends('layouts.default')
 @section('title', 'Đăng ký đồ án')
+
+@section('css')
+    <link rel="stylesheet" href="{{asset('css/style.css')}}">
+@endsection
+
+@section('sidebar')
+    @include('includes.sidebar')
+@endsection
+
 @section('content')
     <div class="register search col-lg-10">
         <nav aria-label="breadcrumb">
@@ -30,7 +39,7 @@
                         + Yêu cầu chăm học hỏi kiến thức mới</td>
                     <td>3 tháng</td>
                     <td>15/15</td>
-                    <td><button class="invite"><a href="{{ route('register_attend') }}">Tham gia nhóm</a></button></td>
+                    <td><button class="invite"><a href="{{ route('student.register_attend') }}">Tham gia nhóm</a></button></td>
                 </tr>
                 <tr>
                     <td>Nguyễn Thành Trung</td>
@@ -39,7 +48,7 @@
                         + Yêu cầu chăm học hỏi kiến thức mới</td>
                     <td>3 tháng</td>
                     <td>15/15</td>
-                    <td><button class="invite"><a href="{{ route('register_attend') }}">Tham gia nhóm</a></button></td>
+                    <td><button class="invite"><a href="{{ route('student.register_attend') }}">Tham gia nhóm</a></button></td>
                 </tr>
                 <tr>
                     <td>Nguyễn Thành Trung</td>
@@ -48,7 +57,7 @@
                         + Yêu cầu chăm học hỏi kiến thức mới</td>
                     <td>3 tháng</td>
                     <td>15/15</td>
-                    <td><button class="invite"><a href="{{ route('register_attend') }}">Tham gia nhóm</a></button></td>
+                    <td><button class="invite"><a href="{{ route('student.register_attend') }}">Tham gia nhóm</a></button></td>
                 </tr>
         </table>
 

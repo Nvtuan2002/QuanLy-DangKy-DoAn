@@ -20,7 +20,7 @@
                         <label>Mật khẩu</label>
                     </div>
                     <a href="">Quên mật khẩu?</a>
-                    <a href="{{ route('TE_dashboard') }}">
+                    <a href="{{ route('teacher.TE_dashboard') }}">
                         <span></span>
                         <span></span>
                         <span></span>
