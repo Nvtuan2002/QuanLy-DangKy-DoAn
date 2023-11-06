@@ -3,7 +3,7 @@
     <div class="container-fluid">
         <div class="center-center">
             <div class="logo">
-                <a href="#"><img src="./img/logo.png" alt="Logo Header"></a>
+                <a href="#"><img src="{{asset('img/logo.png')}}" alt="Logo Header"></a>
             </div>
         </div>
     </div>
@@ -11,12 +11,12 @@
 
     <!-- right -->
     <div class="info t-14 fw-700" id="userDropdown" role="button">
-        <img class="avatar" src="./img/avatar.png" alt="">
+        <img class="avatar" src="{{asset('img/avatar.png')}}" alt="">
         <div class="fullname ms-2">Hoàng Hải Long</div>
         <i class="bi bi-caret-down-fill"></i>
         <ul id="userDropdownMenu">
             <li><a href="{{ route('login') }}"><i class="me-2 bi bi-box-arrow-right"></i>Đăng xuất</a></li>
-            <li><a href="{{ route('infoStudent') }}"><i class="me-2 bi bi-pen"></i>Chỉnh sửa thông tin</a></li>
+            <li><a href="{{ route('student.infoStudent') }}"><i class="me-2 bi bi-pen"></i>Chỉnh sửa thông tin</a></li>
             <li class="has-submenu" id="settingsMenu"> <!-- Add a class for submenu and an id -->
                 <a class="submenu-trigger" role="button">
                     <i class="me-2 bi bi-gear"></i>Cài đặt

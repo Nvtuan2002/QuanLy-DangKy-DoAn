@@ -1,19 +1,19 @@
 <div class="sidebar">
     <ul class="nav nav-pills flex-column mb-auto" style="padding-top: 50px;">
         <li>
-            <a href="{{ route('dashboard') }}" class="nav-link link-body-emphasis">
+            <a href="{{ route('student.dashboard') }}" class="nav-link link-body-emphasis">
                 <i class="bi bi-house-door"></i>
                 Trang chủ
             </a>
         </li>
         <li>
-            <a href="{{ route('groupSV') }}" class="nav-link link-body-emphasis">
+            <a href="{{ route('student.groupSV') }}" class="nav-link link-body-emphasis">
                 <i class="bi bi-people-fill"></i>
                 Nhóm của bạn
             </a>
         </li>
         <li>
-            <a href="{{ route('register') }}" class="nav-link link-body-emphasis">
+            <a href="{{ route('student.register') }}" class="nav-link link-body-emphasis">
                 <svg xmlns="http://www.w3.org/2000/svg" width="21" height="20" viewBox="0 0 21 20">
                     <path
                         d="M18.2679 8.75C18.5804 8.75 18.8705 8.79883 19.1384 8.89648C19.4062 8.99414 19.6443 9.13086 19.8527 9.30664C20.061 9.48242 20.2173 9.6875 20.3214 9.92188C20.4256 10.1562 20.4851 10.4102 20.5 10.6836C20.5 10.9375 20.4442 11.1849 20.3326 11.4258C20.221 11.6667 20.061 11.8783 19.8527 12.0605L11.8504 19.082L7.64286 20L8.69196 16.3184L16.6942 9.30664C16.9025 9.12435 17.1443 8.98763 17.4196 8.89648C17.6949 8.80534 17.9777 8.75651 18.2679 8.75ZM18.8371 11.1816C18.9933 11.0449 19.0714 10.8789 19.0714 10.6836C19.0714 10.4818 18.997 10.319 18.8482 10.1953C18.6994 10.0716 18.506 10.0065 18.2679 10C18.1637 10 18.0632 10.013 17.9665 10.0391C17.8698 10.0651 17.7842 10.1139 17.7098 10.1855L9.98661 16.9629L9.60714 18.2812L11.1138 17.9492L18.8371 11.1816ZM4.78571 8.75H3.35714V7.5H4.78571V8.75ZM14.7857 8.75H6.21429V7.5H14.7857V8.75ZM3.35714 11.25H4.78571V12.5H3.35714V11.25ZM4.78571 5H3.35714V3.75H4.78571V5ZM14.7857 5H6.21429V3.75H14.7857V5ZM1.92857 16.25H6.87277L6.51562 17.5H0.5V0H17.6429V7.25586C17.1443 7.32096 16.6682 7.46419 16.2143 7.68555V1.25H1.92857V16.25ZM6.21429 11.25H11.9509L10.5223 12.5H6.21429V11.25Z"
@@ -26,13 +26,13 @@
             </a>
         </li>
         <li>
-            <a href="{{ route('calendar') }}" class="nav-link link-body-emphasis">
+            <a href="{{ route('student.calendar') }}" class="nav-link link-body-emphasis">
                 <i class="bi bi-calendar4-range"></i>
                 Lịch thống kê báo cáo
             </a>
         </li>
         <li>
-            <a href="{{ route('contact') }}" class="nav-link link-body-emphasis">
+            <a href="{{ route('student.contact') }}" class="nav-link link-body-emphasis">
                 <i class="bi bi-chat-dots"></i>
                 Liên hệ với giảng viên
             </a>
@@ -48,19 +48,19 @@
     <div style="width: 100vw; margin-left: -15px;" id="flush-collapseOne1" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
         <ul class="nav nav-pills flex-column mb-auto" style="">
             <li>
-                <a href="{{ route('dashboard') }}" class="nav-link link-body-emphasis">
+                <a href="{{ route('student.dashboard') }}" class="nav-link link-body-emphasis">
                     <i class="bi bi-house-door"></i>
                     Trang chủ
                 </a>
             </li>
             <li>
-                <a href="{{ route('groupSV') }}" class="nav-link link-body-emphasis">
+                <a href="{{ route('student.groupSV') }}" class="nav-link link-body-emphasis">
                     <i class="bi bi-people-fill"></i>
                     Nhóm của bạn
                 </a>
             </li>
             <li>
-                <a href="{{ route('register') }}" class="nav-link link-body-emphasis">
+                <a href="{{ route('student.register') }}" class="nav-link link-body-emphasis">
                     <svg xmlns="http://www.w3.org/2000/svg" width="21" height="20" viewBox="0 0 21 20">
                         <path
                             d="M18.2679 8.75C18.5804 8.75 18.8705 8.79883 19.1384 8.89648C19.4062 8.99414 19.6443 9.13086 19.8527 9.30664C20.061 9.48242 20.2173 9.6875 20.3214 9.92188C20.4256 10.1562 20.4851 10.4102 20.5 10.6836C20.5 10.9375 20.4442 11.1849 20.3326 11.4258C20.221 11.6667 20.061 11.8783 19.8527 12.0605L11.8504 19.082L7.64286 20L8.69196 16.3184L16.6942 9.30664C16.9025 9.12435 17.1443 8.98763 17.4196 8.89648C17.6949 8.80534 17.9777 8.75651 18.2679 8.75ZM18.8371 11.1816C18.9933 11.0449 19.0714 10.8789 19.0714 10.6836C19.0714 10.4818 18.997 10.319 18.8482 10.1953C18.6994 10.0716 18.506 10.0065 18.2679 10C18.1637 10 18.0632 10.013 17.9665 10.0391C17.8698 10.0651 17.7842 10.1139 17.7098 10.1855L9.98661 16.9629L9.60714 18.2812L11.1138 17.9492L18.8371 11.1816ZM4.78571 8.75H3.35714V7.5H4.78571V8.75ZM14.7857 8.75H6.21429V7.5H14.7857V8.75ZM3.35714 11.25H4.78571V12.5H3.35714V11.25ZM4.78571 5H3.35714V3.75H4.78571V5ZM14.7857 5H6.21429V3.75H14.7857V5ZM1.92857 16.25H6.87277L6.51562 17.5H0.5V0H17.6429V7.25586C17.1443 7.32096 16.6682 7.46419 16.2143 7.68555V1.25H1.92857V16.25ZM6.21429 11.25H11.9509L10.5223 12.5H6.21429V11.25Z"
@@ -73,13 +73,13 @@
                 </a>
             </li>
             <li>
-                <a href="{{ route('calendar') }}" class="nav-link link-body-emphasis">
+                <a href="{{ route('student.calendar') }}" class="nav-link link-body-emphasis">
                     <i class="bi bi-calendar4-range"></i>
                     Lịch thống kê báo cáo
                 </a>
             </li>
             <li>
-                <a href="{{ route('contact') }}" class="nav-link link-body-emphasis">
+                <a href="{{ route('student.contact') }}" class="nav-link link-body-emphasis">
                     <i class="bi bi-chat-dots"></i>
                     Liên hệ với giảng viên
                 </a>

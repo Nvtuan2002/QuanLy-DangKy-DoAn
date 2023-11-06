@@ -1,7 +1,7 @@
  <div class="footer">
      <div class="row container justify-content-around">
          <div class="logo d-flex align-items-center justify-content-center col-lg-3">
-             <img src="./img/logo.png" alt="Logo Footer">
+             <img src="{{asset('img/logo.png')}}" alt="Logo Footer">
          </div>
          <div class="about_us col-lg-4"">
              <H3>Giới thiệu</H3>
