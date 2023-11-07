@@ -2,17 +2,17 @@
 
 use Illuminate\Support\Facades\Route;
 use Illuminate\Http\Response;
+use App\Http\Controllers\StudentController;
+use App\Http\Controllers\LoginController;
+use App\Models\Student;
 
+Route::get('/', [LoginController::class,'getLogin'])->name('login');
 
-Route::get('/', function () {
-   return view('login');
-})->name('login');
+Route::post('/', [LoginController::class,'checkLogin'])->name('checkLogin');
 
 Route::prefix('student')->name('student.')->group(function () {
 
-   Route::get('/dashboard', function () {
-      return view('students.dashboard');
-   })->name('dashboard');
+   Route::get('{/dashboard', [StudentController::class,'dashboard'])->name('dashboard');
 
    Route::get('/groupSV', function () {
       return view('students.groupSV');

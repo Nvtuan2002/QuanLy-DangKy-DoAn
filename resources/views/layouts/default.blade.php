@@ -8,7 +8,8 @@
 <body>
     <div>
         <header>
-            @include('includes.header')
+            @yield('header')
+            
         </header>
         <main class="d-flex">
             <aside class="">

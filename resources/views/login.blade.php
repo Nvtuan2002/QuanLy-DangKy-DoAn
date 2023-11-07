@@ -10,22 +10,25 @@
             <div class="login-box col-lg-5 col-md-12">
                 <h2>CHÀO MỪNG</h2>
                 <h5>Chúng tôi rất vui khi thấy bạn trở lại với chúng tôi</h5>
-                <form>
+                <form action="{{route('checkLogin')}}"  method="POST">
+                    @csrf
                     <div class="user-box">
-                        <input type="text" name="" required="">
+                        <input type="text" name="email" required="" >
                         <label>Tài khoản</label>
                     </div>
                     <div class="user-box">
-                        <input type="password" name="" required="">
+                        <input type="password" name="password" required="">
                         <label>Mật khẩu</label>
                     </div>
-                    <a href="">Quên mật khẩu?</a>
-                    <a href="{{ route('teacher.TE_dashboard') }}">
+                    <button type="submit">Đăng nhập</button>
+
+
+                    <a href="">
                         <span></span>
                         <span></span>
                         <span></span>
                         <span></span>
-                        Đăng nhập
+                        Quên mật khẩu
                     </a>
                 </form>
             </div>

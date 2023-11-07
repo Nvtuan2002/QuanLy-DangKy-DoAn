@@ -1,6 +1,12 @@
 @extends('layouts.default')
 @section('title', 'Trang chủ')
 
+@section('header')
+    @include('includes.header',[
+        'name' => $studentData->stu_name
+    ])
+@endsection
+
 @section('css')
     <link rel="stylesheet" href="{{asset('css/style.css')}}">
     
