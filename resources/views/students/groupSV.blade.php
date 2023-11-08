@@ -1,6 +1,12 @@
 @extends('layouts.default')
 @section('title', 'Nhóm của bạn')
 
+@section('header')
+    @include('includes.header', [
+        'name' => $studentData->stu_name,
+    ])
+@endsection
+
 @section('css')
     <link rel="stylesheet" href="{{ asset('css/style.css') }}">
 @endsection
@@ -11,7 +17,7 @@
 
 @section('content')
     <div class="groups col-lg-10">
-        <img src="{{asset('../img/background-primary.png')}}" alt="">
+        <img src="{{ asset('../img/background-primary.png') }}" alt="">
         <nav aria-label="breadcrumb">
             <ol class="breadcrumb">
                 <li class="breadcrumb-item active" aria-current="page">Nhóm của bạn</li>
@@ -19,9 +25,9 @@
         </nav>
         <div class="d-flex justify-content-between">
             <div class="alert" style="padding: unset">
-                <p class="fw-bold">Chào mừng, Hoàng Hải Long</p>
+                <p class="fw-bold">Chào mừng, {{ $dataGroup->stu_name }}</p>
                 <p class="">Thông báo của giảng viên: </p>
-                <p class="">15/10/2023 9:54PM: Nhóm cần hoàn thành chi tiết hơn</p>
+                <p class="">15/10/2023 9:54PM: {{ $dataGroup->rate_noti }}</p>
             </div>
             <div class="d-flex flex-column me-5 align-items-end">
                 <button class="cancel mb-4 ">Rời nhóm</button>
@@ -30,7 +36,8 @@
         </div>
         <div class="mx-3 row">
             <div class="col-lg-8 col-sm-12 history-update">
-                <p><img class="avatar me-4" src="{{asset('./img/avatar-groups.png')}}" alt="Avatar groups">Nhóm 04</p>
+                <p><img class="avatar me-4" src="{{ asset('./img/avatar-groups.png') }}"
+                        alt="Avatar groups">{{ $dataGroup->group_name }}</p>
                 <p class="fw-bold"><i class="bi bi-clock-history"></i>Lịch sử cập nhật</p>
                 <ul>
                     <li><i class="bi bi-file-earmark-arrow-up"></i>Hoàng Hải Long đã tải lên file abc.pdf</li>
@@ -57,7 +64,7 @@
                     </tr>
                     <tr>
                         <td>15/10/2023</td>
-                        <td>10</td>
+                        <td>{{$dataGroup->rate_score}}</td>
                     </tr>
                     <tr>
                         <td>15/10/2023</td>

@@ -4,35 +4,33 @@ use Illuminate\Support\Facades\Route;
 use Illuminate\Http\Response;
 use App\Http\Controllers\StudentController;
 use App\Http\Controllers\LoginController;
+use App\Http\Controllers\TeacherController;
 use App\Models\Student;
 
-Route::get('/', [LoginController::class,'getLogin'])->name('login');
+Route::get('/', [LoginController::class, 'getLogin'])->name('login');
 
-Route::post('/', [LoginController::class,'checkLogin'])->name('checkLogin');
+Route::post('/', [LoginController::class, 'checkLogin'])->name('checkLogin');
 
 Route::prefix('student')->name('student.')->group(function () {
 
-   Route::get('{/dashboard', [StudentController::class,'dashboard'])->name('dashboard');
+   Route::get('{/dashboard', [StudentController::class, 'dashboard'])->name('dashboard');
 
-   Route::get('/groupSV', function () {
-      return view('students.groupSV');
-   })->name('groupSV');
+   Route::get('/infoStudent', [StudentController::class,'getInfoStudent'])->name('infoStudent');
+
+   Route::get('/groupSV', [StudentController::class,'studentGroup'])->name('groupSV');
+
+   Route::get('/groupSV_detail', [StudentController::class,'getInfoGroup'])->name('groupSV_detail');
 
    Route::get('/groupSV_update', function () {
       return view('students.groupSV_update');
    })->name('groupSV_update');
 
-   Route::get('/groupSV_detail', function () {
-      return view('students.groupSV_detail');
-   })->name('groupSV_detail');
 
    Route::get('/groupSV_request', function () {
       return view('students.groupSV_request');
    })->name('groupSV_request');
 
-   Route::get('/register', function () {
-      return view('students.register');
-   })->name('register');
+   Route::get('/registerProject', [TeacherController::class,'getAllProject'])->name('register');
 
    Route::get('/register_attend', function () {
       return view('students.register_attend');
@@ -50,9 +48,6 @@ Route::prefix('student')->name('student.')->group(function () {
       return view('students.contact');
    })->name('contact');
 
-   Route::get('/infoStudent', function () {
-      return view('students.infoStudent');
-   })->name('infoStudent');
 
    Route::get('/infoTeacher', function () {
       return view('students.infoTeacher');
@@ -104,9 +99,3 @@ Route::prefix('teacher')->name('teacher.')->group(function () {
       return view('teachers.contact');
    })->name('contact');
 });
-
-
-
-
-
-

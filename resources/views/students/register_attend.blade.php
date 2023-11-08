@@ -77,6 +77,7 @@
         </div>
     </div>
     <script>
+        
         document.addEventListener('DOMContentLoaded', function() {
             document.querySelector('.register_attend').style.display = 'none';
             setTimeout(function() {

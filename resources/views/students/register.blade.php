@@ -1,6 +1,12 @@
 @extends('layouts.default')
 @section('title', 'Đăng ký đồ án')
 
+@section('header')
+    @include('includes.header',[
+        'name' => $studentData->stu_name
+    ])
+@endsection
+
 @section('css')
     <link rel="stylesheet" href="{{asset('css/style.css')}}">
 @endsection
@@ -32,33 +38,18 @@
 
         </table>
         <table class="container">
-                <tr>
-                    <td>Nguyễn Thành Trung</td>
-                    <td>Website Quản lý đăng ký đồ án</td>
-                    <td>+Về ngôn ngữ: PHP 
-                        + Yêu cầu chăm học hỏi kiến thức mới</td>
-                    <td>3 tháng</td>
-                    <td>15/15</td>
-                    <td><button class="invite"><a href="{{ route('student.register_attend') }}">Tham gia nhóm</a></button></td>
-                </tr>
-                <tr>
-                    <td>Nguyễn Thành Trung</td>
-                    <td>Website Quản lý đăng ký đồ án</td>
-                    <td>+Về ngôn ngữ: PHP 
-                        + Yêu cầu chăm học hỏi kiến thức mới</td>
-                    <td>3 tháng</td>
-                    <td>15/15</td>
-                    <td><button class="invite"><a href="{{ route('student.register_attend') }}">Tham gia nhóm</a></button></td>
-                </tr>
-                <tr>
-                    <td>Nguyễn Thành Trung</td>
-                    <td>Website Quản lý đăng ký đồ án</td>
-                    <td>+Về ngôn ngữ: PHP 
-                        + Yêu cầu chăm học hỏi kiến thức mới</td>
-                    <td>3 tháng</td>
-                    <td>15/15</td>
-                    <td><button class="invite"><a href="{{ route('student.register_attend') }}">Tham gia nhóm</a></button></td>
-                </tr>
+
+            @foreach ($allProject as $item)
+            <tr>
+                <td>{{$item->t_name}}</td>
+                <td>{{$item->p_name}}</td>
+                <td>{{$item->p_request}}</td>
+                <td>{{$item->p_major}}</td>
+                <td>{{$item->p_quantity}}</td>
+                <td><button class="invite"><a href="{{ route('student.register_attend') }}">Tham gia nhóm</a></button></td>
+            </tr> 
+            @endforeach
+                
         </table>
 
     </div>

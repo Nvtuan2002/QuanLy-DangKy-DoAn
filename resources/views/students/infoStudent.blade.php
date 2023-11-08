@@ -5,6 +5,12 @@
     <link rel="stylesheet" href="{{ asset('css/style.css') }}">
 @endsection
 
+@section('header')
+    @include('includes.header',[
+        'name' => $studentData->stu_name
+    ])
+@endsection
+
 @section('sidebar')
     @include('includes.sidebar')
 @endsection
@@ -27,48 +33,30 @@
                 </label>
             </div>
             <h5 style="margin-top: 10px; background: #8EACCD; padding: 3px 3px; display:inline-block; border-radius: 5px;">
-                Hoàng Hải Long</h5>
+                {{$studentDataDetail[0]->stu_name}}</h5>
         </div>
         <div class="row justify-content-evenly" style="margin: 30px 0px;">
             <div class="col-5" style="margin-top: -36px; padding:unset; ">
                 <h4 class="fw-bold">Thông tin cá nhân</h4>
                 <div class="d-flex flex-column" style="border: 1px solid rgb(106, 89, 89); ">
-                    <textarea name="" id="" cols="30" rows="10"
-                        style="outline: none; border: none; height: 123px;"></textarea>
+                    <textarea name="" id="" cols="30" rows="10" 
+                        style="outline: none; border: none; height: 123px;">{{$studentDataDetail[0]->stu_desc}}</textarea>
                     <i class="bi bi-pencil-square text-end" style="float: right"></i>
                 </div>
             </div>
             <div class="col-5" style="border: 1px solid rgb(106, 89, 89); height: 150px;">
                 <h5>Kỹ năng cá nhân</h5>
                 <div class="row" style="">
+                    @foreach ($studentDataDetail as $item)
                     <div class="col-6 text-start">
-                        <label class="ms-3">Giao tiếp</label>
+                        <label class="ms-3">{{$item->stu_skill}}</label>
                         <div class="progress col-9" role="progressbar" aria-label="Info example" aria-valuenow="50"
                             aria-valuemin="0" aria-valuemax="100">
-                            <div class="progress-bar bg-info text-dark" style="width: 99%">99%</div>
+                            <div class="progress-bar bg-info text-dark" style="width: {{$item->stu_skill_detail}}%">{{$item->stu_skill_detail}}%</div>
                         </div>
                     </div>
-                    <div class="col-6 text-start">
-                        <label class="ms-3">Nhác học</label>
-                        <div class="progress col-9" role="progressbar" aria-label="Info example" aria-valuenow="50"
-                            aria-valuemin="0" aria-valuemax="100">
-                            <div class="progress-bar bg-info text-dark" style="width: 99%">99%</div>
-                        </div>
-                    </div>
-                    <div class="col-6 text-start">
-                        <label class="ms-3">Ielts</label>
-                        <div class="progress col-9" role="progressbar" aria-label="Info example" aria-valuenow="50"
-                            aria-valuemin="0" aria-valuemax="100">
-                            <div class="progress-bar bg-info text-dark" style="width: 99%">99%</div>
-                        </div>
-                    </div>
-                    <div class="col-6 text-start">
-                        <label class="ms-3">FullStack</label>
-                        <div class="progress col-9" role="progressbar" aria-label="Info example" aria-valuenow="50"
-                            aria-valuemin="0" aria-valuemax="100">
-                            <div class="progress-bar bg-info text-dark" style="width: 99%">99%</div>
-                        </div>
-                    </div>
+                    @endforeach
+
                     <i class="bi bi-pencil-square text-end"></i>
                 </div>
             </div>
@@ -77,7 +65,7 @@
             <div class="col-lg-5 col-xl-5 input_info d-flex justify-content-between" style="">
                 <div style="width: 85%;">
                     <label for="" style="width: 100px;">Họ và tên: </label>
-                    <input type="text" value="Hoàng Hải Long">
+                    <input type="text" value="   {{$studentDataDetail[0]->stu_name}}">
                 </div>
                 <i class="bi bi-pencil-square"></i>
 
@@ -85,35 +73,35 @@
             <div class="col-lg-5 col-xl-5 input_info d-flex justify-content-between" style="">
                 <div style="width: 85%;">
                     <label for="" style="width: 100px;">Số điện thoại: </label>
-                    <input type="text" value="0967846423">
+                    <input type="text" value="0{{$studentDataDetail[0]->stu_phone}}">
                 </div>
                 <i class="bi bi-pencil-square"></i>
             </div>
             <div class="col-lg-5 col-xl-5 input_info d-flex justify-content-between" style="">
                 <div style="width: 85%;">
                     <label for="" style="width: 100px;">Email: </label>
-                    <input type="text" value="long19092k2@gmail.com">
+                    <input type="text" value="{{$studentDataDetail[0]->stu_email}}">
                 </div>
                 <i class="bi bi-pencil-square"></i>
             </div>
             <div class="col-lg-5 col-xl-5 input_info d-flex justify-content-between" style="">
                 <div style="width: 85%;">
                     <label for="" style="width: 100px;">Ngày Sinh: </label>
-                    <input type="date" value="2002-09-19">
+                    <input type="date" value="{{$studentDataDetail[0]->stu_born}}">
                 </div>
                 <i class="bi bi-pencil-square"></i>
             </div>
             <div class="col-lg-5 col-xl-5 input_info d-flex justify-content-between" style="">
                 <div style="width: 85%;">
                     <label for="" style="width: 100px;">Khoa: </label>
-                    <input type="text" value="Công Nghệ Thông Tin">
+                    <input type="text" value="{{$studentDataDetail[0]->stu_major}}">
                 </div>
                 <i class="bi bi-pencil-square"></i>
             </div>
             <div class="col-lg-5 col-xl-5 input_info d-flex justify-content-between" style="">
                 <div style="width: 85%;">
                     <label for="" style="width: 100px;">NickName: </label>
-                    <input type="text" value="LongNotDevVipPro">
+                    <input type="text" value="{{$studentDataDetail[0]->stu_nickname}}">
                 </div>
                 <i class="bi bi-pencil-square"></i>
             </div>

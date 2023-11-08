@@ -1,6 +1,12 @@
 @extends('layouts.default')
 @section('title', 'Xem thông tin nhóm')
 
+@section('header')
+@include('includes.header', [
+    'name' => $studentData->stu_name,
+])
+@endsection
+
 @section('css')
     <link rel="stylesheet" href="{{ asset('css/style.css') }}">
 @endsection
@@ -29,36 +35,32 @@
                 </ul>
                 <ul class="row">
                     <p class="col-4">Tên nhóm: </p>
-                    <p class="col-8">Team Hắc Cơ</p>
+                    <p class="col-8">{{$infoGroup[0]->group_name}}</p>
                 </ul>
                 <ul class="row">
                     <p class="col-4">Tên đề tài: </p>
-                    <p class="col-8">Xây dựng Web quản lí đăng ký đồ án</p>
+                    <p class="col-8">{{$infoGroup[0]->p_name}}</p>
                 </ul>
                 <ul class="row">
                     <p class="col-4">Giảng Viên: </p>
-                    <p class="col-8">Nguyễn Thành Trung</p>
+                    <p class="col-8">{{$infoGroup[0]->t_name}}</p>
                 </ul>
                 <ul class="row">
                     <p class="col-4">Thành viên nhóm: </p>
                     <div class="col-8">
+                        @foreach ($infoGroup as $item)
+                            
                         <ul class="row d-flex align-items-center">
                             <img class="col-6" src="{{asset('./img/avatar.png')}}" alt="">
-                            <li class="col-6">Hoàng Hải Long (Nhóm trưởng)</li>
+                            <li class="col-6">{{$item->stu_name}}</li>
                         </ul>
-                        <ul class="row d-flex align-items-center">
-                            <img class="col-6" src="{{asset('./img/avatar.png')}}" alt="">
-                            <li class="col-6">Nguyễn Viết Tuấn</li>
-                        </ul>
-                        <ul class="row d-flex align-items-center">
-                            <img class="col-6" src="{{asset('./img/avatar.png')}}" alt="">
-                            <li class="col-6">Bùi Khánh Huyền</li>
-                        </ul>
+                        @endforeach
+                       
                     </div>
                 </ul>
                 <ul class="row">
                     <p class="col-4">Nhóm số: </p>
-                    <p class="col-8">1</p>
+                    <p class="col-8">{{$infoGroup[0]->group_number}}</p>
                 </ul>
                 <ul class="row">
                     <p class="col-4">Điểm số trung bình: </p>
