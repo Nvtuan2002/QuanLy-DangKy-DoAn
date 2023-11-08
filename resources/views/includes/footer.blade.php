@@ -4,7 +4,7 @@
              <img src="{{asset('img/logo.png')}}" alt="Logo Footer">
          </div>
          <div class="about_us col-lg-4"">
-             <H3>Giới thiệu</H3>
+             <h4>Giới thiệu</h4>
              <p class="t-16">Chúng tôi quá tự hào khi xây dựng hệ thống này, điều này <br>sẽ giúp sinh viên truy cập dễ
                  dàng hơn để dự án</p>
              <p><i class="bi bi-telephone"></i>0967846423</p>
@@ -16,7 +16,7 @@
                  </svg>Vĩnh Ngọc, Đông Anh, Hà Nội</p>
          </div>
          <div class="role col-lg-5"" style="">
-             <H3>Giáo Viên</H3>
+             <h4>Giáo Viên</h4>
              <div class="row">
                  <p class="t-16 col-lg-6"><a href=""><i class="bi bi-caret-right"></i>Vũ Thị Ngọc Anh</a></p>
                  <p class="t-16 col-lg-6"><a href=""><i class="bi bi-caret-right"></i>Phạm Hoàng Giang</a></p>

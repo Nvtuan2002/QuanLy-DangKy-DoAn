@@ -40,16 +40,20 @@
             </div>
         </div>
         <div class="row justify-content-evenly" style="margin: 30px 10px;">
-            <div class="col-5" style="margin-top: -36px; padding:unset; ">
-                <h4 class="fw-bold">Thông tin cá nhân</h4>
-                <div class="d-flex flex-column" style="border: 1px solid rgb(106, 89, 89); ">
-                    <textarea name="" id="" cols="30" rows="10"
-                        style="outline: none; border: none; height: 123px;"></textarea>
-                    <i class="bi bi-pencil-square text-end" style="float: right"></i>
-                </div>
+            <div class="col-5" style=" padding:unset; border: 1px solid rgb(106, 89, 89); ">
+                <form action="" method="" style="padding: 0px 12px;">
+                    <h4 class="">Thông tin cá nhân</h4>
+                    <div class="d-flex flex-column align-item-end" style="">
+                        <textarea name="" id="js-textarea" cols="10" rows="10"
+                            style="outline: none; border: none; width: 100%; height: 90px; padding: 10px; color:black">Tôi là Ai ?</textarea>
+                        <i class="bi bi-pencil-square" role="button" id="edit-textarea" style="text-align: end;"></i>
+                        <i class="fa-solid fa-paper-plane" type="submit" id="send-textarea"
+                            style="display: none; text-align: end; margin: 0.5rem;"></i>
+                    </div>
+                </form>
             </div>
-            <div class="col-5" style="border: 1px solid rgb(106, 89, 89); height: 150px;">
-                <h5>Kỹ năng cá nhân</h5>
+            <div class="col-5" style="border: 1px solid rgb(106, 89, 89);">
+                <h4>Kỹ năng cá nhân</h4>
                 <div class="row" style="">
                     <div class="col-6 text-start">
                         <label class="ms-3">Giao tiếp</label>

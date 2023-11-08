@@ -77,13 +77,17 @@
         </div>
     </div>
     <script>
-        
         document.addEventListener('DOMContentLoaded', function() {
-            document.querySelector('.register_attend').style.display = 'none';
-            setTimeout(function() {
-                document.getElementById('loading').style.display = 'none';
-                document.querySelector('.register_attend').style.display = 'block';
-            }, 3000);
+            var loading = document.getElementById('loading');
+            var register_attend = document.querySelector('.register_attend');
+            var a = 1;
+            if (a == 1) {
+                loading.style.display = 'block';
+                register_attend.style.display = 'none';
+            } else {
+                loading.style.display = 'none';
+                register_attend.style.display = 'block';
+            }
         });
     </script>
 @stop

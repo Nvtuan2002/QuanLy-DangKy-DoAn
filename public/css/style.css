@@ -339,7 +339,7 @@ ol li {
     object-fit: contain;
     z-index: -1;
     width: 100%;
-    height: 70%;
+    height: 57%;
     top: 18%;
 }
 
@@ -429,7 +429,7 @@ ol li {
 }
 
 .accept {
-    background-color: var(--accept-background);
+    background-color: #ECE3CE;
 }
 
 .reject {
@@ -482,8 +482,8 @@ form .input {
     border-radius: 50%;
     box-shadow: 0 0 0 0.25em inset;
     caret-color: #255ff4;
-    width: 2em;
-    height: 2em;
+    width: 1.5em;
+    height: 1.5em;
 }
 
 form .input:focus,
@@ -517,8 +517,8 @@ form .caret {
     border-radius: 0 0 0.125em 0.125em;
     margin-bottom: -0.6em;
     width: 0.25em;
-    height: 1em;
-    transform: translate(0, -1em) rotate(-45deg) translate(0, 0.875em);
+    height: 0.6em;
+    transform: translate(0, -1em) rotate(311deg) translate(0, 0.875em);
     transform-origin: 50% 0;
 }
 
@@ -601,7 +601,7 @@ table tr td {
     text-align: start;
     padding: 10px;
     display: inline-block;
-    border-radius: 30px;
+    border-radius: 20px;
 
 }
 
@@ -640,6 +640,7 @@ table tr th:first-child {
 .register table tr th:nth-child(5) {
     width: 10%;
     height: 100%;
+    text-align: center;
 }
 
 .register table tr td:nth-child(6),
@@ -1010,7 +1011,7 @@ option {
     border-top: 1px solid #ccc;
 }
 
-.contact-hidden{
+.contact-hidden {
     display: none;
     order: -2;
 }

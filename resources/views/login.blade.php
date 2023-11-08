@@ -10,26 +10,25 @@
             <div class="login-box col-lg-5 col-md-12">
                 <h2>CHÀO MỪNG</h2>
                 <h5>Chúng tôi rất vui khi thấy bạn trở lại với chúng tôi</h5>
-                <form action="{{route('checkLogin')}}"  method="POST">
+                <form action="{{ route('checkLogin') }}" method="POST">
                     @csrf
                     <div class="user-box">
-                        <input type="text" name="email" required="" >
+                        <input type="text" name="email" required="">
                         <label>Tài khoản</label>
                     </div>
                     <div class="user-box">
                         <input type="password" name="password" required="">
                         <label>Mật khẩu</label>
                     </div>
-                    <button type="submit">Đăng nhập</button>
+                    <a href="">Quên mật khẩu</a>
 
-
-                    <a href="">
+                    <button type="submit">
                         <span></span>
                         <span></span>
                         <span></span>
                         <span></span>
-                        Quên mật khẩu
-                    </a>
+                        Đăng nhập
+                    </button>
                 </form>
             </div>
         </div>

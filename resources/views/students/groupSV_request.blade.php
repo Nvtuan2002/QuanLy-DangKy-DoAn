@@ -21,7 +21,7 @@
             <h5 style="width: 141px">Thông tin</h5>
             <h5>Lựa chọn</h5>
         </div>
-        <div>
+        <div style="min-height: 360px;">
             <div class="d-flex list_request">
                     <p>Hoàng Hải Long</p>
                     <i class="bi bi-box-arrow-up-right"></i>
