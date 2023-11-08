@@ -277,6 +277,7 @@ article>div {
     margin-right: 0.5rem;
     width: 150px;
     height: 150px;
+    object-fit: cover;
 }
 
 .home .about .des>h5 {
@@ -921,7 +922,7 @@ td:nth-child(8) {
 
 /* teacher dashboard */
 .h5_dashboard {
-    margin: 10px 0;
+    margin: 5px 0;
 }
 
 .te_dashboard a {
