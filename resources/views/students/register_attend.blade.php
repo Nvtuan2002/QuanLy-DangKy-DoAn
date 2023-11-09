@@ -1,6 +1,14 @@
 @extends('layouts.default')
 @section('title', 'Tham gia nhóm')
 
+
+@section('header')
+    @include('includes.header',[
+        'name' => $studentData->stu_name,
+        'img' => $studentData->stu_avt
+    ])
+@endsection
+
 @section('css')
     <link rel="stylesheet" href="{{asset('css/style.css')}}">
 @endsection
@@ -26,10 +34,11 @@
             </div>
         </div>
         <div class="register_attend m-2">
-            <h5 style="float: right;">Giảng viên: Nguyễn Thành Trung</h5>
+            <h5 style="float: right;">Giảng viên: {{$allGroup[0]->t_name}}</h5>
             <table class="container">
                 <tr>
-                    <th style="text-align: center">Tên giảng viên</th>
+                    <th style="text-align: center">Tên nhóm</th>
+                    <th style="text-align: center">Tên nhóm trưởng</th>
                     <th style="text-align: center">Tên đề tài</th>
                     <th style="text-align: center">Yêu cầu</th>
                     <th style="text-align: center">Nhóm số</th>
@@ -38,33 +47,18 @@
                 </tr>
             </table>
             <table class="container">
+                @foreach ($allGroup as $item)
                 <tr>
-                    <td>Nguyễn Thành Trung</td>
-                    <td>Website Quản lý đăng ký đồ án</td>
-                    <td>+Về ngôn ngữ: PHP
-                        + Yêu cầu chăm học hỏi kiến thức mới</td>
-                    <td>1</td>
-                    <td>15/15</td>
+                    <td>{{$item->group_name}}</td>
+                    <td>{{$item->group_leader}}</td>
+                    <td>{{$item->p_name}}</td>
+                    <td>{{$item->group_request}}</td>
+                    <td>{{$item->group_number}}</td>
+                    <td>{{$item->group_quantity}}</td>
                     <td><button class="invite" href="{{ route('student.register') }}">Tham gia nhóm</button></td>
                 </tr>
-                <tr>
-                    <td>Nguyễn Thành Trung</td>
-                    <td>Website Quản lý đăng ký đồ án</td>
-                    <td>+Về ngôn ngữ: PHP
-                        + Yêu cầu chăm học hỏi kiến thức mới</td>
-                    <td>2</td>
-                    <td>15/15</td>
-                    <td><button class="invite" href="{{ route('student.register') }}">Tham gia nhóm</button></td>
-                </tr>
-                <tr>
-                    <td>Nguyễn Thành Trung</td>
-                    <td>Website Quản lý đăng ký đồ án</td>
-                    <td>+Về ngôn ngữ: PHP
-                        + Yêu cầu chăm học hỏi kiến thức mới</td>
-                    <td>3</td>
-                    <td>15/15</td>
-                    <td><button class="invite" href="{{ route('student.register') }}">Tham gia nhóm</button></td>
-                </tr>
+                @endforeach
+               
             </table>
             <div class="d-flex justify-content-around">
                 <div class="d-flex justify-content-center mt-5">
@@ -80,7 +74,7 @@
         document.addEventListener('DOMContentLoaded', function() {
             var loading = document.getElementById('loading');
             var register_attend = document.querySelector('.register_attend');
-            var a = 1;
+            var a = {{$studentData->stu_status}};
             if (a == 1) {
                 loading.style.display = 'block';
                 register_attend.style.display = 'none';

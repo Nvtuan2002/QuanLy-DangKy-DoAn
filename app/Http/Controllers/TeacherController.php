@@ -14,12 +14,15 @@ class TeacherController extends Controller
     private $teacher;
     private $student;
 
-    public function __construct() {
+    public function __construct()
+    {
         $this->teacher = new Teacher();
+
         $this->student = new Student();
     }
 
-    public function getAllProject(){
+    public function getAllProject()
+    {
 
         $id = session('id');
 
@@ -27,9 +30,38 @@ class TeacherController extends Controller
 
         $studentData = $studentData[0];
 
+        if ($studentData->stu_status == 0) {
+            $allProject = $this->teacher->getAllProject();
+            return view('students.register', compact('allProject', 'studentData'));
+        } elseif ($studentData->stu_status == 1) {
+            return "dang xu li";
+        } elseif ($studentData->stu_status == 2) {
+            return redirect()->route('student.register_attend')->with(['studentData' => $studentData]);
 
-        $allProject = $this->teacher->getAllProject();
+        } else {
+            return "ban da dang ki do an";
+        }
+    }
 
-        return view('students.register',compact('allProject','studentData'));
+    public function handleJoinProject(Request $request, $p_id, $t_id)
+    {
+
+        $id = session('id');
+
+        $studentData = $this->student->getDataStudent($id);
+
+        $studentData = $studentData[0];
+
+        // dd($p_id);
+
+        $this->teacher->changeStatus($id, 1, $p_id, $t_id);
+
+        return back();
+        // dd($this->student->getDataStudent($id)[0]->stu_status);
+        //     if ($studentData->stu_status == 1) {
+        //         return redirect()->route('student.register_attend')->with(['studentData' => $studentData]);
+        //     }
+        //     else{
+        //     }
     }
 }

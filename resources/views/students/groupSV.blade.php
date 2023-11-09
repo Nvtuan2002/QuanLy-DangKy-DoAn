@@ -2,8 +2,9 @@
 @section('title', 'Nhóm của bạn')
 
 @section('header')
-    @include('includes.header', [
+    @include('includes.header',[
         'name' => $studentData->stu_name,
+        'img' => $studentData->stu_avt
     ])
 @endsection
 

@@ -1,6 +1,13 @@
 @extends('layouts.default')
 @section('title', 'Cập nhật tiến độ nhóm')
 
+@section('header')
+    @include('includes.header',[
+        'name' => $studentData->stu_name,
+        'img' => $studentData->stu_avt
+    ])
+@endsection
+
 @section('css')
     <link rel="stylesheet" href="{{asset('css/style.css')}}">
 @endsection

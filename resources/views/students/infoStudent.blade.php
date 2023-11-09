@@ -8,6 +8,7 @@
 @section('header')
     @include('includes.header', [
         'name' => $studentData->stu_name,
+        'img' => $studentData->stu_avt,
     ])
 @endsection
 
@@ -16,28 +17,33 @@
 @endsection
 
 @section('content')
-    <div class="groups col-lg-10">
-        {{-- <img src="../img/background-primary.png" alt=""> --}}
-        <nav aria-label="breadcrumb">
-            <ol class="breadcrumb">
-                <li class="breadcrumb-item active" aria-current="page">Chỉnh sửa thông tin cá nhân</li>
-            </ol>
-        </nav>
-        <div class="text-center">
-            <div class="info_img">
-                <input type="file" id="file-input" style="display: none">
-                <label for="file-input">
-                    <img src="{{ asset('https://scontent.fhan17-1.fna.fbcdn.net/v/t1.15752-9/385533421_871168748062380_2297325553142698699_n.jpg?_nc_cat=108&ccb=1-7&_nc_sid=8cd0a2&_nc_ohc=hMrzd7xiheoAX8b1D2l&_nc_ht=scontent.fhan17-1.fna&oh=03_AdRXIvodPzcdkIF_kKiJJEj-CY7dVqC24dt5W08MLkSU3g&oe=656765F7') }}"
-                        alt="" id="image">
-                    <i class="bi bi-camera-fill"></i>
-                </label>
+    <form action="{{ route('student.updateInfoStudent') }}" method="POST" enctype="multipart/form-data">
+        @csrf
+        {{-- @method('PUT') --}}
+        <div class="groups col-lg-10">
+            {{-- <img src="../img/background-primary.png" alt=""> --}}
+            <nav aria-label="breadcrumb">
+                <ol class="breadcrumb">
+                    <li class="breadcrumb-item active" aria-current="page">Chỉnh sửa thông tin cá nhân</li>
+                </ol>
+            </nav>
+            <div class="text-center">
+                <div class="info_img">
+                    <input type="file" id="file-input" style="display: none">
+                    <label for="file-input">
+                        <img src="{{ asset('storage/image/' . $studentData->stu_avt) }}" alt="" id="image"
+                            name="stu_avt">
+                        <i class="bi bi-camera-fill"></i>
+                    </label>
+                </div>
+                <input type="file" name="img_change">
+                <h5
+                    style="margin-top: 10px; background: #8EACCD; padding: 3px 3px; display:inline-block; border-radius: 5px;">
+                    {{ $studentDataDetail[0]->stu_name }}</h5>
             </div>
-            <h5 style="margin-top: 10px; background: #8EACCD; padding: 3px 3px; display:inline-block; border-radius: 5px;">
-                {{ $studentDataDetail[0]->stu_name }}</h5>
-        </div>
-        <div class="row justify-content-evenly" style="margin: 30px 0px; ">
-            <div class="col-5" style=" padding:unset; border: 1px solid rgb(106, 89, 89); ">
-                <form action="" method="" style="padding: 0px 12px;">
+            <div class="row justify-content-evenly" style="margin: 30px 0px; ">
+                <div class="col-5" style=" padding:unset; border: 1px solid rgb(106, 89, 89); ">
+
                     <h4 class="">Thông tin cá nhân</h4>
                     <div class="d-flex flex-column align-item-end" style="">
                         <textarea name="" id="js-textarea" cols="10" rows="10"
@@ -46,27 +52,28 @@
                         <i class="fa-solid fa-paper-plane" type="submit" id="send-textarea"
                             style="display: none; text-align: end; margin: 0.5rem;"></i>
                     </div>
-                </form>
-            </div>
-            <div class="col-5" style="border: 1px solid rgb(106, 89, 89);">
-                <h4>Kỹ năng cá nhân</h4>
-                <div class="row" style="">
-                    @foreach ($studentDataDetail as $item)
-                        <div class="col-6 text-start">
-                            <label class="ms-3">{{ $item->stu_skill }}</label>
-                            <div class="progress col-9" role="progressbar" aria-label="Info example" aria-valuenow="50"
-                                aria-valuemin="0" aria-valuemax="100">
-                                <div class="progress-bar bg-info text-dark" style="width: {{ $item->stu_skill_detail }}%">
-                                    {{ $item->stu_skill_detail }}%</div>
+
+                </div>
+                <div class="col-5" style="border: 1px solid rgb(106, 89, 89);">
+                    <h4>Kỹ năng cá nhân</h4>
+                    <div class="row" style="">
+                        @foreach ($studentDataDetail as $item)
+                            <div class="col-6 text-start">
+                                <label class="ms-3">{{ $item->stu_skill }}</label>
+                                <div class="progress col-9" role="progressbar" aria-label="Info example" aria-valuenow="50"
+                                    aria-valuemin="0" aria-valuemax="100">
+                                    <div class="progress-bar bg-info text-dark"
+                                        style="width: {{ $item->stu_skill_detail }}%">
+                                        {{ $item->stu_skill_detail }}%</div>
+                                </div>
                             </div>
-                        </div>
-                    @endforeach
-                    <i class="bi bi-pencil-square text-end" data-bs-toggle="modal" data-bs-target="#exampleModal"></i>
-                    <!-- Modal -->
-                    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel"
-                        aria-hidden="true">
-                        <div class="modal-dialog">
-                            <form action="" method="">
+                        @endforeach
+                        <i class="bi bi-pencil-square text-end" data-bs-toggle="modal" data-bs-target="#exampleModal"></i>
+                        <!-- Modal -->
+                        <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel"
+                            aria-hidden="true">
+                            <div class="modal-dialog">
+
                                 <div class="modal-content" style="top: 20vh">
                                     <div class="modal-header">
                                         <h1 class="modal-title fs-5" id="exampleModalLabel">Thêm file</h1>
@@ -82,16 +89,16 @@
                                     <div class="modal-footer">
                                         <button type="button" class="btn comeback" data-bs-dismiss="modal">Quay
                                             lại</button>
-                                        <button type="submit" class="btn request">Cập nhật</button>
+                                        {{-- <button type="submit" class="btn request">Cập nhật</button> --}}
                                     </div>
                                 </div>
-                            </form>
+
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
-        </div>
-        <form action="" method="">
+
             <div class="row justify-content-center gy-3" style="">
                 <div class="col-lg-5 col-xl-5 input_info d-flex justify-content-between" style="">
                     <div style="width: 85%;">
@@ -144,10 +151,13 @@
 
                 </div>
             </div>
-        </form>
-    </div>
-    </div>
-    </div>
+        </div>
+        <button type="submit">Cập nhật</button>
+    </form>
+
+@endsection
+@section('js')
+
     <script>
         const input = document.querySelector('input');
         const image = document.getElementById('image');
@@ -188,7 +198,7 @@
             editNicknameIcon.style.display = "none";
             sendNickname.style.display = "inline-block";
         });
-        
+
         sendNickname.addEventListener('click', () => {
             nicknameInput.disabled = !nicknameInput.disabled;
             nicknameInput.style.background = "#8EACCD";
@@ -196,4 +206,4 @@
             editNicknameIcon.style.display = "inline-block";
         });
     </script>
-@stop
+@endsection

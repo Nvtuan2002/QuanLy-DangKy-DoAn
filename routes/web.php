@@ -17,9 +17,25 @@ Route::prefix('student')->name('student.')->group(function () {
 
    Route::get('/infoStudent', [StudentController::class,'getInfoStudent'])->name('infoStudent');
 
+   Route::post('/infoStudent', [StudentController::class,'updateInfoStudent'])->name('updateInfoStudent');
+
+
    Route::get('/groupSV', [StudentController::class,'studentGroup'])->name('groupSV');
 
    Route::get('/groupSV_detail', [StudentController::class,'getInfoGroup'])->name('groupSV_detail');
+
+   Route::get('/registerProject', [TeacherController::class,'getAllProject'])->name('register');
+
+   Route::get('/registerProject/{p_id}/{t_id}', [TeacherController::class,'handleJoinProject'])->name('handleJoinProject');
+
+   Route::get('/register_attend', [StudentController::class,'getAllGroup'])->name('register_attend');
+   
+   Route::get('/register_create/', [StudentController::class,'getCreateGroup'])->name('register_create');
+
+   Route::post('/register_create', [StudentController::class,'handleCreateGroup'])->name('handle_create');
+
+
+
 
    Route::get('/groupSV_update', function () {
       return view('students.groupSV_update');
@@ -30,15 +46,8 @@ Route::prefix('student')->name('student.')->group(function () {
       return view('students.groupSV_request');
    })->name('groupSV_request');
 
-   Route::get('/registerProject', [TeacherController::class,'getAllProject'])->name('register');
 
-   Route::get('/register_attend', function () {
-      return view('students.register_attend');
-   })->name('register_attend');
 
-   Route::get('/register_create', function () {
-      return view('students.register_create');
-   })->name('register_create');
 
    Route::get('/calendar', function () {
       return view('students.calendar');
