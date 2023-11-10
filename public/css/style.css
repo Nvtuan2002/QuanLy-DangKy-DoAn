@@ -920,6 +920,7 @@ td:nth-child(7),
 th:nth-child(8),
 td:nth-child(8) {
     width: 12.5%;
+    height: 100%;
     /* 100% / 8 */
 }
 

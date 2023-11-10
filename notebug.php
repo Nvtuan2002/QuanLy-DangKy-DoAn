@@ -17,7 +17,7 @@ FE
  ví dụ nhóm số bao nhiêu thì ngắn lại, yêu cầu thì dài ra, lựa chọn tham gia nhóm nếu fix được cho nó cố định height thì tốt 
  tại nếu mà data dài ra cái button cũng dài ra 
 
- - tạo 1 trang đang gửi yêu cầu vào erorrbalde (cái này dùng chung) cứ cho nó quay quay ghi là đang gửi yêu cầu là kê
+ <!-- - tạo 1 trang đang gửi yêu cầu vào erorrbalde (cái này dùng chung) cứ cho nó quay quay ghi là đang gửi yêu cầu là kê -->
 
 
 
