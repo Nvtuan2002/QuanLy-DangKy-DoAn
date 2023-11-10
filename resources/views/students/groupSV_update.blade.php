@@ -2,14 +2,14 @@
 @section('title', 'Cập nhật tiến độ nhóm')
 
 @section('header')
-    @include('includes.header',[
+    @include('includes.header', [
         'name' => $studentData->stu_name,
-        'img' => $studentData->stu_avt
+        'img' => $studentData->stu_avt,
     ])
 @endsection
 
 @section('css')
-    <link rel="stylesheet" href="{{asset('css/style.css')}}">
+    <link rel="stylesheet" href="{{ asset('css/style.css') }}">
 @endsection
 
 @section('sidebar')
@@ -26,9 +26,9 @@
         </nav>
         <div class="d-flex justify-content-between">
             <div class="alert">
-                <p class="fw-bold">Chào mừng, {{$studentData->stu_name}}</p>
-                <p class="">Thông báo của giảng viên: </p>
-                <p class="">{{$dataNotiGroup[0]->created_at}} : {{$dataNotiGroup[0]->rate_noti }}</p>
+                <p class="fw-bold">Chào mừng, {{ $studentData->stu_name }}</p>
+                <p class="fw-bold">Thông báo của giảng viên: </p>
+                <p class="fw-bold">{{ $dataNotiGroup[0]->created_at }} <span style="font-weight: initial;">: {{ $dataNotiGroup[0]->rate_noti }}</span> </p>
             </div>
             <div class="d-flex flex-column me-5 align-items-end">
                 <button class="cancel mb-4 ">Rời nhóm</button>
@@ -41,7 +41,8 @@
                 <div>
                     <button class="btn-invisible">Truy Cập</button>
                     <!-- Button trigger modal -->
-                    <button type="button" class="btn-invisible btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                    <button type="button" class="btn-invisible btn-primary" data-bs-toggle="modal"
+                        data-bs-target="#exampleModal">
                         Thêm File mới
                     </button>
 
@@ -59,8 +60,16 @@
                                             aria-label="Close"></button>
                                     </div>
                                     <div class="modal-body">
-                                        <input type="text" placeholder="Nhập tiêu đề" name="file_title">
-                                        <input type="file" class="form-control" id="dokumen" required="" name="file_upload">
+                                        <Label
+                                            style="border-radius: var(--bs-border-radius); 
+                                            border: 1px solid #dee2e6; background-color: whitesmoke;
+                                            width: 19%; text-align:center; padding: 0.375rem 0px;">
+                                            Tiêu đề
+                                        </Label>
+                                        <input type="text" class="form-control" style="width: 80%; display:inline-block;"
+                                            name="file_title">
+                                        <input type="file" class="form-control" id="dokumen" required=""
+                                            name="file_upload" style="margin-top: 10px; outline:none;">
                                     </div>
                                     <div class="modal-footer">
                                         <button type="button" class="btn comeback" data-bs-dismiss="modal">Quay
@@ -76,20 +85,18 @@
             <div>
                 <ul>
                     @foreach ($dataFile as $item)
-                    <li>
-                        <div style="display: flex; justify-content:space-between">
-                            
-                            <a href="{{asset('storage/file/'.$item->file)}}" target=”_blank” > <i class="bi bi-file-earmark-arrow-up-fill"></i>{{$item->file}}</a>
-                            <a href="{{route('student.dowload',['file_name' => $item->file])}}"><i class="fa-solid fa-download"></i>Tải xuống</a>
-                            <p>{{$item->file_title}}</p>
-                            <p>{{$item->created_at}}</p>
-                            
-
-                        </div>
-                    </li>
-                        
+                        <li>
+                            <div style="display: grid; grid-template-columns: 30% 15% 25% 15%; margin-top: 20px;">
+                                <a href="{{ asset('storage/file/' . $item->file) }}" target=”_blank”> <i
+                                        class="bi bi-file-earmark-arrow-up-fill"></i>{{ $item->file }}</a>
+                                <a href="{{ route('student.dowload', ['file_name' => $item->file]) }}"><i
+                                        class="fa-solid fa-download"></i>Tải xuống</a>
+                                <p style="margin: unset; padding-top: 2px;">{{ $item->file_title }}</p>
+                                <p style="margin: unset; padding-top: 2px;">{{ $item->created_at }}</p>
+                            </div>
+                        </li>
                     @endforeach
-                    
+
                 </ul>
             </div>
         </div>

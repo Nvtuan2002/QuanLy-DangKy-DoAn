@@ -65,6 +65,14 @@ header {
     right: 0;
 }
 
+.img {
+    height: 40px;
+    width: 40px;
+    object-fit: cover !important;
+    border-radius: 50% !important;
+}
+
+
 i {
     font-size: 21px;
 }
@@ -186,9 +194,9 @@ article>div {
 .footer {
     background: var(--third-color, #D2E0FB);
     padding: 10px 0px;
-    bottom: 0;
-    right: 0;
-    left: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 .footer .logo img {
@@ -364,7 +372,6 @@ ol li {
 
 /* GroupsSV Detail*/
 .groups_detail ul img {
-    width: 55px !important;
     padding: unset;
 }
 
@@ -603,7 +610,7 @@ table tr td {
     padding: 10px;
     display: inline-block;
     border-radius: 20px;
-
+    overflow: auto;
 }
 
 table tr td:first-child,
@@ -703,7 +710,7 @@ circle {
 }
 
 /* Loading NotJoin */
-#loading-notJoin{
+#loading-notJoin {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -777,19 +784,19 @@ circle {
 
 .register_attend table tr td:nth-child(2),
 .register_attend table tr th:nth-child(2) {
-    width: 20%;
+    width: 15%;
     height: 100%;
 }
 
 .register_attend table tr td:nth-child(3),
 .register_attend table tr th:nth-child(3) {
-    width: 30%;
+    width: 25%;
     height: 100%;
 }
 
 .register_attend table tr td:nth-child(4),
 .register_attend table tr th:nth-child(4) {
-    width: 10%;
+    width: 25%;
     height: 100%;
 }
 
@@ -797,11 +804,12 @@ circle {
 .register_attend table tr th:nth-child(5) {
     width: 10%;
     height: 100%;
+    text-align: center;
 }
 
 .register_attend table tr td:nth-child(6),
 .register_attend table tr th:nth-child(6) {
-    width: 15%;
+    width: 10%;
     height: 100%;
     text-align: center;
 }

@@ -18,7 +18,7 @@
 
 @section('content')
     <div id="loading-notJoin" style="margin-top: 10%;">
-        <h5>Bạn cần đăng kí đồ án để có thể tham gia group <a href="{{ route('student.register') }}" style="color: blueviolet">Đăng ký đồ án</a></h5>
+        <h5>Bạn đã đăng ký đồ án <a href="{{ route('student.groupSV') }}" style="color: blueviolet">Nhóm của bạn</a></h5>
         <div class="spinner">
             <span>L</span>
             <span>O</span>

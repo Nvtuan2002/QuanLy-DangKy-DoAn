@@ -32,7 +32,7 @@
                 style="margin:0 auto; width: 60% ;box-shadow: 0px 7px 4px 0px rgba(0, 0, 0, 0.25); border: 1px solid rgba(0, 0, 0, 0.20);">
                 <ul class="row">
                     <p class="col-4">Ảnh Đại diện</p>
-                    <img class="col-8" src="{{asset('storage/image/'.$dataGroup->group_avt)}}" alt="">
+                    <img class="col-8 img" style="width: 60px; height: 60px;" src="{{asset('storage/image/'.$dataGroup->group_avt)}}" alt="">
                 </ul>
                 <ul class="row">
                     <p class="col-4">Tên nhóm: </p>
@@ -52,7 +52,7 @@
                         @foreach ($memberGroup as $item)
                             
                         <ul class="row d-flex align-items-center">
-                            <img class="col-6" src="{{asset('storage/image/'. $item->stu_avt)}}" alt="">
+                            <img class="col-6 img" src="{{asset('storage/image/'. $item->stu_avt)}}" alt="">
                             <li class="col-6">{{$item->stu_name}}</li>
                         </ul>
                         @endforeach

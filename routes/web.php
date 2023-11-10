@@ -57,12 +57,6 @@ Route::prefix('student')->name('student.')->group(function () {
 
 
 
-
-
-
-
-
-
    Route::get('/calendar', function () {
       return view('students.calendar');
    })->name('calendar');
