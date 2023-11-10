@@ -29,6 +29,9 @@ Route::prefix('student')->name('student.')->group(function () {
    Route::get('/registerProject/{p_id}/{t_id}', [TeacherController::class,'handleJoinProject'])->name('handleJoinProject');
 
    Route::get('/register_attend', [StudentController::class,'getAllGroup'])->name('register_attend');
+
+   Route::get('/register_attend/{group_id}', [StudentController::class,'handleJoinGroup'])->name('register_attend');
+
    
    Route::get('/register_create/', [StudentController::class,'getCreateGroup'])->name('register_create');
 

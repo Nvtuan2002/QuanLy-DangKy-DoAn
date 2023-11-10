@@ -37,19 +37,19 @@
                 <th style="text-align: center">Số lượng thành viên</th>
                 <th style="text-align: center">Lựa chọn</th>
             </tr>
-
         </table>
         <table class="container">
             @foreach ($allProject as $item)
-                    <tr>
-                        <td>{{ $item->t_name }}</td>
-                        <td>{{ $item->p_name }}</td>
-                        <td>{{ $item->p_request }}</td>
-                        <td>{{ $item->p_major }}</td>
-                        <td>{{ $item->p_quantity }}</td>
-                        <td><a href="{{route('student.handleJoinProject',['p_id' => $item->p_id,'t_id' => $item->t_id])}}"><button class="invite" type="submit">Tham gia nhóm</button></a>
-                        </td>
-                    </tr>
+                <tr>
+                    <td>{{ $item->t_name }}</td>
+                    <td>{{ $item->p_name }}</td>
+                    <td>{{ $item->p_request }}</td>
+                    <td>{{ $item->p_major }}</td>
+                    <td>{{ $item->p_quantity }}</td>
+                    <td><a href="{{ route('student.handleJoinProject', ['p_id' => $item->p_id, 't_id' => $item->t_id]) }}"><button
+                                class="invite" type="submit">Tham gia nhóm</button></a>
+                    </td>
+                </tr>
             @endforeach
 
         </table>
