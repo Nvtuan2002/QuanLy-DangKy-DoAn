@@ -7,11 +7,11 @@
 
 FE
 
-- chỉnh phần avt cho tròn ra 
-- chỉnh lại css trang chỉnh sửa sinh viên cho căn ra giữa và vài button
+<!-- - chỉnh phần avt cho tròn ra  -->
+<!-- - chỉnh lại css trang chỉnh sửa sinh viên cho căn ra giữa và vài button -->
 
--chỉnh trang infoStudent lúc bấm vào avt hiện ra chose file xong lúc bấm xong thì hidden cái input đấy đi chứ kh xóa
-- vẫn trang infoStudentkĩ năng cá nhân bấm vào hiện ra 4 cái input có pleader holder là kĩ năng 1234 xong bên cạnh cái input đấy có 4 cái input tương ứng để ghi %
+<!-- -chỉnh trang infoStudent lúc bấm vào avt hiện ra chose file xong lúc bấm xong thì hidden cái input đấy đi chứ kh xóa -->
+<!-- - vẫn trang infoStudentkĩ năng cá nhân bấm vào hiện ra 4 cái input có pleader holder là kĩ năng 1234 xong bên cạnh cái input đấy có 4 cái input tương ứng để ghi % -->
 
 -chỉnh lại css bảng cho nó đều cái nào dài cần dài cái nào ngắn cần ngắn của trang register attend (trang nào có bảng thì cứ chỉnh)
  ví dụ nhóm số bao nhiêu thì ngắn lại, yêu cầu thì dài ra, lựa chọn tham gia nhóm nếu fix được cho nó cố định height thì tốt 

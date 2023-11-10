@@ -17,5 +17,16 @@
 @endsection
 
 @section('content')
-    <div class="div">Ban can phai dang ki do an truoc</div>
+    <div id="loading-notJoin" style="margin-top: 10%;">
+        <h5>Yêu cầu đang được xử lý <a href="{{ route('student.register') }}" style="color: blueviolet">Đăng ký đồ án</a></h5>
+        <div class="spinner">
+            <span>L</span>
+            <span>O</span>
+            <span>A</span>
+            <span>D</span>
+            <span>I</span>
+            <span>N</span>
+            <span>G</span>
+        </div>
+    </div>
 @endsection

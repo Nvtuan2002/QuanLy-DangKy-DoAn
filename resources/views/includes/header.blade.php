@@ -11,7 +11,7 @@
 
     <!-- right -->
     <div class="info t-14 fw-700" id="userDropdown" role="button">
-        <img class="avatar" src="{{asset('storage/image/'.$img)}}" alt="">
+        <img class="avatar" src="{{asset('storage/image/'.$img)}}" alt="" style="border-radius: 50%; object-fit: cover;">
         <div class="fullname ms-2">{{$name}}</div>
         <i class="bi bi-caret-down-fill"></i>
         <ul id="userDropdownMenu">

@@ -17,10 +17,10 @@
 @endsection
 
 @section('content')
-    <form action="{{ route('student.updateInfoStudent') }}" method="POST" enctype="multipart/form-data">
+    <form class="form-infoS" action="{{ route('student.updateInfoStudent') }}" method="POST" enctype="multipart/form-data">
         @csrf
         {{-- @method('PUT') --}}
-        <div class="groups col-lg-10">
+        <div class="groups col-lg-10" style="margin: 0 auto; margin-top: 15px;">
             {{-- <img src="../img/background-primary.png" alt=""> --}}
             <nav aria-label="breadcrumb">
                 <ol class="breadcrumb">
@@ -29,14 +29,12 @@
             </nav>
             <div class="text-center">
                 <div class="info_img">
-                    <input type="file" id="file-input" style="display: none">
+                    <input type="file" id="file-input" name="img_change" style="display: none">
                     <label for="file-input">
                         <img src="{{ asset('storage/image/' . $studentData->stu_avt) }}" alt="" id="image"
                             name="stu_avt">
-                        <i class="bi bi-camera-fill"></i>
                     </label>
                 </div>
-                <input type="file" name="img_change">
                 <h5
                     style="margin-top: 10px; background: #8EACCD; padding: 3px 3px; display:inline-block; border-radius: 5px;">
                     {{ $studentDataDetail[0]->stu_name }}</h5>
@@ -81,9 +79,29 @@
                                             aria-label="Close"></button>
                                     </div>
                                     <div class="modal-body">
-                                        <div>
-                                            <label for="">Kỹ năng giao tiếp</label>
-                                            <input type="text" style="outline: none;">
+                                        <div style="text-align: start; margin-bottom: 10px;">
+                                            <label for="">Kỹ năng</label>
+                                            <input type="text" style="outline: none; width: 50%;" placeholder="Giao tiếp">
+                                            <label for="">tỷ lệ (%)</label>
+                                            <input type="text" style="outline: none; width: 20%;">
+                                        </div>
+                                        <div style="text-align: start; margin-bottom: 10px;">
+                                            <label for="">Kỹ năng</label>
+                                            <input type="text" style="outline: none; width: 50%;" placeholder="Giao tiếp">
+                                            <label for="">tỷ lệ (%)</label>
+                                            <input type="text" style="outline: none; width: 20%;">
+                                        </div>
+                                        <div style="text-align: start; margin-bottom: 10px;">
+                                            <label for="">Kỹ năng</label>
+                                            <input type="text" style="outline: none; width: 50%;" placeholder="Giao tiếp">
+                                            <label for="">tỷ lệ (%)</label>
+                                            <input type="text" style="outline: none; width: 20%;">
+                                        </div>
+                                        <div style="text-align: start; margin-bottom: 10px;">
+                                            <label for="">Kỹ năng</label>
+                                            <input type="text" style="outline: none; width: 50%;" placeholder="Giao tiếp">
+                                            <label for="">tỷ lệ (%)</label>
+                                            <input type="text" style="outline: none; width: 20%;">
                                         </div>
                                     </div>
                                     <div class="modal-footer">
@@ -101,7 +119,7 @@
 
             <div class="row justify-content-center gy-3" style="">
                 <div class="col-lg-5 col-xl-5 input_info d-flex justify-content-between" style="">
-                    <div style="width: 85%;">
+                    <div style="width: 85%; text-align: start;">
                         <label for="" style="width: 100px;">Họ và tên: </label>
                         <input type="text" value="{{ $studentDataDetail[0]->stu_name }}" disabled style="color: black">
                     </div>
@@ -109,7 +127,7 @@
 
                 </div>
                 <div class="col-lg-5 col-xl-5 input_info d-flex justify-content-between" style="">
-                    <div style="width: 85%;">
+                    <div style="width: 85%; text-align: start;">
                         <label for="" style="width: 100px;">Số điện thoại: </label>
                         <input type="text" value="0{{ $studentDataDetail[0]->stu_phone }}" disabled
                             style="color: black">
@@ -117,7 +135,7 @@
 
                 </div>
                 <div class="col-lg-5 col-xl-5 input_info d-flex justify-content-between" style="">
-                    <div style="width: 85%;">
+                    <div style="width: 85%; text-align: start;">
                         <label for="" style="width: 100px;">Email: </label>
                         <input type="text" value="{{ $studentDataDetail[0]->stu_email }}" disabled
                             style="color: black">
@@ -125,7 +143,7 @@
 
                 </div>
                 <div class="col-lg-5 col-xl-5 input_info d-flex justify-content-between" style="">
-                    <div style="width: 85%;">
+                    <div style="width: 85%; text-align: start;">
                         <label for="" style="width: 100px;">Ngày Sinh: </label>
                         <input type="date" value="{{ $studentDataDetail[0]->stu_born }}" disabled
                             style="color: black">
@@ -133,7 +151,7 @@
 
                 </div>
                 <div class="col-lg-5 col-xl-5 input_info d-flex justify-content-between" style="">
-                    <div style="width: 85%;">
+                    <div style="width: 85%; text-align: start;">
                         <label for="" style="width: 100px;">Khoa: </label>
                         <input type="text" value="{{ $studentDataDetail[0]->stu_major }}" disabled
                             style="color: black">
@@ -141,7 +159,7 @@
 
                 </div>
                 <div class="col-lg-5 col-xl-5 input_info d-flex justify-content-between" style="height: 41px;">
-                    <div style="width: 85%;">
+                    <div style="width: 85%; text-align: start;">
                         <label for="" style="width: 100px;">NickName: </label>
                         <input type="text" value="{{ $studentDataDetail[0]->stu_nickname }}" disabled
                             style="color: black">
@@ -152,24 +170,36 @@
                 </div>
             </div>
         </div>
-        <button type="submit">Cập nhật</button>
+        <button class="accept" type="submit">Cập nhật</button>
     </form>
 
 @endsection
 @section('js')
 
     <script>
-        const input = document.querySelector('input');
+        const input = document.querySelector('input[name="img_change"]');
         const image = document.getElementById('image');
 
+        const allowedFileTypes = ['image/jpeg', 'image/png', 'image/gif'];
+
         input.addEventListener('change', () => {
-            if (input.files && input.files[0]) {
+            if (input.files && input.files.length > 0) {
+                const file = input.files[0];
+                const fileType = file.type;
+
+                if (!allowedFileTypes.includes(fileType)) {
+                    return;
+                }
+
                 const reader = new FileReader();
 
                 reader.onload = function(e) {
-                    image.src = e.target.result;
+                    setTimeout(() => {
+                        image.src = e.target.result;
+                    }, 100);
                 };
-                reader.readAsDataURL(input.files[0]);
+
+                reader.readAsDataURL(file);
             }
         });
 
