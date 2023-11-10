@@ -29,30 +29,16 @@
             <h5>Lựa chọn</h5>
         </div>
         <div style="min-height: 360px;">
+            @foreach ($dataStudentRequest as $item)
+                
             <div class="d-flex list_request">
-                    <p>Hoàng Hải Long</p>
+                    <p>{{$item->stu_name}}</p>
                     <i class="bi bi-box-arrow-up-right"></i>
-                    <button class="accept">Duyệt</button>
-                    <button class="reject">Từ chối</button>
+                    <button class="accept"><a href="{{route('student.handleRequestJoinGroup_accept',['id'=>$item->stu_id,'status'=> 1])}}">Duyệt</a></button>
+                    <button class="reject"><a href="{{route('student.handleRequestJoinGroup_accept',['id'=>$item->stu_id,'status'=> 2])}}">Từ chối</a></button>
             </div>
-            <div class="d-flex list_request">
-                    <p>Hoàng Hải Long</p>
-                    <i class="bi bi-box-arrow-up-right"></i>
-                    <button class="accept">Duyệt</button>
-                    <button class="reject">Từ chối</button>
-            </div>
-            <div class="d-flex list_request">
-                    <p>Hoàng Hải Long</p>
-                    <i class="bi bi-box-arrow-up-right"></i>
-                    <button class="accept">Duyệt</button>
-                    <button class="reject">Từ chối</button>
-            </div>
-            <div class="d-flex list_request">
-                    <p>Hoàng Hải Long</p>
-                    <i class="bi bi-box-arrow-up-right"></i>
-                    <button class="accept">Duyệt</button>
-                    <button class="reject">Từ chối</button>
-            </div>
+            @endforeach
+            
             
         </div>
         <div class="d-flex justify-content-center mt-5">

@@ -19,7 +19,14 @@ FE
 
  <!-- - tạo 1 trang đang gửi yêu cầu vào erorrbalde (cái này dùng chung) cứ cho nó quay quay ghi là đang gửi yêu cầu là kê -->
 
+-trang group SV đang bị lỗi độ dài độ rộng ảnh  ảnh do không có khung để chứa ảnh ô điểm đánh giá chỉnh lại cho cái phần ngày đánh giá dài ra
+- in đậm cái ngày và giờ của phần thông báo giảng viên
 
+- chỉnh lại phần avt của thành viên trong trang groupSV detail
+
+- chỉnh lại phần hiển thị file trong group sv update và chỉnh lại ô nhập tiêu đề trong chỗ thêm file mới
+
+- làm 1 trrang bạn đã dăng kí đồ án vào phần error
 
 
 BE

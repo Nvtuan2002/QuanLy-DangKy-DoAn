@@ -32,27 +32,27 @@
                 style="margin:0 auto; width: 60% ;box-shadow: 0px 7px 4px 0px rgba(0, 0, 0, 0.25); border: 1px solid rgba(0, 0, 0, 0.20);">
                 <ul class="row">
                     <p class="col-4">Ảnh Đại diện</p>
-                    <img class="col-8" src="{{asset('./img/avatar-groups.png')}}" alt="">
+                    <img class="col-8" src="{{asset('storage/image/'.$dataGroup->group_avt)}}" alt="">
                 </ul>
                 <ul class="row">
                     <p class="col-4">Tên nhóm: </p>
-                    <p class="col-8">{{$infoGroup[0]->group_name}}</p>
+                    <p class="col-8">{{$dataGroup->group_name}}</p>
                 </ul>
                 <ul class="row">
                     <p class="col-4">Tên đề tài: </p>
-                    <p class="col-8">{{$infoGroup[0]->p_name}}</p>
+                    <p class="col-8">{{$dataGroup->p_name}}</p>
                 </ul>
                 <ul class="row">
                     <p class="col-4">Giảng Viên: </p>
-                    <p class="col-8">{{$infoGroup[0]->t_name}}</p>
+                    <p class="col-8">{{$dataGroup->t_name}}</p>
                 </ul>
                 <ul class="row">
                     <p class="col-4">Thành viên nhóm: </p>
                     <div class="col-8">
-                        @foreach ($infoGroup as $item)
+                        @foreach ($memberGroup as $item)
                             
                         <ul class="row d-flex align-items-center">
-                            <img class="col-6" src="{{asset('./img/avatar.png')}}" alt="">
+                            <img class="col-6" src="{{asset('storage/image/'. $item->stu_avt)}}" alt="">
                             <li class="col-6">{{$item->stu_name}}</li>
                         </ul>
                         @endforeach
@@ -61,7 +61,7 @@
                 </ul>
                 <ul class="row">
                     <p class="col-4">Nhóm số: </p>
-                    <p class="col-8">{{$infoGroup[0]->group_number}}</p>
+                    <p class="col-8">{{$dataGroup->group_number}}</p>
                 </ul>
                 <ul class="row">
                     <p class="col-4">Điểm số trung bình: </p>

@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Nov 10, 2023 at 04:13 AM
+-- Generation Time: Nov 10, 2023 at 04:50 PM
 -- Server version: 10.4.24-MariaDB
 -- PHP Version: 8.1.4
 
@@ -61,7 +61,7 @@ INSERT INTO `group_rate` (`rate_id`, `group_id`, `rate_noti`, `rate_score`, `cre
 (1, 1, 'Can hoan thien tot hon', 10, '2023-11-14 07:58:58', '0000-00-00 00:00:00'),
 (2, 2, 'tuan can cham chi hon', 9, NULL, NULL),
 (3, 2, NULL, NULL, NULL, NULL),
-(4, 1, 'hoàn thành đi', 7, '0000-00-00 00:00:00', NULL);
+(4, 1, 'hoàn thành đi', 7, '2023-11-09 09:11:41', NULL);
 
 -- --------------------------------------------------------
 
@@ -187,8 +187,21 @@ CREATE TABLE `storage_file` (
   `group_id` int(11) NOT NULL,
   `file` text COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
-  `updated_at` timestamp NULL DEFAULT NULL
+  `updated_at` timestamp NULL DEFAULT NULL,
+  `file_title` text COLLATE utf8mb4_unicode_ci NOT NULL,
+  `stu_id` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Dumping data for table `storage_file`
+--
+
+INSERT INTO `storage_file` (`storage_id`, `group_id`, `file`, `created_at`, `updated_at`, `file_title`, `stu_id`) VALUES
+(1, 1, '1234.jpg', '2023-11-10 06:32:52', NULL, 'file1', 1),
+(2, 1, '3.jpg', '2023-11-10 06:33:26', NULL, 'file2', 1),
+(3, 1, 'Báo-cáo-web-nâng-cao.docx', '2023-11-10 06:39:22', NULL, 'this is third time test', 1),
+(4, 1, 'Giáo trình Tư tưởng Hồ Chí Minh 2017.pdf', '2023-11-10 06:49:28', NULL, 'file test 4', 1),
+(5, 1, 'Báo-cáo-ĐACS.pdf', '2023-11-10 07:25:39', NULL, 'fiel thu 5', 4);
 
 -- --------------------------------------------------------
 
@@ -213,19 +226,20 @@ CREATE TABLE `student` (
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL,
   `p_id` int(11) DEFAULT NULL,
-  `t_id` int(11) DEFAULT NULL
+  `t_id` int(11) DEFAULT NULL,
+  `stu_leader` int(11) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
 -- Dumping data for table `student`
 --
 
-INSERT INTO `student` (`stu_id`, `stu_password`, `stu_avt`, `stu_desc`, `stu_name`, `stu_phone`, `stu_major`, `stu_email`, `stu_nickname`, `stu_born`, `stu_status`, `role`, `group_id`, `created_at`, `updated_at`, `p_id`, `t_id`) VALUES
-(1, '123456', 'avatar.png', 'longhoang', 'Hoang hai Long', 90764536, 'CNTT', 'long@gmail.com', 'Longhoang', '2002-09-19', '2', '0', 1, NULL, NULL, 2, 1),
-(3, 'tuannguyen', 'tuan.jpg', 'haha', 'Nguyen Viet Tuan', 87989793, 'CNTT', 'tuan@gmail.com', 'tuan so vo', '2002-09-03', '2', '0', 2, NULL, NULL, 2, 1),
-(4, '123456', '3.jpg', 'day la nguio thu 3', 'Hoang duc huy', 9727189, 'CNTT', 'huy@gmail.com', 'huy xinh', '2002-09-18', '2', '0', 1, NULL, NULL, 3, 2),
-(5, '123456', '123.jpg', 'khog co gi ', 'Bui Khanh Huyen', 0, 'CNTT', 'huyen@gmail.com', 'huynn', '2002-09-18', '2', '0', NULL, NULL, NULL, 3, 2),
-(6, '123456', '1', 'hong ngoc day', 'Đỗ Hồng Ngọc', 987290872, 'CNTT', 'ngoc@gmail.com', 'HOng Ngoc', '2002-09-18', '2', '0', NULL, NULL, NULL, 1, 1);
+INSERT INTO `student` (`stu_id`, `stu_password`, `stu_avt`, `stu_desc`, `stu_name`, `stu_phone`, `stu_major`, `stu_email`, `stu_nickname`, `stu_born`, `stu_status`, `role`, `group_id`, `created_at`, `updated_at`, `p_id`, `t_id`, `stu_leader`) VALUES
+(1, '123456', 'avatar.png', 'longhoang', 'Hoang hai Long', 90764536, 'CNTT', 'long@gmail.com', 'Longhoang', '2002-09-19', '4', '0', 1, NULL, NULL, 2, 1, 1),
+(3, 'tuannguyen', 'tuan.jpg', 'haha', 'Nguyen Viet Tuan', 87989793, 'CNTT', 'tuan@gmail.com', 'tuan so vo', '2002-09-03', '2', '0', 2, NULL, NULL, 2, 1, 1),
+(4, '123456', '3.jpg', 'day la nguio thu 3', 'Hoang duc huy', 9727189, 'CNTT', 'huy@gmail.com', 'huy xinh', '2002-09-18', '4', '0', 1, NULL, NULL, 2, 1, NULL),
+(5, '123456', '123.jpg', 'khog co gi ', 'Bui Khanh Huyen', 0, 'CNTT', 'huyen@gmail.com', 'huynn', '2002-09-18', '4', '0', 11, NULL, NULL, 2, 1, 1),
+(6, '123456', '1', 'hong ngoc day', 'Đỗ Hồng Ngọc', 987290872, 'CNTT', 'ngoc@gmail.com', 'HOng Ngoc', '2002-09-18', '3', '0', 3, NULL, NULL, 3, 2, NULL);
 
 -- --------------------------------------------------------
 
@@ -256,7 +270,13 @@ INSERT INTO `student_group` (`group_id`, `group_leader`, `group_avt`, `group_nam
 (2, 'Nguyen tuan', '123', 'Day la group cua tuan', 2, 1, 2, NULL, NULL, 'cần 1 bạn gánh mình hết', 1),
 (3, 'cao thạch đức mạnh', '1', 'Đây là group của mạnh', 3, 2, 1, NULL, NULL, 'giỏi tiếng anh', 1),
 (4, 'Bùi Khánh Huyền', '295828443_1464870653947887_1934853230498165422_n.png', 'nhóm khoogn cần biết', 2, 1, 3, NULL, NULL, 'Cần lắm 1 be', 2),
-(5, 'Bùi Khánh Huyền2', 'fgbdr.jpg', 'nhóm nát', 2, 1, 4, NULL, NULL, 'Cần anh mạnh đz', 2);
+(5, 'Bùi Khánh Huyền2', 'fgbdr.jpg', 'nhóm nát', 2, 1, 4, NULL, NULL, 'Cần anh mạnh đz', 2),
+(6, 'Bùi Khánh Huyền', '1234.jpg', 'nhóm nát bét', 2, 1, 5, NULL, NULL, 'Cần lắm 1 ádfasdfasd', 3),
+(7, 'Bùi Khánh Huyền', '3.jpg', 'nhóm nátasdfasdf', 2, 1, 6, NULL, NULL, 'Cần lắm 1 be', 3),
+(8, 'Bùi Khánh Huyền', '1234.jpg', 'asdf', 2, 1, 7, NULL, NULL, 'asdf', 1),
+(9, 'Bùi Khánh Huyền', '1234.jpg', 'asdf', 2, 1, 7, NULL, NULL, 'asdf', 1),
+(10, 'Bùi Khánh Huyền', '1234.jpg', 'asdf', 2, 1, 7, NULL, NULL, 'asdf', 1),
+(11, 'Bùi Khánh Huyền', '1234.jpg', 'asdf', 2, 1, 7, NULL, NULL, 'asdf', 1);
 
 -- --------------------------------------------------------
 
@@ -266,7 +286,7 @@ INSERT INTO `student_group` (`group_id`, `group_leader`, `group_avt`, `group_nam
 
 CREATE TABLE `student_skill` (
   `stu_skill_id` int(10) UNSIGNED NOT NULL,
-  `stu_id` int(11) NOT NULL,
+  `stu_id` int(11) DEFAULT NULL,
   `stu_skill` text COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `stu_skill_detail` int(11) DEFAULT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
@@ -465,7 +485,7 @@ ALTER TABLE `project`
 -- AUTO_INCREMENT for table `storage_file`
 --
 ALTER TABLE `storage_file`
-  MODIFY `storage_id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT;
+  MODIFY `storage_id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT for table `student`
@@ -477,7 +497,7 @@ ALTER TABLE `student`
 -- AUTO_INCREMENT for table `student_group`
 --
 ALTER TABLE `student_group`
-  MODIFY `group_id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `group_id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
 
 --
 -- AUTO_INCREMENT for table `student_skill`

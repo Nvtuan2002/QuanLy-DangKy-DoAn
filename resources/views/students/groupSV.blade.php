@@ -18,6 +18,7 @@
 
 @section('content')
     <div class="groups col-lg-10">
+        
         <img src="{{ asset('../img/background-primary.png') }}" alt="">
         <nav aria-label="breadcrumb">
             <ol class="breadcrumb">
@@ -26,9 +27,9 @@
         </nav>
         <div class="d-flex justify-content-between">
             <div class="alert" style="padding: unset">
-                <p class="fw-bold">Chào mừng, {{ $dataGroup->stu_name }}</p>
+                <p class="fw-bold">Chào mừng, {{ $studentData->stu_name }}</p>
                 <p class="">Thông báo của giảng viên: </p>
-                <p class="">15/10/2023 9:54PM: {{ $dataGroup->rate_noti }}</p>
+                <p class="">{{$dataNotiGroup[0]->created_at}} : {{$dataNotiGroup[0]->rate_noti }}</p>
             </div>
             <div class="d-flex flex-column me-5 align-items-end">
                 <button class="cancel mb-4 ">Rời nhóm</button>
@@ -36,19 +37,17 @@
             </div>
         </div>
         <div class="mx-3 row">
-            <div class="col-lg-8 col-sm-12 history-update">
-                <p><img class="avatar me-4" src="{{ asset('./img/avatar-groups.png') }}"
+            <div class="col-lg-8 col-sm-12 history-update">   
+                <p>
+                    <img class="avatar me-4" src="{{asset('storage/image/'.$dataGroup->group_avt)}}" style="height: 20px; width:20px"
                         alt="Avatar groups">{{ $dataGroup->group_name }}</p>
                 <p class="fw-bold"><i class="bi bi-clock-history"></i>Lịch sử cập nhật</p>
                 <ul>
-                    <li><i class="bi bi-file-earmark-arrow-up"></i>Hoàng Hải Long đã tải lên file abc.pdf</li>
-                    <li><i class="bi bi-file-earmark-arrow-up"></i>Hoàng Hải Long đã tải lên file abc.pdf</li>
-                    <li><i class="bi bi-file-earmark-arrow-up"></i>Hoàng Hải Long đã tải lên file abc.pdf</li>
-                    <li><i class="bi bi-file-earmark-arrow-up"></i>Hoàng Hải Long đã tải lên file abc.pdf</li>
-                    <li><i class="bi bi-file-earmark-arrow-up"></i>Hoàng Hải Long đã tải lên file abc.pdf</li>
-                    <li><i class="bi bi-file-earmark-arrow-up"></i>Hoàng Hải Long đã tải lên file abc.pdf</li>
-                    <li><i class="bi bi-file-earmark-arrow-up"></i>Hoàng Hải Long đã tải lên file abc.pdf</li>
-                    <li><i class="bi bi-file-earmark-arrow-up"></i>Hoàng Hải Long đã tải lên file abc.pdf</li>
+                    @foreach ($dataUpdateFile as $item)
+
+                    <li><i class="bi bi-file-earmark-arrow-up"></i>{{$item->stu_name}} đã tải lên {{$item->file}}</li>
+                        
+                    @endforeach
                 </ul>
                 <div class="d-flex flex-wrap justify-content-center" style="width: 420px; gap: 20px 40px;">
                     <a class="request" href="{{ route('student.groupSV_update') }}">Cập nhật tiến độ nhóm</a>
@@ -63,14 +62,13 @@
                         <td>Ngày</td>
                         <td>Điểm đánh giá</td>
                     </tr>
+                    @foreach ($dataNotiGroup as $item)
                     <tr>
-                        <td>15/10/2023</td>
-                        <td>{{$dataGroup->rate_score}}</td>
+                        <td>{{$item->created_at}}</td>
+                        <td>{{$item->rate_score}}</td>
                     </tr>
-                    <tr>
-                        <td>15/10/2023</td>
-                        <td>10</td>
-                    </tr>
+                    @endforeach
+                    
                 </table>
             </div>
         </div>

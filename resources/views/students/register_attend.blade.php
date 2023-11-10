@@ -3,14 +3,14 @@
 
 
 @section('header')
-    @include('includes.header',[
+    @include('includes.header', [
         'name' => $studentData->stu_name,
-        'img' => $studentData->stu_avt
+        'img' => $studentData->stu_avt,
     ])
 @endsection
 
 @section('css')
-    <link rel="stylesheet" href="{{asset('css/style.css')}}">
+    <link rel="stylesheet" href="{{ asset('css/style.css') }}">
 @endsection
 
 @section('sidebar')
@@ -34,7 +34,7 @@
             </div>
         </div>
         <div class="register_attend m-2">
-            <h5 style="float: right;">Giảng viên: {{$allGroup[0]->t_name}}</h5>
+            <h5 style="float: right;">Giảng viên: {{ $allGroup[0]->t_name }}</h5>
             <table class="container">
                 <tr>
                     <th style="text-align: center">Tên nhóm</th>
@@ -48,17 +48,19 @@
             </table>
             <table class="container">
                 @foreach ($allGroup as $item)
-                <tr>
-                    <td>{{$item->group_name}}</td>
-                    <td>{{$item->group_leader}}</td>
-                    <td>{{$item->p_name}}</td>
-                    <td>{{$item->group_request}}</td>
-                    <td>{{$item->group_number}}</td>
-                    <td>{{$item->group_quantity}}</td>
-                    <td><button class="invite" href="{{ route('student.register') }}">Tham gia nhóm</button></td>
-                </tr>
+                    <tr>
+                        <td>{{ $item->group_name }}</td>
+                        <td>{{ $item->group_leader }}</td>
+                        <td>{{ $item->p_name }}</td>
+                        <td>{{ $item->group_request }}</td>
+                        <td>{{ $item->group_number }}</td>
+                        <td>{{ $item->group_quantity }}</td>
+                        <td><a href="{{ route('student.requestJoinGroup', ['group_id' => $item->group_id]) }}"><button
+                                    class="invite" type="submit">Tham gia nhóm</button></a>
+                        </td>
+                    </tr>
                 @endforeach
-               
+
             </table>
             <div class="d-flex justify-content-around">
                 <div class="d-flex justify-content-center mt-5">
@@ -74,7 +76,7 @@
         document.addEventListener('DOMContentLoaded', function() {
             var loading = document.getElementById('loading');
             var register_attend = document.querySelector('.register_attend');
-            var a = {{$studentData->stu_status}};
+            var a = {{ $studentData->stu_status }};
             if (a == 1) {
                 loading.style.display = 'block';
                 register_attend.style.display = 'none';

@@ -26,9 +26,9 @@
         </nav>
         <div class="d-flex justify-content-between">
             <div class="alert">
-                <p class="fw-bold">Chào mừng, Hoàng Hải Long</p>
+                <p class="fw-bold">Chào mừng, {{$studentData->stu_name}}</p>
                 <p class="">Thông báo của giảng viên: </p>
-                <p class="">15/10/2023 9:54PM: Nhóm cần hoàn thành chi tiết hơn</p>
+                <p class="">{{$dataNotiGroup[0]->created_at}} : {{$dataNotiGroup[0]->rate_noti }}</p>
             </div>
             <div class="d-flex flex-column me-5 align-items-end">
                 <button class="cancel mb-4 ">Rời nhóm</button>
@@ -46,35 +46,50 @@
                     </button>
 
                     <!-- Modal -->
-                    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel"
-                        aria-hidden="true">
-                        <div class="modal-dialog">
-                            <div class="modal-content" style="top: 20vh">
-                                <div class="modal-header">
-                                    <h1 class="modal-title fs-5" id="exampleModalLabel">Thêm file</h1>
-                                    <button type="button" class="btn-close" data-bs-dismiss="modal"
-                                        aria-label="Close"></button>
-                                </div>
-                                <div class="modal-body">
-                                    <input type="file" class="form-control" id="dokumen" required="">
-                                </div>
-                                <div class="modal-footer">
-                                    <button type="button" class="btn comeback" data-bs-dismiss="modal">Quay
-                                        lại</button>
-                                    <button type="button" class="btn request">Cập nhật</button>
+
+                    <form action="" method="POST" enctype="multipart/form-data">
+                        @csrf
+                        <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel"
+                            aria-hidden="true">
+                            <div class="modal-dialog">
+                                <div class="modal-content" style="top: 20vh">
+                                    <div class="modal-header">
+                                        <h1 class="modal-title fs-5" id="exampleModalLabel">Thêm file</h1>
+                                        <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                            aria-label="Close"></button>
+                                    </div>
+                                    <div class="modal-body">
+                                        <input type="text" placeholder="Nhập tiêu đề" name="file_title">
+                                        <input type="file" class="form-control" id="dokumen" required="" name="file_upload">
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button type="button" class="btn comeback" data-bs-dismiss="modal">Quay
+                                            lại</button>
+                                        <button type="submit" class="btn request">Cập nhật</button>
+                                    </div>
                                 </div>
                             </div>
                         </div>
-                    </div>
+                    </form>
                 </div>
             </div>
             <div>
                 <ul>
-                    <li><i class="bi bi-file-earmark-arrow-up-fill"></i>longhoang.pdf</li>
-                    <li><i class="bi bi-file-earmark-arrow-up-fill"></i>longhoang.pdf</li>
-                    <li><i class="bi bi-file-earmark-arrow-up-fill"></i>longhoang.pdf</li>
-                    <li><i class="bi bi-file-earmark-arrow-up-fill"></i>longhoang.pdf</li>
-                    <li><i class="bi bi-file-earmark-arrow-up-fill"></i>longhoang.pdf</li>
+                    @foreach ($dataFile as $item)
+                    <li>
+                        <div style="display: flex; justify-content:space-between">
+                            
+                            <a href="{{asset('storage/file/'.$item->file)}}" target=”_blank” > <i class="bi bi-file-earmark-arrow-up-fill"></i>{{$item->file}}</a>
+                            <a href="{{route('student.dowload',['file_name' => $item->file])}}"><i class="fa-solid fa-download"></i>Tải xuống</a>
+                            <p>{{$item->file_title}}</p>
+                            <p>{{$item->created_at}}</p>
+                            
+
+                        </div>
+                    </li>
+                        
+                    @endforeach
+                    
                 </ul>
             </div>
         </div>

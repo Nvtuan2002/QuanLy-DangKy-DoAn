@@ -8,17 +8,25 @@ use App\Models\Teacher;
 
 use App\Models\Student;
 
+use App\Models\Status;
+
+
 
 class TeacherController extends Controller
 {
     private $teacher;
     private $student;
+    private $changeStatus;
+
 
     public function __construct()
     {
         $this->teacher = new Teacher();
 
         $this->student = new Student();
+
+        $this->changeStatus = new Status();
+
     }
 
     public function getAllProject()
@@ -54,7 +62,10 @@ class TeacherController extends Controller
 
         // dd($p_id);
 
-        $this->teacher->changeStatus($id, 1, $p_id, $t_id);
+        // $this->teacher->changeStatus($id, 1, $p_id, $t_id);
+
+        $this->changeStatus->changeStatus1($id,$p_id, $t_id);
+
 
         return back();
         // dd($this->student->getDataStudent($id)[0]->stu_status);
