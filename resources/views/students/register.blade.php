@@ -48,6 +48,8 @@
                     <td>{{ $item->p_quantity }}</td>
                     <td><a href="{{ route('student.handleJoinProject', ['p_id' => $item->p_id, 't_id' => $item->t_id]) }}"><button
                                 class="invite" type="submit">Tham gia nhóm</button></a>
+
+                        
                     </td>
                 </tr>
             @endforeach

@@ -35,7 +35,7 @@ Route::prefix('student')->name('student.')->group(function () {
    
    Route::get('/register_create/', [StudentController::class,'getCreateGroup'])->name('register_create');
 
-   Route::post('/register_create', [StudentController::class,'handleCreateGroup'])->name('handle_create');
+   // Route::post('/register_create', [StudentController::class,'handleCreateGroup'])->name('handle_create');
 
 
 
