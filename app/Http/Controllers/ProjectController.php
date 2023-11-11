@@ -67,9 +67,7 @@ class ProjectController extends Controller
         $p_quantity = $request->p_quantity;
         
         $this->project->createNewProject($t_id, $p_name,$p_request,$p_major, $p_quantity);
-
-
-
-
     }
+
+    
 }

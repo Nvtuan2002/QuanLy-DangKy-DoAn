@@ -57,15 +57,11 @@ Route::prefix('student')->name('student.')->group(function () {
    Route::get('/handleRequest/{id}/{status}', [HandleRequest::class,'handleRequestJoinGroup'])->name('handleRequestJoinGroup_accept');
 
 
+   Route::get('/contact', [StudentController::class,'showChat'])->name('contact');
 
 
-   Route::get('/calendar', function () {
-      return view('students.calendar');
-   })->name('calendar');
+   Route::get('/calendar', [StudentController::class,'getCalender'])->name('calendar');
 
-   Route::get('/contact', function () {
-      return view('students.contact');
-   })->name('contact');
 
 
    Route::get('/infoTeacher', function () {
@@ -102,11 +98,19 @@ Route::prefix('teacher')->name('teacher.')->group(function () {
 
    Route::get('/monitor_group/{group_id}', [TeacherController::class,'observeGroup'])->name('monitor_group');
 
+   Route::post('/set_noti/{group_id}', [TeacherController::class,'setNotification'])->name('set_noti');
+
+   Route::post('/set_meeting/{group_id}', [TeacherController::class,'setMeeting'])->name('set_meeting');
+
+   Route::get('/contact', [TeacherController::class,'showChat'])->name('teacherChat');
+
+   Route::post('/contact/{group_id}', [TeacherController::class,'showChatGroup'])->name('handleChat');
+
+
+
    Route::get('/calendar', function () {
       return view('teachers.calendar');
    })->name('calendar');
 
-   Route::get('/contact', function () {
-      return view('teachers.contact');
-   })->name('contact');
+
 });

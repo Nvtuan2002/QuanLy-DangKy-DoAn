@@ -12,6 +12,9 @@ use App\Models\Status;
 
 use App\Models\File;
 
+use App\Models\Notification;
+
+
 
 
 
@@ -21,6 +24,8 @@ class TeacherController extends Controller
     private $student;
     private $changeStatus;
     private $file;
+    private $notification;
+
 
 
     public function __construct()
@@ -32,6 +37,9 @@ class TeacherController extends Controller
         $this->changeStatus = new Status();
 
         $this->file = new File();
+
+        $this->notification = new Notification();
+
 
 
     }
@@ -149,6 +157,47 @@ class TeacherController extends Controller
 
 
         return view('teachers.monitor_group',compact('dataTeacher','dataGroup','memberGroup','dataFile'));
+    }
+
+    public function setNotification(Request $request,$group_id){
+        $set_noti = $request->long;
+
+        $this->notification->setNotificationGroup($group_id,$set_noti);
+
+        return back();
+        // dd($group_id);
+    }
+
+    public function setMeeting(Request $request,$group_id){
+        
+        $date_meeting = $request->date('date')->format('d-m-Y') ;
+        $stime_meeting = $request->date('stime')->format('H-i-s');
+        $etime_meeting = $request->date('etime')->format('H-i-s');
+
+        
+        $this->notification->setMeeting($group_id,$date_meeting,$stime_meeting,$etime_meeting);
+
+        return back();
+        // dd($etime_meeting);
+    }
+
+    public function showChat (){
+        $t_id = session('t_id');
+
+        $dataTeacher = $this->teacher->getDataTeacher($t_id);
+
+        $dataTeacher =  $dataTeacher[0];
+
+        $dataGroup = $this->notification->getDataGroupTeacher($t_id);
+
+        // dd($dataGroup);
+
+        return view('teachers.contact',compact('dataTeacher','dataGroup'));
+
+    }
+
+    public function showChatGroup(){
+        
     }
 
 

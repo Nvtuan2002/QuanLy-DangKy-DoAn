@@ -121,4 +121,14 @@ class StudentController extends Controller
         //     else{
         //     }
     }
+
+    public function getCalender(){
+        $id = session('id');
+
+        $studentData = $this->student->getDataStudent($id);
+
+        $studentData = $studentData[0];
+
+        return view('students.calendar',compact('studentData'));
+    }
 }

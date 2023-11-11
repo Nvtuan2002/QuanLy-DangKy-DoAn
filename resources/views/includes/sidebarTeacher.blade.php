@@ -32,7 +32,7 @@
             </a>
         </li>
         <li>
-            <a href="{{ route('teacher.contact') }}" class="nav-link link-body-emphasis">
+            <a href="{{ route('teacher.teacherChat') }}" class="nav-link link-body-emphasis">
                 <i class="bi bi-chat-dots"></i>
                 Chat với sinh viên
             </a>
@@ -86,7 +86,7 @@
                 </a>
             </li>
             <li>
-                <a href="{{ route('teacher.contact') }}" class="nav-link link-body-emphasis">
+                <a href="{{ route('teacher.teacherChat') }}" class="nav-link link-body-emphasis">
                     <i class="bi bi-chat-dots"></i>
                     Chat với sinh viên
                 </a>

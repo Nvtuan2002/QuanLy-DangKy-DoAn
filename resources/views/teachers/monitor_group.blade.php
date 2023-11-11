@@ -15,7 +15,7 @@
 @endsection
 
 @section('sidebar')
-    @include('includes.sidebar')
+    @include('includes.sidebarTeacher')
 @endsection
 
 @section('content')
@@ -84,31 +84,34 @@
                 <div class="modal fade" id="staticBackdrop1" data-bs-backdrop="static" data-bs-keyboard="false"
                     tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
                     <div class="modal-dialog">
-                        <div class="modal-content">
-                            <div class="modal-header">
-                                <h1 class="modal-title fs-5" id="staticBackdropLabel">Chọn ngày họp</h1>
-                                <button type="button" class="btn-close" data-bs-dismiss="modal"
-                                    aria-label="Close"></button>
+                        <form action="{{route('teacher.set_meeting',['group_id'=> $dataGroup->group_id])}}" method="post">
+                            @csrf
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h1 class="modal-title fs-5" id="staticBackdropLabel">Chọn ngày họp</h1>
+                                    <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                        aria-label="Close"></button>
+                                </div>
+                                <div class="modal-body">
+                                    
+                                        <div class="mb-4">
+                                            <label for="meeting-date" class="col-form-label">Chọn ngày họp</label>
+                                            <input type="date" name="date" id="meeting-date" style="outline: none;">
+                                        </div>
+                                        <div class="mb-4">
+                                            <label for="start-time" class="col-form-label">Chọn giờ họp</label>
+                                            <input type="time" name="stime" id="start-time" style="outline: none;">
+                                            <i class="bi bi-chevron-double-right"></i>
+                                            <input type="time" name="etime" id="end-time" style="outline: none;">
+                                        </div>
+                                    
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                                    <button type="submit" class="request">Đưa ra lịch họp</button>
+                                </div>
                             </div>
-                            <div class="modal-body">
-                                <form id="meeting-form">
-                                    <div class="mb-4">
-                                        <label for="meeting-date" class="col-form-label">Chọn ngày họp</label>
-                                        <input type="date" name="meeting-date" id="meeting-date" style="outline: none;">
-                                    </div>
-                                    <div class="mb-4">
-                                        <label for="start-time" class="col-form-label">Chọn giờ họp</label>
-                                        <input type="time" name="start-time" id="start-time" style="outline: none;">
-                                        <i class="bi bi-chevron-double-right"></i>
-                                        <input type="time" name="end-time" id="end-time" style="outline: none;">
-                                    </div>
-                                </form>
-                            </div>
-                            <div class="modal-footer">
-                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                                <button type="button" class="request">Đưa ra lịch họp</button>
-                            </div>
-                        </div>
+                        </form>
                     </div>
                 </div>
                 {{-- Modal Meeting --}}
@@ -116,21 +119,23 @@
                     tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
                     <div class="modal-dialog">
                         <div class="modal-content">
-                            <div class="modal-header">
-                                <h1 class="modal-title fs-5" id="staticBackdropLabel">Đặt Thông báo</h1>
-                                <button type="button" class="btn-close" data-bs-dismiss="modal"
-                                    aria-label="Close"></button>
-                            </div>
-                            <div class="modal-body">
-                                <form id="meeting-form">
-                                    <textarea name="" id="" cols="61" rows="5"
-                                        placeholder="Hãy đưa ra một vài thông báo cho nhóm ...." style="outline: none;"></textarea>
-                                </form>
-                            </div>
-                            <div class="modal-footer">
-                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                                <button type="button" class="request">Đưa ra thông báo</button>
-                            </div>
+                            <form action="{{route('teacher.set_noti',['group_id'=>$dataGroup->group_id])}}" method="POST">
+                                @csrf
+                                <div class="modal-header">
+                                    <h1 class="modal-title fs-5" id="staticBackdropLabel">Đặt Thông báo</h1>
+                                    <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                        aria-label="Close"></button>
+                                </div>
+                                <div class="modal-body">
+                                        <textarea id="" cols="61" rows="5"
+                                            placeholder="Hãy đưa ra một vài thông báo cho nhóm ...." style="outline: none;" name="long"></textarea>
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                                    <button type="submit" class="request">Đưa ra thông báo</button>
+                                </div>
+
+                            </form>
                         </div>
                     </div>
                 </div>

@@ -27,14 +27,17 @@
         </nav>
         <div class="container row justify-content-around">
             <div class="contact col-lg-8 col-sm-12">
+            <form action="" method="post">
+                @csrf
                 <div class="messenger-header">
                     <select name="" id="" style="background-color: unset; border: none; outline: none;">
-                        <option value="">Nhóm 1</option>
-                        <option value="">Nhóm 2</option>
-                        <option value="">Nhóm 3</option>
-                        <option value="">Nhóm 4</option>
+                        @foreach ($dataGroup as $item)
+                        <option value="{{$item->group_id}}">Nhóm {{$item->group_number}} </option>
+                        @endforeach
                     </select>
+                    <button type="submit">Truy cập</button>
                 </div>
+            </form>
                 <div class="messenger-body">
                     <div>
                         <img src="{{ asset('./img/avatar.png') }}" alt="">
