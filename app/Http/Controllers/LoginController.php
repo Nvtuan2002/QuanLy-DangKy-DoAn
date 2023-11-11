@@ -50,7 +50,7 @@ class LoginController extends Controller
         }
         elseif(!empty($dataDB1[0])){
             $request->session()->put('role',$dataDB1[0]->role);
-            $request->session()->put('id',$dataDB1[0]->t_id);
+            $request->session()->put('t_id',$dataDB1[0]->t_id);
             // dd(session('role'));
             return redirect()->route('teacher.TE_dashboard');
         }

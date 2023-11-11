@@ -30,4 +30,13 @@ class File extends Model
             ->where('group_id', '=', $group_id)
             ->get();
     }
+
+    public function getAllDataFile($group_id)
+    {
+        return DB::table('storage_file')
+        ->select('storage_file.*', 'student.stu_name')
+        ->join('student','storage_file.stu_id','=','student.stu_id')
+        ->where('storage_file.group_id','=',1)
+        ->get();
+    }
 }

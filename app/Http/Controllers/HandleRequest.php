@@ -45,4 +45,16 @@ class HandleRequest extends Controller
 
         return back();
     }
+
+    public function handleRequestJoinProject($id,$status){
+        if($status == 1){
+            $this->changeStatus->changeStatus2($id);
+        }else{
+            $this->changeStatus->changeStatus0($id);
+        }
+
+        return back();
+    }
+
+   
 }

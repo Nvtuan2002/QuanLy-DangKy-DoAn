@@ -113,13 +113,19 @@ class Student extends Authenticatable
             ]);
     }
 
+    public function countAllGroupId(){
+        return  DB::table('student_group')
+            ->select(DB::raw('count(student_group.group_id) as number'))
+            ->get();
+    }
+
 
 
 
     public function countGroupNumber($p_id)
     {
         return  DB::table('student_group')
-            ->select(DB::raw('count(student_group.group_number) as number'))
+            ->select(DB::raw('count(student_group.group_id) as number'))
             ->where('student_group.p_id', '=', $p_id)
             ->get();
     }
@@ -133,4 +139,23 @@ class Student extends Authenticatable
             ->where('storage_file.group_id', '=', $group_id)
             ->get();
     }
+
+    public function getAllSkill($id){
+        return DB::table('student_skill')
+        ->select('*', DB::raw("ROW_NUMBER() OVER(PARTITION BY stu_id) AS row_num  "))
+        ->where('stu_id','=',1)
+        ->get();
+    }
+
+    public function updateSkill($id,$stu_skill,$stu_skill_detail,$row_num){
+        return DB::table('student_skill')
+        ->where('stu_id',$id)
+        ->where('row')
+        ->update([
+            'stu_skill' => $stu_skill,
+            'stu_skill_detail' => $stu_skill_detail
+    ]);
+    }
+
+
 }

@@ -30,7 +30,7 @@
             <form method="POST" action="{{ route('student.handle_create') }}" enctype="multipart/form-data">
                 @csrf
                 <label for="">Tên nhóm trưởng: </label>
-                <input class="invite" type="text" name="group_leader"> <br>
+                <input class="invite" type="text" name="group_leader" value="{{$studentData->stu_name }}"> <br>
                 <label for="">Yêu cầu: </label>
                 <input class="invite" type="text" name="group_request"> <br>
                 <label for="">Tên đề tài: </label>

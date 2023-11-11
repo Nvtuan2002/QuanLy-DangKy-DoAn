@@ -184,6 +184,8 @@ class GroupController extends Controller
         $count = $this->student->countGroupNumber($p_id);
 
         $nextNumber = $count[0]->number + 1;
+
+        
         // dd($nextNumber);
         return view('students.register_create', compact('studentData', 'nextNumber', 'getProjectName'));
     }

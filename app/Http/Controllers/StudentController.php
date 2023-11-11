@@ -66,6 +66,59 @@ class StudentController extends Controller
     public function updateInfoStudent(Request $request)
     {
 
-        dd($request->file());
+        $id = session('id');
+
+        $studentData = $this->student->getDataStudent($id);
+
+        $studentData = $studentData[0];
+
+        if($request->hasFile('img_change')){
+            
+            $stu_avt_change =$request->file('img_change')->getClientOriginalName();
+        }
+        $stu_desc_change = $request->stu_desc_change;
+        $stu_skill1 = $request->stu_skill1;
+        $stu_skill2 = $request->stu_skill2;
+        $stu_skill3 = $request->stu_skill3;
+        $stu_skill4 = $request->stu_skill4;
+
+        $stu_skill_detail1 = $request->stu_skill_detail1;
+        $stu_skill_detail2 = $request->stu_skill_detail2;
+        $stu_skill_detail3 = $request->stu_skill_detail3;
+        $stu_skill_detail4 = $request->stu_skill_detail4;
+        
+        // dd($request->stu_skill);
+        
+        $dataupdate  = $this->student->getAllSkill($id);
+        // dd($dataupdate);
+
+        for($i= 0;$i < 4; $i++){
+           echo $dataupdate[$i]->row_num;
+        }
+    }
+
+    public function requestJoinProject(Request $request, $p_id, $t_id)
+    {
+
+        $id = session('id');
+
+        $studentData = $this->student->getDataStudent($id);
+
+        $studentData = $studentData[0];
+
+        // dd($p_id);
+
+        // $this->teacher->changeStatus($id, 1, $p_id, $t_id);
+
+        $this->changeStatus->changeStatus1($id,$p_id, $t_id);
+
+
+        return back();
+        // dd($this->student->getDataStudent($id)[0]->stu_status);
+        //     if ($studentData->stu_status == 1) {
+        //         return redirect()->route('student.register_attend')->with(['studentData' => $studentData]);
+        //     }
+        //     else{
+        //     }
     }
 }

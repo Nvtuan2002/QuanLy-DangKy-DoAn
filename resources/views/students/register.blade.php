@@ -46,7 +46,7 @@
                     <td>{{ $item->p_request }}</td>
                     <td>{{ $item->p_major }}</td>
                     <td>{{ $item->p_quantity }}</td>
-                    <td><a href="{{ route('student.handleJoinProject', ['p_id' => $item->p_id, 't_id' => $item->t_id]) }}"><button
+                    <td><a href="{{ route('student.requestJoinProject', ['p_id' => $item->p_id, 't_id' => $item->t_id]) }}"><button
                                 class="invite" type="submit">Tham gia nhóm</button></a>
 
                         

@@ -1,6 +1,15 @@
 @extends('layouts.default')
 @section('title', 'Hàng chờ')
 
+@section('header')
+    @include('includes.header',[
+        'name' => $dataTeacher->t_name,
+        'img' => $dataTeacher->t_avt,
+
+    ])
+@endsection
+
+
 @section('css')
     <link rel="stylesheet" href="{{asset('css/style.css')}}">
 @endsection
@@ -30,47 +39,29 @@
                 <tr>
                     <th style="text-align: center">Tên sinh viên</th>
                     <th style="text-align: center">Mã số sinh viên</th>
-                    <th style="text-align: center">Giảng viên phụ trách</th>
+                    <th style="text-align: center">Email</th>
                     <th style="text-align: center">Đề tài tham gia</th>
-                    <th style="text-align: center">Nhóm</th>
+                    <th style="text-align: center">Chuyên ngành</th>
                     <th style="text-align: center">Lựa chọn</th>
                 </tr>
 
         </table>
         <table class="container">
+                @foreach ($dataStudentRequest as $item)
                 <tr>
-                    <td>Nguyễn Hải Long</td>
-                    <td>20010999</td>
-                    <td>Nguyễn Thành Trung</td>
-                    <td>Chuyên Ngành</td>
-                    <td>1</td>
+                    <td>{{$item->stu_name}}</td>
+                    <td>{{$item->MSSV}}</td>
+                    <td>{{$item->stu_email}}</td>
+                    <td>{{$item->p_name}}</td>
+                    <td>{{$item->stu_major}}</td>
                     <td>
-                        <button class="invite">Từ chối</button>
-                        <button class="invite">Duyệt</button>
+                        <button class="invite"><a href="{{route('teacher.handleRequestJoinProject',['id'=>$item->stu_id,'status'=> 2])}}">Từ chối</a></button>
+                        <button class="invite"><a href="{{route('teacher.handleRequestJoinProject',['id'=>$item->stu_id,'status'=> 1])}}">Duyệt</a></button>
                     </td>
                 </tr>
-                <tr>
-                    <td>Nguyễn Hải Long</td>
-                    <td>20010999</td>
-                    <td>Nguyễn Thành Trung</td>
-                    <td>Chuyên Ngành</td>
-                    <td>2</td>
-                    <td>
-                        <button class="invite">Từ chối</button>
-                        <button class="invite">Duyệt</button>
-                    </td>
-                </tr>
-                <tr>
-                    <td>Nguyễn Hải Long</td>
-                    <td>20010999</td>
-                    <td>Nguyễn Thành Trung</td>
-                    <td>Chuyên Ngành</td>
-                    <td>3</td>
-                    <td>
-                        <button class="invite">Từ chối</button>
-                        <button class="invite">Duyệt</button>
-                    </td>
-                </tr>
+                
+                @endforeach
+              
         </table>
 
     </div>

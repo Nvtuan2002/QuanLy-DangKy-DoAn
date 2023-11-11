@@ -1,6 +1,13 @@
 @extends('layouts.default')
 @section('title', 'Danh sách sinh viên')
 
+@section('header')
+    @include('includes.header',[
+        'name' => $dataTeacher->t_name,
+        'img' => $dataTeacher->t_avt,
+
+    ])
+@endsection
 @section('css')
     <link rel="stylesheet" href="{{asset('css/style.css')}}">
 @endsection
@@ -27,53 +34,44 @@
             </form>
         </div>
         <table class="container">
-                <tr>
-                    <th style="text-align: center">Tên sinh viên</th>
-                    <th style="text-align: center">Mã số sinh viên</th>
-                    <th style="text-align: center">Giảng viên phụ trách</th>
-                    <th style="text-align: center">Đề tài tham gia</th>
-                    <th style="text-align: center">Nhóm</th>
-                    <th style="text-align: center">Lựa chọn</th>
-                </tr>
-
+            <tr>
+                <th style="text-align: center">Tên sinh viên</th>
+                <th style="text-align: center">Email</th>
+                <th style="text-align: center">MSSV</th>
+                <th style="text-align: center">Đề tài tham gia</th>
+                <th style="text-align: center">Chuyên ngành </th>
+                <th style="text-align: center">Trạng thái </th>
+                <th style="text-align: center">Lựa chọn</th>
+            </tr>
+            
         </table>
         <table class="container">
-                <tr>
-                    <td>Nguyễn Hải Long</td>
-                    <td>20010999</td>
-                    <td>Nguyễn Thành Trung</td>
-                    <td>Lập trình WEbssite</td>
-                    <td>15/15</td>
-                    <td>
-                        <button class="invite"><a href="#">Xóa</a></button>
-                        <button class="invite"><a href="#">Chỉnh sửa</a></button>
-                        <button class="invite"><a href="#">Chuyển nhóm</a></button>
-                    </td>
-                </tr>
-                <tr>
-                    <td>Nguyễn Hải Long</td>
-                    <td>20010999</td>
-                    <td>Nguyễn Thành Trung</td>
-                    <td>Lập trình WEbssite</td>
-                    <td>15/15</td>
-                    <td>
-                        <button class="invite"><a href="#">Xóa</a></button>
-                        <button class="invite"><a href="#">Chỉnh sửa</a></button>
-                        <button class="invite"><a href="#">Chuyển nhóm</a></button>
-                    </td>
-                </tr>
-                <tr>
-                    <td>Nguyễn Hải Long</td>
-                    <td>20010999</td>
-                    <td>Nguyễn Thành Trung</td>
-                    <td>Lập trình WEbssite</td>
-                    <td>15/15</td>
-                    <td>
-                        <button class="invite"><a href="#">Xóa</a></button>
-                        <button class="invite"><a href="#">Chỉnh sửa</a></button>
-                        <button class="invite"><a href="#">Chuyển nhóm</a></button>
-                    </td>
-                </tr>
+            @foreach ($dataStudentRegis as $item)
+            <tr>
+                <td>{{$item->stu_name}}</td>
+                <td>{{$item->stu_email}}</td>
+                <td>{{$item->MSSV}}</td>
+                <td>{{$item->p_name}}</td>
+                <td>{{$item->stu_major}}</td>
+                <td>
+                    @if ($item->stu_status == 4)
+                        Đã có nhóm <br>
+                        Nhóm:{{$item->group_id}}
+                    @elseif ($item->stu_status == 3)
+                        Đang tham gia nhóm
+                    @elseif($item->stu_status == 2)
+                        Chưa vào nhóm
+                    @endif
+                </td>
+                <td>
+                    <button class="invite"><a href="#">Xóa</a></button>
+                    <button class="invite"><a href="#">Chỉnh sửa</a></button>
+                    <button class="invite"><a href="#">Chuyển nhóm</a></button>
+                </td>
+            </tr>
+            
+            @endforeach
+               
         </table>
 
     </div>

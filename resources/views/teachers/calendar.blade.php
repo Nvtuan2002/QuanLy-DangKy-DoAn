@@ -1,6 +1,15 @@
 @extends('layouts.default')
 @section('title', 'Lịch thống kê báo cáo')
 
+@section('header')
+    @include('includes.header',[
+        'name' => $dataTeacher->t_name,
+        'img' => $dataTeacher->t_avt,
+
+    ])
+@endsection
+
+
 @section('css')
     <link rel="stylesheet" href="{{ asset('css/style.css') }}">
 @endsection

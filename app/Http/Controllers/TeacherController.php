@@ -10,6 +10,9 @@ use App\Models\Student;
 
 use App\Models\Status;
 
+use App\Models\File;
+
+
 
 
 class TeacherController extends Controller
@@ -17,6 +20,7 @@ class TeacherController extends Controller
     private $teacher;
     private $student;
     private $changeStatus;
+    private $file;
 
 
     public function __construct()
@@ -26,6 +30,9 @@ class TeacherController extends Controller
         $this->student = new Student();
 
         $this->changeStatus = new Status();
+
+        $this->file = new File();
+
 
     }
 
@@ -42,37 +49,113 @@ class TeacherController extends Controller
             $allProject = $this->teacher->getAllProject();
             return view('students.register', compact('allProject', 'studentData'));
         } elseif ($studentData->stu_status == 1) {
-            return "dang xu li";
+            return view('error.requestJoinProject',compact('studentData'));
         } elseif ($studentData->stu_status == 2) {
             return redirect()->route('student.register_attend')->with(['studentData' => $studentData]);
 
-        } else {
-            return "ban da dang ki do an";
+        }elseif($studentData->stu_status == 3){
+            return view('error.requestJoinGroup',compact('studentData'));
+        }
+         else {
+            return view('error.registered',compact('studentData'));
         }
     }
 
-    public function handleJoinProject(Request $request, $p_id, $t_id)
-    {
+    public function dashboard(){
+        $t_id = session('t_id');
 
-        $id = session('id');
+        $dataTeacher = $this->teacher->getDataTeacher($t_id);
 
-        $studentData = $this->student->getDataStudent($id);
+        $dataTeacher =  $dataTeacher[0];
 
-        $studentData = $studentData[0];
+        $totalStudentRegis = $this->teacher->getToltalStudentRegis();
 
-        // dd($p_id);
+        $totalProject = $this->teacher->getTotalProject();
 
-        // $this->teacher->changeStatus($id, 1, $p_id, $t_id);
+        $totalTeacher = $this->teacher->getTotalTeacher();
 
-        $this->changeStatus->changeStatus1($id,$p_id, $t_id);
+        $totalStudentNotRegis = $this->teacher->getToltalStudentNotRegis();
 
 
-        return back();
-        // dd($this->student->getDataStudent($id)[0]->stu_status);
-        //     if ($studentData->stu_status == 1) {
-        //         return redirect()->route('student.register_attend')->with(['studentData' => $studentData]);
-        //     }
-        //     else{
-        //     }
+
+
+        return view('teachers.TE_dashboard',compact('dataTeacher','totalStudentRegis','totalProject','totalTeacher','totalStudentNotRegis'));
+        
     }
+
+    public function getAllStudentRegis(){
+        $t_id = session('t_id');
+
+        $dataTeacher = $this->teacher->getDataTeacher($t_id);
+
+        $dataTeacher =  $dataTeacher[0];
+
+        $dataStudentRegis = $this->teacher->studentRegisProject($t_id);
+
+        // dd($dataStudentRegis);
+
+        return view('teachers.register_list',compact('dataTeacher','dataStudentRegis'));
+    }
+
+    public function getAllStudentRequestProject(){
+        $t_id = session('t_id');
+
+        $dataTeacher = $this->teacher->getDataTeacher($t_id);
+
+        $dataTeacher =  $dataTeacher[0];
+
+        $dataStudentRequest = $this->teacher->studentRequestPorject($t_id);
+
+
+        return view('teachers.register_wait',compact('dataTeacher','dataStudentRequest'));
+
+    }
+
+    public function getObserveGroup(){
+        $t_id = session('t_id');
+
+        $dataTeacher = $this->teacher->getDataTeacher($t_id);
+
+        $dataTeacher =  $dataTeacher[0];
+
+        $dataGroup = $this->teacher->getGroupToObserve($t_id);
+
+        // dd($dataGroup);
+
+        // dd($dataTeacher);
+
+        return view('teachers.monitor_process',compact('dataTeacher','dataGroup'));
+    }
+
+    public function observeGroup($group_id){
+
+        $t_id = session('t_id');
+
+        $dataTeacher = $this->teacher->getDataTeacher($t_id);
+
+        $dataTeacher =  $dataTeacher[0];
+
+        $dataGroup = $this->student->getDataGroup($group_id);
+
+        $dataGroup = $dataGroup[0];
+
+        $memberGroup = $this->student->getMemberGroup($group_id);
+
+        $dataFile = $this->file->getAllDataFile($group_id);
+
+        // dd($dataFile);
+        
+        // dd($memberGroup);
+
+
+        return view('teachers.monitor_group',compact('dataTeacher','dataGroup','memberGroup','dataFile'));
+    }
+
+
+
+    
+
+
+    
+
 }

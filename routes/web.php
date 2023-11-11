@@ -7,6 +7,8 @@ use App\Http\Controllers\LoginController;
 use App\Http\Controllers\TeacherController;
 use App\Http\Controllers\GroupController;
 use App\Http\Controllers\HandleRequest;
+use App\Http\Controllers\ProjectController;
+
 
 
 
@@ -40,11 +42,11 @@ Route::prefix('student')->name('student.')->group(function () {
 
    Route::get('/registerProject', [TeacherController::class, 'getAllProject'])->name('register');
 
-   Route::get('/registerProject/{p_id}/{t_id}', [TeacherController::class, 'handleJoinProject'])->name('handleJoinProject');
+   Route::get('/registerProject/{p_id}/{t_id}', [StudentController::class, 'requestJoinProject'])->name('requestJoinProject');
 
    Route::get('/register_attend', [GroupController::class, 'getAllGroup'])->name('register_attend');
 
-   Route::get('/register_attend/{group_id}', [GroupController::class, 'requestJoinGroup'])->name('requestJoinGroup');
+   Route::get('/register_attend/{group_id}', [StudentController::class, 'requestJoinGroup'])->name('requestJoinGroup');
 
    Route::get('/register_create/', [GroupController::class, 'getCreateGroup'])->name('register_create');
 
@@ -80,33 +82,25 @@ Route::prefix('student')->name('student.')->group(function () {
 Route::prefix('teacher')->name('teacher.')->group(function () {
 
    //Giảng viên
-   Route::get('/TE_dashboard', function () {
-      return view('teachers.TE_dashboard');
-   })->name('TE_dashboard');
+   Route::get('/TE_dashboard', [TeacherController::class,'dashboard'])->name('TE_dashboard');
 
-   Route::get('/register_list', function () {
-      return view('teachers.register_list');
-   })->name('register_list');
+   Route::get('/register_list', [TeacherController::class,'getAllStudentRegis'])->name('register_list'); 
 
-   Route::get('/register_wait', function () {
-      return view('teachers.register_wait');
-   })->name('register_wait');
+   Route::get('/register_wait', [TeacherController::class,'getAllStudentRequestProject'])->name('register_wait');
 
-   Route::get('/update', function () {
-      return view('teachers.update');
-   })->name('update');
+   Route::get('/handleRequestJoinProject/{id}/{status}', [HandleRequest::class,'handleRequestJoinProject'])->name('handleRequestJoinProject');
 
-   Route::get('/update_new', function () {
-      return view('teachers.update_new');
-   })->name('update_new');
 
-   Route::get('/monitor_process', function () {
-      return view('teachers.monitor_process');
-   })->name('monitor_process');
+   Route::get('/updateProject',[ProjectController::class,'getAllProject'] )->name('update');
+   
+   Route::get('/update_new', [ProjectController::class,'createNewProject'])->name('update_new');
 
-   Route::get('/monitor_group', function () {
-      return view('teachers.monitor_group');
-   })->name('monitor_group');
+   Route::post('/update', [ProjectController::class,'handleCreateProject'])->name('handleCreate');
+
+   Route::get('/monitor_process', [TeacherController::class,'getObserveGroup'])->name('monitor_process');
+
+
+   Route::get('/monitor_group/{group_id}', [TeacherController::class,'observeGroup'])->name('monitor_group');
 
    Route::get('/calendar', function () {
       return view('teachers.calendar');

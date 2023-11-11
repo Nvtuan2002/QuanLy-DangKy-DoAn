@@ -1,6 +1,15 @@
 @extends('layouts.default')
 @section('title', 'Theo dõi tiến trình')
 
+@section('header')
+    @include('includes.header',[
+        'name' => $dataTeacher->t_name,
+        'img' => $dataTeacher->t_avt,
+
+    ])
+@endsection
+
+
 @section('css')
     <link rel="stylesheet" href="{{asset('css/style.css')}}">
 @endsection
@@ -14,54 +23,52 @@
         {{-- <img src="../img/background-primary.png" alt=""> --}}
         <nav aria-label="breadcrumb">
             <ol class="breadcrumb">
-                <li class="breadcrumb-item active" aria-current="page">Theo dõi tiến trình > Nhóm 04</li>
+                <li class="breadcrumb-item active" aria-current="page">Theo dõi tiến trình > Nhóm số {{$dataGroup->group_number}}</li>
             </ol>
         </nav>
         <div class="d-flex justify-content-between" style="margin-bottom: -30px;">
             <div class="alert">
-                <p class="fw-bold">Chào mừng, Nguyễn Thành Trung</p>
+                <p class="fw-bold">Chào mừng giảng viên {{$dataTeacher->t_name,}} đến với {{$dataGroup->group_name}}</p>
             </div>
         </div>
         <div class="mx-3 row">
             <div class="col-md-8 col-sm-12 history-update" style="border-right: 1px solid black; margin-right: 50px;">
-                <h6 class=" fw-bold"><img class="avatar me-4" src="./img/avatar-groups.png" alt="Avatar groups">Nhóm 04</h6>
+                <h6 class=" fw-bold">
+                    <img class="avatar me-4" src="{{asset('storage/image/'.$dataGroup->group_avt)}}" alt="Avatar groups" style="height: 20px; width:20px">Nhóm {{$dataGroup->group_number}}
+                </h6>
                 <div class="row">
-                    <ul class="col-6">
+                    <ul class="col-3">
                         <p class="fw-bold"><i class="bi bi-clock-history"></i>Lịch sử cập nhật</p>
-                        <li><i class="bi bi-file-earmark-arrow-up"></i>Hoàng Hải Long đã tải lên file abc.pdf</li>
-                        <li><i class="bi bi-file-earmark-arrow-up"></i>Hoàng Hải Long đã tải lên file abc.pdf</li>
-                        <li><i class="bi bi-file-earmark-arrow-up"></i>Hoàng Hải Long đã tải lên file abc.pdf</li>
-                        <li><i class="bi bi-file-earmark-arrow-up"></i>Hoàng Hải Long đã tải lên file abc.pdf</li>
-                        <li><i class="bi bi-file-earmark-arrow-up"></i>Hoàng Hải Long đã tải lên file abc.pdf</li>
-                        <li><i class="bi bi-file-earmark-arrow-up"></i>Hoàng Hải Long đã tải lên file abc.pdf</li>
-                        <li><i class="bi bi-file-earmark-arrow-up"></i>Hoàng Hải Long đã tải lên file abc.pdf</li>
-                        <li><i class="bi bi-file-earmark-arrow-up"></i>Hoàng Hải Long đã tải lên file abc.pdf</li>
+                        @foreach ($dataFile as $item)
+                        <li><i class="bi bi-file-earmark-arrow-up"></i>{{$item->file}}</li>
+                      
+                        @endforeach
+                    </ul>
+                    <ul class="col-3 text-center">
+                        <p class="fw-bold"><i class="bi bi-clock-history"></i>Người up load</p>
+                        @foreach ($dataFile as $item)
+                        <li></i>{{$item->created_at}}</li>
+                        @endforeach
+                   
                     </ul>
                     <ul class="col-3 text-center">
                         <p class="fw-bold"><i class="bi bi-clock-history"></i>Bình luận</p>
-                        <li></i>Cập nhật</li>
-                        <li></i>Cập nhật</li>
-                        <li></i>Cập nhật</li>
-                        <li></i>Cập nhật</li>
-                        <li></i>Cập nhật</li>
-                        <li></i>Cập nhật</li>
-                        <li></i>Cập nhật</li>
-                        <li></i>Cập nhật</li>
+                        @foreach ($dataFile as $item)
+                            
+                        <li></i>{{$item->file_title}}</li>
+                        @endforeach
+                       
                     </ul>
                     <ul class="col-3 text-center">
                         <p class="fw-bold"><i class="bi bi-clock-history"></i>Thời gian</p>
-                        <li></i>9: 56</li>
-                        <li></i>9: 56</li>
-                        <li></i>9: 56</li>
-                        <li></i>9: 56</li>
-                        <li></i>9: 56</li>
-                        <li></i>9: 56</li>
-                        <li></i>9: 56</li>
-                        <li></i>9: 56</li>
+                        @foreach ($dataFile as $item)
+                        <li></i>{{$item->created_at}}</li>
+                        @endforeach
+                   
                     </ul>
                 </div>
                 <div class="d-flex flex-wrap justify-content-around monitor_group" style="">
-                    <a class="request" href="{{ route('monitor_process') }}">Quay lại</a>
+                    <a class="request" href="{{ route('teacher.monitor_process') }}">Quay lại</a>
                     <button class="request" id="modal_monitor">Đưa ra thông báo</button>
                     <button class="request">Đánh giá tiến độ</button>
                 </div>
@@ -131,10 +138,13 @@
             <div class="col-md-3 col-sm-12">
                 <div class="mt-4">
                     <h6 class="fw-bold">Giới thiệu</h6>
-                    <p>Website xây dựng quản lý đồ án</p>
+                    <p>Nhóm em làm về đề tài {{$dataGroup->p_name}}</p>
                     <p><i class="bi bi-activity"></i>Tiến trình</p>
                     <p><i class="bi bi-journal-album"></i>Ghi chú</p>
                     <p><i class="bi bi-people-fill"></i>Thành viên</p>
+                    @foreach ($memberGroup as $item)
+                        <p><img src="{{asset('storage/image/'.$item->stu_avt)}}" alt=""> {{$item->stu_name}}</p>
+                    @endforeach
                 </div>
                 <div class="mt-4">
                     <h6 class="fw-bold">Đóng góp</h6>

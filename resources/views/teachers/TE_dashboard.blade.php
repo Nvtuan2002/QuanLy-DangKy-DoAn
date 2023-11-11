@@ -1,6 +1,14 @@
 @extends('layouts.default')
 @section('title', 'Tổng quan')
 
+@section('header')
+    @include('includes.header',[
+        'name' => $dataTeacher->t_name,
+        'img' => $dataTeacher->t_avt,
+
+    ])
+@endsection
+
 @section('css')
     <link rel="stylesheet" href="{{asset('css/style.css')}}">
 @endsection
@@ -23,28 +31,28 @@
                 <div style="height: 130px;">
                     <img src="{{asset('./img/carbon_summary-kpi.png')}}" class="" alt="Icon Teacher">
                     <h5 class="card-title h5_dashboard">Tổng số sinh viên đăng ký</h5>
-                    <p>100</p>
+                    <p>{{$totalStudentRegis[0]->total}}</p>
                 </div>
             </div>
             <div class="col-xl-4 col-lg-4 col-md-6 col-sm-12 text-center d-flex justify-content-center">
                 <div style="height: 130px;">
                     <img src="{{asset('./img/codicon_project.png')}}" class="" alt="Icon Profile">
                     <h5 class="card-title h5_dashboard">Tổng số đề tài đồ án</h5>
-                    <p>100</p>
+                    <p>{{$totalProject[0]->total}}</p>
                 </div>
             </div>
             <div class="col-xl-4 col-lg-4 col-md-6 col-sm-12 text-center d-flex justify-content-center">
                 <div style="height: 130px;">
                     <img src="{{asset('./img/mdi_teacher.png')}}" class="" alt="Icon Finance">
                     <h5 class="card-title h5_dashboard">Tổng số giảng viên</h5>
-                    <p>100</p>
+                    <p>{{$totalTeacher[0]->total}}</p>
                 </div>
             </div>
             <div class="col-xl-4 col-lg-4 col-md-6 col-sm-12 text-center d-flex justify-content-center">
                 <div style="height: 130px;">
                     <img src="{{asset('./img/mdi_teacher.png')}}" class="" alt="Icon Finance">
                     <h5 class="card-title h5_dashboard">Tổng số học sinh không đủ điều kiện </h5>
-                    <p>100</p>
+                    <p>{{$totalStudentNotRegis[0]->total}}</p>
                 </div>
             </div>
             <div class="col-xl-4 col-lg-4 col-md-6 col-sm-12 text-center d-flex justify-content-center">

@@ -16,6 +16,15 @@ class Status extends Model
     // 3 - request join group 
     // 4 - accept join group or create gorup (student change)
 
+    public function changeStatus0($id){
+        return DB::table('student')
+        ->where('stu_id',$id)
+        ->update([
+            'stu_status' => 0,
+            'p_id' => 0,
+            't_id' => 0,
+    ]);
+    }
 
 
     public function changeStatus1($id,$p_id,$t_id){

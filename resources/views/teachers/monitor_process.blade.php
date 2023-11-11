@@ -1,6 +1,15 @@
 @extends('layouts.default')
 @section('title', 'Theo dõi tiến trình')
 
+@section('header')
+    @include('includes.header',[
+        'name' => $dataTeacher->t_name,
+        'img' => $dataTeacher->t_avt,
+
+    ])
+@endsection
+
+
 @section('css')
     <link rel="stylesheet" href="{{asset('css/style.css')}}">
 @endsection
@@ -22,36 +31,23 @@
                     <th style="text-align: center">Tên nhóm</th>
                     <th style="text-align: center">Nhóm trưởng</th>
                     <th style="text-align: center">Đề tài đăng ký</th>
-                    <th style="text-align: center">Tiến độ làm việc</th>
+                    <th style="text-align: center">Số lượng thành viên</th>
                     <th style="text-align: center">Lựa chọn</th>
                 </tr>
 
         </table>
         <table class="container">
-                <tr>
-                    <td>Nhóm số 4</td>
-                    <td>Team vô địch</td>
-                    <td>Hoàng Hải Long</td>
-                    <td>Website Facebôk</td>
-                    <td>Web đánh giá</td>
-                    <td><button class="invite"><a href="{{ route('teacher.monitor_group') }}">Theo dõi nhóm</a></button></td>
-                </tr>
-                <tr>
-                    <td>Nhóm số 4</td>
-                    <td>Team vô địch</td>
-                    <td>Hoàng Hải Long</td>
-                    <td>Website Youte</td>
-                    <td>Web đánh giá</td>
-                    <td><button class="invite"><a href="{{ route('teacher.monitor_group') }}">Theo dõi nhóm</a></button></td>
-                </tr>
-                <tr>
-                    <td>Nhóm số 4</td>
-                    <td>Team vô địch</td>
-                    <td>Hoàng Hải Long</td>
-                    <td>Website Facebôk</td>
-                    <td>Web đánh giá</td>
-                    <td><button class="invite"><a href="{{ route('teacher.monitor_group') }}">Theo dõi nhóm</a></button></td>
-                </tr>
+            @foreach ($dataGroup as $item)
+            <tr>
+                <td>{{$item->group_number}}</td>
+                <td>{{$item->group_name}}</td>
+                <td>{{$item->group_leader}}</td>
+                <td>{{$item->p_name}}</td>
+                <td>{{$item->group_quantity}}</td>
+                <td><button class="invite"><a href="{{ route('teacher.monitor_group',['group_id' => $item->group_id]) }}">Theo dõi nhóm</a></button></td>
+            </tr>
+            @endforeach
+               
         </table>
 
     </div>

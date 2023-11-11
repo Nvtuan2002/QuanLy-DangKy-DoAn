@@ -44,7 +44,7 @@
 
                     <h4 class="">Thông tin cá nhân</h4>
                     <div class="d-flex flex-column align-item-end" style="">
-                        <textarea name="" id="js-textarea" cols="10" rows="10"
+                        <textarea name="stu_desc_change" id="js-textarea" cols="10" rows="10"
                             style="outline: none; border: none; width: 100%; height: 90px; padding: 10px; color:black" disabled>{{ $studentDataDetail[0]->stu_desc }}</textarea>
                         <i class="bi bi-pencil-square" role="button" id="edit-textarea" style="text-align: end;"></i>
                         <i class="fa-solid fa-paper-plane" type="submit" id="send-textarea"
@@ -81,27 +81,27 @@
                                     <div class="modal-body">
                                         <div style="text-align: start; margin-bottom: 10px;">
                                             <label for="">Kỹ năng</label>
-                                            <input type="text" style="outline: none; width: 50%;" placeholder="Giao tiếp">
+                                            <input type="text" style="outline: none; width: 50%;" placeholder="Giao tiếp" name="stu_skill1">
                                             <label for="">tỷ lệ (%)</label>
-                                            <input type="text" style="outline: none; width: 20%;">
+                                            <input type="text" style="outline: none; width: 20%;" name="stu_skill_detail1">
                                         </div>
                                         <div style="text-align: start; margin-bottom: 10px;">
                                             <label for="">Kỹ năng</label>
-                                            <input type="text" style="outline: none; width: 50%;" placeholder="Giao tiếp">
+                                            <input type="text" style="outline: none; width: 50%;" placeholder="Giao tiếp" name="stu_skill2">
                                             <label for="">tỷ lệ (%)</label>
-                                            <input type="text" style="outline: none; width: 20%;">
+                                            <input type="text" style="outline: none; width: 20%;" name="stu_skill_detail2">
                                         </div>
                                         <div style="text-align: start; margin-bottom: 10px;">
                                             <label for="">Kỹ năng</label>
-                                            <input type="text" style="outline: none; width: 50%;" placeholder="Giao tiếp">
+                                            <input type="text" style="outline: none; width: 50%;" placeholder="Giao tiếp" name="stu_skill3">
                                             <label for="">tỷ lệ (%)</label>
-                                            <input type="text" style="outline: none; width: 20%;">
+                                            <input type="text" style="outline: none; width: 20%;" name="stu_skill_detail3">
                                         </div>
                                         <div style="text-align: start; margin-bottom: 10px;">
                                             <label for="">Kỹ năng</label>
-                                            <input type="text" style="outline: none; width: 50%;" placeholder="Giao tiếp">
+                                            <input type="text" style="outline: none; width: 50%;" placeholder="Giao tiếp" name="stu_skill4">
                                             <label for="">tỷ lệ (%)</label>
-                                            <input type="text" style="outline: none; width: 20%;">
+                                            <input type="text" style="outline: none; width: 20%;" name="stu_skill_detail4">
                                         </div>
                                     </div>
                                     <div class="modal-footer">

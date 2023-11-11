@@ -1,6 +1,14 @@
 @extends('layouts.default')
 @section('title', 'Liên hệ với sinh viên')
 
+@section('header')
+    @include('includes.header',[
+        'name' => $dataTeacher->t_name,
+        'img' => $dataTeacher->t_avt,
+
+    ])
+@endsection
+
 @section('css')
     <link rel="stylesheet" href="{{ asset('css/style.css') }}">
     

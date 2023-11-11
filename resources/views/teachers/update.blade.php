@@ -1,6 +1,14 @@
 @extends('layouts.default')
 @section('title', 'Cập nhật đồ án')
 
+@section('header')
+    @include('includes.header',[
+        'name' => $dataTeacher->t_name,
+        'img' => $dataTeacher->t_avt,
+
+    ])
+@endsection
+
 @section('css')
     <link rel="stylesheet" href="{{asset('css/style.css')}}">
 @endsection
@@ -30,7 +38,7 @@
             </div>
             <table class="container">
                 <tr>
-                    <th style="text-align: center">Tên giảng viên</th>
+                    <th style="text-align: center">STT</th>
                     <th style="text-align: center">Tên đề tài</th>
                     <th style="text-align: center">Yêu cầu</th>
                     <th style="text-align: center">Chuyên ngành</th>
@@ -40,36 +48,18 @@
 
             </table>
             <table class="container">
+                @foreach ($dataProject as $key => $item)
                 <tr>
-                    <td>Nguyễn Hải Long</td>
-                    <td>Lập Trình Web</td>
-                    <td>Sử dụng Laravel và MYSQL</td>
-                    <td>Công Nghệ Thông Tin</td>
-                    <td>15/15</td>
+                    <td>{{$key+1}}</td>
+                    <td>{{$item->p_name}}</td>
+                    <td>{{$item->p_request}}</td>
+                    <td>{{$item->p_major}}</td>
+                    <td>{{$item->p_quantity}}</td>
                     <td>
                         <button class="invite">Chỉnh sửa</button>
                     </td>
                 </tr>
-                <tr>
-                    <td>Nguyễn Hải Long</td>
-                    <td>Lập Trình Nhúng</td>
-                    <td>Sử dụng Laravel và MYSQL</td>
-                    <td>Công Nghệ Thông Tin</td>
-                    <td>15/15</td>
-                    <td>
-                        <button class="invite">Chỉnh sửa</button>
-                    </td>
-                </tr>
-                <tr>
-                    <td>Nguyễn Hải Long</td>
-                    <td>Lập Trình IOT</td>
-                    <td>Sử dụng Laravel và MYSQL</td>
-                    <td>Công Nghệ Thông Tin</td>
-                    <td>15/15</td>
-                    <td>
-                        <button class="invite">Chỉnh sửa</button>
-                    </td>
-                </tr>
+                @endforeach
             </table>
         </div>
     </div>
