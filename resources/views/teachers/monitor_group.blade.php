@@ -2,16 +2,15 @@
 @section('title', 'Theo dõi tiến trình')
 
 @section('header')
-    @include('includes.header',[
+    @include('includes.header', [
         'name' => $dataTeacher->t_name,
         'img' => $dataTeacher->t_avt,
-
     ])
 @endsection
 
 
 @section('css')
-    <link rel="stylesheet" href="{{asset('css/style.css')}}">
+    <link rel="stylesheet" href="{{ asset('css/style.css') }}">
 @endsection
 
 @section('sidebar')
@@ -23,54 +22,51 @@
         {{-- <img src="../img/background-primary.png" alt=""> --}}
         <nav aria-label="breadcrumb">
             <ol class="breadcrumb">
-                <li class="breadcrumb-item active" aria-current="page">Theo dõi tiến trình > Nhóm số {{$dataGroup->group_number}}</li>
+                <li class="breadcrumb-item active" aria-current="page">Theo dõi tiến trình > Nhóm số
+                    {{ $dataGroup->group_number }}</li>
             </ol>
         </nav>
         <div class="d-flex justify-content-between" style="margin-bottom: -30px;">
             <div class="alert">
-                <p class="fw-bold">Chào mừng giảng viên {{$dataTeacher->t_name,}} đến với {{$dataGroup->group_name}}</p>
+                <p class="fw-bold">Chào mừng giảng viên {{ $dataTeacher->t_name }} đến với {{ $dataGroup->group_name }}</p>
             </div>
         </div>
         <div class="mx-3 row">
-            <div class="col-md-8 col-sm-12 history-update" style="border-right: 1px solid black; margin-right: 50px;">
+            <div class="col-md-9 col-sm-12 history-update" style="border-right: 1px solid black; padding: unset;">
                 <h6 class=" fw-bold">
-                    <img class="avatar me-4" src="{{asset('storage/image/'.$dataGroup->group_avt)}}" alt="Avatar groups" style="height: 20px; width:20px">Nhóm {{$dataGroup->group_number}}
+                    <img class="avatar me-4" src="{{ asset('storage/image/' . $dataGroup->group_avt) }}" alt="Avatar groups"
+                        style="height: 20px; width:20px">Nhóm {{ $dataGroup->group_number }}
                 </h6>
-                <div class="row">
-                    <ul class="col-3">
-                        <p class="fw-bold"><i class="bi bi-clock-history"></i>Lịch sử cập nhật</p>
-                        @foreach ($dataFile as $item)
-                        <li><i class="bi bi-file-earmark-arrow-up"></i>{{$item->file}}</li>
-                      
-                        @endforeach
-                    </ul>
-                    <ul class="col-3 text-center">
-                        <p class="fw-bold"><i class="bi bi-clock-history"></i>Người up load</p>
-                        @foreach ($dataFile as $item)
-                        <li></i>{{$item->created_at}}</li>
-                        @endforeach
-                   
-                    </ul>
-                    <ul class="col-3 text-center">
-                        <p class="fw-bold"><i class="bi bi-clock-history"></i>Bình luận</p>
-                        @foreach ($dataFile as $item)
-                            
-                        <li></i>{{$item->file_title}}</li>
-                        @endforeach
-                       
-                    </ul>
-                    <ul class="col-3 text-center">
-                        <p class="fw-bold"><i class="bi bi-clock-history"></i>Thời gian</p>
-                        @foreach ($dataFile as $item)
-                        <li></i>{{$item->created_at}}</li>
-                        @endforeach
-                   
-                    </ul>
-                </div>
+                <table>
+                    <tr>
+                        <th><i class="bi bi-clock-history"></i>Lịch sử cập nhật</th>
+                        <th><i class="bi bi-upload"></i>Người tải lên</th>
+                        <th><i class="bi bi-chat-dots"></i>Bình luận</th>
+                        <th><i class="bi bi-calendar-range"></i>Thời gian</th>
+                    </tr>
+                    @foreach ($dataFile as $item)
+                        <tr>
+                            <td>
+                                <i class="bi bi-file-earmark-arrow-up"></i>{{ $item->file }}
+                            </td>
+                            <td>
+                                {{ $item->created_at }}
+                            </td>
+                            <td>
+                                {{ $item->file_title }}
+                            </td>
+                            <td>
+                                {{ $item->created_at }}
+                            </td>
+                        </tr>
+                    @endforeach
+                </table>
+
                 <div class="d-flex flex-wrap justify-content-around monitor_group" style="">
                     <a class="request" href="{{ route('teacher.monitor_process') }}">Quay lại</a>
                     <button class="request" id="modal_monitor">Đưa ra thông báo</button>
-                    <button class="request">Đánh giá tiến độ</button>
+                    <button class="request" data-bs-toggle="modal" data-bs-target="#staticBackdrop3">Đánh giá tiến
+                        độ</button>
                 </div>
 
                 {{-- Active --}}
@@ -84,7 +80,8 @@
                 <div class="modal fade" id="staticBackdrop1" data-bs-backdrop="static" data-bs-keyboard="false"
                     tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
                     <div class="modal-dialog">
-                        <form action="{{route('teacher.set_meeting',['group_id'=> $dataGroup->group_id])}}" method="post">
+                        <form action="{{ route('teacher.set_meeting', ['group_id' => $dataGroup->group_id]) }}"
+                            method="post">
                             @csrf
                             <div class="modal-content">
                                 <div class="modal-header">
@@ -93,33 +90,63 @@
                                         aria-label="Close"></button>
                                 </div>
                                 <div class="modal-body">
-                                    
-                                        <div class="mb-4">
-                                            <label for="meeting-date" class="col-form-label">Chọn ngày họp</label>
-                                            <input type="date" name="date" id="meeting-date" style="outline: none;">
-                                        </div>
-                                        <div class="mb-4">
-                                            <label for="start-time" class="col-form-label">Chọn giờ họp</label>
-                                            <input type="time" name="stime" id="start-time" style="outline: none;">
-                                            <i class="bi bi-chevron-double-right"></i>
-                                            <input type="time" name="etime" id="end-time" style="outline: none;">
-                                        </div>
-                                    
+
+                                    <div class="mb-4">
+                                        <label for="meeting-date" class="col-form-label">Chọn ngày họp</label>
+                                        <input type="date" class="form-control d-inline-block" style="width: unset;"
+                                            name="date" id="meeting-date" style="outline: none;">
+                                    </div>
+                                    <div class="mb-4">
+                                        <label for="start-time" class="col-form-label">Chọn giờ họp</label>
+                                        <input type="time" class="form-control d-inline-block" style="width: unset;"
+                                            name="stime" id="start-time" style="outline: none;">
+                                        <i class="bi bi-chevron-double-right"></i>
+                                        <input type="time" class="form-control d-inline-block" style="width: unset;"
+                                            name="etime" id="end-time" style="outline: none;">
+                                    </div>
+
                                 </div>
                                 <div class="modal-footer">
-                                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
                                     <button type="submit" class="request">Đưa ra lịch họp</button>
                                 </div>
                             </div>
                         </form>
                     </div>
                 </div>
+
                 {{-- Modal Meeting --}}
                 <div class="modal fade" id="staticBackdrop2" data-bs-backdrop="static" data-bs-keyboard="false"
                     tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
                     <div class="modal-dialog">
                         <div class="modal-content">
-                            <form action="{{route('teacher.set_noti',['group_id'=>$dataGroup->group_id])}}" method="POST">
+                            <form action="{{ route('teacher.set_noti', ['group_id' => $dataGroup->group_id]) }}"
+                                method="POST">
+                                @csrf
+                                <div class="modal-header">
+                                    <h1 class="modal-title fs-5" id="staticBackdropLabel">Đặt Thông báo</h1>
+                                    <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                        aria-label="Close"></button>
+                                </div>
+                                <div class="modal-body" style="text-align: center;">
+                                    <textarea id="" cols="50" rows="5" class="form-control d-inline-block" style="width: unset;"
+                                        placeholder="Hãy đưa ra một vài thông báo cho nhóm ...." style="outline: none;" name="long"></textarea>
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="submit" class="request">Đưa ra thông báo</button>
+                                </div>
+
+                            </form>
+                        </div>
+                    </div>
+                </div>
+
+                {{-- Modal Evaluate --}}
+                <div class="modal fade" id="staticBackdrop3" data-bs-backdrop="static" data-bs-keyboard="false"
+                    tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+                            <form action="{{ route('teacher.set_noti', ['group_id' => $dataGroup->group_id]) }}"
+                                method="POST" style="margin: unset;">
                                 @csrf
                                 <div class="modal-header">
                                     <h1 class="modal-title fs-5" id="staticBackdropLabel">Đặt Thông báo</h1>
@@ -127,11 +154,16 @@
                                         aria-label="Close"></button>
                                 </div>
                                 <div class="modal-body">
-                                        <textarea id="" cols="61" rows="5"
-                                            placeholder="Hãy đưa ra một vài thông báo cho nhóm ...." style="outline: none;" name="long"></textarea>
+                                    <div>
+                                        <label for="">Ngày</label>
+                                        <input type="date" class="form-control d-inline-block">
+                                    </div>
+                                    <div>
+                                        <label for="">Điểm số</label>
+                                        <input type="text" class="form-control d-inline-block" placeholder="VD: 9đ">
+                                    </div>
                                 </div>
                                 <div class="modal-footer">
-                                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
                                     <button type="submit" class="request">Đưa ra thông báo</button>
                                 </div>
 
@@ -140,16 +172,19 @@
                     </div>
                 </div>
             </div>
-            <div class="col-md-3 col-sm-12">
+            <div class="col-md-3 col-sm-12 about_monitor">
                 <div class="mt-4">
                     <h6 class="fw-bold">Giới thiệu</h6>
-                    <p>Nhóm em làm về đề tài {{$dataGroup->p_name}}</p>
+                    <p>Nhóm em làm về đề tài {{ $dataGroup->p_name }}</p>
                     <p><i class="bi bi-activity"></i>Tiến trình</p>
                     <p><i class="bi bi-journal-album"></i>Ghi chú</p>
-                    <p><i class="bi bi-people-fill"></i>Thành viên</p>
-                    @foreach ($memberGroup as $item)
-                        <p><img src="{{asset('storage/image/'.$item->stu_avt)}}" alt=""> {{$item->stu_name}}</p>
-                    @endforeach
+                    <p id="show_people"><i class="bi bi-people-fill"></i>Thành viên</p>
+                    <p class="d-none">
+                        @foreach ($memberGroup as $item)
+                            <img class="img mb-2" src="{{ asset('storage/image/' . $item->stu_avt) }}" alt="">
+                            {{ $item->stu_name }} <br>
+                        @endforeach
+                    </p>
                 </div>
                 <div class="mt-4">
                     <h6 class="fw-bold">Đóng góp</h6>
@@ -170,5 +205,11 @@
         modal_monitor.addEventListener("click", function() {
             modal_up.style.display = modal_up.style.display === "none" ? "block" : "none";
         });
+
+        const peopleFill = document.querySelector('#show_people');
+        const people = document.querySelector('.d-none');
+        peopleFill.addEventListener('click', function() {
+            people.classList.toggle('d-none');
+        })
     </script>
 @stop

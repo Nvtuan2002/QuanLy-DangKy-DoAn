@@ -19,7 +19,7 @@
 @endsection
 
 @section('content')
-    <div class="register_list search col-lg-10">
+    <div class="register_wait search col-lg-10">
         <nav aria-label="breadcrumb">
             <ol class="breadcrumb">
                 <li class="breadcrumb-item active" aria-current="page">Danh sách sinh viên > hàng chờ</li>
@@ -55,8 +55,8 @@
                     <td>{{$item->p_name}}</td>
                     <td>{{$item->stu_major}}</td>
                     <td>
-                        <button class="invite"><a href="{{route('teacher.handleRequestJoinProject',['id'=>$item->stu_id,'status'=> 2])}}">Từ chối</a></button>
                         <button class="invite"><a href="{{route('teacher.handleRequestJoinProject',['id'=>$item->stu_id,'status'=> 1])}}">Duyệt</a></button>
+                        <button class="invite"><a href="{{route('teacher.handleRequestJoinProject',['id'=>$item->stu_id,'status'=> 2])}}">Từ chối</a></button>
                     </td>
                 </tr>
                 

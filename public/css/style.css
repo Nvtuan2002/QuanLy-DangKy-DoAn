@@ -39,6 +39,7 @@ svg {
 
 li {
     margin-bottom: 0.5rem;
+    list-style-type: none;
 }
 
 h5 {
@@ -490,8 +491,8 @@ form .input {
     border-radius: 50%;
     box-shadow: 0 0 0 0.25em inset;
     caret-color: #255ff4;
-    width: 1.5em;
-    height: 1.5em;
+    width: 1.7em;
+    height: 1.7em;
 }
 
 form .input:focus,
@@ -610,7 +611,6 @@ table tr td {
     padding: 10px;
     display: inline-block;
     border-radius: 20px;
-    overflow: auto;
 }
 
 table tr td:first-child,
@@ -1128,8 +1128,9 @@ option {
 
 .register_list table tr td:nth-child(3),
 .register_list table tr th:nth-child(3) {
-    width: 20%;
+    width: 10%;
     height: 100%;
+    text-align: center;
 }
 
 .register_list table tr td:nth-child(4),
@@ -1142,11 +1143,19 @@ option {
 .register_list table tr th:nth-child(5) {
     width: 10%;
     height: 100%;
+    text-align: center;
 }
 
 .register_list table tr td:nth-child(6),
 .register_list table tr th:nth-child(6) {
-    width: 15%;
+    width: 13%;
+    height: 100%;
+    text-align: center;
+}
+
+.register_list table tr td:nth-child(7),
+.register_list table tr th:nth-child(7) {
+    width: 12%;
     height: 100%;
     text-align: center;
 }
@@ -1156,61 +1165,134 @@ option {
     margin-bottom: 12px;
 }
 
-.register_list table tr td:nth-child(6) {
+.register_list table tr td:nth-child(7) {
     padding: unset;
     background-color: unset;
     border: unset;
 }
 
-.register_list table tr td:nth-child(6) button:nth-child(1) {
+.register_list table tr td:nth-child(7) button:nth-child(1) {
     background-color: var(--reject-background);
+    width: 100%;
+    height: 100%;
 }
 
-.register_list table tr td:nth-child(6) button:nth-child(2) {
+.register_list table tr td:nth-child(7) button:nth-child(2) {
     background-color: #ECE3CE;
+    width: 100%;
+    height: 100%;
 }
 
-.register_list table tr td:nth-child(6) button:nth-child(3) {
+.register_list table tr td:nth-child(7) button:nth-child(3) {
     background-color: #F2E358;
+    width: 100%;
+    height: 100%;
 }
 
 /*End List Register Teacher */
 
+/* Register wait */
+.register_wait table tr td:nth-child(1),
+.register_wait table tr th:nth-child(1) {
+    width: 15%;
+    height: 100%;
+
+}
+
+.register_wait table tr td:nth-child(2),
+.register_wait table tr th:nth-child(2) {
+    width: 15%;
+    height: 100%;
+    text-align: center;
+}
+
+.register_wait table tr td:nth-child(3),
+.register_wait table tr th:nth-child(3) {
+    width: 15%;
+    height: 100%;
+    text-align: center;
+}
+
+.register_wait table tr td:nth-child(4),
+.register_wait table tr th:nth-child(4) {
+    width: 25%;
+    height: 100%;
+}
+
+.register_wait table tr td:nth-child(5),
+.register_wait table tr th:nth-child(5) {
+    width: 15%;
+    height: 100%;
+    text-align: center;
+}
+
+.register_wait table tr td:nth-child(6),
+.register_wait table tr th:nth-child(6) {
+    width: 15%;
+    height: 100%;
+    text-align: center;
+}
+
+.register_wait table tr td button {
+    width: 130px;
+    margin-bottom: 12px;
+}
+
+.register_wait table tr td:nth-child(6) {
+    padding: unset;
+    background-color: unset;
+    border: unset;
+}
+
+.register_wait table tr td:nth-child(6) button:nth-child(1) {
+    background-color: #ECE3CE;
+}
+
+.register_wait table tr td:nth-child(6) button:nth-child(2) {
+    background-color: var(--reject-background);
+}
+
+
+/* Register wait */
+
+
 /* Update Đồ án */
 .update table tr td:nth-child(1),
 .update table tr th:nth-child(1) {
-    width: 15%;
+    width: 10%;
     height: 100%;
 
 }
 
 .update table tr td:nth-child(2),
 .update table tr th:nth-child(2) {
-    width: 20%;
+    width: 25%;
     height: 100%;
 }
 
 .update table tr td:nth-child(3),
 .update table tr th:nth-child(3) {
-    width: 20%;
+    width: 30%;
     height: 100%;
 }
 
 .update table tr td:nth-child(4),
 .update table tr th:nth-child(4) {
-    width: 20%;
+    width: 13%;
     height: 100%;
+    text-align: center;
 }
 
 .update table tr td:nth-child(5),
 .update table tr th:nth-child(5) {
     width: 10%;
     height: 100%;
+    text-align: center;
 }
 
 .update table tr td:nth-child(6),
 .update table tr th:nth-child(6) {
-    width: 15%;
+    width: 12%;
     height: 100%;
     text-align: center;
 }
@@ -1228,13 +1310,27 @@ option {
 
 .update table tr td:nth-child(6) button:nth-child(1) {
     background-color: #ECE3CE;
+    height: 100%;
+    width: 100%;
 }
 
 .update_new form {
     padding: 40px 40px;
 }
 
+.update .modal label {
+    width: 150px;
+}
+
 /* End Update Đồ án */
+
+/* Modal */
+.form-control:focus {
+    box-shadow: none;
+}
+
+/* Modal */
+
 
 /*  Teacher Monitor */
 .monitor table tr td:nth-child(1),
@@ -1354,4 +1450,49 @@ label[for="file-input"]:hover {
 
 .infoAllTeacher>div>div>div>img {
     margin-right: 10px;
+}
+
+.monitor_groups table {
+    all: unset;
+}
+
+.monitor_groups table tr {
+    display: inline-block;
+    width: 100%;
+}
+
+.monitor_groups table tr td {
+    background-color: unset;
+    border: unset;
+    text-align: start;
+}
+
+.monitor_groups table tr th {
+    background-color: unset;
+    border: unset;
+    text-align: start;
+}
+
+.monitor_groups table tr td:nth-child(1),
+.monitor_groups table tr th:nth-child(1) {
+    width: 24%;
+    height: 100%;
+}
+
+.monitor_groups table tr td:nth-child(2),
+.monitor_groups table tr th:nth-child(2) {
+    width: 24%;
+    height: 100%;
+}
+
+.monitor_groups table tr td:nth-child(3),
+.monitor_groups table tr th:nth-child(3) {
+    width: 24%;
+    height: 100%;
+}
+
+.monitor_groups table tr td:nth-child(4),
+.monitor_groups table tr th:nth-child(4) {
+    width: 24%;
+    height: 100%;
 }

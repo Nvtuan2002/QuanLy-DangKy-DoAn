@@ -28,7 +28,7 @@
         <div class="calendar container">
             <div class="select-date">
                 <p>Chọn ngày và thời gian</p>
-                <input type="datetime-local" id="currentDateTime">
+                <input type="datetime-local" id="currentDateTime" class="form-control" style="margin-left: 15px;width: 200px;">
             </div>
             <table>
                 <tr>

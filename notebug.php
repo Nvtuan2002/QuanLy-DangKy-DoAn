@@ -29,19 +29,19 @@ FE
 
 <!-- - làm 1 trrang bạn đã dăng kí đồ án vào phần error (như nào hmm) -->
 
--- chirh lại css trang register_list(danh sách sinh viên đăng kí)
+<!-- -- chirh lại css trang register_list(danh sách sinh viên đăng kí) -->
 
-- chỉnh lại css trang updateProject (cập nhật đồ án) cho các ô độ rộng vừa phải cái nào cần dài thì dài 
+<!-- - chỉnh lại css trang updateProject (cập nhật đồ án) cho các ô độ rộng vừa phải cái nào cần dài thì dài  -->
 
--- thêm 1 trang chỉnh sửa cập nhật đồ án 4 ô input
+<!-- -- thêm 1 trang chỉnh sửa cập nhật đồ án 4 ô input -->
 
-- chỉnh lại thành dạng table 
+<!-- - chỉnh lại thành dạng table  -->
 
--hover vào thành viên hoặc click ra ảnh
+<!-- -hover vào thành viên hoặc click ra ảnh -->
 
-- thêm hover đánh giá tiến độ cho ra 2 input ngày và điểm
+<!-- - thêm hover đánh giá tiến độ cho ra 2 input ngày và điểm -->
 
--đổi màu duyệt và từ chối thành màu xanh và đỏ
+<!-- -đổi màu duyệt và từ chối thành màu xanh và đỏ -->
 
 
 

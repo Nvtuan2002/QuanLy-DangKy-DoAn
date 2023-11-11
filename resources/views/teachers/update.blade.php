@@ -2,15 +2,14 @@
 @section('title', 'Cập nhật đồ án')
 
 @section('header')
-    @include('includes.header',[
+    @include('includes.header', [
         'name' => $dataTeacher->t_name,
         'img' => $dataTeacher->t_avt,
-
     ])
 @endsection
 
 @section('css')
-    <link rel="stylesheet" href="{{asset('css/style.css')}}">
+    <link rel="stylesheet" href="{{ asset('css/style.css') }}">
 @endsection
 
 @section('sidebar')
@@ -49,18 +48,53 @@
             </table>
             <table class="container">
                 @foreach ($dataProject as $key => $item)
-                <tr>
-                    <td>{{$key+1}}</td>
-                    <td>{{$item->p_name}}</td>
-                    <td>{{$item->p_request}}</td>
-                    <td>{{$item->p_major}}</td>
-                    <td>{{$item->p_quantity}}</td>
-                    <td>
-                        <button class="invite">Chỉnh sửa</button>
-                    </td>
-                </tr>
+                    <tr>
+                        <td>{{ $key + 1 }}</td>
+                        <td>{{ $item->p_name }}</td>
+                        <td>{{ $item->p_request }}</td>
+                        <td>{{ $item->p_major }}</td>
+                        <td>{{ $item->p_quantity }}</td>
+                        <td>
+                            <button class="invite" style="padding: 10px 15px;" data-bs-toggle="modal"
+                                data-bs-target="#exampleModal">
+                                Chỉnh sửa</button>
+                        </td>
+                    </tr>
                 @endforeach
             </table>
+            <!-- Modal -->
+            <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                <div class="modal-dialog">
+                    <div class="modal-content" style="top: 20vh">
+                        <div class="modal-header">
+                            <h1 class="modal-title fs-5" id="exampleModalLabel">Thêm file</h1>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body">
+                            <div style="text-align: start; margin-bottom: 10px; padding: 10px;">
+                                <label for="" style="">Tên đề tài</label>
+                                <input type="text" class="form-control d-inline-block" style="outline: none; width: 59%;" placeholder="">
+                            </div>
+                            <div style="text-align: start; margin-bottom: 10px; padding: 10px;">
+                                <label for="" style="">Yêu cầu</label>
+                                <input type="text" class="form-control d-inline-block" style="outline: none; width: 59%;" placeholder="">
+                            </div>
+                            <div style="text-align: start; margin-bottom: 10px; padding: 10px;">
+                                <label for="" style="">Chuyên ngành</label>
+                                <input type="text" class="form-control d-inline-block" style="outline: none; width: 59%;" placeholder="">
+                            </div>
+                            <div style="text-align: start; margin-bottom: 10px; padding: 10px;">
+                                <label for="" style="">Số lượng thành viên</label>
+                                <input type="text" class="form-control d-inline-block" style="outline: none; width: 59%;" placeholder="">
+                            </div>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn comeback" data-bs-dismiss="modal">Quay
+                                lại</button>
+                            <button type="submit" class="btn request">Cập nhật</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
-    </div>
-@stop
+    @stop
