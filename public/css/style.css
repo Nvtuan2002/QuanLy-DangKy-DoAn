@@ -170,7 +170,6 @@ body {
 
 main {
     margin-top: 50px;
-    background: url('../img/background-primary.png') no-repeat center 80%;
 }
 
 article {
@@ -1323,7 +1322,7 @@ option {
     width: 150px;
 }
 
-.update_new form div>button{
+.update_new form div>button {
     background-color: #ECE3CE;
 }
 
