@@ -64,7 +64,7 @@
 
                 </div>
                 <div class="messenger-footer d-flex justify-content-center">
-                    <form action="{{route('teacher.handlePostMessage')}}" method="post">
+                    <form action="{{route('teacher.handlePostMessage')}}" method="post" style="width: 95%;">
                         @csrf
                         <label for="image-upload" class="attachment-icon">
                             <i class="bi bi-card-image"></i>

@@ -19,7 +19,6 @@
 
 @section('content')
     <div class="groups col-lg-10 monitor_groups">
-        {{-- <img src="../img/background-primary.png" alt=""> --}}
         <nav aria-label="breadcrumb">
             <ol class="breadcrumb">
                 <li class="breadcrumb-item active" aria-current="page">Theo dõi tiến trình > Nhóm số

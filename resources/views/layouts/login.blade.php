@@ -100,6 +100,13 @@
             transition: .3s;
         }
 
+        .login-box .user-box i {
+            position: absolute;
+            top: 15px;
+            right: 10px;
+            cursor: pointer;
+        }
+
         .login-box .user-box input:focus~label,
         .login-box .user-box input:valid~label {
             top: -25px;

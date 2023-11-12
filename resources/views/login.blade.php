@@ -17,8 +17,9 @@
                         <label>Tài khoản</label>
                     </div>
                     <div class="user-box">
-                        <input type="password" name="password" required="">
+                        <input type="password" name="password" required="" id="password-input">
                         <label>Mật khẩu</label>
+                        <i class="bi bi-eye-slash" id="togglePassword"></i>
                     </div>
                     @if ($errors->any())
                         <p style="color: red">{{ $errors->first() }}</p>
@@ -36,4 +37,15 @@
             </div>
         </div>
     </div>
+    <script>
+        const passwordInput = document.getElementById('password-input');
+        const showPasswordCheckbox = document.getElementById('togglePassword');
+
+        showPasswordCheckbox.addEventListener('click', () => {
+            passwordInput.type = passwordInput.type === 'password' ? 'text' : 'password';
+            
+            showPasswordCheckbox.classList.toggle('bi-eye');
+            showPasswordCheckbox.classList.toggle('bi-eye-slash');
+        });
+    </script>
 @stop

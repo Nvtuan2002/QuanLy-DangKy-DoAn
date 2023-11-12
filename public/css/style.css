@@ -170,6 +170,7 @@ body {
 
 main {
     margin-top: 50px;
+    background: url('../img/background-primary.png') no-repeat center 80%;
 }
 
 article {
@@ -838,7 +839,7 @@ circle {
 
 .register_create>h5 {
     position: absolute;
-    right: 70px;
+    right: 110px;
 }
 
 .register_create form>label {
@@ -1020,7 +1021,7 @@ td:nth-child(8) {
 .contact input {
     outline: none;
     border: none;
-    width: 85%;
+    width: 80%;
 }
 
 .contact button {
@@ -1320,6 +1321,10 @@ option {
 
 .update .modal label {
     width: 150px;
+}
+
+.update_new form div>button{
+    background-color: #ECE3CE;
 }
 
 /* End Update Đồ án */
