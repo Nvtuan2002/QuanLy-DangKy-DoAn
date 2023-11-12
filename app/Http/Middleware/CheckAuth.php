@@ -15,8 +15,9 @@ class CheckAuth
      */
     public function handle(Request $request, Closure $next): Response
     {
-        
+        $id = $request->session('id');
+        if(empty($id)){   
             return $next($request);
-       
+        }
     }
 }

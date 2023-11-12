@@ -20,6 +20,9 @@
                         <input type="password" name="password" required="">
                         <label>Mật khẩu</label>
                     </div>
+                    @if ($errors->any())
+                        <p style="color: red">{{ $errors->first() }}</p>
+                    @endif
                     <a href="">Quên mật khẩu</a>
 
                     <button type="submit">

@@ -55,19 +55,18 @@ class LoginController extends Controller
             return redirect()->route('teacher.TE_dashboard');
         }
         else{
-            dd($request);
+            return back()->withErrors(['msg' => 'Sai tài khoản hoặc mật khẩu vui lòng kiểm tra lại!']);
         };
 
-        // dd($request->all());
+    }
 
-        //     if (Auth::attempt([
-        //         'email' => $email,
-        //         'password' => $password
-        //     ])) {
-        //         $dataUser = DB::table('student')
-        //             ->where('stu_email', $email)
-        //             ->first();
-        //         dd($dataUser);
-        //     };
+    public function logout(Request $request){
+
+        $request->session()->forget(['id', 't_id']);
+        $request->session()->flush();
+        
+        return redirect()->route('login');
+
+
     }
 }

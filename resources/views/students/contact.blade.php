@@ -27,29 +27,38 @@
         <div class="container row justify-content-around">
             <div class="contact col-lg-8 col-sm-12">
                 <div class="messenger-header">
-                    <h5 style="margin-left: 5px;">Nhóm 1</h5>
+                    <h5 style="margin-left: 5px;">{{$dataGroup1[0]->group_name}}</h5>
                 </div>
                 <div class="messenger-body">
-                    <div>
-                        <img src="{{ asset('./img/avatar.png') }}" alt="">
-                        <span class="message">Xin chào </span>
-                    </div>
-                    <div class="user">
-                        <span class="message user-message">Chào bạn!</span>
-                        <img src="{{ asset('./img/avatar.png') }}" alt="">
-                    </div>
+                    @foreach ($dataMessage as $item)
+                        @if ($item->chat_sender == 0 || $item->stu_id != $studentData->stu_id)
+                            <div style="display:flex">
+                                <img src="{{ asset('./img/avatar.png') }}" alt="">
+                                <span class="message" style=""> {{ $item->chat_message }} </span>
+
+                            </div>
+                        @else
+                        <div style="display:flex;justify-content:flex-end">
+                            <span class="message" style=" background-color:red"> {{ $item->chat_message }} </span>
+                        </div>
+                        @endif
+                    @endforeach
+
                 </div>
                 <div class="messenger-footer d-flex justify-content-center">
-                    <label for="image-upload" class="attachment-icon">
-                        <i class="bi bi-card-image"></i>
-                    </label>
-                    <input id="image-upload" type="file" class="attachment-input" style="display: none" accept="image/*">
-                    <label for="file-upload" class="attachment-icon">
-                        <i class="bi bi-paperclip"></i>
-                    </label>
-                    <input id="file-upload" type="file" class="attachment-input" style="display: none">
-                    <input class="invite" type="text" class="input-box" placeholder="Nhập tin nhắn...">
-                    <button class="" type="submit"><i class="bi bi-send"></i></button>
+                    <form action="{{route('student.handlePostMessage')}}" method="post">
+                        @csrf
+                        <label for="image-upload" class="attachment-icon">
+                            <i class="bi bi-card-image"></i>
+                        </label>
+                        <input id="image-upload" type="file" class="attachment-input" style="display: none" accept="image/*">
+                        <label for="file-upload" class="attachment-icon">
+                            <i class="bi bi-paperclip"></i>
+                        </label>
+                        <input id="file-upload" type="file" class="attachment-input" style="display: none">
+                        <input class="invite" type="text" class="input-box" placeholder="Nhập tin nhắn..." name="message">
+                        <button class="" type="submit"><i class="bi bi-send"></i></button>
+                    </form>
                 </div>
             </div>
             <button class="contact-hidden" data-bs-target="#flush-collapseOne5" data-bs-toggle="collapse"

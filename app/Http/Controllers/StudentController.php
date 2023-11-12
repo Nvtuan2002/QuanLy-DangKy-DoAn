@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use App\Models\Student;
 use App\Models\Teacher;
 use App\Models\Status;
+use App\Models\Notification;
+
 
 
 use Illuminate\Contracts\Cache\Store;
@@ -24,6 +26,8 @@ class StudentController extends Controller
 
     private $changeStatus;
 
+    private $notification;
+
 
 
     public function __construct()
@@ -31,6 +35,8 @@ class StudentController extends Controller
         $this->student = new Student();
 
         $this->changeStatus = new Status();
+
+        $this->notification = new Notification();
     }
 
     public function dashboard()
@@ -130,5 +136,42 @@ class StudentController extends Controller
         $studentData = $studentData[0];
 
         return view('students.calendar',compact('studentData'));
+    }
+
+    public function showChat(){
+        $id = session('id');
+
+        $studentData = $this->student->getDataStudent($id);
+
+        $studentData = $studentData[0];
+
+        $group_id = $studentData->group_id;
+        // dd($group_id);
+
+        $dataGroup1 = $this->student->getDataGroup($group_id);
+
+        $dataMessage = $this->notification->getMessage($group_id);
+
+        return view('students.contact',compact('studentData','dataGroup1','dataMessage'));
+    }
+
+    public function handlePostMessage(Request $request){    
+
+        $message = $request->message;
+
+        $stu_id = session('id');
+
+        $studentData = $this->student->getDataStudent($stu_id);
+
+        $studentData = $studentData[0];
+
+        $group_id = $studentData->group_id;
+
+        // dd($message);
+
+        // dd($group_id);
+
+        $this->notification->upMessagefromStudent($group_id,$message,$stu_id);
+        return back();
     }
 }

@@ -192,12 +192,46 @@ class TeacherController extends Controller
 
         // dd($dataGroup);
 
-        return view('teachers.contact',compact('dataTeacher','dataGroup'));
+        return view('teachers.select_contact',compact('dataTeacher','dataGroup'));
 
     }
 
-    public function showChatGroup(){
+    public function showChatGroup(Request $request,$group_id){
+        $t_id = session('t_id');
+
+        $dataTeacher = $this->teacher->getDataTeacher($t_id);
+
+        $dataTeacher =  $dataTeacher[0];
+
+        $dataGroup = $this->notification->getDataGroupTeacher($t_id);
+
+        $dataGroup1 = $this->student->getDataGroup($group_id);
+        // dd($dataGroup1);
+
+        $request->session()->put('group_now',$group_id);
         
+        $dataMember = $this->student->getMemberGroup($group_id);
+        $dataMessage = $this->notification->getMessage($group_id);
+
+        
+
+        // dd($dataMessage);
+
+        return view('teachers.contact',compact('dataTeacher','dataGroup','dataMessage','dataMember','dataGroup1'));
+    }
+
+    public function handlePostMessage(Request $request){    
+
+        $message = $request->message;
+
+        $t_id = session('t_id');
+
+        $group_id = session('group_now');
+
+        // dd($group_id);
+
+        $this->notification->upMessagefromTeacher($t_id,$group_id,$message);
+        return back();
     }
 
 

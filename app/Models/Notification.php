@@ -41,4 +41,39 @@ class Notification extends Model
         ->get();
     }
 
+    public function getMessage($group_id){
+        return DB::table('chat')
+        ->select('*')
+        ->where('group_id','=',$group_id)
+        ->get();
+    }
+
+    public function upMessagefromTeacher($t_id,$group_id,$message){
+        return DB::table('chat')
+            ->insert([
+                'group_id' => $group_id,
+                'chat_sender'=>0,
+                'chat_message' => $message,
+                'created_at' =>date('Y-m-d H-s-i'),
+                't_id' => $t_id,
+                'p_id'=>0,
+                'stu_id'=>0
+            ]);
+        
+    }
+
+    public function upMessagefromStudent($group_id,$message,$stu_id){
+        return DB::table('chat')
+            ->insert([
+                'group_id' => $group_id,
+                'chat_sender'=>1,
+                'chat_message' => $message,
+                'created_at' =>date('Y-m-d H-s-i'),
+                't_id' =>0,
+                'p_id'=>0,
+                'stu_id'=>$stu_id
+            ]);
+        
+    }
+
 }

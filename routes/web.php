@@ -16,6 +16,9 @@ use App\Models\Student;
 
 Route::get('/', [LoginController::class, 'getLogin'])->name('login');
 
+Route::get('/logout', [LoginController::class, 'logout'])->name('logout');
+
+
 Route::post('/', [LoginController::class, 'checkLogin'])->name('checkLogin');
 
 Route::prefix('student')->name('student.')->group(function () {
@@ -62,6 +65,10 @@ Route::prefix('student')->name('student.')->group(function () {
 
    Route::get('/calendar', [StudentController::class,'getCalender'])->name('calendar');
 
+   Route::get('/contact', [StudentController::class,'showChat'])->name('contact');
+
+   Route::post('/contact/', [StudentController::class,'handlePostmessage'])->name('handlePostMessage');
+
 
 
    Route::get('/infoTeacher', function () {
@@ -74,6 +81,9 @@ Route::prefix('student')->name('student.')->group(function () {
 });
 
 
+
+
+//teacher
 
 Route::prefix('teacher')->name('teacher.')->group(function () {
 
@@ -104,7 +114,9 @@ Route::prefix('teacher')->name('teacher.')->group(function () {
 
    Route::get('/contact', [TeacherController::class,'showChat'])->name('teacherChat');
 
-   Route::post('/contact/{group_id}', [TeacherController::class,'showChatGroup'])->name('handleChat');
+   Route::get('/contact/{group_id}', [TeacherController::class,'showChatGroup'])->name('handleChat');
+   Route::post('/contact/', [TeacherController::class,'handlePostmessage'])->name('handlePostMessage');
+
 
 
 
