@@ -52,12 +52,9 @@
                 </div>
             </form>
         </div>
-        <div class="d-flex justify-content-around" style="clear: both">
+        <div class="d-flex justify-content-center" style="clear: both; padding-left: 10px;">
             <div class="d-flex justify-content-center mt-5">
                 <a class="cancel px-5" href="{{ route('student.register_attend') }}">Quay lại</a>
-            </div>
-            <div class="d-flex justify-content-center mt-5">
-                <a class="cancel px-5" href="{{ route('student.register_create') }}">Tạo nhóm</a>
             </div>
         </div>
     </div>

@@ -87,17 +87,20 @@
                     </form>
                 </div>
             </div>
-            <div>
-                <ul>
+            <div style="margin-top: 10px;">
+                <ul style=" border: 1px solid #a19494; padding: unset; margin: 0px 25px; border-radius: 3px;">
                     @foreach ($dataFile as $item)
-                        <li>
-                            <div style="display: grid; grid-template-columns: 30% 15% 25% 15%; margin-top: 20px;">
+                        <li style="margin: unset; margin-top: calc(var(--borderWidth-thin, max(1px, 0.0625rem))*-1);">
+                            <div
+                                style="display: grid; grid-template-columns: 30% 25% 20% 15%;
+                             border-top: 1px solid #a19494; border-radius: 3px; 
+                             padding: 5px 10px; margin: unset">
                                 <a href="{{ asset('storage/file/' . $item->file) }}" target=”_blank”> <i
                                         class="bi bi-file-earmark-arrow-up-fill"></i>{{ $item->file }}</a>
-                                <a href="{{ route('student.dowload', ['file_name' => $item->file]) }}"><i
-                                        class="fa-solid fa-download"></i>Tải xuống</a>
                                 <p style="margin: unset; padding-top: 2px;">{{ $item->file_title }}</p>
                                 <p style="margin: unset; padding-top: 2px;">{{ $item->created_at }}</p>
+                                <a href="{{ route('student.dowload', ['file_name' => $item->file]) }}"><i
+                                        class="fa-solid fa-download"></i>Tải xuống</a>
                             </div>
                         </li>
                     @endforeach

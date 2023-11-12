@@ -89,21 +89,27 @@ col-xl : 1200px */
         padding: 5.5px !important;
     }
 
-    .monitor_groups .mx-3 .history-update .monitor_group #modal_monitor{
+    .monitor_groups .mx-3 .history-update .monitor_group #modal_monitor {
         order: 1;
         margin: 10px;
     }
 
-    .monitor_groups .mx-3 .history-update{
+    .monitor_groups .mx-3 .history-update {
         border: none !important;
     }
-    .monitor_groups .mx-3 .history-update{
+
+    .monitor_groups .mx-3 .history-update {
         order: 1;
     }
 
     .monitor_groups .mx-3 .history-update .monitor_group button,
-    .monitor_groups .mx-3 .history-update .monitor_group a{
+    .monitor_groups .mx-3 .history-update .monitor_group a {
         margin: 10px;
+    }
+
+    #loading-notJoin {
+        margin-top: 33% !important;
+        margin-bottom: 0px !important;
     }
 }
 

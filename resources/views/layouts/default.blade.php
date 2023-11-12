@@ -16,7 +16,7 @@
                 {{-- Sinh Vien --}}
                 @yield('sidebar')
             </aside>
-            <article class="col-md-10">
+            <article class="col-md-10 col-sm-11">
                 @yield('content')
             </article>
         </main>

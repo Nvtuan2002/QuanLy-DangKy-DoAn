@@ -25,7 +25,18 @@
             </ol>
         </nav>
         @if (count($dataStudentRequest) == 0 )
-            <div><h4>Không có sinh viên nào yêu cầu vào nhóm</h4></div>
+        <div id="loading-notJoin" style="margin-top: 8%;  margin-bottom: 360px">
+            <h5>Không có sinh viên nào yêu cầu vào nhóm</h5>
+            <div class="spinner">
+                <span>L</span>
+                <span>O</span>
+                <span>A</span>
+                <span>D</span>
+                <span>I</span>
+                <span>N</span>
+                <span>G</span>
+            </div>
+        </div>
         @else
             
         <div class="d-flex list_request_title">

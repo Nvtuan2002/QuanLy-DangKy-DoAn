@@ -256,22 +256,29 @@ article>div {
 
 /* Home */
 
-.home .info .card img {
-    width: 81px;
-    height: 66px;
+.home .info>div>div .dashboard_info_img {
+    height: 70px;
+    width: 60px;
+}
+
+.home .info>div>div>img {
+    width: 63px;
+    height: 47px;
 }
 
 .home .info>div>div {
-    height: 150px;
-}
-
-.home .info>div>div {
-
     padding: 10px;
     width: 240px;
     border-radius: 11px;
     background: var(--card-background);
     box-shadow: 0px 7px 4px 0px rgba(0, 0, 0, 0.25)
+}
+
+.home .info>div>div:hover,
+.home .about>div:hover,
+.home .event img:hover {
+    transform: translateY(-10px);
+    transition: 0.2s all;
 }
 
 .home .about>div {
@@ -353,11 +360,18 @@ ol li {
     top: 18%;
 }
 
-.groups .history-update ul,
-.groups .history-update ul li {
-    margin-bottom: 1rem;
+.groups .history-update ul {
+    border: 1px solid #eaeaea;
     padding-left: unset;
+    width: 550px;
+    border-radius: 5px;
+}
 
+.groups .history-update ul li {
+    border: 1px solid #eaeaea;
+    padding: 5px 10px;
+    border-radius: 5px;
+    margin: unset;
 }
 
 #groupSV tr td:nth-child(1) {
@@ -1038,6 +1052,7 @@ td:nth-child(8) {
 
 .contact label {
     cursor: pointer;
+    width: 5%;
 }
 
 .messenger-header {
@@ -1048,7 +1063,9 @@ td:nth-child(8) {
 
 .messenger-body {
     padding: 10px;
-    min-height: 500px;
+    max-height: 450px;
+    overflow: auto;
+    border-radius: 10px;
 }
 
 .messenger-footer {
@@ -1063,7 +1080,7 @@ td:nth-child(8) {
     color: #fff;
     padding: 5px;
     border-radius: 5px;
-    margin-bottom: 5px;
+    margin: 5px;
 }
 
 select,
@@ -1457,7 +1474,8 @@ label[for="file-input"]:hover {
 }
 
 .monitor_groups table {
-    all: unset;
+    border: unset;
+    width: 100%;
 }
 
 .monitor_groups table tr {

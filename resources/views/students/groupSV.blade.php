@@ -38,7 +38,6 @@
             </div>
             <div class="d-flex flex-column me-5 align-items-end">
                 <button class="cancel mb-4 ">Rời nhóm</button>
-                <button class="invite me-4"><i class="bi bi-plus-square"></i>Mời bạn tham gia</button>
             </div>
         </div>
         <div class="mx-3 row">
@@ -48,13 +47,16 @@
                         alt="">{{ $dataGroup->group_name }}
                 </p>
                 <p class="fw-bold"><i class="bi bi-clock-history"></i>Lịch sử cập nhật</p>
-                <ul>
+                <ul style="height: 300px; overflow-x: auto;">
                     @foreach ($dataUpdateFile as $item)
                         <li><i class="bi bi-file-earmark-arrow-up"></i>{{ $item->stu_name }} đã tải lên {{ $item->file }}
                         </li>
                     @endforeach
                 </ul>
-                <div class="d-flex flex-wrap justify-content-center" style="width: 420px; gap: 20px 40px;">
+                <div class="d-flex flex-wrap justify-content-center"
+                    style="width: 420px; gap: 20px 40px;   
+                    margin-left: 60px;
+                    margin-top: 100px;">
                     <a class="request" href="{{ route('student.groupSV_update') }}">Cập nhật tiến độ nhóm</a>
                     <a class="request" href="{{ route('student.groupSV_detail') }}">Xem thông tin nhóm</a>
                     <a class="request" href="{{ route('student.groupSV_request') }}">Các yêu cầu vào nhóm</a>
@@ -64,13 +66,13 @@
                 style="width: 280px; height: 630px;">
                 <p class="fw-bold" style="text-align: center;">Đánh giá của giảng viên</p>
                 @if (count($dataNotiGroup) == 0)
-                <tr>Chưa có điểm đánh giá từ giảng viên</tr>
+                    <tr>Chưa có điểm đánh giá từ giảng viên</tr>
                 @else
-                <table id="groupSV" style="width: 365px;">
-                <tr>
-                        <td>Ngày</td>
-                        <td>Điểm đánh giá</td>
-                    </tr>
+                    <table id="groupSV" style="width: 365px;">
+                        <tr>
+                            <td>Ngày</td>
+                            <td>Điểm đánh giá</td>
+                        </tr>
                         @foreach ($dataNotiGroup as $item)
                             <tr>
                                 <td>{{ $item->created_at }}</td>
@@ -78,7 +80,7 @@
                             </tr>
                         @endforeach
 
-                    @endif
+                @endif
 
                 </table>
             </div>

@@ -24,6 +24,7 @@
             height: 178px;
             object-fit: cover;
         }
+        
     </style>
 
     <div class="home col-lg-10">
@@ -36,7 +37,7 @@
             <div class="info row">
                 <div class="col-xl-4 col-lg-4 col-md-6 col-sm-12 text-center d-flex justify-content-center">
                     <div style="height: 130px;">
-                        <img src="{{ asset('img/noto_teacher.png ') }}" class="" alt="Icon Teacher">
+                        <img src="{{ asset('img/noto_teacher.png ') }}" class="dashboard_info_img" alt="Icon Teacher">
                         <h5 class="card-title h5_dashboard"><a href="{{ route('student.infoAllTeacher') }}">Thông tin giảng
                                 viên</a>
                         </h5>
@@ -44,7 +45,7 @@
                 </div>
                 <div class="col-xl-4 col-lg-4 col-md-6 col-sm-12 text-center d-flex justify-content-center">
                     <div style="height: 130px;">
-                        <img src="{{ asset('img/home_profile.png') }}" class="" alt="Icon Profile">
+                        <img src="{{ asset('img/home_profile.png') }}" class="dashboard_info_img" alt="Icon Profile">
                         <h5 class="card-title h5_dashboard"><a href="{{ route('student.infoStudent') }}">Thông tin cá
                                 nhân</a>
                         </h5>
@@ -52,7 +53,7 @@
                 </div>
                 <div class="col-xl-4 col-lg-4 col-md-6 col-sm-12 text-center d-flex justify-content-center">
                     <div style="height: 130px;">
-                        <img src="{{ asset('img/home_finance.png') }}" class="" alt="Icon Finance">
+                        <img src="{{ asset('img/home_finance.png') }}" class="dashboard_info_img" alt="Icon Finance">
                         <h5 class="card-title h5_dashboard">Tài chính</h5>
                     </div>
                 </div>

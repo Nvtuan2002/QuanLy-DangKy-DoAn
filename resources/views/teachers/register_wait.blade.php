@@ -2,16 +2,15 @@
 @section('title', 'Hàng chờ')
 
 @section('header')
-    @include('includes.header',[
+    @include('includes.header', [
         'name' => $dataTeacher->t_name,
         'img' => $dataTeacher->t_avt,
-
     ])
 @endsection
 
 
 @section('css')
-    <link rel="stylesheet" href="{{asset('css/style.css')}}">
+    <link rel="stylesheet" href="{{ asset('css/style.css') }}">
 @endsection
 
 @section('sidebar')
@@ -31,18 +30,27 @@
                 <a class="invite" href="{{ route('teacher.register_wait') }}">Hàng chờ</a>
             </div>
             <form class="container" style="margin-bottom: 10px">
-                <input placeholder="Nhập từ khóa muốn tìm kiếm" required="" pattern=".*\S.*" type="search" class="input invite" id="search">
+                <input placeholder="Nhập từ khóa muốn tìm kiếm" required="" pattern=".*\S.*" type="search"
+                    class="input invite" id="search">
                 <span class="caret"></span>
             </form>
         </div>
 
         @if (count($dataStudentRequest) == 0)
-            <div>
-                <h2>Chưa có sinh viên nào yêu cầu vào nhóm của bạn</h2>
+            <div id="loading-notJoin" style="margin-top: 10%;">
+                <h5>Chưa có sinh viên nào yêu cầu vào nhóm của bạn</h5>
+                <div class="spinner">
+                    <span>L</span>
+                    <span>O</span>
+                    <span>A</span>
+                    <span>D</span>
+                    <span>I</span>
+                    <span>N</span>
+                    <span>G</span>
+                </div>
             </div>
         @else
-            
-        <table class="container">
+            <table class="container">
                 <tr>
                     <th style="text-align: center">Tên sinh viên</th>
                     <th style="text-align: center">Mã số sinh viên</th>
@@ -52,24 +60,26 @@
                     <th style="text-align: center">Lựa chọn</th>
                 </tr>
 
-        </table>
-        <table class="container">
+            </table>
+            <table class="container">
                 @foreach ($dataStudentRequest as $item)
-                <tr>
-                    <td>{{$item->stu_name}}</td>
-                    <td>{{$item->MSSV}}</td>
-                    <td>{{$item->stu_email}}</td>
-                    <td>{{$item->p_name}}</td>
-                    <td>{{$item->stu_major}}</td>
-                    <td>
-                        <button class="invite"><a href="{{route('teacher.handleRequestJoinProject',['id'=>$item->stu_id,'status'=> 1])}}">Duyệt</a></button>
-                        <button class="invite"><a href="{{route('teacher.handleRequestJoinProject',['id'=>$item->stu_id,'status'=> 2])}}">Từ chối</a></button>
-                    </td>
-                </tr>
-                
+                    <tr>
+                        <td>{{ $item->stu_name }}</td>
+                        <td>{{ $item->MSSV }}</td>
+                        <td>{{ $item->stu_email }}</td>
+                        <td>{{ $item->p_name }}</td>
+                        <td>{{ $item->stu_major }}</td>
+                        <td>
+                            <button class="invite"><a
+                                    href="{{ route('teacher.handleRequestJoinProject', ['id' => $item->stu_id, 'status' => 1]) }}">Duyệt</a></button>
+                            <button class="invite"><a
+                                    href="{{ route('teacher.handleRequestJoinProject', ['id' => $item->stu_id, 'status' => 2]) }}">Từ
+                                    chối</a></button>
+                        </td>
+                    </tr>
                 @endforeach
-              
-        </table>
+
+            </table>
         @endif
 
     </div>

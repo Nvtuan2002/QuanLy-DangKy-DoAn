@@ -45,7 +45,7 @@
                     <h4 class="">Thông tin cá nhân</h4>
                     <div class="d-flex flex-column align-item-end" style="">
                         <textarea name="stu_desc_change" id="js-textarea" cols="10" rows="10"
-                            style="outline: none; border: none; width: 100%; height: 90px; padding: 10px; color:black" disabled >{{ $studentData->stu_desc }}</textarea>
+                            style="outline: none; border: none; width: 100%; height: 90px; padding: 10px; color:black" disabled>{{ $studentData->stu_desc }}</textarea>
                         <i class="bi bi-pencil-square" role="button" id="edit-textarea" style="text-align: end;"></i>
                         <i class="fa-solid fa-paper-plane" type="submit" id="send-textarea"
                             style="display: none; text-align: end; margin: 0.5rem;"></i>
@@ -75,7 +75,7 @@
                             @endforeach
 
                         @endif
-                        <i class="bi bi-pencil-square text-end" data-bs-toggle="modal" data-bs-target="#exampleModal"></i>
+                        <i class="bi bi-pencil-square text-end" data-bs-toggle="modal" data-bs-target="#exampleModal" role="button"></i>
                         <!-- Modal -->
                         <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel"
                             aria-hidden="true">
@@ -89,42 +89,21 @@
                                     </div>
                                     <div class="modal-body">
                                         <div style="text-align: start; margin-bottom: 10px;">
-                                            <label for="">Kỹ năng</label>
+                                            <label style="margin-right: 5px;" for="">Kỹ năng</label>
                                             <input type="text" style="outline: none; width: 50%;" placeholder="Giao tiếp"
                                                 name="stu_skill1">
-                                            <label for="">tỷ lệ (%)</label>
+                                            <label style="margin-right: 5px;" for="">tỷ lệ (%)</label>
                                             <input type="text" style="outline: none; width: 20%;"
                                                 name="stu_skill_detail1">
                                         </div>
-                                        <div style="text-align: start; margin-bottom: 10px;">
-                                            <label for="">Kỹ năng</label>
-                                            <input type="text" style="outline: none; width: 50%;"
-                                                placeholder="Giao tiếp" name="stu_skill2">
-                                            <label for="">tỷ lệ (%)</label>
-                                            <input type="text" style="outline: none; width: 20%;"
-                                                name="stu_skill_detail2">
-                                        </div>
-                                        <div style="text-align: start; margin-bottom: 10px;">
-                                            <label for="">Kỹ năng</label>
-                                            <input type="text" style="outline: none; width: 50%;"
-                                                placeholder="Giao tiếp" name="stu_skill3">
-                                            <label for="">tỷ lệ (%)</label>
-                                            <input type="text" style="outline: none; width: 20%;"
-                                                name="stu_skill_detail3">
-                                        </div>
-                                        <div style="text-align: start; margin-bottom: 10px;">
-                                            <label for="">Kỹ năng</label>
-                                            <input type="text" style="outline: none; width: 50%;"
-                                                placeholder="Giao tiếp" name="stu_skill4">
-                                            <label for="">tỷ lệ (%)</label>
-                                            <input type="text" style="outline: none; width: 20%;"
-                                                name="stu_skill_detail4">
-                                        </div>
                                     </div>
+                                    <i class="bi bi-plus-circle" id="add-skill"></i>
+
+
                                     <div class="modal-footer">
                                         <button type="button" class="btn comeback" data-bs-dismiss="modal">Quay
                                             lại</button>
-                                        {{-- <button type="submit" class="btn request">Cập nhật</button> --}}
+                                        <button type="submit" class="btn request">Cập nhật</button>
                                     </div>
                                 </div>
 
@@ -246,6 +225,47 @@
             nicknameInput.style.background = "#8EACCD";
             sendNickname.style.display = "none";
             editNicknameIcon.style.display = "inline-block";
+        });
+    </script>
+
+    <script>
+        const addSkillBtn = document.getElementById('add-skill');
+        const modalBody = document.querySelector('.modal-body');
+
+        let skillCount = 1;
+
+        addSkillBtn.addEventListener('click', () => {
+            skillCount++;
+
+            const newSkillDiv = document.createElement('div');
+            newSkillDiv.style.textAlign = 'start';
+            newSkillDiv.style.marginBottom = '10px';
+
+            const skillLabel = document.createElement('label');
+            skillLabel.textContent = 'Kỹ năng';
+            skillLabel.style.marginRight = '10px';
+
+            const skillInput = document.createElement('input');
+            skillInput.setAttribute('type', 'text');
+            skillInput.setAttribute('style', 'outline: none; width: 50%;');
+            skillInput.setAttribute('name', `stu_skill${skillCount}`);
+
+            const percentageLabel = document.createElement('label');
+            percentageLabel.style.marginRight = '10px';
+            percentageLabel.style.marginLeft = '3px';
+            percentageLabel.textContent = 'tỷ lệ (%)';
+
+            const percentageInput = document.createElement('input');
+            percentageInput.setAttribute('type', 'text');
+            percentageInput.setAttribute('style', 'outline: none; width: 20%;');
+            percentageInput.setAttribute('name', `stu_skill_detail${skillCount}`);
+
+            newSkillDiv.appendChild(skillLabel);
+            newSkillDiv.appendChild(skillInput);
+            newSkillDiv.appendChild(percentageLabel);
+            newSkillDiv.appendChild(percentageInput);
+
+            modalBody.appendChild(newSkillDiv);
         });
     </script>
 @endsection

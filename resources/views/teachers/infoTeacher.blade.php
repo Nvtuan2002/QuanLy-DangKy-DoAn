@@ -32,7 +32,6 @@
                     <label for="file-input">
                         <img src="{{ asset('https://scontent.fhan17-1.fna.fbcdn.net/v/t1.15752-9/385533421_871168748062380_2297325553142698699_n.jpg?_nc_cat=108&ccb=1-7&_nc_sid=8cd0a2&_nc_ohc=hMrzd7xiheoAX8b1D2l&_nc_ht=scontent.fhan17-1.fna&oh=03_AdRXIvodPzcdkIF_kKiJJEj-CY7dVqC24dt5W08MLkSU3g&oe=656765F7') }}"
                             alt="" id="image">
-                        <i class="bi bi-camera-fill"></i>
                     </label>
                 </div>
                 <h5
