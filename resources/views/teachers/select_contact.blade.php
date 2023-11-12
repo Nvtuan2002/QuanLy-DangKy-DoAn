@@ -24,14 +24,21 @@
                 <li class="breadcrumb-item active" aria-current="page">Danh sách nhóm Chat</li>
             </ol>
         </nav>
-        <select onchange="window.location.href=this.options[this.selectedIndex].value; "
-            style="background-color: unset; border: none; outline: none; width: 11%;">
-            @foreach ($dataGroup as $item)
-                <option value="{{ route('teacher.handleChat', ['group_id' => $item->group_id]) }}">Nhóm số:
-                    {{ $item->group_number }}</option>
-            @endforeach
+        @if (count($dataGroup) == 0)
+            <div>
+                <h3>Chưa có sinh viên tạo nhóm</h3>
+            </div>
+        @else
+            <select onchange="window.location.href=this.options[this.selectedIndex].value; "
+                style="background-color: unset; border: none; outline: none; width: 11%;">
+                @foreach ($dataGroup as $item)
+                    <option value="{{ route('teacher.handleChat', ['group_id' => $item->group_id]) }}">Nhóm số:
+                        {{ $item->group_number }}</option>
+                @endforeach
 
-        </select>
+            </select>
+        @endif
+
     </div>
 
 

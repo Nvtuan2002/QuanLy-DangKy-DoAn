@@ -34,7 +34,7 @@
                 <label for="">Yêu cầu: </label>
                 <input class="invite" type="text" name="group_request"> <br>
                 <label for="">Tên đề tài: </label>
-                <input class="invite" type="text" name="p_name" value="{{ $getProjectName }}"><br>
+                <input class="invite" type="text" name="p_name" value="{{ $getProjectName[0]->p_name }}"><br>
                 <label for="">Số thành viên: </label>
                 <input class="invite" type="text" name="group_quantity"><br>
                 <label for="">Tên nhóm: </label>

@@ -84,11 +84,18 @@ class TeacherController extends Controller
 
         $totalStudentNotRegis = $this->teacher->getToltalStudentNotRegis();
 
-
-
-
         return view('teachers.TE_dashboard',compact('dataTeacher','totalStudentRegis','totalProject','totalTeacher','totalStudentNotRegis'));
         
+    }
+
+    public function getInfoTeacher(){
+        $t_id = session('t_id');
+
+        $dataTeacher = $this->teacher->getDataTeacher($t_id);
+
+        $dataTeacher =  $dataTeacher[0];
+
+        return view('teachers.infoTeacher',compact('dataTeacher'));
     }
 
     public function getAllStudentRegis(){

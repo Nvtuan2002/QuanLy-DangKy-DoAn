@@ -16,7 +16,11 @@
         <i class="bi bi-caret-down-fill"></i>
         <ul id="userDropdownMenu">
             <li><a href="{{ route('logout') }}"><i class="me-2 bi bi-box-arrow-right"></i>Đăng xuất</a></li>
-            <li><a href="{{ route('student.infoStudent') }}"><i class="me-2 bi bi-pen"></i>Chỉnh sửa thông tin</a></li>
+            @if (Session::has('id'))
+             <li><a href="{{ route('student.infoStudent') }}"><i class="me-2 bi bi-pen"></i>Chỉnh sửa thông tin</a></li>
+            @else
+             <li><a href="{{ route('teacher.infoTeacher') }}"><i class="me-2 bi bi-pen"></i>Chỉnh sửa thông tin</a></li>
+            @endif
             <li class="has-submenu" id="settingsMenu"> <!-- Add a class for submenu and an id -->
                 <a class="submenu-trigger" role="button">
                     <i class="me-2 bi bi-gear"></i>Cài đặt

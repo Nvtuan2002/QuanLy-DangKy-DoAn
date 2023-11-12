@@ -31,13 +31,13 @@
                 <div class="info_img">
                     <input type="file" id="file-input" name="img_change" style="display: none">
                     <label for="file-input">
-                        <img src="{{ asset('storage/image/' . $studentData->stu_avt) }}" alt="" id="image"
+                        <img src="{{ asset('storage/image/' . $dataStudentRequest->stu_avt) }}" alt="" id="image"
                             name="stu_avt">
                     </label>
                 </div>
                 <h5
                     style="margin-top: 10px; background: #8EACCD; padding: 3px 3px; display:inline-block; border-radius: 5px;">
-                    {{ $studentData->stu_name }}</h5>
+                    {{ $dataStudentRequest->stu_name }}</h5>
             </div>
             <div class="row justify-content-evenly" style="margin: 30px 0px; ">
                 <div class="col-5" style=" padding:unset; border: 1px solid rgb(106, 89, 89); ">
@@ -45,7 +45,7 @@
                     <h4 class="">Thông tin cá nhân</h4>
                     <div class="d-flex flex-column align-item-end" style="">
                         <textarea name="stu_desc_change" id="js-textarea" cols="10" rows="10"
-                            style="outline: none; border: none; width: 100%; height: 90px; padding: 10px; color:black" disabled >{{ $studentData->stu_desc }}</textarea>
+                            style="outline: none; border: none; width: 100%; height: 90px; padding: 10px; color:black" disabled >{{ $dataStudentRequest->stu_desc }}</textarea>
                         <i class="bi bi-pencil-square" role="button" id="edit-textarea" style="text-align: end;"></i>
                         <i class="fa-solid fa-paper-plane" type="submit" id="send-textarea"
                             style="display: none; text-align: end; margin: 0.5rem;"></i>
@@ -55,14 +55,14 @@
                 <div class="col-5" style="border: 1px solid rgb(106, 89, 89);">
                     <h4>Kỹ năng cá nhân</h4>
                     <div class="row" style="">
-                        @if (count($studentDataDetail) == 0)
+                        {{-- @if (count($dataStudentRequestDetail) == 0)
                             <label class="ms-3">Chưa có kỹ năng bạn có muốn thêm</label>
                             <div class="progress col-9" role="progressbar" aria-label="Info example" aria-valuenow="50"
                                 aria-valuemin="0" aria-valuemax="100">
-                                {{-- <div class="progress-bar bg-info text-dark" style="width: 0%">0%</div> --}}
+                                <div class="progress-bar bg-info text-dark" style="width: 0%">0%</div>
                             </div>
                         @else
-                            @foreach ($studentDataDetail as $item)
+                            @foreach ($dataStudentRequestDetail as $item)
                                 <div class="col-6 text-start">
                                     <label class="ms-3">{{ $item->stu_skill }}</label>
                                     <div class="progress col-9" role="progressbar" aria-label="Info example"
@@ -74,7 +74,7 @@
                                 </div>
                             @endforeach
 
-                        @endif
+                        @endif --}}
                         <i class="bi bi-pencil-square text-end" data-bs-toggle="modal" data-bs-target="#exampleModal"></i>
                         <!-- Modal -->
                         <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel"
@@ -138,7 +138,7 @@
                 <div class="col-lg-5 col-xl-5 input_info d-flex justify-content-between" style="">
                     <div style="width: 85%; text-align: start;">
                         <label for="" style="width: 100px;">Họ và tên: </label>
-                        <input type="text" value="{{ $studentData->stu_name }}" disabled style="color: black">
+                        <input type="text" value="{{ $dataStudentRequest->stu_name }}" disabled style="color: black">
                     </div>
 
 
@@ -146,35 +146,35 @@
                 <div class="col-lg-5 col-xl-5 input_info d-flex justify-content-between" style="">
                     <div style="width: 85%; text-align: start;">
                         <label for="" style="width: 100px;">Số điện thoại: </label>
-                        <input type="text" value="0{{ $studentData->stu_phone }}" disabled style="color: black">
+                        <input type="text" value="0{{ $dataStudentRequest->stu_phone }}" disabled style="color: black">
                     </div>
 
                 </div>
                 <div class="col-lg-5 col-xl-5 input_info d-flex justify-content-between" style="">
                     <div style="width: 85%; text-align: start;">
                         <label for="" style="width: 100px;">Email: </label>
-                        <input type="text" value="{{ $studentData->stu_email }}" disabled style="color: black">
+                        <input type="text" value="{{ $dataStudentRequest->stu_email }}" disabled style="color: black">
                     </div>
 
                 </div>
                 <div class="col-lg-5 col-xl-5 input_info d-flex justify-content-between" style="">
                     <div style="width: 85%; text-align: start;">
                         <label for="" style="width: 100px;">Ngày Sinh: </label>
-                        <input type="date" value="{{ $studentData->stu_born }}" disabled style="color: black">
+                        <input type="date" value="{{ $dataStudentRequest->stu_born }}" disabled style="color: black">
                     </div>
 
                 </div>
                 <div class="col-lg-5 col-xl-5 input_info d-flex justify-content-between" style="">
                     <div style="width: 85%; text-align: start;">
                         <label for="" style="width: 100px;">Khoa: </label>
-                        <input type="text" value="{{ $studentData->stu_major }}" disabled style="color: black">
+                        <input type="text" value="{{ $dataStudentRequest->stu_major }}" disabled style="color: black">
                     </div>
 
                 </div>
                 <div class="col-lg-5 col-xl-5 input_info d-flex justify-content-between" style="height: 41px;">
                     <div style="width: 85%; text-align: start;">
                         <label for="" style="width: 100px;">NickName: </label>
-                        <input type="text" value="{{ $studentData->stu_nickname }}" disabled style="color: black">
+                        <input type="text" value="{{ $dataStudentRequest->stu_nickname }}" disabled style="color: black">
                     </div>
                     <i class="bi bi-pencil-square" role="button" id="edit-nickname"></i>
                     <i class="fa-solid fa-paper-plane" type="submit" id="send-nickname" style="display: none;"></i>
@@ -217,7 +217,7 @@
 
         const editNicknameIcon = document.getElementById('edit-nickname');
         const editTextareaIcon = document.getElementById('edit-textarea');
-        const nicknameInput = document.querySelector('input[value="{{ $studentData->stu_nickname }}"]');
+        const nicknameInput = document.querySelector('input[value="{{ $dataStudentRequest->stu_nickname }}"]');
         const textareas = document.getElementById('js-textarea');
         const sendNickname = document.querySelector('i[id="send-nickname"]');
         const sendTextarea = document.querySelector('i[id="send-textarea"]');

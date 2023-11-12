@@ -38,6 +38,29 @@ class Student extends Authenticatable
             ->get();
     }
 
+
+    public function createSkill($id, $stu_skill, $stu_skill_detail)
+    {
+        return DB::table('student_skill')
+            ->insert([
+                'stu_id' => $id,
+                'stu_skill' => $stu_skill,
+                'stu_skill_detail' => $stu_skill_detail,
+                'stu_id' => $id,
+               'created_at' => date('Y-m-d H-s-i') 
+            ]);
+    }
+
+    public function updateInfo($stu_id,$stu_desc,$stu_nickname,$stu_avt){
+        return DB::table('student')
+        ->where('stu_id',$stu_id)
+        ->update([
+            'stu_desc'=> $stu_desc,
+            'stu_nickname'=> $stu_nickname,
+            'stu-avt'=>$stu_avt,
+        ]);
+    }
+
     public function getNotiGroup($group_id)
     {
         return DB::table('group_rate')
@@ -97,11 +120,12 @@ class Student extends Authenticatable
     //function will insert in database 
 
 
-    public function getGroupIdLastest(){
+    public function getGroupIdLastest()
+    {
         return DB::table('student_group')
-        ->select('*')
-        ->orderBy('group_id','desc')
-        ->first();
+            ->select('*')
+            ->orderBy('group_id', 'desc')
+            ->first();
     }
 
     public function updateGroupId($id, $group_id)
@@ -113,14 +137,12 @@ class Student extends Authenticatable
             ]);
     }
 
-    public function countAllGroupId(){
+    public function countAllGroupId()
+    {
         return  DB::table('student_group')
             ->select(DB::raw('count(student_group.group_id) as number'))
             ->get();
     }
-
-
-
 
     public function countGroupNumber($p_id)
     {
@@ -140,22 +162,9 @@ class Student extends Authenticatable
             ->get();
     }
 
-    public function getAllSkill($id){
-        return DB::table('student_skill')
-        ->select('*', DB::raw("ROW_NUMBER() OVER(PARTITION BY stu_id) AS row_num  "))
-        ->where('stu_id','=',1)
+    public function getdataStudentRequest($stu_id){
+        return DB::table('student')
+        ->where('stu_id',$stu_id)
         ->get();
     }
-
-    public function updateSkill($id,$stu_skill,$stu_skill_detail,$row_num){
-        return DB::table('student_skill')
-        ->where('stu_id',$id)
-        ->where('row')
-        ->update([
-            'stu_skill' => $stu_skill,
-            'stu_skill_detail' => $stu_skill_detail
-    ]);
-    }
-
-
 }

@@ -53,7 +53,6 @@
                             <div style="display:flex">
                                 <img src="{{ asset('./img/avatar.png') }}" alt="">
                                 <span class="message" style=""> {{ $item->chat_message }} </span>
-
                             </div>
                         @else
                         <div style="display:flex;justify-content:flex-end">
@@ -90,6 +89,7 @@
                             src="{{ asset('https://scontent.fhan17-1.fna.fbcdn.net/v/t1.15752-9/385533421_871168748062380_2297325553142698699_n.jpg?_nc_cat=108&ccb=1-7&_nc_sid=8cd0a2&_nc_ohc=Gknv9e23wqcAX-scTrX&_nc_ht=scontent.fhan17-1.fna&oh=03_AdRRXo6Arrs3SrPnu3_fdbR9VvlAbCuin7cdjshNo1fIuw&oe=65687F37') }}"
                             alt="">
                     </div>
+                    <h5 class="text-center">Nhóm:{{$dataGroup1[0]->group_number}}</h5>
                     <h5 class="text-center">{{$dataGroup1[0]->group_name}}</h5>
                     <a style="margin-left: 20px;" href="{{ route('student.infoStudent') }}"><i
                             class="bi bi-person-square"></i>Trang

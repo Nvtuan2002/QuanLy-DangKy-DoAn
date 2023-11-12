@@ -35,6 +35,13 @@
                 <span class="caret"></span>
             </form>
         </div>
+
+        @if (count($dataStudentRequest) == 0)
+            <div>
+                <h2>Chưa có sinh viên nào yêu cầu vào nhóm của bạn</h2>
+            </div>
+        @else
+            
         <table class="container">
                 <tr>
                     <th style="text-align: center">Tên sinh viên</th>
@@ -63,6 +70,7 @@
                 @endforeach
               
         </table>
+        @endif
 
     </div>
 @stop

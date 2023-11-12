@@ -28,7 +28,12 @@
             <div class="alert">
                 <p class="fw-bold">Chào mừng, {{ $studentData->stu_name }}</p>
                 <p class="fw-bold">Thông báo của giảng viên: </p>
-                <p class="fw-bold">{{ $dataNotiGroup[0]->created_at }} <span style="font-weight: initial;">: {{ $dataNotiGroup[0]->rate_noti }}</span> </p>
+                @if (count($dataNotiGroup) == 0)
+                    <p>Chưa có thông báo từ giảng viên</p>
+                @else
+                    <p class="fw-bold">{{ $dataNotiGroup[0]->created_at }} <span style="font-weight: initial;">:
+                            {{ $dataNotiGroup[0]->rate_noti }}</span> </p>
+                @endif
             </div>
             <div class="d-flex flex-column me-5 align-items-end">
                 <button class="cancel mb-4 ">Rời nhóm</button>

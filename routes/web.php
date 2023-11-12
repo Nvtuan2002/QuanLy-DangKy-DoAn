@@ -45,11 +45,17 @@ Route::prefix('student')->name('student.')->group(function () {
 
    Route::get('/registerProject', [TeacherController::class, 'getAllProject'])->name('register');
 
-   Route::get('/registerProject/{p_id}/{t_id}', [StudentController::class, 'requestJoinProject'])->name('requestJoinProject');
+   Route::get('/registerProject/{p_id}/{t_id}', [HandleRequest::class, 'requestJoinProject'])->name('requestJoinProject');
 
    Route::get('/register_attend', [GroupController::class, 'getAllGroup'])->name('register_attend');
 
    Route::get('/register_attend/{group_id}', [StudentController::class, 'requestJoinGroup'])->name('requestJoinGroup');
+
+   // Route::get('/handleRequestJoingroup/{id}/{status}', [HandleRequest::class,'handleRequestJoinProject'])->name('handleRequestJoinProject');
+
+   Route::get('/seeInfoRequest/{stu_id}',[StudentController::class,'seeInfoRequest'])->name('infoRequest');
+
+
 
    Route::get('/register_create/', [GroupController::class, 'getCreateGroup'])->name('register_create');
 
@@ -89,6 +95,9 @@ Route::prefix('teacher')->name('teacher.')->group(function () {
 
    //Giảng viên
    Route::get('/TE_dashboard', [TeacherController::class,'dashboard'])->name('TE_dashboard');
+
+   Route::get('/infoTeacher', [TeacherController::class, 'getInfoTeacher'])->name('infoTeacher');
+
 
    Route::get('/register_list', [TeacherController::class,'getAllStudentRegis'])->name('register_list'); 
 

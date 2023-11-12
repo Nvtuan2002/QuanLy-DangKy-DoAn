@@ -6,8 +6,9 @@ use App\Models\Student;
 use App\Models\Teacher;
 use App\Models\Status;
 use App\Models\File;
-
 use App\Models\StudentRequest;
+use App\Models\Project;
+
 
 
 
@@ -25,12 +26,15 @@ class GroupController extends Controller
 
     private $student;
 
+    private $teacher;
 
     private $changeStatus;
 
     private $file;
 
     private $studentRequest;
+
+    private $project;
 
 
 
@@ -44,6 +48,10 @@ class GroupController extends Controller
         $this->file = new File();
 
         $this->studentRequest = new StudentRequest();
+
+        $this->teacher = new Teacher();
+
+        $this->project = new Project();
     }
 
 
@@ -60,43 +68,28 @@ class GroupController extends Controller
 
         $checkstatus = $studentData->stu_status; // check status student join group yet
 
-        $group_id = $studentData->group_id;
-
-        $dataGroup = $this->student->getDataGroup($group_id);
-
-        // dd($dataGroup);
         
-        $dataGroup = $dataGroup[0];
         
-        $dataNotiGroup = $this->student->getNotiGroup($group_id);
-
-        // dd(count($dataNotiGroup));
-        
-        $dataUpdateFile = $this->student->getDataUpdate($group_id);
-        
-        if(count($dataNotiGroup)==0  || count($dataUpdateFile)==0) {
-            return 'cho nay insert skill mac dinh cho account';
-        }
-        else{
-            if ($checkstatus != 4) {
-                return view('error.notJoinGroup', compact('studentData'));
-            } else {
-                return view('students.groupSV', compact('studentData', 'dataGroup', 'dataNotiGroup','dataUpdateFile'));
-            };
-
-        }
-        
-
+        if ($checkstatus != 4) {
+            return view('error.notJoinGroup', compact('studentData'));
+        } else {
+            $group_id = $studentData->group_id;
+            
+            $dataGroup = $this->student->getDataGroup($group_id);
+            
+            $dataNotiGroup = $this->student->getNotiGroup($group_id);
+            
+            // dd(count($dataNotiGroup));
+            
+            $dataUpdateFile = $this->student->getDataUpdate($group_id);
+            // dd($dataGroup);
+    
+            $dataGroup = $dataGroup[0];
+            return view('students.groupSV', compact('studentData', 'dataGroup', 'dataNotiGroup', 'dataUpdateFile'));
+        };
 
         // dd($dataUpdateFile);
 
-        // dd($dataNotiGroup);
-        // dd($dataGroup);
-
-
-
-
-        // dd($dataGroup);
     }
 
     public function getInfoGroup()
@@ -138,16 +131,19 @@ class GroupController extends Controller
 
         $p_id = $studentData->p_id;
 
-        // dd($p_id);
+        $t_id = $studentData->t_id;
+
+        // dd($t_id);
+        $dataTeacher = $this->teacher->getDataTeacher($t_id);
 
         $allGroup = $this->student->getAllGroup($p_id);
 
 
-        // dd($allGroup);
+        // dd($dataTeacher);
 
         // dd($t_id);
 
-        return view('students.register_attend', compact('allGroup', 'studentData'));
+        return view('students.register_attend', compact('allGroup', 'studentData', 'dataTeacher'));
     }
 
     public function requestJoinGroup(Request $request, $group_id)
@@ -177,15 +173,16 @@ class GroupController extends Controller
 
         $p_id = $studentData->p_id;
 
-        $getProjectName = $this->student->getAllGroup($p_id);
-        $getProjectName = $getProjectName[0]->p_name;
+        $getProjectName = $this->project->getNameProject($p_id);
+
+        // dd($getProjectName);
 
 
         $count = $this->student->countGroupNumber($p_id);
 
         $nextNumber = $count[0]->number + 1;
 
-        
+
         // dd($nextNumber);
         return view('students.register_create', compact('studentData', 'nextNumber', 'getProjectName'));
     }
@@ -216,17 +213,16 @@ class GroupController extends Controller
 
             $this->student->createGroup($group_leader, $group_avt, $group_request, $p_id, $group_quantity, $group_number, $group_name, $t_id);
 
-            $group_id = $this->student->getGroupIdLastest(); 
+            $group_id = $this->student->getGroupIdLastest();
             $group_id = $group_id->group_id;
 
             // dd($group_id);
 
-            $this->student->updateGroupId($id,$group_id);
+            $this->student->updateGroupId($id, $group_id);
 
             $this->changeStatus->changeStatus4($id);
 
             $this->changeStatus->leaderStatus($id);
-
         } else {
             return 'deo co file';
         }
@@ -273,7 +269,7 @@ class GroupController extends Controller
         // dd($file_title);
         if ($request->hasFile('file_upload')) {
             $request->file('file_upload')->storeAs('public/file', $file_name);
-            $this->file->saveFile($file_name, $file_title, $group_id,$id);
+            $this->file->saveFile($file_name, $file_title, $group_id, $id);
             return back();
         } else {
             return "deo co file";
@@ -282,12 +278,13 @@ class GroupController extends Controller
 
     public function downloadFile(Request $request, $file)
     {
-        $path = storage_path('app\public\file\\'.$file);
+        $path = storage_path('app\public\file\\' . $file);
         // dd($path);
         return response()->download($path);
     }
 
-    public function getRequestJoinGroup(){
+    public function getRequestJoinGroup()
+    {
 
         $id = session('id');
 
@@ -302,8 +299,6 @@ class GroupController extends Controller
 
         // dd($dataStudentRequest);
 
-        return view('students.groupSV_request',compact('studentData','dataStudentRequest'));
-
+        return view('students.groupSV_request', compact('studentData', 'dataStudentRequest'));
     }
-
 }

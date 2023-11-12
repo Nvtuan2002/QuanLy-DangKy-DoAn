@@ -34,7 +34,11 @@
             </div>
         </div>
         <div class="register_attend m-2">
-            <h5 style="float: right;">Giảng viên: {{ $allGroup[0]->t_name }}</h5>
+            <h5 style="float: right;">Giảng viên: {{ $dataTeacher[0]->t_name }}</h5>
+            @if (count($allGroup) == 0)
+                <div><h3>Hiện tại chưa có nhóm nào vui lòng tạo nhóm mới</h3></div>
+            @else
+            
             <table class="container">
                 <tr>
                     <th style="text-align: center">Tên nhóm</th>
@@ -62,6 +66,7 @@
                 @endforeach
 
             </table>
+            @endif
             <div class="d-flex justify-content-around">
                 <div class="d-flex justify-content-center mt-5">
                     <a class="cancel px-5" href="{{ route('student.register') }}">Quay lại</a>

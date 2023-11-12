@@ -25,6 +25,11 @@
                 <li class="breadcrumb-item active" aria-current="page">Theo dõi tiến trình</li>
             </ol>
         </nav>
+        @if (count($dataGroup) == 0)
+            <div>
+                <h3>Chưa có sinh viên tạo nhóm đăng kí đồ án của bạn</h3>
+            </div>
+        @else
         <table class="container">
                 <tr>
                     <th style="text-align: center">Nhóm số</th>
@@ -49,6 +54,8 @@
             @endforeach
                
         </table>
+            
+        @endif
 
     </div>
 @stop

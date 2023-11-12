@@ -47,6 +47,17 @@ FE
 <!-- - css cái trang select_contact( mới tạo) phía bên giảng viên -->
 
 
+-trang chru 2 trang
+
+- trang groupSV css khung lịch sử cập nhật dài ra và để chế độ scroll
+
+- css lịa trang group sv update cho với mỗi file có khung và để thêm tiêu đề lên trên theo thứ tự Tên file, Tiêu đề, Thời gian update, Tải xuống
+
+-xóa nút tạo nhóm trong register create
+- trang infostudent sửa lại kỹ năng cá nhân chỉ hiện thị 1 lựa chọn và có dấu cộng để thêm nhiều lựa chọn
+-trang chat phải có scroll
+
+
 
 BE
 
@@ -61,6 +72,10 @@ BE
 <!-- --render data img vào nhóm của tôi -->
 
 - validate lại khi student join vào 1 project kh có nhóm hiện lỗi
+
+lỗi member group khi đang ở trạng thái 3 thì vẫn được liệt kê vào nhóm
+
+- phía bên teacher khi theo dõi kh hiển thị file đã upload
 
 
 

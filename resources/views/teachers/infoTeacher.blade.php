@@ -4,8 +4,8 @@
 
 @section('header')
     @include('includes.header',[
-        'name' => $studentData->stu_name,
-        'img' => $studentData->stu_avt
+        'name' => $dataTeacher->t_name,
+        'img' => $dataTeacher->t_avt
     ])
 @endsection
 
@@ -14,7 +14,7 @@
 @endsection
 
 @section('sidebar')
-    @include('includes.sidebar')
+    @include('includes.sidebarTeacher')
 @endsection
 
 @section('content')

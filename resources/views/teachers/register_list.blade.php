@@ -33,6 +33,13 @@
                 <span class="caret"></span>
             </form>
         </div>
+
+        @if (count($dataStudentRegis)==0)
+            <div>
+                <h3>Chưa có sinh viên nào đăng kí đề tài của bạn</h3>
+            </div>
+        @else
+        
         <table class="container">
             <tr>
                 <th style="text-align: center">Tên sinh viên</th>
@@ -43,7 +50,6 @@
                 <th style="text-align: center">Trạng thái </th>
                 <th style="text-align: center">Lựa chọn</th>
             </tr>
-            
         </table>
         <table class="container">
             @foreach ($dataStudentRegis as $item)
@@ -73,6 +79,7 @@
             @endforeach
                
         </table>
+        @endif
 
     </div>
 @stop

@@ -32,6 +32,7 @@
                 <div class="messenger-body">
                     @foreach ($dataMessage as $item)
                         @if ($item->chat_sender == 0 || $item->stu_id != $studentData->stu_id)
+                        <h6>{{$item->stu_name}}</h6>
                             <div style="display:flex">
                                 <img src="{{ asset('./img/avatar.png') }}" alt="">
                                 <span class="message" style=""> {{ $item->chat_message }} </span>
@@ -46,7 +47,7 @@
 
                 </div>
                 <div class="messenger-footer d-flex justify-content-center">
-                    <form action="{{route('student.handlePostMessage')}}" method="post" style="width: 95%;>
+                    <form action="{{route('student.handlePostMessage')}}" method="post" style="width: 95%;">
                         @csrf
                         <label for="image-upload" class="attachment-icon">
                             <i class="bi bi-card-image"></i>

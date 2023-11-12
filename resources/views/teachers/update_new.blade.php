@@ -24,6 +24,13 @@
                 <li class="breadcrumb-item active" aria-current="page"> Cập nhật đồ án > Tạo đồ án mới</li>
             </ol>
         </nav>
+        @if (Session::has('success'))
+            <div>
+                <ul>
+                    <li>{{ Session::get('success') }}</li>
+                </ul>
+            </div>
+        @endif
         <div class="register_create container update_new">
             <h5>Giảng viên: {{ $dataTeacher->t_name }}</h5>
             <form method="POST" action="{{ route('teacher.handleCreate') }}" enctype="multipart/form-data">

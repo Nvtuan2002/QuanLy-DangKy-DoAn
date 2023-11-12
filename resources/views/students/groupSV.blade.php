@@ -29,7 +29,12 @@
             <div class="alert" style="padding: unset">
                 <p class="fw-bold">Chào mừng, {{ $studentData->stu_name }}</p>
                 <p class="fw-bold">Thông báo của giảng viên: </p>
-                <p class="fw-bold">{{ $dataNotiGroup[0]->created_at }} <span style="font-weight: initial;">: {{ $dataNotiGroup[0]->rate_noti }}</span> </p>
+                @if (count($dataNotiGroup) == 0)
+                    <p>Chưa có thông báo từ giảng viên</p>
+                @else
+                    <p class="fw-bold">{{ $dataNotiGroup[0]->created_at }} <span style="font-weight: initial;">:
+                            {{ $dataNotiGroup[0]->rate_noti }}</span> </p>
+                @endif
             </div>
             <div class="d-flex flex-column me-5 align-items-end">
                 <button class="cancel mb-4 ">Rời nhóm</button>
@@ -55,19 +60,25 @@
                     <a class="request" href="{{ route('student.groupSV_request') }}">Các yêu cầu vào nhóm</a>
                 </div>
             </div>
-            <div class="col-lg-4 col-sm-12 d-flex justify-content-end flex-column align-items-center" style="width: 280px; height: 630px;">
+            <div class="col-lg-4 col-sm-12 d-flex justify-content-end flex-column align-items-center"
+                style="width: 280px; height: 630px;">
                 <p class="fw-bold" style="text-align: center;">Đánh giá của giảng viên</p>
+                @if (count($dataNotiGroup) == 0)
+                <tr>Chưa có điểm đánh giá từ giảng viên</tr>
+                @else
                 <table id="groupSV" style="width: 365px;">
-                    <tr>
+                <tr>
                         <td>Ngày</td>
                         <td>Điểm đánh giá</td>
                     </tr>
-                    @foreach ($dataNotiGroup as $item)
-                        <tr>
-                            <td>{{ $item->created_at }}</td>
-                            <td>{{ $item->rate_score }}</td>
-                        </tr>
-                    @endforeach
+                        @foreach ($dataNotiGroup as $item)
+                            <tr>
+                                <td>{{ $item->created_at }}</td>
+                                <td>{{ $item->rate_score }}</td>
+                            </tr>
+                        @endforeach
+
+                    @endif
 
                 </table>
             </div>

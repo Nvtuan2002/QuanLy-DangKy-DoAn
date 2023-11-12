@@ -35,6 +35,13 @@
                     <span class="caret"></span>
                 </form>
             </div>
+
+            @if (count($dataProject) == 0)
+                <div>
+                    <h2>Hiện tại bạn chưa có đồ án nào</h2>
+                </div>
+            @else
+                
             <table class="container">
                 <tr>
                     <th style="text-align: center">STT</th>
@@ -60,8 +67,10 @@
                                 Chỉnh sửa</button>
                         </td>
                     </tr>
+                    <tr></tr>
                 @endforeach
             </table>
+            @endif
             <!-- Modal -->
             <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
                 <div class="modal-dialog">

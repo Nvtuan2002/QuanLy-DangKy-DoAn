@@ -65,8 +65,12 @@ class ProjectController extends Controller
         $p_request = $request->p_request;
         $p_major = $request->p_major;
         $p_quantity = $request->p_quantity;
+
+        // dd($t_id);
         
         $this->project->createNewProject($t_id, $p_name,$p_request,$p_major, $p_quantity);
+        
+        return back()->with('success','Thêm đồ án thành công');
     }
 
     

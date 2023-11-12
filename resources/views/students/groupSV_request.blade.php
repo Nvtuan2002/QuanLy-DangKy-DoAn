@@ -24,6 +24,10 @@
                 <li class="breadcrumb-item active" aria-current="page">Nhóm của bạn > Yêu cầu vào nhóm</li>
             </ol>
         </nav>
+        @if (count($dataStudentRequest) == 0 )
+            <div><h4>Không có sinh viên nào yêu cầu vào nhóm</h4></div>
+        @else
+            
         <div class="d-flex list_request_title">
             <h5 style="width: 141px">Thông tin</h5>
             <h5>Lựa chọn</h5>
@@ -33,7 +37,8 @@
                 
             <div class="d-flex list_request">
                     <p>{{$item->stu_name}}</p>
-                    <i class="bi bi-box-arrow-up-right"></i>
+                    <a href="{{route('student.infoRequest',['stu_id' =>$item->stu_id])}}"><i class="bi bi-box-arrow-up-right"></i></a>
+                    {{-- <i class="bi bi-box-arrow-up-right"></i> --}}
                     <button class="accept"><a href="{{route('student.handleRequestJoinGroup_accept',['id'=>$item->stu_id,'status'=> 1])}}">Duyệt</a></button>
                     <button class="reject"><a href="{{route('student.handleRequestJoinGroup_accept',['id'=>$item->stu_id,'status'=> 2])}}">Từ chối</a></button>
             </div>
@@ -41,6 +46,7 @@
             
             
         </div>
+        @endif
         <div class="d-flex justify-content-center mt-5">
             <a class="cancel px-5" href="{{ route('student.groupSV') }}">Quay lại</a>
         </div>

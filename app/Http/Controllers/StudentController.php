@@ -64,6 +64,8 @@ class StudentController extends Controller
 
         $studentDataDetail = $this->student->getDataDetail($id);
 
+        // dd(count($studentDataDetail));
+
         // dd($request);
         return view('students.infoStudent', compact('studentDataDetail', 'studentData'));
     }
@@ -78,9 +80,8 @@ class StudentController extends Controller
 
         $studentData = $studentData[0];
 
-        if($request->hasFile('img_change')){
-            
-            $stu_avt_change =$request->file('img_change')->getClientOriginalName();
+        if ($request->hasFile('img_change')) {
+            $stu_avt_change = $request->file('img_change')->getClientOriginalName();
         }
         $stu_desc_change = $request->stu_desc_change;
         $stu_skill1 = $request->stu_skill1;
@@ -92,53 +93,78 @@ class StudentController extends Controller
         $stu_skill_detail2 = $request->stu_skill_detail2;
         $stu_skill_detail3 = $request->stu_skill_detail3;
         $stu_skill_detail4 = $request->stu_skill_detail4;
-        
-        // dd($request->stu_skill);
-        
-        $dataupdate  = $this->student->getAllSkill($id);
-        // dd($dataupdate);
 
-        for($i= 0;$i < 4; $i++){
-           echo $dataupdate[$i]->row_num;
+        if (empty($stu_skill1) && empty($stu_skill2) && empty($stu_skill3) && empty($stu_skill4)) {
+            return "pleasd write down at least 1 skill";
+        } else {
+            $array = [
+                $stu_skill1 => $stu_skill_detail1,
+                $stu_skill2 => $stu_skill_detail2,
+                $stu_skill3 => $stu_skill_detail3,
+                $stu_skill4 => $stu_skill_detail4,
+            ];
         }
-    }
 
-    public function requestJoinProject(Request $request, $p_id, $t_id)
-    {
+        dd($array);
 
-        $id = session('id');
+        foreach ($array as $key => $value) {
+            $this->student->createSkill($id, $key, $value);
+        }
 
-        $studentData = $this->student->getDataStudent($id);
-
-        $studentData = $studentData[0];
-
-        // dd($p_id);
-
-        // $this->teacher->changeStatus($id, 1, $p_id, $t_id);
-
-        $this->changeStatus->changeStatus1($id,$p_id, $t_id);
+        // dd($array);
 
 
         return back();
-        // dd($this->student->getDataStudent($id)[0]->stu_status);
-        //     if ($studentData->stu_status == 1) {
-        //         return redirect()->route('student.register_attend')->with(['studentData' => $studentData]);
-        //     }
-        //     else{
-        //     }
+        // dd($request->stu_skill);
+
+
     }
 
-    public function getCalender(){
+    public function requestJoinGroup($group_id)
+    {
         $id = session('id');
 
         $studentData = $this->student->getDataStudent($id);
 
         $studentData = $studentData[0];
 
-        return view('students.calendar',compact('studentData'));
+
+
+        $this->changeStatus->changeStatus3($id, $group_id);
+
+        return view('error.requestJoinGroup', compact('studentData'));
     }
 
-    public function showChat(){
+    public function seeInfoRequest($stu_id)
+    {
+        $id = session('id');
+
+        $studentData = $this->student->getDataStudent($id);
+
+        $studentData = $studentData[0];
+
+        $dataStudentRequest = $this->student->getdataStudentRequest($stu_id);
+
+        $dataStudentRequest = $dataStudentRequest[0];
+        // dd($dataStudentRequest);
+
+        return view('students.InfoStudent_see', compact('studentData', 'dataStudentRequest'));
+    }
+
+
+    public function getCalender()
+    {
+        $id = session('id');
+
+        $studentData = $this->student->getDataStudent($id);
+
+        $studentData = $studentData[0];
+
+        return view('students.calendar', compact('studentData'));
+    }
+
+    public function showChat()
+    {
         $id = session('id');
 
         $studentData = $this->student->getDataStudent($id);
@@ -146,16 +172,26 @@ class StudentController extends Controller
         $studentData = $studentData[0];
 
         $group_id = $studentData->group_id;
-        // dd($group_id);
 
-        $dataGroup1 = $this->student->getDataGroup($group_id);
+        // $stu_nickname = $studentData->stu_nickname;
 
-        $dataMessage = $this->notification->getMessage($group_id);
-
-        return view('students.contact',compact('studentData','dataGroup1','dataMessage'));
+        
+        if (empty($group_id)) {
+            return view('error.errorContact', compact('studentData'));
+        } else {
+            $dataNameMessage = $this->notification->getNameMessage($group_id);
+            
+            $dataGroup1 = $this->student->getDataGroup($group_id);
+            
+            $dataMessage = $this->notification->getMessage($group_id);
+            
+            // dd($dataMessage);
+            return view('students.contact', compact('studentData', 'dataGroup1', 'dataMessage','dataNameMessage'));
+        }
     }
 
-    public function handlePostMessage(Request $request){    
+    public function handlePostMessage(Request $request)
+    {
 
         $message = $request->message;
 
@@ -167,11 +203,13 @@ class StudentController extends Controller
 
         $group_id = $studentData->group_id;
 
-        // dd($message);
+        $stu_name = $studentData->stu_nickname;
+
+        // dd($stu_name);
 
         // dd($group_id);
 
-        $this->notification->upMessagefromStudent($group_id,$message,$stu_id);
+        $this->notification->upMessagefromStudent($group_id, $message, $stu_id,$stu_name);
         return back();
     }
 }

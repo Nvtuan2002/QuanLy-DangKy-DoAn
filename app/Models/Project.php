@@ -11,6 +11,13 @@ class Project extends Model
 {
     use HasFactory;
 
+    public function getNameProject($p_id){
+        return DB::table('project')
+            ->select('p_name')
+            ->where('p_id',$p_id)
+            ->get();
+    }
+
     public function getAllProject($t_id){
         return DB::table('project')
         ->select('*')
@@ -29,9 +36,8 @@ class Project extends Model
         ]);
     }
 
-    
+    public function countNumberStudent(){
 
-    
+    }
 
-    
 }
