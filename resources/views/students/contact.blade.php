@@ -33,10 +33,9 @@
                     @foreach ($dataMessage as $item)
                         @if ($item->chat_sender == 0 || $item->stu_id != $studentData->stu_id)
                             <small style="margin-left: 0.3rem">{{ $item->name }}</small>
-                            <div style="display: flex; align-items: start; margin-bottom: 10px;">
+                            <div style="display: flex; align-items: start; margin-bottom: 10px; position:relative;">
                                 <img style="" src="{{ asset('storage/image/' . $item->avt) }}" alt="">
-                                <span class="message" style=""> {{ $item->chat_message }} </span>
-
+                                <span class="message"> {{ $item->chat_message }} </span>
                             </div>
                         @else
                             <div style="display:flex;justify-content:flex-end">

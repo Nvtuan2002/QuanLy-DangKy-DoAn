@@ -1115,6 +1115,28 @@ td:nth-child(8) {
     padding: 5px;
     border-radius: 5px;
     margin: 5px;
+    position: relative;
+}
+
+.message:before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 0;
+    height: 0;
+    text-align: center;
+}
+
+.message:active::before {
+    content: "12:00";
+    position: absolute;
+    left: 0;
+    top: -35px;
+    width: 50px;
+    height: 32px;
+    font-size: 20px;
+    color: black;
 }
 
 select,
