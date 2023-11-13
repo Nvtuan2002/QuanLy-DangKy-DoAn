@@ -18,7 +18,6 @@
 
 @section('content')
     <div class="groups_request col-lg-10">
-        <img src="../img/background-primary.png" alt="">
         <nav aria-label="breadcrumb">
             <ol class="breadcrumb">
                 <li class="breadcrumb-item active" aria-current="page">Nhóm của bạn > Yêu cầu vào nhóm</li>

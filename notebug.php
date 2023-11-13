@@ -47,9 +47,9 @@ FE
 <!-- - css cái trang select_contact( mới tạo) phía bên giảng viên -->
 
 
--trang chru 2 trang (k hỉu)
+<!-- -trang chru 2 trang (k hỉu)
 
--seeInfoRequest ko vào được
+-seeInfoRequest ko vào được -->
 
 <!-- - trang groupSV css khung lịch sử cập nhật dài ra và để chế độ scroll -->
 
@@ -60,7 +60,7 @@ theo thứ tự Tên file, Tiêu đề, Thời gian update, Tải xuống -->
 <!-- - trang infostudent sửa lại kỹ năng cá nhân chỉ hiện thị 1 lựa chọn và có dấu cộng để thêm nhiều lựa chọn -->
 <!-- -trang chat phải có scroll -->
 
-- chỉnh lại css các trang vừa bảo sử dụng các acccount khác nhau để xem validate
+<!-- - chỉnh lại css các trang vừa bảo sử dụng các acccount khác nhau để xem validate -->
 
 
 

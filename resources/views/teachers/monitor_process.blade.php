@@ -2,16 +2,15 @@
 @section('title', 'Theo dõi tiến trình')
 
 @section('header')
-    @include('includes.header',[
+    @include('includes.header', [
         'name' => $dataTeacher->t_name,
         'img' => $dataTeacher->t_avt,
-
     ])
 @endsection
 
 
 @section('css')
-    <link rel="stylesheet" href="{{asset('css/style.css')}}">
+    <link rel="stylesheet" href="{{ asset('css/style.css') }}">
 @endsection
 
 @section('sidebar')
@@ -26,11 +25,20 @@
             </ol>
         </nav>
         @if (count($dataGroup) == 0)
-            <div>
-                <h3>Chưa có sinh viên tạo nhóm đăng kí đồ án của bạn</h3>
+            <div id="loading-notJoin" style="margin-top: 10%;">
+                <h5>Chưa có sinh viên tạo nhóm đăng kí đồ án của bạn</h5>
+                <div class="spinner">
+                    <span>L</span>
+                    <span>O</span>
+                    <span>A</span>
+                    <span>D</span>
+                    <span>I</span>
+                    <span>N</span>
+                    <span>G</span>
+                </div>
             </div>
         @else
-        <table class="container">
+            <table class="container">
                 <tr>
                     <th style="text-align: center">Nhóm số</th>
                     <th style="text-align: center">Tên nhóm</th>
@@ -40,21 +48,24 @@
                     <th style="text-align: center">Lựa chọn</th>
                 </tr>
 
-        </table>
-        <table class="container">
-            @foreach ($dataGroup as $item)
-            <tr>
-                <td>{{$item->group_number}}</td>
-                <td>{{$item->group_name}}</td>
-                <td>{{$item->group_leader}}</td>
-                <td>{{$item->p_name}}</td>
-                <td>{{$item->group_quantity}}</td>
-                <td><button class="invite"><a href="{{ route('teacher.monitor_group',['group_id' => $item->group_id]) }}">Theo dõi nhóm</a></button></td>
-            </tr>
-            @endforeach
-               
-        </table>
-            
+            </table>
+            <div style="max-height: 400px; overflow: auto;">
+                <table class="container">
+                    @foreach ($dataGroup as $item)
+                        <tr>
+                            <td>{{ $item->group_number }}</td>
+                            <td>{{ $item->group_name }}</td>
+                            <td>{{ $item->group_leader }}</td>
+                            <td>{{ $item->p_name }}</td>
+                            <td>{{ $item->group_quantity }}</td>
+                            <td><button class="invite"><a
+                                        href="{{ route('teacher.monitor_group', ['group_id' => $item->group_id]) }}">Theo dõi
+                                        nhóm</a></button></td>
+                        </tr>
+                    @endforeach
+                </table>
+            </div>
+
         @endif
 
     </div>

@@ -9,11 +9,10 @@
     <div>
         <header>
             @yield('header')
-            
         </header>
         <main class="d-flex">
+            <img src="{{ asset('img/background-primary.png') }}">
             <aside class="">
-                {{-- Sinh Vien --}}
                 @yield('sidebar')
             </aside>
             <article class="col-md-10 col-sm-11">
@@ -27,4 +26,5 @@
 </body>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
 @yield('js')
+
 </html>

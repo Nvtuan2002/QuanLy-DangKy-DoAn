@@ -43,7 +43,6 @@
                                 <option value="{{ route('teacher.handleChat', ['group_id' => $item->group_id]) }}">Nhóm số:
                                     {{ $item->group_number }}</option>
                             @endforeach
-
                         </select>
 
                     </div>
@@ -53,8 +52,7 @@
                         @if ($item->chat_sender == 1)
                             <h6>{{ $item->name }}</h6>
                             <div style="display: flex; align-items: start;">
-                                <img style="margin-top: 5px; height:30px" src="{{ asset('storage/image/' . $item->avt) }}"
-                                    alt="">
+                                <img src="{{ asset('storage/image/' . $item->avt) }}">
                                 <span class="message" style=""> {{ $item->chat_message }} </span>
                             </div>
                         @else
@@ -140,7 +138,7 @@
                             data-bs-parent="#accordionFlushExample2">
                             @foreach ($dataMember as $item)
                                 @if ($item->stu_status == 4)
-                                <img class="col-6 img" src="{{ asset('storage/image/' . $item->stu_avt) }}"
+                                    <img class="col-6 img" src="{{ asset('storage/image/' . $item->stu_avt) }}"
                                         alt="">
                                     <button class="button-invisible"><i
                                             class="bi bi-people-fill"></i>{{ $item->stu_name }}</button>
@@ -148,9 +146,12 @@
                             @endforeach
                             {{-- <button class="button-invisible"><i class="bi bi-people-fill"></i>Nguyễn Viết Tuấn</button> --}}
                         </div>
-                    </div> <br>
+                    </div>
                 </div>
             </div>
+        </div>
+        <div style="text-align: center;">
+            <a class="request">Quay lại</a>
         </div>
     </div>
     <script>

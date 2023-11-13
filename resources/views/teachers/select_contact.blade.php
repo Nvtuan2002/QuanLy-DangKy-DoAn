@@ -10,7 +10,6 @@
 
 @section('css')
     <link rel="stylesheet" href="{{ asset('css/style.css') }}">
-
 @endsection
 
 @section('sidebar')
@@ -25,8 +24,17 @@
             </ol>
         </nav>
         @if (count($dataGroup) == 0)
-            <div>
-                <h3>Chưa có sinh viên tạo nhóm</h3>
+            <div id="loading-notJoin" style="margin-top: 10%;">
+                <h5>Chưa có sinh viên tạo nhóm</h5>
+                <div class="spinner">
+                    <span>L</span>
+                    <span>O</span>
+                    <span>A</span>
+                    <span>D</span>
+                    <span>I</span>
+                    <span>N</span>
+                    <span>G</span>
+                </div>
             </div>
         @else
             {{-- <select onchange="window.location.href=this.options[this.selectedIndex].value; "
@@ -38,19 +46,25 @@
 
             </select> --}}
 
-            @foreach ($a as $item)
-                <p>{{ $item->p_name }}</p>
-                @foreach ($dataGroup as $item2)
-                    @if ($item->p_id == $item2->p_id)
-                    <a href="{{ route('teacher.handleChat', ['group_id' => $item2->group_id]) }}"> + Nhóm số:
-                        {{ $item2->group_number }}</a>
-                        <br>
-                    @endif
-                @endforeach
-            @endforeach
-        @endif
-
+            <div class="d-flex justify-content-center align-items-center"
+                style="height: 60vh;">
+                <table style="width: 72%">
+                    @foreach ($a as $item)
+                        <tr>
+                            <td style="width: 35%">{{ $item->p_name }}</td>
+                            @foreach ($dataGroup as $item2)
+                                @if ($item->p_id == $item2->p_id)
+                                        <td class="" style="width: unset;"><a
+                                                href="{{ route('teacher.handleChat', ['group_id' => $item2->group_id]) }}">Nhóm
+                                                số:
+                                                {{ $item2->group_number }}</a></td>
+                                @endif
+                            @endforeach
+                        </tr>
+                    @endforeach
+                </table>
+            </div>
     </div>
-
-
+    @endif
+    </div>
 @stop

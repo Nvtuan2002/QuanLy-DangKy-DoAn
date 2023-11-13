@@ -39,8 +39,8 @@
                 <button class="cancel mb-4 ">Rời nhóm</button>
             </div>
         </div>
-        <div class="mx-3" style=" border: 1px solid rgba(0, 0, 0, 0.20);
-        background: #F9F3CC; padding: 10px;">
+        <div class="mx-3"
+            style="padding: 10px; height: 320px; background: #ededed; border-radius: 8px;">
             <div class="d-flex justify-content-between">
                 <p class="fw-bold">File của bạn</p>
                 <div>
@@ -52,7 +52,6 @@
                     </button>
 
                     <!-- Modal -->
-
                     <form action="" method="POST" enctype="multipart/form-data">
                         @csrf
                         <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel"
@@ -88,18 +87,18 @@
                 </div>
             </div>
             <div style="margin-top: 10px;">
-                <ul style=" border: 1px solid #a19494; padding: unset; margin: 0px 25px; border-radius: 3px;">
+                <ul
+                    style=" border: 1px solid #a19494; padding: unset; 
+                margin: 0px 25px; border-radius: 3px; overflow: auto; height: 250px;">
                     @foreach ($dataFile as $item)
                         <li style="margin: unset; margin-top: calc(var(--borderWidth-thin, max(1px, 0.0625rem))*-1);">
                             <div
                                 style="display: grid; grid-template-columns: 30% 25% 20% 15%;
                              border-top: 1px solid #a19494; border-radius: 3px; 
                              padding: 5px 10px; margin: unset">
-                             
-                                  
-                                  <a href="{{ asset('storage/file/' . $item->file) }}" target=”_blank”> <i
-                                          class="bi bi-file-earmark-arrow-up-fill"></i>{{ $item->file }}</a>
-                            
+                                <a href="{{ asset('storage/file/' . $item->file) }}" target=”_blank”> <i
+                                        class="bi bi-file-earmark-arrow-up-fill"></i>{{ $item->file }}</a>
+
                                 <p style="margin: unset; padding-top: 2px;">{{ $item->file_title }}</p>
                                 <p style="margin: unset; padding-top: 2px;">{{ $item->created_at }}</p>
                                 <a href="{{ route('student.dowload', ['file_name' => $item->file]) }}"><i

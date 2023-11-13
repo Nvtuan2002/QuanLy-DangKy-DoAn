@@ -37,39 +37,49 @@
             </div>
 
             @if (count($dataProject) == 0)
-                <div>
-                    <h2>Hiện tại bạn chưa có đồ án nào</h2>
+                <div id="loading-notJoin" style="margin-top: 10%; clear: both; padding-top: 5%;">
+                    <h5>Hiện tại bạn chưa có đồ án nào</h5>
+                    <div class="spinner">
+                        <span>L</span>
+                        <span>O</span>
+                        <span>A</span>
+                        <span>D</span>
+                        <span>I</span>
+                        <span>N</span>
+                        <span>G</span>
+                    </div>
                 </div>
             @else
-                
-            <table class="container">
-                <tr>
-                    <th style="text-align: center">STT</th>
-                    <th style="text-align: center">Tên đề tài</th>
-                    <th style="text-align: center">Yêu cầu</th>
-                    <th style="text-align: center">Chuyên ngành</th>
-                    <th style="text-align: center">Số lượng thành viên</th>
-                    <th style="text-align: center">Lựa chọn</th>
-                </tr>
-
-            </table>
-            <table class="container">
-                @foreach ($dataProject as $key => $item)
+                <table class="container">
                     <tr>
-                        <td>{{ $key + 1 }}</td>
-                        <td>{{ $item->p_name }}</td>
-                        <td>{{ $item->p_request }}</td>
-                        <td>{{ $item->p_major }}</td>
-                        <td>{{ $item->p_quantity }}</td>
-                        <td>
-                            <button class="invite" style="padding: 10px 15px;" data-bs-toggle="modal"
-                                data-bs-target="#exampleModal">
-                                Chỉnh sửa</button>
-                        </td>
+                        <th style="text-align: center">STT</th>
+                        <th style="text-align: center">Tên đề tài</th>
+                        <th style="text-align: center">Yêu cầu</th>
+                        <th style="text-align: center">Chuyên ngành</th>
+                        <th style="text-align: center">Số lượng thành viên</th>
+                        <th style="text-align: center">Lựa chọn</th>
                     </tr>
-                    <tr></tr>
-                @endforeach
-            </table>
+
+                </table>
+                <div style="max-height: 400px; overflow: auto;">
+                    <table class="container">
+                        @foreach ($dataProject as $key => $item)
+                            <tr>
+                                <td>{{ $key + 1 }}</td>
+                                <td>{{ $item->p_name }}</td>
+                                <td>{{ $item->p_request }}</td>
+                                <td>{{ $item->p_major }}</td>
+                                <td>{{ $item->p_quantity }}</td>
+                                <td>
+                                    <button class="invite" style="padding: 10px 15px;" data-bs-toggle="modal"
+                                        data-bs-target="#exampleModal">
+                                        Chỉnh sửa</button>
+                                </td>
+                            </tr>
+                            <tr></tr>
+                        @endforeach
+                    </table>
+                </div>
             @endif
             <!-- Modal -->
             <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -82,19 +92,23 @@
                         <div class="modal-body">
                             <div style="text-align: start; margin-bottom: 10px; padding: 10px;">
                                 <label for="" style="">Tên đề tài</label>
-                                <input type="text" class="form-control d-inline-block" style="outline: none; width: 59%;" placeholder="">
+                                <input type="text" class="form-control d-inline-block" style="outline: none; width: 59%;"
+                                    placeholder="">
                             </div>
                             <div style="text-align: start; margin-bottom: 10px; padding: 10px;">
                                 <label for="" style="">Yêu cầu</label>
-                                <input type="text" class="form-control d-inline-block" style="outline: none; width: 59%;" placeholder="">
+                                <input type="text" class="form-control d-inline-block" style="outline: none; width: 59%;"
+                                    placeholder="">
                             </div>
                             <div style="text-align: start; margin-bottom: 10px; padding: 10px;">
                                 <label for="" style="">Chuyên ngành</label>
-                                <input type="text" class="form-control d-inline-block" style="outline: none; width: 59%;" placeholder="">
+                                <input type="text" class="form-control d-inline-block" style="outline: none; width: 59%;"
+                                    placeholder="">
                             </div>
                             <div style="text-align: start; margin-bottom: 10px; padding: 10px;">
                                 <label for="" style="">Số lượng thành viên</label>
-                                <input type="text" class="form-control d-inline-block" style="outline: none; width: 59%;" placeholder="">
+                                <input type="text" class="form-control d-inline-block" style="outline: none; width: 59%;"
+                                    placeholder="">
                             </div>
                         </div>
                         <div class="modal-footer">

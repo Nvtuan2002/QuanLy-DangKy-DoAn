@@ -2,14 +2,13 @@
 @section('title', 'Danh sách sinh viên')
 
 @section('header')
-    @include('includes.header',[
+    @include('includes.header', [
         'name' => $dataTeacher->t_name,
         'img' => $dataTeacher->t_avt,
-
     ])
 @endsection
 @section('css')
-    <link rel="stylesheet" href="{{asset('css/style.css')}}">
+    <link rel="stylesheet" href="{{ asset('css/style.css') }}">
 @endsection
 
 @section('sidebar')
@@ -29,56 +28,65 @@
                 <a class="invite" href="{{ route('teacher.register_wait') }}">Hàng chờ</a>
             </div>
             <form class="container" style="margin-bottom: 10px">
-                <input placeholder="Nhập từ khóa muốn tìm kiếm" required="" pattern=".*\S.*" type="search" class="input invite" id="search">
+                <input placeholder="Nhập từ khóa muốn tìm kiếm" required="" pattern=".*\S.*" type="search"
+                    class="input invite" id="search">
                 <span class="caret"></span>
             </form>
         </div>
 
-        @if (count($dataStudentRegis)==0)
-            <div>
-                <h3>Chưa có sinh viên nào đăng kí đề tài của bạn</h3>
+        @if (count($dataStudentRegis) == 0)
+            <div id="loading-notJoin" style="margin-top: 10%;">
+                <h5>Chưa có sinh viên nào đăng kí đề tài của bạn</h5>
+                <div class="spinner">
+                    <span>L</span>
+                    <span>O</span>
+                    <span>A</span>
+                    <span>D</span>
+                    <span>I</span>
+                    <span>N</span>
+                    <span>G</span>
+                </div>
             </div>
         @else
-        
-        <table class="container">
-            <tr>
-                <th style="text-align: center">Tên sinh viên</th>
-                <th style="text-align: center">Email</th>
-                <th style="text-align: center">MSSV</th>
-                <th style="text-align: center">Đề tài tham gia</th>
-                <th style="text-align: center">Chuyên ngành </th>
-                <th style="text-align: center">Trạng thái </th>
-                <th style="text-align: center">Lựa chọn</th>
-            </tr>
-        </table>
-        <table class="container">
-            @foreach ($dataStudentRegis as $item)
-            <tr>
-                <td>{{$item->stu_name}}</td>
-                <td>{{$item->stu_email}}</td>
-                <td>{{$item->MSSV}}</td>
-                <td>{{$item->p_name}}</td>
-                <td>{{$item->stu_major}}</td>
-                <td>
-                    @if ($item->stu_status == 4)
-                        Đã có nhóm <br>
-                        Nhóm:{{$item->group_id}}
-                    @elseif ($item->stu_status == 3)
-                        Đang tham gia nhóm
-                    @elseif($item->stu_status == 2)
-                        Chưa vào nhóm
-                    @endif
-                </td>
-                <td>
-                    <button class="invite"><a href="#">Xóa</a></button>
-                    <button class="invite"><a href="#">Chỉnh sửa</a></button>
-                    <button class="invite"><a href="#">Chuyển nhóm</a></button>
-                </td>
-            </tr>
-            
-            @endforeach
-               
-        </table>
+            <table class="container">
+                <tr>
+                    <th style="text-align: center">Tên sinh viên</th>
+                    <th style="text-align: center">Email</th>
+                    <th style="text-align: center">MSSV</th>
+                    <th style="text-align: center">Đề tài tham gia</th>
+                    <th style="text-align: center">Chuyên ngành </th>
+                    <th style="text-align: center">Trạng thái </th>
+                    <th style="text-align: center">Lựa chọn</th>
+                </tr>
+            </table>
+            <div style="max-height: 500px; overflow: auto;">
+                <table class="container">
+                    @foreach ($dataStudentRegis as $item)
+                        <tr>
+                            <td>{{ $item->stu_name }}</td>
+                            <td>{{ $item->stu_email }}</td>
+                            <td>{{ $item->MSSV }}</td>
+                            <td>{{ $item->p_name }}</td>
+                            <td>{{ $item->stu_major }}</td>
+                            <td>
+                                @if ($item->stu_status == 4)
+                                    Đã có nhóm <br>
+                                    Nhóm:{{ $item->group_id }}
+                                @elseif ($item->stu_status == 3)
+                                    Đang tham gia nhóm
+                                @elseif($item->stu_status == 2)
+                                    Chưa vào nhóm
+                                @endif
+                            </td>
+                            <td>
+                                <button class="invite"><a href="#">Xóa</a></button>
+                                <button class="invite"><a href="#">Chỉnh sửa</a></button>
+                                <button class="invite"><a href="#">Chuyển nhóm</a></button>
+                            </td>
+                        </tr>
+                    @endforeach
+                </table>
+            </div>
         @endif
 
     </div>

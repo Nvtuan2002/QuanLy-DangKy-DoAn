@@ -61,25 +61,27 @@
                 </tr>
 
             </table>
-            <table class="container">
-                @foreach ($dataStudentRequest as $item)
-                    <tr>
-                        <td>{{ $item->stu_name }}</td>
-                        <td>{{ $item->MSSV }}</td>
-                        <td>{{ $item->stu_email }}</td>
-                        <td>{{ $item->p_name }}</td>
-                        <td>{{ $item->stu_major }}</td>
-                        <td>
-                            <button class="invite"><a
-                                    href="{{ route('teacher.handleRequestJoinProject', ['id' => $item->stu_id, 'status' => 1]) }}">Duyệt</a></button>
-                            <button class="invite"><a
-                                    href="{{ route('teacher.handleRequestJoinProject', ['id' => $item->stu_id, 'status' => 2]) }}">Từ
-                                    chối</a></button>
-                        </td>
-                    </tr>
-                @endforeach
+            <div style="max-height: 400px; overflow: auto;">
+                <table class="container">
+                    @foreach ($dataStudentRequest as $item)
+                        <tr>
+                            <td>{{ $item->stu_name }}</td>
+                            <td>{{ $item->MSSV }}</td>
+                            <td>{{ $item->stu_email }}</td>
+                            <td>{{ $item->p_name }}</td>
+                            <td>{{ $item->stu_major }}</td>
+                            <td>
+                                <button class="invite"><a
+                                        href="{{ route('teacher.handleRequestJoinProject', ['id' => $item->stu_id, 'status' => 1]) }}">Duyệt</a></button>
+                                <button class="invite"><a
+                                        href="{{ route('teacher.handleRequestJoinProject', ['id' => $item->stu_id, 'status' => 2]) }}">Từ
+                                        chối</a></button>
+                            </td>
+                        </tr>
+                    @endforeach
 
-            </table>
+                </table>
+            </div>
         @endif
 
     </div>

@@ -24,7 +24,7 @@
                 <li class="breadcrumb-item active" aria-current="page">Liên hệ với giảng viên ></li>
             </ol>
         </nav>
-        <div class="container row justify-content-around">
+        <div class="container row justify-content-around" style="margin: 0 auto;">
             <div class="contact col-lg-8 col-sm-12">
                 <div class="messenger-header">
                     <h5 style="margin-left: 5px;">{{ $dataGroup1[0]->group_name }}</h5>
@@ -32,9 +32,9 @@
                 <div class="messenger-body">
                     @foreach ($dataMessage as $item)
                         @if ($item->chat_sender == 0 || $item->stu_id != $studentData->stu_id)
-                            <h6>{{ $item->name }}</h6>
-                            <div style="display: flex; align-items: start;">
-                                <img style="margin-top: 5px; height:30px" src="{{ asset('storage/image/' . $item->avt) }}" alt="">
+                            <small style="margin-left: 0.3rem">{{ $item->name }}</small>
+                            <div style="display: flex; align-items: start; margin-bottom: 10px;">
+                                <img style="" src="{{ asset('storage/image/' . $item->avt) }}" alt="">
                                 <span class="message" style=""> {{ $item->chat_message }} </span>
 
                             </div>
@@ -60,15 +60,15 @@
                         <input id="file-upload" type="file" class="attachment-input" style="display: none">
                         <input class="invite" type="text" class="input-box" placeholder="Nhập tin nhắn..."
                             name="message">
-                        <button class="" type="submit"><i class="bi bi-send"></i></button>
+                        <button class="" type="submit" style="width: 5%;"><i class="bi bi-send"></i></button>
                     </form>
                     @if (Session::has('msg'))
-                    <div>
-                        <ul>
-                            <li>{{ Session::get('msg') }}</li>
-                        </ul>
-                    </div>
-                @endif
+                        <div>
+                            <ul>
+                                <li>{{ Session::get('msg') }}</li>
+                            </ul>
+                        </div>
+                    @endif
                 </div>
             </div>
             <button class="contact-hidden" data-bs-target="#flush-collapseOne5" data-bs-toggle="collapse"
@@ -82,7 +82,7 @@
                             src="{{ asset('https://scontent.fhan17-1.fna.fbcdn.net/v/t1.15752-9/385533421_871168748062380_2297325553142698699_n.jpg?_nc_cat=108&ccb=1-7&_nc_sid=8cd0a2&_nc_ohc=Gknv9e23wqcAX-scTrX&_nc_ht=scontent.fhan17-1.fna&oh=03_AdRRXo6Arrs3SrPnu3_fdbR9VvlAbCuin7cdjshNo1fIuw&oe=65687F37') }}"
                             alt="">
                     </div>
-                    <h5 class="text-center">Nguyễn Thành Trung</h5>
+                    <h5 class="text-center" style="margin-bottom: 20px;">Nguyễn Thành Trung</h5>
                     <a style="margin-left: 20px;" href="{{ route('student.infoStudent') }}"><i
                             class="bi bi-person-square"></i>Trang
                         cá nhân</a> <br>
@@ -106,7 +106,8 @@
                         <div id="flush-collapseOne2" class="accordion-collapse collapse"
                             data-bs-parent="#accordionFlushExample1">
                             <button class="button-invisible"><i class="bi bi-palette-fill"></i>Đổi chủ đề</button>
-                            <button class="button-invisible"><i class="bi bi-emoji-heart-eyes-fill"></i>Thay đổi biểu tượng
+                            <button class="button-invisible"><i class="bi bi-emoji-heart-eyes-fill"></i>Thay đổi biểu
+                                tượng
                                 cảm xúc</button>
                             <button class="button-invisible"><i class="bi bi-snapchat"></i>Chỉnh sửa biệt danh</button>
                         </div>

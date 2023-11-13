@@ -40,8 +40,7 @@
                     {{ $studentData->stu_name }}</h5>
             </div>
             <div class="row justify-content-evenly" style="margin: 30px 0px; ">
-                <div class="col-5" style=" padding:unset; border: 1px solid rgb(106, 89, 89); ">
-
+                <div class="col-5" style="border: 1px solid rgb(106, 89, 89); background: white;">
                     <h4 class="">Thông tin cá nhân</h4>
                     <div class="d-flex flex-column align-item-end" style="">
                         <textarea name="stu_desc_change" id="js-textarea" cols="10" rows="10"
@@ -52,7 +51,7 @@
                     </div>
 
                 </div>
-                <div class="col-5" style="border: 1px solid rgb(106, 89, 89);">
+                <div class="col-5" style="border: 1px solid rgb(106, 89, 89); background: white;">
                     <h4>Kỹ năng cá nhân</h4>
                     <div class="row" style="">
                         @if (count($studentDataDetail) == 0)
@@ -75,7 +74,8 @@
                             @endforeach
 
                         @endif
-                        <i class="bi bi-pencil-square text-end" data-bs-toggle="modal" data-bs-target="#exampleModal" role="button"></i>
+                        <i class="bi bi-pencil-square text-end" data-bs-toggle="modal" data-bs-target="#exampleModal"
+                            role="button"></i>
                         <!-- Modal -->
                         <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel"
                             aria-hidden="true">
@@ -114,50 +114,52 @@
             </div>
 
             <div class="row justify-content-center gy-3" style="">
-                <div class="col-lg-5 col-xl-5 input_info d-flex justify-content-between" style="">
+                <div class="col-lg-5 col-xl-5 col-md-6 input_info d-flex justify-content-between" style="">
                     <div style="width: 85%; text-align: start;">
                         <label for="" style="width: 100px;">Họ và tên: </label>
                         <input type="text" value="{{ $studentData->stu_name }}" disabled style="color: black">
                     </div>
-
-
                 </div>
-                <div class="col-lg-5 col-xl-5 input_info d-flex justify-content-between" style="">
+                <div class="col-lg-5 col-xl-5 col-md-6 input_info d-flex justify-content-between" style="">
                     <div style="width: 85%; text-align: start;">
                         <label for="" style="width: 100px;">Số điện thoại: </label>
                         <input type="text" value="0{{ $studentData->stu_phone }}" disabled style="color: black">
                     </div>
 
                 </div>
-                <div class="col-lg-5 col-xl-5 input_info d-flex justify-content-between" style="">
+                <div class="col-lg-5 col-xl-5 col-md-6 input_info d-flex justify-content-between" style="">
                     <div style="width: 85%; text-align: start;">
                         <label for="" style="width: 100px;">Email: </label>
                         <input type="text" value="{{ $studentData->stu_email }}" disabled style="color: black">
                     </div>
 
                 </div>
-                <div class="col-lg-5 col-xl-5 input_info d-flex justify-content-between" style="">
+                <div class="col-lg-5 col-xl-5 col-md-6 input_info d-flex justify-content-between" style="">
                     <div style="width: 85%; text-align: start;">
                         <label for="" style="width: 100px;">Ngày Sinh: </label>
                         <input type="date" value="{{ $studentData->stu_born }}" disabled style="color: black">
                     </div>
 
                 </div>
-                <div class="col-lg-5 col-xl-5 input_info d-flex justify-content-between" style="">
+                <div class="col-lg-5 col-xl-5 col-md-6 input_info d-flex justify-content-between" style="">
                     <div style="width: 85%; text-align: start;">
                         <label for="" style="width: 100px;">Khoa: </label>
                         <input type="text" value="{{ $studentData->stu_major }}" disabled style="color: black">
                     </div>
-
                 </div>
-                <div class="col-lg-5 col-xl-5 input_info d-flex justify-content-between" style="height: 41px;">
+                <div class="col-lg-5 col-xl-5 col-md-6 input_info d-flex justify-content-between" style="">
+                    <div style="width: 85%; text-align: start;">
+                        <label for="" style="width: 100px;">MSSV: </label>
+                        <input type="text" value="{{ $studentData->stu_major }}" disabled style="color: black">
+                    </div>
+                </div>
+                <div class="col-lg-5 col-xl-5 col-md-6 input_info d-flex justify-content-between" style="height: 41px;">
                     <div style="width: 85%; text-align: start;">
                         <label for="" style="width: 100px;">NickName: </label>
                         <input type="text" value="{{ $studentData->stu_nickname }}" disabled style="color: black">
                     </div>
                     <i class="bi bi-pencil-square" role="button" id="edit-nickname"></i>
                     <i class="fa-solid fa-paper-plane" type="submit" id="send-nickname" style="display: none;"></i>
-
                 </div>
             </div>
         </div>

@@ -47,7 +47,7 @@
             </div>
         </div>
         <div class="row justify-content-evenly" style="margin: 30px 10px;">
-            <div class="col-5" style=" padding:unset; border: 1px solid rgb(106, 89, 89); ">
+            <div class="col-5" style=" padding:unset; border: 1px solid rgb(106, 89, 89); background: white;">
                 <form action="" method="" style="padding: 0px 12px;">
                     <h4 class="">Thông tin cá nhân</h4>
                     <div class="d-flex flex-column align-item-end" style="">
@@ -59,7 +59,7 @@
                     </div>
                 </form>
             </div>
-            <div class="col-5" style="border: 1px solid rgb(106, 89, 89);">
+            <div class="col-5" style="border: 1px solid rgb(106, 89, 89); background: white;">
                 <h4>Kỹ năng cá nhân</h4>
                 <div class="row" style="">
                     @foreach ($dataTeacher_skill as $item)

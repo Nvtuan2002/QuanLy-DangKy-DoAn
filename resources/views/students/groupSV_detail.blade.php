@@ -29,7 +29,8 @@
         </div>
         <div class="d-flex" style="clear: both;">
             <div class="p-3"
-                style="margin:0 auto; width: 60% ;box-shadow: 0px 7px 4px 0px rgba(0, 0, 0, 0.25); border: 1px solid rgba(0, 0, 0, 0.20);">
+                style="margin:0 auto; width: 60% ;box-shadow: 0px 7px 4px 0px rgba(0, 0, 0, 0.25);
+                 border: 1px solid rgba(0, 0, 0, 0.20); background: white;">
                 <ul class="row">
                     <p class="col-4">Ảnh Đại diện</p>
                     <img class="col-8 img" style="width: 60px; height: 60px;"
@@ -58,8 +59,9 @@
                                     <li class="col-6">{{ $item->stu_name }}</li>
                                     @if ($item->stu_leader != 1)
                                         @if ($item->stu_id != $studentData->stu_id)
-                                        <span><a href="{{route('student.leaveGroup1',['stu_id' => $item->stu_id])}}"><button class="cancel mb-4 ">xóa khỏi nhóm</button></a></span>
-                                        {{-- <a href="{{route('student.leaveGroup1',['stu_id' => $item->stu_id])}}"><button class="cancel mb-4 ">xóa khỏi nhóm</button></a> --}}
+                                            <span><a href="{{ route('student.leaveGroup1', ['stu_id' => $item->stu_id]) }}"><button
+                                                        class="cancel mb-4 ">xóa khỏi nhóm</button></a></span>
+                                            {{-- <a href="{{route('student.leaveGroup1',['stu_id' => $item->stu_id])}}"><button class="cancel mb-4 ">xóa khỏi nhóm</button></a> --}}
                                         @endif
                                     @endif
                                 </ul>

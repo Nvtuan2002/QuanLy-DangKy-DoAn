@@ -18,8 +18,6 @@
 
 @section('content')
     <div class="groups col-lg-10">
-
-        <img src="{{ asset('../img/background-primary.png') }}" alt="">
         <nav aria-label="breadcrumb">
             <ol class="breadcrumb">
                 <li class="breadcrumb-item active" aria-current="page">Nhóm của bạn</li>
@@ -48,7 +46,9 @@
                         alt="">{{ $dataGroup->group_name }}
                 </p>
                 <p class="fw-bold"><i class="bi bi-clock-history"></i>Lịch sử cập nhật</p>
-                <ul style="height: 300px; overflow-x: auto;">
+                <ul
+                    style="height: 300px; overflow-x: auto; box-shadow: 0 0 5px rgba(0, 0, 0, 0.2); background: #ededed;
+                border: 1px solid #f68d8d;">
                     @if (count($dataUpdateFile) == 0)
                         <li>Chưa có lịch sử cập nhật</li>
                     @else

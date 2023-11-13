@@ -31,36 +31,41 @@
             </div>
         </div>
         <div class="mx-3 row">
-            <div class="col-md-9 col-sm-12 history-update" style="border-right: 1px solid black; padding: unset;">
+            <div class="col-md-9 col-sm-12 history-update" style="padding: unset;">
                 <h6 class=" fw-bold">
-                    <img class="avatar me-4" src="{{ asset('storage/image/' . $dataGroup->group_avt) }}" alt="Avatar groups"
-                        style="height: 20px; width:20px">Nhóm {{ $dataGroup->group_number }}
+                    <img class="avatar me-4 img" src="{{ asset('storage/image/' . $dataGroup->group_avt) }}"
+                        alt="Avatar groups">Nhóm {{ $dataGroup->group_number }}
                 </h6>
-                <table>
-                    <tr>
-                        <th><i class="bi bi-clock-history"></i>Lịch sử cập nhật</th>
-                        <th><i class="bi bi-upload"></i>Người tải lên</th>
-                        <th><i class="bi bi-chat-dots"></i>Bình luận</th>
-                        <th><i class="bi bi-calendar-range"></i>Thời gian</th>
-                    </tr>
-                    @foreach ($dataFile as $item)
+                <div style="height: 470px;">
+                    <table>
                         <tr>
-                            <td>
-                                <i class="bi bi-file-earmark-arrow-up"></i>{{ $item->file }}
-                            </td>
-                            <td>
-                                {{ $item->stu_name}}
-                            </td>
-                            <td>
-                                {{ $item->file_title }}
-                            </td>
-                            <td>
-                                {{ $item->created_at }}
-                            </td>
+                            <th><i class="bi bi-clock-history"></i>Lịch sử cập nhật</th>
+                            <th><i class="bi bi-upload"></i>Người tải lên</th>
+                            <th><i class="bi bi-chat-dots"></i>Bình luận</th>
+                            <th><i class="bi bi-calendar-range"></i>Thời gian</th>
                         </tr>
-                    @endforeach
-                </table>
-
+                    </table>
+                    <div style="max-height: 400px; overflow: auto;">
+                        <table>
+                            @foreach ($dataFile as $item)
+                                <tr style="">
+                                    <td>
+                                        <i class="bi bi-file-earmark-arrow-up"></i>{{ $item->file }}
+                                    </td>
+                                    <td>
+                                        {{ $item->stu_name }}
+                                    </td>
+                                    <td>
+                                        {{ $item->file_title }}
+                                    </td>
+                                    <td>
+                                        {{ $item->created_at }}
+                                    </td>
+                                </tr>
+                            @endforeach
+                        </table>
+                    </div>
+                </div>
                 <div class="d-flex flex-wrap justify-content-around monitor_group" style="">
                     <a class="request" href="{{ route('teacher.monitor_process') }}">Quay lại</a>
                     <button class="request" id="modal_monitor">Đưa ra thông báo</button>
@@ -148,14 +153,16 @@
                                 method="POST" style="margin: unset;">
                                 @csrf
                                 <div class="modal-header">
-                                    <h1 class="modal-title fs-5" id="staticBackdropLabel">Đánh giá điểm cho nhóm {{$dataGroup->group_number}}</h1>
+                                    <h1 class="modal-title fs-5" id="staticBackdropLabel">Đánh giá điểm cho nhóm
+                                        {{ $dataGroup->group_number }}</h1>
                                     <button type="button" class="btn-close" data-bs-dismiss="modal"
                                         aria-label="Close"></button>
                                 </div>
                                 <div class="modal-body">
                                     <div>
                                         <label for="">Điểm số</label>
-                                        <input type="text" class="form-control d-inline-block" placeholder="VD: 9đ" name="score">
+                                        <input type="text" class="form-control d-inline-block" placeholder="VD: 9đ"
+                                            name="score">
                                     </div>
                                 </div>
                                 <div class="modal-footer">
