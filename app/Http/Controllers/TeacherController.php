@@ -14,6 +14,9 @@ use App\Models\File;
 
 use App\Models\Notification;
 
+use App\Models\Project;
+
+
 
 
 
@@ -25,6 +28,8 @@ class TeacherController extends Controller
     private $changeStatus;
     private $file;
     private $notification;
+    private $project;
+
 
 
 
@@ -39,6 +44,9 @@ class TeacherController extends Controller
         $this->file = new File();
 
         $this->notification = new Notification();
+
+        $this->project = new Project();
+
 
 
 
@@ -95,7 +103,13 @@ class TeacherController extends Controller
 
         $dataTeacher =  $dataTeacher[0];
 
-        return view('teachers.infoTeacher',compact('dataTeacher'));
+        $dataTeacher_skill = $this->teacher->getDataTeacherSkill($t_id);
+
+        $dataTeacher_ost = $this->teacher->getDataTeacherOst($t_id);
+
+        // dd($dataTeacher_ost);
+
+        return view('teachers.infoTeacher',compact('dataTeacher','dataTeacher_skill','dataTeacher_ost'));
     }
 
     public function getAllStudentRegis(){
@@ -175,6 +189,15 @@ class TeacherController extends Controller
         // dd($group_id);
     }
 
+    public function giveScoreGroup(Request $request,$group_id){
+
+        $score = $request->score;
+
+        $this->notification->giveScoreGroup($group_id,$score);
+        
+        return back();
+    }
+
     public function setMeeting(Request $request,$group_id){
         
         $date_meeting = $request->date('date')->format('d-m-Y') ;
@@ -197,9 +220,11 @@ class TeacherController extends Controller
 
         $dataGroup = $this->notification->getDataGroupTeacher($t_id);
 
+        
+        $a = $this->project->getAllProject($t_id);
         // dd($dataGroup);
 
-        return view('teachers.select_contact',compact('dataTeacher','dataGroup'));
+        return view('teachers.select_contact',compact('dataTeacher','dataGroup','a'));
 
     }
 
@@ -231,14 +256,29 @@ class TeacherController extends Controller
 
         $message = $request->message;
 
-        $t_id = session('t_id');
+        if(empty($message)){
+            return back()->with('msg','Hãy điền trước khi bấm gửi');
+        }else{
 
-        $group_id = session('group_now');
+            $t_id = session('t_id');
+    
+            $group_id = session('group_now');
+    
+            $dataTeacher = $this->teacher->getDataTeacher($t_id);
+    
+            $dataTeacher =  $dataTeacher[0];
+    
+            $t_name = $dataTeacher->t_nickname;
+    
+            $t_avt = $dataTeacher->t_avt;
+            
+    
+            // dd($group_id);
+    
+            $this->notification->upMessagefromTeacher($t_id,$group_id,$message,$t_name,$t_avt);
+            return back();
+        }
 
-        // dd($group_id);
-
-        $this->notification->upMessagefromTeacher($t_id,$group_id,$message);
-        return back();
     }
 
 

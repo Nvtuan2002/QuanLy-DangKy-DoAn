@@ -16,7 +16,18 @@ class Notification extends Model
             ->insert([
                 'group_id' => $group_id,
                 'rate_noti' => $rate_noti,
-                'rate_score' => 0,
+                'rate_score' => NULL,
+                'created_at' =>  date('Y-m-d H:i:s')
+            ]);
+    }
+
+    public function giveScoreGroup($group_id, $rate_score)
+    {
+        return DB::table('group_rate')
+            ->insert([
+                'group_id' => $group_id,
+                'rate_noti' => NULL,
+                'rate_score' => $rate_score,
                 'created_at' =>  date('Y-m-d H:i:s')
             ]);
     }
@@ -38,9 +49,10 @@ class Notification extends Model
     public function getDataGroupTeacher($t_id)
     {
         return DB::table('student_group')
-            ->select('student_group.group_id', 'student_group.group_number')
-            ->where('t_id', '=', $t_id)
-            ->get();
+        ->select('group_id', 'group_number', 'project.p_id', 'project.p_name')
+        ->join('project','project.p_id','=','student_group.p_id')
+        ->where('student_group.t_id','=',$t_id)
+        ->get();
     }
 
     public function getMessage($group_id)
@@ -60,7 +72,7 @@ class Notification extends Model
             ->get();
     }
 
-    public function upMessagefromTeacher($t_id, $group_id, $message)
+    public function upMessagefromTeacher($t_id, $group_id, $message, $t_name, $t_avt)
     {
         return DB::table('chat')
             ->insert([
@@ -70,11 +82,13 @@ class Notification extends Model
                 'created_at' => date('Y-m-d H-s-i'),
                 't_id' => $t_id,
                 'p_id' => 0,
-                'stu_id' => 0
+                'stu_id' => 0,
+                'name' => $t_name,
+                'avt' => $t_avt
             ]);
     }
 
-    public function upMessagefromStudent($group_id, $message, $stu_id,$stu_name)
+    public function upMessagefromStudent($group_id, $message, $stu_id, $stu_name, $stu_avt)
     {
         return DB::table('chat')
             ->insert([
@@ -85,7 +99,8 @@ class Notification extends Model
                 't_id' => 0,
                 'p_id' => 0,
                 'stu_id' => $stu_id,
-                'stu_name' =>$stu_name,
+                'name' => $stu_name,
+                'avt' => $stu_avt
             ]);
     }
 }

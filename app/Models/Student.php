@@ -65,14 +65,22 @@ class Student extends Authenticatable
     {
         return DB::table('group_rate')
             ->where('group_id', $group_id)
-            ->orderBy('created_at', 'desc')
+            ->orderBy('created_at', 'asc')
             ->get();
     }
+
+    // public function getScoreGroup($group_id)
+    // {
+    //     return DB::table('group_rate')
+    //         ->where('group_id', $group_id)
+    //         ->orderBy('created_at', 'asc')
+    //         ->get();
+    // }
 
     public function getMemberGroup($groupid)
     {
         return DB::table('student')
-            ->select('student.stu_name', 'student.stu_avt')
+            ->select('student.stu_name', 'student.stu_avt','student.stu_status','student.stu_id','stu_leader')
             ->where('student.group_id', '=', $groupid)
             ->get();
     }

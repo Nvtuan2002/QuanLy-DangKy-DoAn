@@ -151,6 +151,19 @@ class StudentController extends Controller
         return view('students.InfoStudent_see', compact('studentData', 'dataStudentRequest'));
     }
 
+    public function reSelectProject(){
+        $id = session('id');
+
+        $studentData = $this->student->getDataStudent($id);
+
+        $studentData = $studentData[0];
+
+        // $this->changeStatus->reSelectProject($id);
+        $this->changeStatus->changeStatus0($id);
+
+        return redirect()->route('student.register');
+    }
+
 
     public function getCalender()
     {
@@ -176,7 +189,7 @@ class StudentController extends Controller
         // $stu_nickname = $studentData->stu_nickname;
 
         
-        if (empty($group_id)) {
+        if (empty($group_id) || $studentData->stu_status !=4) {
             return view('error.errorContact', compact('studentData'));
         } else {
             $dataNameMessage = $this->notification->getNameMessage($group_id);
@@ -203,13 +216,24 @@ class StudentController extends Controller
 
         $group_id = $studentData->group_id;
 
-        $stu_name = $studentData->stu_nickname;
+        $name = $studentData->stu_nickname;
+        $avt = $studentData->stu_avt;
 
-        // dd($stu_name);
+        // dd($avt);
 
         // dd($group_id);
 
-        $this->notification->upMessagefromStudent($group_id, $message, $stu_id,$stu_name);
+        $this->notification->upMessagefromStudent($group_id, $message, $stu_id,$name,$avt);
         return back();
+    }
+
+    public function seeInfoAllTeacher(){
+        $stu_id = session('id');
+
+        $studentData = $this->student->getDataStudent($stu_id);
+
+        $studentData = $studentData[0];
+
+        return view ('students.infoAllTeacher',compact('studentData'));
     }
 }

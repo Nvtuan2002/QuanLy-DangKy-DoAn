@@ -54,63 +54,7 @@
                 </div>
             </div>
         </div>
-        <div class="text-center">
-            <h5 style="margin-bottom: 20px;">Khoa Dược</h5>
-            <div class="row">
-                <div class="d-flex justify-content-center col-lg-6 col-sm-6">
-                    <img src="{{asset('./img/avatar.png')}}" alt="">
-                    <a href="{{ route('student.infoTeacher') }}">Hoàng Hải Long</a>
-                </div>
-                <div class="d-flex justify-content-center col-lg-6 col-sm-6">
-                    <img src="{{asset('./img/avatar.png')}}" alt="">
-                    <a href="{{ route('student.infoTeacher') }}">Hoàng Hải Long</a>
-                </div>
-                <div class="d-flex justify-content-center col-lg-6 col-sm-6">
-                    <img src="{{asset('./img/avatar.png')}}" alt="">
-                    <a href="{{ route('student.infoTeacher') }}">Hoàng Hải Long</a>
-                </div>
-                <div class="d-flex justify-content-center col-lg-6 col-sm-6">
-                    <img src="{{asset('./img/avatar.png')}}" alt="">
-                    <a href="{{ route('student.infoTeacher') }}">Hoàng Hải Long</a>
-                </div>
-                <div class="d-flex justify-content-center col-lg-6 col-sm-6">
-                    <img src="{{asset('./img/avatar.png')}}" alt="">
-                    <a href="{{ route('student.infoTeacher') }}">Hoàng Hải Long</a>
-                </div>
-                <div class="d-flex justify-content-center col-lg-6 col-sm-6">
-                    <img src="{{asset('./img/avatar.png')}}" alt="">
-                    <a href="{{ route('student.infoTeacher') }}">Hoàng Hải Long</a>
-                </div>
-            </div>
-        </div>
-        <div class="text-center">
-            <h5 style="margin-bottom: 20px;">Khoa Kinh tế</h5>
-            <div class="row">
-                <div class="d-flex justify-content-center col-lg-6 col-sm-6">
-                    <img src="{{asset('./img/avatar.png')}}" alt="">
-                    <a href="{{ route('student.infoTeacher') }}">Hoàng Hải Long</a>
-                </div>
-                <div class="d-flex justify-content-center col-lg-6 col-sm-6">
-                    <img src="{{asset('./img/avatar.png')}}" alt="">
-                    <a href="{{ route('student.infoTeacher') }}">Hoàng Hải Long</a>
-                </div>
-                <div class="d-flex justify-content-center col-lg-6 col-sm-6">
-                    <img src="{{asset('./img/avatar.png')}}" alt="">
-                    <a href="{{ route('student.infoTeacher') }}">Hoàng Hải Long</a>
-                </div>
-                <div class="d-flex justify-content-center col-lg-6 col-sm-6">
-                    <img src="{{asset('./img/avatar.png')}}" alt="">
-                    <a href="{{ route('student.infoTeacher') }}">Hoàng Hải Long</a>
-                </div>
-                <div class="d-flex justify-content-center col-lg-6 col-sm-6">
-                    <img src="{{asset('./img/avatar.png')}}" alt="">
-                    <a href="{{ route('student.infoTeacher') }}">Hoàng Hải Long</a>
-                </div>
-                <div class="d-flex justify-content-center col-lg-6 col-sm-6">
-                    <img src="{{asset('./img/avatar.png')}}" alt="">
-                    <a href="{{ route('student.infoTeacher') }}">Hoàng Hải Long</a>
-                </div>
-            </div>
-        </div>
+        
+        
     </div>
 @stop

@@ -32,12 +32,13 @@
                 @if (count($dataNotiGroup) == 0)
                     <p>Chưa có thông báo từ giảng viên</p>
                 @else
-                    <p class="fw-bold">{{ $dataNotiGroup[0]->created_at }} <span style="font-weight: initial;">:
-                            {{ $dataNotiGroup[0]->rate_noti }}</span> </p>
+                    <p class="fw-bold">{{ $dataNotiGroup['created_at'] }} <span style="font-weight: initial;">:
+                            {{ $dataNotiGroup['rate_noti'] }}</span> </p>
                 @endif
             </div>
             <div class="d-flex flex-column me-5 align-items-end">
-                <button class="cancel mb-4 ">Rời nhóm</button>
+                <a href="{{ route('student.leaveGroup') }}"><button class="cancel mb-4 ">Rời nhóm</button></a>
+                {{-- <button class="cancel mb-4 ">Rời nhóm</button> --}}
             </div>
         </div>
         <div class="mx-3 row">
@@ -48,10 +49,16 @@
                 </p>
                 <p class="fw-bold"><i class="bi bi-clock-history"></i>Lịch sử cập nhật</p>
                 <ul style="height: 300px; overflow-x: auto;">
-                    @foreach ($dataUpdateFile as $item)
-                        <li><i class="bi bi-file-earmark-arrow-up"></i>{{ $item->stu_name }} đã tải lên {{ $item->file }}
-                        </li>
-                    @endforeach
+                    @if (count($dataUpdateFile) == 0)
+                        <li>Chưa có lịch sử cập nhật</li>
+                    @else
+                        @foreach ($dataUpdateFile as $item)
+                            <li><i class="bi bi-file-earmark-arrow-up"></i>{{ $item->stu_name }} đã tải lên
+                                {{ $item->file }}
+                            </li>
+                        @endforeach
+
+                    @endif
                 </ul>
                 <div class="d-flex flex-wrap justify-content-center"
                     style="width: 420px; gap: 20px 40px;   
@@ -73,13 +80,11 @@
                             <td>Ngày</td>
                             <td>Điểm đánh giá</td>
                         </tr>
-                        @foreach ($dataNotiGroup as $item)
-                            <tr>
-                                <td>{{ $item->created_at }}</td>
-                                <td>{{ $item->rate_score }}</td>
-                            </tr>
-                        @endforeach
 
+                        <tr>
+                            <td>{{ $dataScoreGroup['created_at'] }}</td>
+                            <td>{{ $dataScoreGroup['rate_score'] }}</td>
+                        </tr>
                 @endif
 
                 </table>

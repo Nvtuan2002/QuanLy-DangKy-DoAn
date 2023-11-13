@@ -29,14 +29,25 @@
                 <h3>Chưa có sinh viên tạo nhóm</h3>
             </div>
         @else
-            <select onchange="window.location.href=this.options[this.selectedIndex].value; "
+            {{-- <select onchange="window.location.href=this.options[this.selectedIndex].value; "
                 style="background-color: unset; border: none; outline: none; width: 11%;">
                 @foreach ($dataGroup as $item)
                     <option value="{{ route('teacher.handleChat', ['group_id' => $item->group_id]) }}">Nhóm số:
                         {{ $item->group_number }}</option>
                 @endforeach
 
-            </select>
+            </select> --}}
+
+            @foreach ($a as $item)
+                <p>{{ $item->p_name }}</p>
+                @foreach ($dataGroup as $item2)
+                    @if ($item->p_id == $item2->p_id)
+                    <a href="{{ route('teacher.handleChat', ['group_id' => $item2->group_id]) }}"> + Nhóm số:
+                        {{ $item2->group_number }}</a>
+                        <br>
+                    @endif
+                @endforeach
+            @endforeach
         @endif
 
     </div>

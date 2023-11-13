@@ -32,9 +32,9 @@
                 <div class="messenger-body">
                     @foreach ($dataMessage as $item)
                         @if ($item->chat_sender == 0 || $item->stu_id != $studentData->stu_id)
-                            <h6>{{ $item->stu_name }}</h6>
+                            <h6>{{ $item->name }}</h6>
                             <div style="display: flex; align-items: start;">
-                                <img style="margin-top: 5px" src="{{ asset('./img/avatar.png') }}" alt="">
+                                <img style="margin-top: 5px; height:30px" src="{{ asset('storage/image/' . $item->avt) }}" alt="">
                                 <span class="message" style=""> {{ $item->chat_message }} </span>
 
                             </div>
@@ -62,6 +62,13 @@
                             name="message">
                         <button class="" type="submit"><i class="bi bi-send"></i></button>
                     </form>
+                    @if (Session::has('msg'))
+                    <div>
+                        <ul>
+                            <li>{{ Session::get('msg') }}</li>
+                        </ul>
+                    </div>
+                @endif
                 </div>
             </div>
             <button class="contact-hidden" data-bs-target="#flush-collapseOne5" data-bs-toggle="collapse"

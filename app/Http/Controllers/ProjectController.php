@@ -70,7 +70,7 @@ class ProjectController extends Controller
         
         $this->project->createNewProject($t_id, $p_name,$p_request,$p_major, $p_quantity);
         
-        return back()->with('success','Thêm đồ án thành công');
+        return redirect()->route('teacher.update');
     }
 
     

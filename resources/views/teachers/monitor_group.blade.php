@@ -49,7 +49,7 @@
                                 <i class="bi bi-file-earmark-arrow-up"></i>{{ $item->file }}
                             </td>
                             <td>
-                                {{ $item->created_at }}
+                                {{ $item->stu_name}}
                             </td>
                             <td>
                                 {{ $item->file_title }}
@@ -144,26 +144,22 @@
                     tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
                     <div class="modal-dialog">
                         <div class="modal-content">
-                            <form action="{{ route('teacher.set_noti', ['group_id' => $dataGroup->group_id]) }}"
+                            <form action="{{ route('teacher.set_score', ['group_id' => $dataGroup->group_id]) }}"
                                 method="POST" style="margin: unset;">
                                 @csrf
                                 <div class="modal-header">
-                                    <h1 class="modal-title fs-5" id="staticBackdropLabel">Đặt Thông báo</h1>
+                                    <h1 class="modal-title fs-5" id="staticBackdropLabel">Đánh giá điểm cho nhóm {{$dataGroup->group_number}}</h1>
                                     <button type="button" class="btn-close" data-bs-dismiss="modal"
                                         aria-label="Close"></button>
                                 </div>
                                 <div class="modal-body">
                                     <div>
-                                        <label for="">Ngày</label>
-                                        <input type="date" class="form-control d-inline-block">
-                                    </div>
-                                    <div>
                                         <label for="">Điểm số</label>
-                                        <input type="text" class="form-control d-inline-block" placeholder="VD: 9đ">
+                                        <input type="text" class="form-control d-inline-block" placeholder="VD: 9đ" name="score">
                                     </div>
                                 </div>
                                 <div class="modal-footer">
-                                    <button type="submit" class="request">Đưa ra thông báo</button>
+                                    <button type="submit" class="request">Đánh giá</button>
                                 </div>
 
                             </form>

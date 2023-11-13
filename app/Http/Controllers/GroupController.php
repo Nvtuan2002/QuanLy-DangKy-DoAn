@@ -78,14 +78,38 @@ class GroupController extends Controller
             $dataGroup = $this->student->getDataGroup($group_id);
             
             $dataNotiGroup = $this->student->getNotiGroup($group_id);
-            
-            // dd(count($dataNotiGroup));
-            
-            $dataUpdateFile = $this->student->getDataUpdate($group_id);
-            // dd($dataGroup);
+
+            if(count($dataNotiGroup)==0){
+
+                $dataUpdateFile = $this->student->getDataUpdate($group_id);
+                // dd($dataGroup);
+        
+                $dataGroup = $dataGroup[0];
+                return view('students.groupSV', compact('studentData', 'dataGroup', 'dataNotiGroup','dataUpdateFile'));
+            }else{
+                // dd($dataNotiGroup);
+                foreach ($dataNotiGroup as $key => $value) {
+                    if(!empty($value->rate_noti)){
+                        $dataNotiGroup =['rate_noti'=>$value->rate_noti,'created_at'=>$value->created_at];
+                    }else{
+                        $dataScoreGroup = ['rate_score'=>$value->rate_score,'created_at'=>$value->created_at];
+                    }
+                };
     
-            $dataGroup = $dataGroup[0];
-            return view('students.groupSV', compact('studentData', 'dataGroup', 'dataNotiGroup', 'dataUpdateFile'));
+                // foreach ($dataNotiGroup as $key => $value) {
+                //     if(!empty($value->rate_noti)){
+                //         $dataNotiGroup =[$value->rate_noti];
+                //     }
+                // };
+                // dd($dataNotiGroup['created_at']);
+                
+                $dataUpdateFile = $this->student->getDataUpdate($group_id);
+                // dd($dataGroup);
+        
+                $dataGroup = $dataGroup[0];
+                return view('students.groupSV', compact('studentData', 'dataGroup', 'dataNotiGroup', 'dataUpdateFile','dataScoreGroup'));
+            }
+    
         };
 
         // dd($dataUpdateFile);
@@ -161,6 +185,8 @@ class GroupController extends Controller
     }
 
 
+
+
     public function getCreateGroup()
     {
 
@@ -227,7 +253,7 @@ class GroupController extends Controller
             return 'deo co file';
         }
 
-        return back();
+        return redirect()->route('student.groupSV');
     }
 
     public function getUpdateProgress()
@@ -266,6 +292,7 @@ class GroupController extends Controller
         $file_title = $request->file_title;
         $file_name = $request->file('file_upload')->getClientOriginalName();
 
+
         // dd($file_title);
         if ($request->hasFile('file_upload')) {
             $request->file('file_upload')->storeAs('public/file', $file_name);
@@ -300,5 +327,32 @@ class GroupController extends Controller
         // dd($dataStudentRequest);
 
         return view('students.groupSV_request', compact('studentData', 'dataStudentRequest'));
+    }
+
+    public function leaveGroup(){
+        $id = session('id');
+
+
+        $studentData = $this->student->getDataStudent($id); // pass data to header
+
+        $studentData = $studentData[0];
+
+
+        $this->changeStatus->leaveGroup($id);
+        $this->changeStatus->changeStatus2($id);
+        return redirect()->route('student.register_attend');
+    }
+
+    public function DeleteStudentFromLeader($stu_id){
+        $id = session('id');
+
+
+        $studentData = $this->student->getDataStudent($id); // pass data to header
+
+        $studentData = $studentData[0]; 
+
+        $this->changeStatus->leaveGroup($stu_id);
+        $this->changeStatus->changeStatus2($stu_id);
+        return back();
     }
 }

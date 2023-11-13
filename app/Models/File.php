@@ -36,7 +36,8 @@ class File extends Model
         return DB::table('storage_file')
         ->select('storage_file.*', 'student.stu_name')
         ->join('student','storage_file.stu_id','=','student.stu_id')
-        ->where('storage_file.group_id','=',1)
+        ->where('storage_file.group_id','=',$group_id
+        )
         ->get();
     }
 }

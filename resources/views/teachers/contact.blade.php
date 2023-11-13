@@ -25,6 +25,7 @@
             </ol>
         </nav>
         <div class="container row justify-content-around" style="margin: 0 auto;">
+
             <div class="contact col-lg-8 col-sm-12">
                 <form action="" method="post">
                     @csrf
@@ -50,8 +51,10 @@
                 <div class="messenger-body">
                     @foreach ($dataMessage as $item)
                         @if ($item->chat_sender == 1)
+                            <h6>{{ $item->name }}</h6>
                             <div style="display: flex; align-items: start;">
-                                <img style="margin-top: 5px" src="{{ asset('./img/avatar.png') }}" alt="">
+                                <img style="margin-top: 5px; height:30px" src="{{ asset('storage/image/' . $item->avt) }}"
+                                    alt="">
                                 <span class="message" style=""> {{ $item->chat_message }} </span>
                             </div>
                         @else
@@ -79,6 +82,13 @@
                         <button class="" style="width: 5%;" type="submit"><i class="bi bi-send"></i></button>
                     </form>
                 </div>
+                @if (Session::has('msg'))
+                    <div>
+                        <ul>
+                            <li>{{ Session::get('msg') }}</li>
+                        </ul>
+                    </div>
+                @endif
             </div>
             <button class="contact-hidden" data-bs-target="#flush-collapseOne5" data-bs-toggle="collapse"
                 aria-expanded="false" aria-controls="flush-collapseOne"><i
@@ -87,8 +97,7 @@
                 data-bs-parent="#accordionFlushExample">
                 <div class="your-message">
                     <div class="avatar-preview">
-                        <img id="previewImage"
-                            src="{{ asset('https://scontent.fhan17-1.fna.fbcdn.net/v/t1.15752-9/385533421_871168748062380_2297325553142698699_n.jpg?_nc_cat=108&ccb=1-7&_nc_sid=8cd0a2&_nc_ohc=Gknv9e23wqcAX-scTrX&_nc_ht=scontent.fhan17-1.fna&oh=03_AdRRXo6Arrs3SrPnu3_fdbR9VvlAbCuin7cdjshNo1fIuw&oe=65687F37') }}"
+                        <img id="previewImage" src="{{ asset('storage/image/' . $dataGroup1[0]->group_avt) }}"
                             alt="">
                     </div>
                     <h5 class="text-center">Nhóm:{{ $dataGroup1[0]->group_number }}</h5>
@@ -130,8 +139,12 @@
                         <div id="flush-collapseOne3" class="accordion-collapse collapse"
                             data-bs-parent="#accordionFlushExample2">
                             @foreach ($dataMember as $item)
-                                <button class="button-invisible"><i
-                                        class="bi bi-people-fill"></i>{{ $item->stu_name }}</button>
+                                @if ($item->stu_status == 4)
+                                <img class="col-6 img" src="{{ asset('storage/image/' . $item->stu_avt) }}"
+                                        alt="">
+                                    <button class="button-invisible"><i
+                                            class="bi bi-people-fill"></i>{{ $item->stu_name }}</button>
+                                @endif
                             @endforeach
                             {{-- <button class="button-invisible"><i class="bi bi-people-fill"></i>Nguyễn Viết Tuấn</button> --}}
                         </div>

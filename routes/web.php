@@ -51,10 +51,15 @@ Route::prefix('student')->name('student.')->group(function () {
 
    Route::get('/register_attend/{group_id}', [StudentController::class, 'requestJoinGroup'])->name('requestJoinGroup');
 
+   route::get('/turnback',[StudentController::class,'reSelectProject'])->name('reSelect');
+
    // Route::get('/handleRequestJoingroup/{id}/{status}', [HandleRequest::class,'handleRequestJoinProject'])->name('handleRequestJoinProject');
 
    Route::get('/seeInfoRequest/{stu_id}',[StudentController::class,'seeInfoRequest'])->name('infoRequest');
 
+   Route::get('/leaveGroup', [GroupController::class,'leaveGroup'])->name('leaveGroup');
+
+   Route::get('/leaveGroup1/{stu_id}', [GroupController::class,'DeleteStudentFromLeader'])->name('leaveGroup1');
 
 
    Route::get('/register_create/', [GroupController::class, 'getCreateGroup'])->name('register_create');
@@ -77,13 +82,7 @@ Route::prefix('student')->name('student.')->group(function () {
 
 
 
-   Route::get('/infoTeacher', function () {
-      return view('students.infoTeacher');
-   })->name('infoTeacher');
-
-   Route::get('/infoAllTeacher', function () {
-      return view('students.infoAllTeacher');
-   })->name('infoAllTeacher');
+   Route::get('/infoAllTeacher',[StudentController::class,'seeInfoAllTeacher'])->name('infoAllTeacher');
 });
 
 
@@ -118,6 +117,8 @@ Route::prefix('teacher')->name('teacher.')->group(function () {
    Route::get('/monitor_group/{group_id}', [TeacherController::class,'observeGroup'])->name('monitor_group');
 
    Route::post('/set_noti/{group_id}', [TeacherController::class,'setNotification'])->name('set_noti');
+
+   Route::post('/set_score/{group_id}', [TeacherController::class,'giveScoreGroup'])->name('set_score');
 
    Route::post('/set_meeting/{group_id}', [TeacherController::class,'setMeeting'])->name('set_meeting');
 

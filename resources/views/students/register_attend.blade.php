@@ -69,7 +69,7 @@
             @endif
             <div class="d-flex justify-content-around">
                 <div class="d-flex justify-content-center mt-5">
-                    <a class="cancel px-5" href="{{ route('student.register') }}">Quay lại</a>
+                    <a class="cancel px-5" href="{{ route('student.reSelect') }}">Quay lại</a>
                 </div>
                 <div class="d-flex justify-content-center mt-5">
                     <a class="cancel px-5" href="{{ route('student.register_create') }}">Tạo nhóm</a>

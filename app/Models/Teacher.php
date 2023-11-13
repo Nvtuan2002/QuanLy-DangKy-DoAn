@@ -27,6 +27,22 @@ class Teacher extends Model
             ->get();
     }
 
+    public function getDataTeacherSkill($t_id){
+        return DB::table('teacher_skill')
+        ->select('teacher_skill.t_skill', 'teacher_skill.t_skill_detail')
+        ->where('t_id','=',$t_id)
+        ->whereNotNull('teacher_skill.t_skill')
+        ->get();
+    }
+
+    public function getDataTeacherOst($t_id){
+        return DB::table('teacher_skill')
+        ->select('teacher_skill.t_ost')
+        ->where('t_id','=',$t_id)
+        ->whereNotNull('teacher_skill.t_ost')
+        ->get();
+    }
+
     public function getToltalStudentRegis()
     {
         return  DB::table('student')

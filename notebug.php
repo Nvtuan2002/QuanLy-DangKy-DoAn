@@ -48,6 +48,7 @@ FE
 
 
 -trang chru 2 trang (k hỉu)
+
 -seeInfoRequest ko vào được
 
 <!-- - trang groupSV css khung lịch sử cập nhật dài ra và để chế độ scroll -->
@@ -58,6 +59,8 @@ theo thứ tự Tên file, Tiêu đề, Thời gian update, Tải xuống -->
 <!-- -xóa nút tạo nhóm trong register create -->
 <!-- - trang infostudent sửa lại kỹ năng cá nhân chỉ hiện thị 1 lựa chọn và có dấu cộng để thêm nhiều lựa chọn -->
 <!-- -trang chat phải có scroll -->
+
+- chỉnh lại css các trang vừa bảo sử dụng các acccount khác nhau để xem validate
 
 
 
@@ -78,6 +81,9 @@ BE
 lỗi member group khi đang ở trạng thái 3 thì vẫn được liệt kê vào nhóm
 
 - phía bên teacher khi theo dõi kh hiển thị file đã upload
+
+khi leader rời nhóm xóa bỏ stu leader và xóa group
+
 
 
 

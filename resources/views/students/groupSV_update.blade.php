@@ -95,8 +95,11 @@
                                 style="display: grid; grid-template-columns: 30% 25% 20% 15%;
                              border-top: 1px solid #a19494; border-radius: 3px; 
                              padding: 5px 10px; margin: unset">
-                                <a href="{{ asset('storage/file/' . $item->file) }}" target=”_blank”> <i
-                                        class="bi bi-file-earmark-arrow-up-fill"></i>{{ $item->file }}</a>
+                             
+                                  
+                                  <a href="{{ asset('storage/file/' . $item->file) }}" target=”_blank”> <i
+                                          class="bi bi-file-earmark-arrow-up-fill"></i>{{ $item->file }}</a>
+                            
                                 <p style="margin: unset; padding-top: 2px;">{{ $item->file_title }}</p>
                                 <p style="margin: unset; padding-top: 2px;">{{ $item->created_at }}</p>
                                 <a href="{{ route('student.dowload', ['file_name' => $item->file]) }}"><i
