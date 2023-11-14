@@ -70,9 +70,7 @@ Route::prefix('student')->name('student.')->group(function () {
 
    Route::get('/handleRequest/{id}/{status}', [HandleRequest::class,'handleRequestJoinGroup'])->name('handleRequestJoinGroup_accept');
 
-
    Route::get('/contact', [StudentController::class,'showChat'])->name('contact');
-
 
    Route::get('/calendar', [StudentController::class,'getCalender'])->name('calendar');
 
@@ -80,9 +78,9 @@ Route::prefix('student')->name('student.')->group(function () {
 
    Route::post('/contact/', [StudentController::class,'handlePostmessage'])->name('handlePostMessage');
 
-
-
    Route::get('/infoAllTeacher',[StudentController::class,'seeInfoAllTeacher'])->name('infoAllTeacher');
+
+   Route::get('/infoTeacher/{t_id}', [StudentController::class,'SeeInfoTeacherDetail'])->name('seeInfo');
 });
 
 
@@ -99,6 +97,10 @@ Route::prefix('teacher')->name('teacher.')->group(function () {
 
 
    Route::get('/register_list', [TeacherController::class,'getAllStudentRegis'])->name('register_list'); 
+
+   Route::get('/Delete/{stu_id}',[TeacherController::class,'DeleteStudentFromProject'])->name('deleteStudent');
+
+   Route::get('/seeInfoStudent/{stu_id}', [TeacherController::class,'seeInfoStudent'])->name('infoStudent');
 
    Route::get('/register_wait', [TeacherController::class,'getAllStudentRequestProject'])->name('register_wait');
 

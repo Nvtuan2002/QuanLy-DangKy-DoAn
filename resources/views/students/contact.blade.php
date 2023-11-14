@@ -30,6 +30,12 @@
                     <h5 style="margin-left: 5px;">{{ $dataGroup1[0]->group_name }}</h5>
                 </div>
                 <div class="messenger-body">
+                    @if (count($dataNameMessage) == 0)
+                    <div style="text-align:center">
+                        <span >Chưa có tin nhắn nào với giảng viên trước đây</span>
+                    </div>
+                    @else
+                        
                     @foreach ($dataMessage as $item)
                         @if ($item->chat_sender == 0 || $item->stu_id != $studentData->stu_id)
                             <small style="margin-left: 0.3rem">{{ $item->name }}</small>
@@ -43,6 +49,7 @@
                             </div>
                         @endif
                     @endforeach
+                    @endif
 
                 </div>
                 <div class="messenger-footer d-flex justify-content-center">
@@ -139,6 +146,11 @@
             if (selectedFile) {
                 console.log("Đã tải lên tệp đính kèm:", selectedFile);
             }
+        });
+
+        window.addEventListener('load', () => {
+            const messengerBody = document.querySelector('.messenger-body');
+            messengerBody.scrollTop = messengerBody.scrollHeight;
         });
     </script>
 @stop

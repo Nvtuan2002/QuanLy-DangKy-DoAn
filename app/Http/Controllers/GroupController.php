@@ -68,49 +68,29 @@ class GroupController extends Controller
 
         $checkstatus = $studentData->stu_status; // check status student join group yet
 
-        
-        
+
+
         if ($checkstatus != 4) {
             return view('error.notJoinGroup', compact('studentData'));
         } else {
             $group_id = $studentData->group_id;
-            
+
             $dataGroup = $this->student->getDataGroup($group_id);
-            
+
             $dataNotiGroup = $this->student->getNotiGroup($group_id);
+            $dataUpdateFile = $this->student->getDataUpdate($group_id);
+            $dataScoreGroup = $this->student->getScoreGroup($group_id);
 
-            if(count($dataNotiGroup)==0){
+            $dataGroup = $dataGroup[0];
 
-                $dataUpdateFile = $this->student->getDataUpdate($group_id);
-                // dd($dataGroup);
-        
-                $dataGroup = $dataGroup[0];
-                return view('students.groupSV', compact('studentData', 'dataGroup', 'dataNotiGroup','dataUpdateFile'));
-            }else{
-                // dd($dataNotiGroup);
-                foreach ($dataNotiGroup as $key => $value) {
-                    if(!empty($value->rate_noti)){
-                        $dataNotiGroup =['rate_noti'=>$value->rate_noti,'created_at'=>$value->created_at];
-                    }else{
-                        $dataScoreGroup = ['rate_score'=>$value->rate_score,'created_at'=>$value->created_at];
-                    }
-                };
-    
-                // foreach ($dataNotiGroup as $key => $value) {
-                //     if(!empty($value->rate_noti)){
-                //         $dataNotiGroup =[$value->rate_noti];
-                //     }
-                // };
-                // dd($dataNotiGroup['created_at']);
-                
-                $dataUpdateFile = $this->student->getDataUpdate($group_id);
-                // dd($dataGroup);
-        
-                $dataGroup = $dataGroup[0];
-                return view('students.groupSV', compact('studentData', 'dataGroup', 'dataNotiGroup', 'dataUpdateFile','dataScoreGroup'));
-            }
-    
-        };
+            // dd($dataScoreGroup);
+
+
+
+            return view('students.groupSV', compact('studentData', 'dataGroup', 'dataNotiGroup', 'dataUpdateFile', 'dataScoreGroup'));
+        }
+
+
 
         // dd($dataUpdateFile);
 
@@ -329,7 +309,8 @@ class GroupController extends Controller
         return view('students.groupSV_request', compact('studentData', 'dataStudentRequest'));
     }
 
-    public function leaveGroup(){
+    public function leaveGroup()
+    {
         $id = session('id');
 
 
@@ -337,19 +318,26 @@ class GroupController extends Controller
 
         $studentData = $studentData[0];
 
+        if($studentData->stu_leader == 1){
+            $this->changeStatus->leaveGroup($id);
+            $this->changeStatus->deleteGroup($studentData->group_id);
 
-        $this->changeStatus->leaveGroup($id);
-        $this->changeStatus->changeStatus2($id);
-        return redirect()->route('student.register_attend');
+        }else{
+            $this->changeStatus->leaveGroup($id);
+            $this->changeStatus->changeStatus2($id);
+        }
+        
+        return redirect()->route('student.groupSV');
     }
 
-    public function DeleteStudentFromLeader($stu_id){
+    public function DeleteStudentFromLeader($stu_id)
+    {
         $id = session('id');
 
 
         $studentData = $this->student->getDataStudent($id); // pass data to header
 
-        $studentData = $studentData[0]; 
+        $studentData = $studentData[0];
 
         $this->changeStatus->leaveGroup($stu_id);
         $this->changeStatus->changeStatus2($stu_id);

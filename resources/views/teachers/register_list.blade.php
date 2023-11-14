@@ -63,7 +63,7 @@
                 <table class="container">
                     @foreach ($dataStudentRegis as $item)
                         <tr>
-                            <td>{{ $item->stu_name }}</td>
+                            <td>{{ $item->stu_name }} <a href="{{route('teacher.infoStudent',['stu_id' => $item->stu_id])}}"><i class="bi bi-box-arrow-up-right"></i></a></td>
                             <td>{{ $item->stu_email }}</td>
                             <td>{{ $item->MSSV }}</td>
                             <td>{{ $item->p_name }}</td>
@@ -71,7 +71,9 @@
                             <td>
                                 @if ($item->stu_status == 4)
                                     Đã có nhóm <br>
-                                    Nhóm:{{ $item->group_id }}
+                                    @if ($item->stu_leader == 1)
+                                        (nhóm trưởng)
+                                    @endif
                                 @elseif ($item->stu_status == 3)
                                     Đang tham gia nhóm
                                 @elseif($item->stu_status == 2)
@@ -79,9 +81,11 @@
                                 @endif
                             </td>
                             <td>
-                                <button class="invite"><a href="#">Xóa</a></button>
-                                <button class="invite"><a href="#">Chỉnh sửa</a></button>
-                                <button class="invite"><a href="#">Chuyển nhóm</a></button>
+                                <button class="invite"><a
+                                        href="{{ route('teacher.deleteStudent', ['stu_id' => $item->stu_id]) }}">Xóa</a></button>
+                                @if ($item->stu_leader != 1 && $item->stu_status == 4)
+                                    <button class="invite"><a href="#">Chuyển nhóm</a></button>
+                                @endif
                             </td>
                         </tr>
                     @endforeach

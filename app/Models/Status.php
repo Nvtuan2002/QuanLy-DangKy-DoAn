@@ -24,6 +24,8 @@ class Status extends Model
                 'stu_status' => 0,
                 'p_id' => null,
                 't_id' => null,
+                'group_id'=>null,
+                'stu_leader' =>null
             ]);
     }
 
@@ -84,8 +86,18 @@ class Status extends Model
             ->where('stu_id', $id)
             ->update([
                 'group_id' => null,
+                'stu_leader' =>null
             ]);
     }
+
+    public function deleteGroup($group_id){
+        return DB::table('student_group')
+        ->where('group_id',$group_id)
+        ->delete();
+    }
+
+    
+
 
     
 }

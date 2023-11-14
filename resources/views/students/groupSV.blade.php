@@ -27,11 +27,11 @@
             <div class="alert" style="padding: unset">
                 <p class="fw-bold">Chào mừng, {{ $studentData->stu_name }}</p>
                 <p class="fw-bold">Thông báo của giảng viên: </p>
-                @if (count($dataNotiGroup) == 0)
+                @if ($dataNotiGroup == null)
                     <p>Chưa có thông báo từ giảng viên</p>
                 @else
-                    <p class="fw-bold">{{ $dataNotiGroup['created_at'] }} <span style="font-weight: initial;">:
-                            {{ $dataNotiGroup['rate_noti'] }}</span> </p>
+                    <p class="fw-bold">{{ $dataNotiGroup->created_at }} <span style="font-weight: initial;">:
+                            {{ $dataNotiGroup->rate_noti }}</span> </p>
                 @endif
             </div>
             <div class="d-flex flex-column me-5 align-items-end">
@@ -72,7 +72,7 @@
             <div class="col-lg-4 col-sm-12 d-flex justify-content-end flex-column align-items-center"
                 style="width: 280px; height: 630px;">
                 <p class="fw-bold" style="text-align: center;">Đánh giá của giảng viên</p>
-                @if (count($dataNotiGroup) == 0)
+                @if (count($dataScoreGroup) == 0)
                     <tr>Chưa có điểm đánh giá từ giảng viên</tr>
                 @else
                     <table id="groupSV" style="width: 365px;">
@@ -80,11 +80,13 @@
                             <td>Ngày</td>
                             <td>Điểm đánh giá</td>
                         </tr>
-
+                        @foreach ($dataScoreGroup as $item)
+                            
                         <tr>
-                            <td>{{ $dataScoreGroup['created_at'] }}</td>
-                            <td>{{ $dataScoreGroup['rate_score'] }}</td>
+                            <td>{{ $item->created_at }}</td>
+                            <td>{{ $item->rate_score }}</td>
                         </tr>
+                        @endforeach
                 @endif
 
                 </table>

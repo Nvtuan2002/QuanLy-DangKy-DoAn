@@ -24,6 +24,8 @@ class StudentController extends Controller
     private $student;
 
 
+    private $teacher;
+
     private $changeStatus;
 
     private $notification;
@@ -33,6 +35,8 @@ class StudentController extends Controller
     public function __construct()
     {
         $this->student = new Student();
+
+        $this->teacher = new Teacher();
 
         $this->changeStatus = new Status();
 
@@ -234,6 +238,31 @@ class StudentController extends Controller
 
         $studentData = $studentData[0];
 
-        return view ('students.infoAllTeacher',compact('studentData'));
+        $dataAllTeacher = $this->teacher->getAllTeacher();
+
+        // dd($dataAllTeacher);
+
+        return view ('students.infoAllTeacher',compact('studentData','dataAllTeacher'));
+    }
+
+    public function SeeInfoTeacherDetail($t_id){
+
+        $dataTeacher = $this->teacher->getDataTeacher($t_id);
+
+        $dataTeacher = $dataTeacher[0];
+
+        $dataTeacher_skill = $this->teacher->getDataTeacherSkill($t_id);
+
+        $dataTeacher_ost= $this->teacher->getDataTeacherOst($t_id);
+
+
+        // dd($dataTeacher_skill);
+
+        $stu_id = session('id');
+
+        $studentData = $this->student->getDataStudent($stu_id);
+
+        $studentData = $studentData[0];
+        return view('teachers.infoTeacher_see',compact('studentData','dataTeacher','dataTeacher_skill','dataTeacher_ost'));
     }
 }

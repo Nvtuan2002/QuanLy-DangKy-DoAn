@@ -10,6 +10,11 @@ use Illuminate\Support\Facades\DB;
 class Teacher extends Model
 {
     use HasFactory;
+    
+    public function getAllTeacher(){
+        return DB::table('teacher')
+        ->get();
+    }
 
     public function getAllProject()
     {
@@ -50,6 +55,7 @@ class Teacher extends Model
             ->where('student.stu_status', '!=', 0)
             ->get();
     }
+
 
     public function getTotalProject()
     {

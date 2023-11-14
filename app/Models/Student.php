@@ -64,18 +64,23 @@ class Student extends Authenticatable
     public function getNotiGroup($group_id)
     {
         return DB::table('group_rate')
-            ->where('group_id', $group_id)
-            ->orderBy('created_at', 'asc')
-            ->get();
+        ->select('rate_noti', 'created_at')
+        ->where('group_id','=',$group_id)
+        ->whereNotNull('rate_noti')
+        ->orderByDesc('created_at')
+        ->first();
     }
 
-    // public function getScoreGroup($group_id)
-    // {
-    //     return DB::table('group_rate')
-    //         ->where('group_id', $group_id)
-    //         ->orderBy('created_at', 'asc')
-    //         ->get();
-    // }
+  
+
+    public function getScoreGroup($group_id)
+    {
+        return DB::table('group_rate')
+        ->select('rate_score', 'created_at')
+        ->where('group_id','=',$group_id)
+        ->whereNotNull('rate_score')
+        ->get();
+    }
 
     public function getMemberGroup($groupid)
     {

@@ -126,6 +126,45 @@ class TeacherController extends Controller
         return view('teachers.register_list',compact('dataTeacher','dataStudentRegis'));
     }
 
+    public function seeInfoStudent($stu_id){
+        $t_id = session('t_id');
+
+        $dataTeacher = $this->teacher->getDataTeacher($t_id);
+
+        $dataTeacher =  $dataTeacher[0];
+
+        $dataStudentRequest = $this->student->getdataStudentRequest($stu_id);
+
+        $dataStudentRequest = $dataStudentRequest[0];
+
+        return view('students.infoStudent_see',compact('dataTeacher','dataStudentRequest'));
+
+    }
+
+
+    public function DeleteStudentFromProject($stu_id){
+        $checkgroupid = $this->student->getDataStudent($stu_id)[0]->group_id;
+
+        $numbermember = $this->student->getMemberGroup($checkgroupid);
+
+        $count = count( $numbermember);
+
+        // dd($count);
+        
+        if(!empty($checkgroupid) && $count == 1){
+            $this->changeStatus->changeStatus0($stu_id);
+            $this->changeStatus->deleteGroup($checkgroupid);
+        }
+        else{
+            $this->changeStatus->changeStatus0($stu_id);
+        }
+
+
+
+
+        return redirect()->route('teacher.register_list');
+    }
+
     public function getAllStudentRequestProject(){
         $t_id = session('t_id');
 

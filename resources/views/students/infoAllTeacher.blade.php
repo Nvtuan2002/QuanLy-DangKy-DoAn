@@ -13,6 +13,7 @@
     <link rel="stylesheet" href="{{asset('css/style.css')}}">
 @endsection
 
+
 @section('sidebar')
     @include('includes.sidebar')
 @endsection
@@ -27,32 +28,16 @@
         </nav>
         <div class="text-center">
             <h5 style="margin-bottom: 20px;">Khoa công Nghệ Thông tin</h5>
-            <div class="row">
-                <div class="d-flex justify-content-center col-lg-6 col-sm-6">
-                    <img src="{{asset('./img/avatar.png')}}" alt="">
-                    <a href="{{ route('student.infoTeacher') }}">Nguyễn Thành Trung</a>
+            @foreach ($dataAllTeacher as $item)
+                @if ($item->t_major == 'CNTT')
+                <div class="row">
+                    <div class="d-flex justify-content-center col-lg-6 col-sm-6">
+                        <img src="{{ asset('storage/image/' . $item->t_avt) }}" alt="" style="height: 30px">
+                        <a href="{{route('student.seeInfo',['t_id'=>$item->t_id])}}">{{$item->t_name}}</a>
+                    </div>
                 </div>
-                <div class="d-flex justify-content-center col-lg-6 col-sm-6">
-                    <img src="{{asset('./img/avatar.png')}}" alt="">
-                    <a href="{{ route('student.infoTeacher') }}">Hoàng Hải Long</a>
-                </div>
-                <div class="d-flex justify-content-center col-lg-6 col-sm-6">
-                    <img src="{{asset('./img/avatar.png')}}" alt="">
-                    <a href="{{ route('student.infoTeacher') }}">Hoàng Hải Long</a>
-                </div>
-                <div class="d-flex justify-content-center col-lg-6 col-sm-6">
-                    <img src="{{asset('./img/avatar.png')}}" alt="">
-                    <a href="{{ route('student.infoTeacher') }}">Hoàng Hải Long</a>
-                </div>
-                <div class="d-flex justify-content-center col-lg-6 col-sm-6">
-                    <img src="{{asset('./img/avatar.png')}}" alt="">
-                    <a href="{{ route('student.infoTeacher') }}">Hoàng Hải Long</a>
-                </div>
-                <div class="d-flex justify-content-center col-lg-6 col-sm-6">
-                    <img src="{{asset('./img/avatar.png')}}" alt="">
-                    <a href="{{ route('student.infoTeacher') }}">Hoàng Hải Long</a>
-                </div>
-            </div>
+                @endif
+            @endforeach
         </div>
         
         

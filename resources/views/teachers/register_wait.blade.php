@@ -65,7 +65,7 @@
                 <table class="container">
                     @foreach ($dataStudentRequest as $item)
                         <tr>
-                            <td>{{ $item->stu_name }}</td>
+                            <td>{{ $item->stu_name }} <a href="{{route('teacher.infoStudent',['stu_id' => $item->stu_id])}}"><i class="bi bi-box-arrow-up-right"></i></a></td>
                             <td>{{ $item->MSSV }}</td>
                             <td>{{ $item->stu_email }}</td>
                             <td>{{ $item->p_name }}</td>

@@ -10,7 +10,23 @@
 
 @section('css')
     <link rel="stylesheet" href="{{ asset('css/style.css') }}">
+    <style>
+        .hover_time {
+            display: none;
+        }
 
+        .message:hover+.hover_time {
+            display: block;
+        }
+
+        .hover_time1 {
+            display: none;
+        }
+
+        .message:hover + .hover_time1 {
+            display: block;
+        }
+    </style>
 @endsection
 
 @section('sidebar')
@@ -27,40 +43,30 @@
         <div class="container row justify-content-around" style="margin: 0 auto;">
 
             <div class="contact col-lg-8 col-sm-12">
-                <form action="" method="post">
-                    @csrf
-                    <div class="messenger-header">
-                        {{-- <select name="" id="" style="background-color: unset; border: none; outline: none;">
-                        @foreach ($dataGroup as $item)
-                        <option value="{{$item->group_id}}">Nhóm {{$item->group_number}} </option>
-                        @endforeach
-                    </select>
-                    <button type="submit"><a href="{{route('teacher.handleChat',['group_id'=>$item->group_id])}}">Truy cập</a></button> --}}
-
-                        <select onchange="window.location.href=this.options[this.selectedIndex].value;"
-                            style="background-color: unset; border: none; outline: none;">
-                            @foreach ($dataGroup as $item)
-                                <option value="{{ route('teacher.handleChat', ['group_id' => $item->group_id]) }}">Nhóm số:
-                                    {{ $item->group_number }}</option>
-                            @endforeach
-                        </select>
-
-                    </div>
-                </form>
                 <div class="messenger-body">
-                    @foreach ($dataMessage as $item)
-                        @if ($item->chat_sender == 1)
-                            <h6>{{ $item->name }}</h6>
-                            <div style="display: flex; align-items: start;">
-                                <img src="{{ asset('storage/image/' . $item->avt) }}">
-                                <span class="message" style=""> {{ $item->chat_message }} </span>
-                            </div>
-                        @else
-                            <div style="display:flex;justify-content:flex-end">
-                                <span class="message" style=" background-color:red"> {{ $item->chat_message }} </span>
-                            </div>
-                        @endif
-                    @endforeach
+
+                    @if (count($dataMessage) == 0)
+                        <div style="text-align:center">
+                            <span>Chưa có tin nhắn nào với nhóm sinh viên này trước đây</span>
+                        </div>
+                    @else
+                        @foreach ($dataMessage as $item)
+                            @if ($item->chat_sender == 1)
+                                <h6>{{ $item->name }}</h6>
+                                <div style="display: flex; align-items: start;">
+                                    <img src="{{ asset('storage/image/' . $item->avt) }}">
+                                    <span class="message" style=" background-color:rgb(0, 81, 255)(0, 102, 255)"> {{ $item->chat_message }} </span>
+                                    <span class="hover_time">{{ substr($item->created_at,-8,5) }}</span>
+                                    
+                                </div>
+                            @else
+                                <div style="display:flex;justify-content:flex-end">
+                                    <span class="hover_time1">{{ substr($item->created_at,-8,5) }}</span>
+                                    <span class="message message1" style=" background-color:red"> {{ $item->chat_message }} </span>
+                                </div>
+                            @endif
+                        @endforeach
+                    @endif
 
                 </div>
                 <div class="messenger-footer d-flex justify-content-center">
@@ -151,7 +157,7 @@
             </div>
         </div>
         <div style="text-align: center;">
-            <a class="request">Quay lại</a>
+            <a class="request" href="{{ route('teacher.teacherChat') }}">Quay lại</a>
         </div>
     </div>
     <script>
@@ -167,6 +173,11 @@
             if (selectedFile) {
                 console.log("Đã tải lên tệp đính kèm:", selectedFile);
             }
+        });
+
+        window.addEventListener('load', () => {
+            const messengerBody = document.querySelector('.messenger-body');
+            messengerBody.scrollTop = messengerBody.scrollHeight;
         });
     </script>
 @stop

@@ -1,19 +1,36 @@
-@extends('layouts.default')
-@section('title', 'Chỉnh sửa thông tin cá nhân')
+@if (Session::has('id'))
+    @extends('layouts.default')
+    @section('title', 'Chỉnh sửa thông tin cá nhân')
 
-@section('css')
-    <link rel="stylesheet" href="{{ asset('css/style.css') }}">
-@endsection
+    @section('css')
+        <link rel="stylesheet" href="{{ asset('css/style.css') }}">
+    @endsection
 
-@section('header')
-    @include('includes.header', [
-        'name' => $studentData->stu_name,
-        'img' => $studentData->stu_avt,
-    ])
-@endsection
+    @section('header')
+        @include('includes.header', [
+            'name' => $studentData->stu_name,
+            'img' => $studentData->stu_avt,
+        ])
+    @endsection
+@else
+    @extends('layouts.default')
+    @section('title', 'Chỉnh sửa thông tin cá nhân')
+
+    @section('css')
+        <link rel="stylesheet" href="{{ asset('css/style.css') }}">
+    @endsection
+
+    @section('header')
+        @include('includes.header', [
+            'name' => $dataTeacher->t_name,
+            'img' => $dataTeacher->t_avt,
+        ])
+    @endsection
+@endif
+
 
 @section('sidebar')
-    @include('includes.sidebar')
+    @include('includes.sidebarTeacher')
 @endsection
 
 @section('content')
