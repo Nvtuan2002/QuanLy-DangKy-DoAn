@@ -72,6 +72,10 @@ BE
 
 -tạo nhóm cần validate data như nhóm số để không bị trùng, tên đề tài là điền tự động
 
+- tạo thêm trang lịch báo cáo đơn giản sử dụng table bao gồm ngày, giờ, Link báo cáo,
+-lịch báo cáo phía bên teacher thì bao gồm ngày giờ, link báo cáo, nhóm báo cáo, đề tài của nhóm đấy
+- thêm animation các thứ vào 
+
 
 
 <!-- - tạo create group  -->
