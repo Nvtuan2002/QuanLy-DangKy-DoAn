@@ -23,7 +23,7 @@
             display: none;
         }
 
-        .message:hover + .hover_time1 {
+        .message:hover+.hover_time1 {
             display: block;
         }
     </style>
@@ -55,14 +55,16 @@
                                 <h6>{{ $item->name }}</h6>
                                 <div style="display: flex; align-items: start;">
                                     <img src="{{ asset('storage/image/' . $item->avt) }}">
-                                    <span class="message" style=" background-color:rgb(0, 81, 255)(0, 102, 255)"> {{ $item->chat_message }} </span>
-                                    <span class="hover_time">{{ substr($item->created_at,-8,5) }}</span>
-                                    
+                                    <span class="message" style=" background-color:rgb(0, 81, 255)(0, 102, 255)">
+                                        {{ $item->chat_message }} </span>
+                                    <span class="hover_time">{{ substr($item->created_at, -8, 5) }}</span>
+
                                 </div>
                             @else
                                 <div style="display:flex;justify-content:flex-end">
-                                    <span class="hover_time1">{{ substr($item->created_at,-8,5) }}</span>
-                                    <span class="message message1" style=" background-color:red"> {{ $item->chat_message }} </span>
+                                    <span class="hover_time1">{{ substr($item->created_at, -8, 5) }}</span>
+                                    <span class="message message1" style=" background-color:red"> {{ $item->chat_message }}
+                                    </span>
                                 </div>
                             @endif
                         @endforeach
@@ -83,7 +85,8 @@
                         <input id="file-upload" type="file" class="attachment-input" style="display: none">
                         <input class="invite" type="text" class="input-box" placeholder="Nhập tin nhắn..."
                             name="message">
-                        <button class="" style="width: 5%;" type="submit"><i class="bi bi-send"></i></button>
+                        <button class="" style="width: 5%; color: black !important;" type="submit"><i
+                                class="bi bi-send"></i></button>
                     </form>
                 </div>
                 @if (Session::has('msg'))
@@ -140,14 +143,13 @@
                             data-bs-target="#flush-collapseOne3" aria-expanded="false" aria-controls="flush-collapseOne">
                             Thành viên nhóm
                         </button>
-                        <div id="flush-collapseOne3" class="accordion-collapse collapse"
+                        <div id="flush-collapseOne3" class="accordion-collapse collapse d-flex"
                             data-bs-parent="#accordionFlushExample2">
                             @foreach ($dataMember as $item)
                                 @if ($item->stu_status == 4)
                                     <img class="col-6 img" src="{{ asset('storage/image/' . $item->stu_avt) }}"
                                         alt="">
-                                    <button class="button-invisible"><i
-                                            class="bi bi-people-fill"></i>{{ $item->stu_name }}</button>
+                                    <button class="button-invisible">{{ $item->stu_name }}</button>
                                 @endif
                             @endforeach
                             {{-- <button class="button-invisible"><i class="bi bi-people-fill"></i>Nguyễn Viết Tuấn</button> --}}

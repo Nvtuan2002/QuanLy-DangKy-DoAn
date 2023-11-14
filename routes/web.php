@@ -129,12 +129,8 @@ Route::prefix('teacher')->name('teacher.')->group(function () {
    Route::get('/contact/{group_id}', [TeacherController::class,'showChatGroup'])->name('handleChat');
    Route::post('/contact/', [TeacherController::class,'handlePostmessage'])->name('handlePostMessage');
 
-
-
-
-   Route::get('/calendar', function () {
-      return view('teachers.calendar');
-   })->name('calendar');
+   
+   Route::get('/calendar',[TeacherController::class, 'showCalendar'])->name('calendar');
 
 
 });

@@ -4,12 +4,13 @@
 @section('header')
     @include('includes.header', [
         'name' => $studentData->stu_name,
-        'img' => $studentData->stu_avt
+        'img' => $studentData->stu_avt,
     ])
 @endsection
 
 @section('css')
     <link rel="stylesheet" href="{{ asset('css/style.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/animation.css') }}">
 @endsection
 
 @section('sidebar')
@@ -24,7 +25,6 @@
             height: 178px;
             object-fit: cover;
         }
-        
     </style>
 
     <div class="home col-lg-10">
@@ -52,9 +52,9 @@
                     </div>
                 </div>
                 <div class="col-xl-4 col-lg-4 col-md-6 col-sm-12 text-center d-flex justify-content-center">
-                    <div style="height: 130px;">
+                    <div style="height: 130px;" role="button">
                         <img src="{{ asset('img/home_finance.png') }}" class="dashboard_info_img" alt="Icon Finance">
-                        <h5 class="card-title h5_dashboard">Tài chính</h5>
+                        <h5 class="card-title h5_dashboard"><a href="">Tài chính</a></h5>
                     </div>
                 </div>
             </div>
@@ -82,13 +82,16 @@
                         class="" alt="Icon Event">
                 </div>
                 <div class="col-lg-3 col-xl-3 col-sm-6">
-                    <img src="{{ asset('https://phenikaa-uni.edu.vn:3600/pu/vi/posts/thumbnail-2023-13.jpg') }}" class="" alt="Icon Event">
+                    <img src="{{ asset('https://phenikaa-uni.edu.vn:3600/pu/vi/posts/thumbnail-2023-13.jpg') }}"
+                        class="" alt="Icon Event">
                 </div>
                 <div class="col-lg-3 col-xl-3 col-sm-6">
-                    <img src="{{ asset('https://phenikaa-uni.edu.vn:3600/pu/vi/posts/3937242262937772701537842393408118834103876n.jpg') }}" class="" alt="Icon Event">
+                    <img src="{{ asset('https://phenikaa-uni.edu.vn:3600/pu/vi/posts/3937242262937772701537842393408118834103876n.jpg') }}"
+                        class="" alt="Icon Event">
                 </div>
                 <div class="col-lg-3 col-xl-3 col-sm-6">
-                    <img src="{{ asset('https://phenikaa-uni.edu.vn:3600/pu/vi/posts/111.jpg') }}" class="" alt="Icon Event">
+                    <img src="{{ asset('https://phenikaa-uni.edu.vn:3600/pu/vi/posts/111.jpg') }}" class=""
+                        alt="Icon Event">
                 </div>
             </div>
         </div>

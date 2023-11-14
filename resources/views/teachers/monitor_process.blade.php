@@ -11,6 +11,7 @@
 
 @section('css')
     <link rel="stylesheet" href="{{ asset('css/style.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/animation.css') }}">
 @endsection
 
 @section('sidebar')
@@ -38,6 +39,11 @@
                 </div>
             </div>
         @else
+            <form class="container" style="margin-bottom: 10px">
+                <input placeholder="Nhập từ khóa muốn tìm kiếm" required="" pattern=".*\S.*" type="search"
+                    class="input invite" id="search">
+                <span class="caret"></span>
+            </form>
             <table class="container">
                 <tr>
                     <th style="text-align: center">Nhóm số</th>
@@ -59,7 +65,8 @@
                             <td>{{ $item->p_name }}</td>
                             <td>{{ $item->group_quantity }}</td>
                             <td><button class="invite"><a
-                                        href="{{ route('teacher.monitor_group', ['group_id' => $item->group_id]) }}">Theo dõi
+                                        href="{{ route('teacher.monitor_group', ['group_id' => $item->group_id]) }}">Theo
+                                        dõi
                                         nhóm</a></button></td>
                         </tr>
                     @endforeach

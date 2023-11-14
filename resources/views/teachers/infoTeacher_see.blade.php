@@ -120,6 +120,9 @@
                 <i class="bi bi-pencil-square"></i>
             </div>
         </div>
+        <div style="margin-top: 75px; text-align:center;">
+            <a class="cancel" href="{{ route('student.infoAllTeacher') }}">Quay lại</a>
+        </div>
     </div>
     </div>
     <script>

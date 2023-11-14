@@ -2,13 +2,11 @@
 @section('title', 'Lịch thống kê báo cáo')
 
 @section('header')
-    @include('includes.header',[
+    @include('includes.header', [
         'name' => $dataTeacher->t_name,
         'img' => $dataTeacher->t_avt,
-
     ])
 @endsection
-
 
 @section('css')
     <link rel="stylesheet" href="{{ asset('css/style.css') }}">
@@ -25,141 +23,34 @@
                 <li class="breadcrumb-item active" aria-current="page">Lịch thống kêu báo cáo ></li>
             </ol>
         </nav>
-        <div class="calendar container">
+        <div class="te_calendar container">
             <div class="select-date">
-                <p>Chọn ngày và thời gian</p>
-                <input type="datetime-local" id="currentDateTime" class="form-control" style="margin-left: 15px;width: 200px;">
+                <input type="datetime-local" id="currentDateTime" class="form-control"
+                    style="margin-left: 15px;width: 230px;" role="button">
             </div>
+            <table style="margin-bottom: 20px;">
+                <tr>
+                    <th>Ngày họp</th>
+                    <th>Giờ họp</th>
+                    <th>Link báo cáo</th>
+                    <th>Nhóm báo cáo</th>
+                    <th>Đề tài</th>
+                </tr>
+            </table>
             <table>
                 <tr>
-                    <th>Thời gian</th>
-                    <th>Thứ 2</th>
-                    <th>Thứ 3</th>
-                    <th>Thứ 4</th>
-                    <th>Thứ 5</th>
-                    <th>Thứ 6</th>
-                    <th>Thứ 7</th>
-                    <th>Chủ Nhật</th>
+                    <td>14/11/2023</td>
+                    <td>10:40</td>
+                    <td><a href="" target="_blank">https://meet.google.com/</a></td>
+                    <td>1</td>
+                    <td>Xây dựng Website đăng ký đồ án liên ngành</td>
                 </tr>
                 <tr>
-                    <td>7:00 AM</td>
-                    <td>Lịch học</td>
-                    <td>Lịch học</td>
-                    <td>Lịch học</td>
-                    <td>Lịch học</td>
-                    <td>Lịch học</td>
-                    <td>Lịch học</td>
-                    <td>Lịch học</td>
-                </tr>
-                <tr>
-                    <td>8:00 AM</td>
-                    <td>Lịch học</td>
-                    <td>Lịch học</td>
-                    <td>Lịch học</td>
-                    <td>Lịch học</td>
-                    <td>Lịch học</td>
-                    <td>Lịch học</td>
-                    <td>Lịch học</td>
-                </tr>
-                <tr>
-                    <td>9:00 AM</td>
-                    <td>Lịch học</td>
-                    <td>Lịch học</td>
-                    <td>Lịch học</td>
-                    <td>Lịch học</td>
-                    <td>Lịch học</td>
-                    <td>Lịch học</td>
-                    <td>Lịch học</td>
-                </tr>
-                <tr>
-                    <td>10:00 AM</td>
-                    <td>Lịch học</td>
-                    <td>Lịch học</td>
-                    <td>Lịch học</td>
-                    <td>Lịch học</td>
-                    <td>Lịch học</td>
-                    <td>Lịch học</td>
-                    <td>Lịch học</td>
-                </tr>
-                <tr>
-                    <td>11:00 AM</td>
-                    <td>Lịch học</td>
-                    <td>Lịch học</td>
-                    <td>Lịch học</td>
-                    <td>Lịch học</td>
-                    <td>Lịch học</td>
-                    <td>Lịch học</td>
-                    <td>Lịch học</td>
-                </tr>
-                <tr>
-                    <td>12:00 AM</td>
-                    <td>Lịch học</td>
-                    <td>Lịch học</td>
-                    <td>Lịch học</td>
-                    <td>Lịch học</td>
-                    <td>Lịch học</td>
-                    <td>Lịch học</td>
-                    <td>Lịch học</td>
-                </tr>
-                <tr>
-                    <td>13:00 PM</td>
-                    <td>Lịch học</td>
-                    <td>Lịch học</td>
-                    <td>Lịch học</td>
-                    <td>Lịch học</td>
-                    <td>Lịch học</td>
-                    <td>Lịch học</td>
-                    <td>Lịch học</td>
-                </tr>
-                <tr>
-                    <td>14:00 PM</td>
-                    <td>Lịch học</td>
-                    <td>Lịch học</td>
-                    <td>Lịch học</td>
-                    <td>Lịch học</td>
-                    <td>Lịch học</td>
-                    <td>Lịch học</td>
-                    <td>Lịch học</td>
-                </tr>
-                <tr>
-                    <td>15:00 PM</td>
-                    <td>Lịch học</td>
-                    <td>Lịch học</td>
-                    <td>Lịch học</td>
-                    <td>Lịch học</td>
-                    <td>Lịch học</td>
-                    <td>Lịch học</td>
-                    <td>Lịch học</td>
-                </tr>
-                <tr>
-                    <td>16:00 PM</td>
-                    <td>Lịch học</td>
-                    <td>Lịch học</td>
-                    <td>Lịch học</td>
-                    <td>Lịch học</td>
-                    <td>Lịch học</td>
-                    <td>Lịch học</td>
-                    <td>Lịch học</td>
-                </tr>
-                <tr>
-                    <td>17:00 PM</td>
-                    <td>Lịch học</td>
-                    <td>Lịch học</td>
-                    <td>Lịch học</td>
-                    <td>Lịch học</td>
-                    <td>Lịch học</td>
-                    <td>Lịch học</td>
-                    <td>Lịch học</td>
-                </tr>
-                <tr>
-                    <td>18:00 PM</td>
-                    <td>Lịch học</td>
-                    <td>Lịch học</td>
-                    <td>Lịch học</td>
-                    <td>Lịch học</td>
-                    <td>Lịch học</td>
-                    <td>Lịch học</td>
-                    <td>Lịch học</td>
+                    <td>14/11/2023</td>
+                    <td>10:40</td>
+                    <td>https://meet.google.com/</td>
+                    <td>2</td>
+                    <td><a href="" target="_blank">https://meet.google.com/</a></td>
                 </tr>
             </table>
         </div>
@@ -169,7 +60,7 @@
             const currentDateTimeInput = document.getElementById('currentDateTime');
             const now = new Date();
             const utcTime = now.getTime() - (now.getTimezoneOffset() * 60000);
-            const isoString = new Date(utcTime).toISOString().slice(0, 16);
+            const isoString = new Date(utcTime).toISOString().slice(0, 19);
             currentDateTimeInput.value = isoString;
         }
         updateCurrentDateTime();

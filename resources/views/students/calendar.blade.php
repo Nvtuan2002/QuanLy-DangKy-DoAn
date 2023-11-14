@@ -2,14 +2,14 @@
 @section('title', 'Lịch thống kê báo cáo')
 
 @section('header')
-    @include('includes.header',[
+    @include('includes.header', [
         'name' => $studentData->stu_name,
-        'img' => $studentData->stu_avt
+        'img' => $studentData->stu_avt,
     ])
 @endsection
 
 @section('css')
-    <link rel="stylesheet" href="{{asset('css/style.css')}}">
+    <link rel="stylesheet" href="{{ asset('css/style.css') }}">
 @endsection
 
 @section('sidebar')
@@ -26,138 +26,26 @@
         <div class="calendar container">
             <div class="select-date">
                 <p>Chọn ngày và thời gian</p>
-                <input type="datetime-local" id="currentDateTime" class="form-control" style="margin-left: 15px;width: 200px;">
+                <input type="datetime-local" id="currentDateTime" class="form-control"
+                    style="margin-left: 15px;width: 200px;">
             </div>
+            <table style="margin-bottom: 20px;">
+                <tr>
+                    <th>Ngày họp</th>
+                    <th>Giờ báo cáo</th>
+                    <th>Link báo cáo</th>
+                </tr>
+            </table>
             <table>
                 <tr>
-                    <th>Thời gian</th>
-                    <th>Thứ 2</th>
-                    <th>Thứ 3</th>
-                    <th>Thứ 4</th>
-                    <th>Thứ 5</th>
-                    <th>Thứ 6</th>
-                    <th>Thứ 7</th>
-                    <th>Chủ Nhật</th>
+                    <td>14/11/2023</td>
+                    <td>10:40</td>
+                    <td><a href="" target="_blank">https://meet.google.com/</a></td>
                 </tr>
                 <tr>
-                    <td>7:00 AM</td>
-                    <td>Lịch học</td>
-                    <td>Lịch học</td>
-                    <td>Lịch học</td>
-                    <td>Lịch học</td>
-                    <td>Lịch học</td>
-                    <td>Lịch học</td>
-                    <td>Lịch học</td>
-                </tr>
-                <tr>
-                    <td>8:00 AM</td>
-                    <td>Lịch học</td>
-                    <td>Lịch học</td>
-                    <td>Lịch học</td>
-                    <td>Lịch học</td>
-                    <td>Lịch học</td>
-                    <td>Lịch học</td>
-                    <td>Lịch học</td>
-                </tr>
-                <tr>
-                    <td>9:00 AM</td>
-                    <td>Lịch học</td>
-                    <td>Lịch học</td>
-                    <td>Lịch học</td>
-                    <td>Lịch học</td>
-                    <td>Lịch học</td>
-                    <td>Lịch học</td>
-                    <td>Lịch học</td>
-                </tr>
-                <tr>
-                    <td>10:00 AM</td>
-                    <td>Lịch học</td>
-                    <td>Lịch học</td>
-                    <td>Lịch học</td>
-                    <td>Lịch học</td>
-                    <td>Lịch học</td>
-                    <td>Lịch học</td>
-                    <td>Lịch học</td>
-                </tr>
-                <tr>
-                    <td>11:00 AM</td>
-                    <td>Lịch học</td>
-                    <td>Lịch học</td>
-                    <td>Lịch học</td>
-                    <td>Lịch học</td>
-                    <td>Lịch học</td>
-                    <td>Lịch học</td>
-                    <td>Lịch học</td>
-                </tr>
-                <tr>
-                    <td>12:00 AM</td>
-                    <td>Lịch học</td>
-                    <td>Lịch học</td>
-                    <td>Lịch học</td>
-                    <td>Lịch học</td>
-                    <td>Lịch học</td>
-                    <td>Lịch học</td>
-                    <td>Lịch học</td>
-                </tr>
-                <tr>
-                    <td>13:00 PM</td>
-                    <td>Lịch học</td>
-                    <td>Lịch học</td>
-                    <td>Lịch học</td>
-                    <td>Lịch học</td>
-                    <td>Lịch học</td>
-                    <td>Lịch học</td>
-                    <td>Lịch học</td>
-                </tr>
-                <tr>
-                    <td>14:00 PM</td>
-                    <td>Lịch học</td>
-                    <td>Lịch học</td>
-                    <td>Lịch học</td>
-                    <td>Lịch học</td>
-                    <td>Lịch học</td>
-                    <td>Lịch học</td>
-                    <td>Lịch học</td>
-                </tr>
-                <tr>
-                    <td>15:00 PM</td>
-                    <td>Lịch học</td>
-                    <td>Lịch học</td>
-                    <td>Lịch học</td>
-                    <td>Lịch học</td>
-                    <td>Lịch học</td>
-                    <td>Lịch học</td>
-                    <td>Lịch học</td>
-                </tr>
-                <tr>
-                    <td>16:00 PM</td>
-                    <td>Lịch học</td>
-                    <td>Lịch học</td>
-                    <td>Lịch học</td>
-                    <td>Lịch học</td>
-                    <td>Lịch học</td>
-                    <td>Lịch học</td>
-                    <td>Lịch học</td>
-                </tr>
-                <tr>
-                    <td>17:00 PM</td>
-                    <td>Lịch học</td>
-                    <td>Lịch học</td>
-                    <td>Lịch học</td>
-                    <td>Lịch học</td>
-                    <td>Lịch học</td>
-                    <td>Lịch học</td>
-                    <td>Lịch học</td>
-                </tr>
-                <tr>
-                    <td>18:00 PM</td>
-                    <td>Lịch học</td>
-                    <td>Lịch học</td>
-                    <td>Lịch học</td>
-                    <td>Lịch học</td>
-                    <td>Lịch học</td>
-                    <td>Lịch học</td>
-                    <td>Lịch học</td>
+                    <td>14/11/2023</td>
+                    <td>10:40</td>
+                    <td><a href="" target="_blank">https://meet.google.com/</a></td>
                 </tr>
             </table>
         </div>

@@ -11,6 +11,7 @@
 
 @section('css')
     <link rel="stylesheet" href="{{ asset('css/style.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/animation.css') }}">
 @endsection
 
 @section('sidebar')
@@ -65,7 +66,7 @@
                 <table class="container">
                     @foreach ($dataStudentRequest as $item)
                         <tr>
-                            <td>{{ $item->stu_name }} <a href="{{route('teacher.infoStudent',['stu_id' => $item->stu_id])}}"><i class="bi bi-box-arrow-up-right"></i></a></td>
+                            <td>{{ $item->stu_name }}</td>
                             <td>{{ $item->MSSV }}</td>
                             <td>{{ $item->stu_email }}</td>
                             <td>{{ $item->p_name }}</td>
@@ -76,6 +77,10 @@
                                 <button class="invite"><a
                                         href="{{ route('teacher.handleRequestJoinProject', ['id' => $item->stu_id, 'status' => 2]) }}">Từ
                                         chối</a></button>
+                                <button class="cancel" style="padding: 7px 10px; background: #c8b6f2">
+                                    <a href="{{ route('teacher.infoStudent', ['stu_id' => $item->stu_id]) }}">Xem thông
+                                        tin</i></a>
+                                </button>
                             </td>
                         </tr>
                     @endforeach

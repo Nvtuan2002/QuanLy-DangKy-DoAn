@@ -62,19 +62,29 @@ theo thứ tự Tên file, Tiêu đề, Thời gian update, Tải xuống -->
 
 <!-- - chỉnh lại css các trang vừa bảo sử dụng các acccount khác nhau để xem validate -->
 
+<!-- -- register_list đổi icon xem thông tin thành button dưới nút xóa -->
 
-- trnag chủ, màu mè, 
-- đặt nút quay lại vào các trang see <infostudent>
-<teacher></teacher>
+--overflow - update Teacher
+<!-- --groupSV thêm background -->
+<!-- --monitor_group button dính (đưa lịch học thêm input địa điểm họp type= text ) -->
+
+
+<!-- - đặt nút quay lại vào các trang see <infostudent> <teacher></teacher> -->
+<!-- -home https://img.freepik.com/free-vector/gray-abstract-wireframe-background_53876-99911.jpg -->
+
+<!-- - tạo thêm trang lịch báo cáo đơn giản sử dụng table bao gồm ngày, giờ, Link báo cáo, -->
+<!-- - lịch báo cáo phía bên teacher thì bao gồm ngày giờ, link báo cáo, nhóm báo cáo, đề tài của nhóm đấy -->
+- thêm animation các thứ vào 
+opacity: 0.7;
+    color: red;
+
+
 BE
 
 -file chỉnh sửa thông tin cá nhân cần làm lại
 
 -tạo nhóm cần validate data như nhóm số để không bị trùng, tên đề tài là điền tự động
 
-- tạo thêm trang lịch báo cáo đơn giản sử dụng table bao gồm ngày, giờ, Link báo cáo,
--lịch báo cáo phía bên teacher thì bao gồm ngày giờ, link báo cáo, nhóm báo cáo, đề tài của nhóm đấy
-- thêm animation các thứ vào 
 
 
 

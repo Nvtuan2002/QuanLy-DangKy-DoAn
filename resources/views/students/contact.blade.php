@@ -66,7 +66,7 @@
                         <input id="file-upload" type="file" class="attachment-input" style="display: none">
                         <input class="invite" type="text" class="input-box" placeholder="Nhập tin nhắn..."
                             name="message">
-                        <button class="" type="submit" style="width: 5%;"><i class="bi bi-send"></i></button>
+                        <button class="" type="submit" style="width: 5%; color: black !important;"><i class="bi bi-send"></i></button>
                     </form>
                     @if (Session::has('msg'))
                         <div>

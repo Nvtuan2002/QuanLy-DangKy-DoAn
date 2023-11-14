@@ -10,6 +10,7 @@
 
 @section('css')
     <link rel="stylesheet" href="{{ asset('css/style.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/animation.css') }}">
 @endsection
 
 @section('sidebar')
@@ -61,7 +62,7 @@
                     </tr>
 
                 </table>
-                <div style="max-height: 400px; overflow: auto;">
+                <div style=";">
                     <table class="container">
                         @foreach ($dataProject as $key => $item)
                             <tr>
@@ -76,7 +77,6 @@
                                         Chỉnh sửa</button>
                                 </td>
                             </tr>
-                            <tr></tr>
                         @endforeach
                     </table>
                 </div>

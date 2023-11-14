@@ -11,6 +11,7 @@
 
 @section('css')
     <link rel="stylesheet" href="{{ asset('css/style.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/animation.css') }}">
 @endsection
 
 @section('sidebar')
@@ -36,7 +37,7 @@
                     <img class="avatar me-4 img" src="{{ asset('storage/image/' . $dataGroup->group_avt) }}"
                         alt="Avatar groups">Nhóm {{ $dataGroup->group_number }}
                 </h6>
-                <div style="height: 470px;">
+                <div style="height: 480px;">
                     <table>
                         <tr>
                             <th><i class="bi bi-clock-history"></i>Lịch sử cập nhật</th>
@@ -45,7 +46,7 @@
                             <th><i class="bi bi-calendar-range"></i>Thời gian</th>
                         </tr>
                     </table>
-                    <div style="max-height: 400px; overflow: auto;">
+                    <div style="max-height: 330px; overflow: auto;">
                         <table>
                             @foreach ($dataFile as $item)
                                 <tr style="">
@@ -66,7 +67,7 @@
                         </table>
                     </div>
                 </div>
-                <div class="d-flex flex-wrap justify-content-around monitor_group" style="">
+                <div class="d-flex flex-wrap justify-content-around monitor_group" style="margin-top: 70px;">
                     <a class="request" href="{{ route('teacher.monitor_process') }}">Quay lại</a>
                     <button class="request" id="modal_monitor">Đưa ra thông báo</button>
                     <button class="request" data-bs-toggle="modal" data-bs-target="#staticBackdrop3">Đánh giá tiến
@@ -95,6 +96,11 @@
                                 </div>
                                 <div class="modal-body">
 
+                                    <div class="mb-4">
+                                        <label for="meeting-date" class="col-form-label">Địa điểm họp</label>
+                                        <input type="text" class="form-control d-inline-block" style="width: 75%;"
+                                            name="date" id="meeting-date" style="outline: none;">
+                                    </div>
                                     <div class="mb-4">
                                         <label for="meeting-date" class="col-form-label">Chọn ngày họp</label>
                                         <input type="date" class="form-control d-inline-block" style="width: unset;"

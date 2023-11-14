@@ -59,7 +59,8 @@
                 <div class="col-5"
                     style="padding-right: calc(var(--bs-gutter-x) * .5);
                 padding-left: calc(var(--bs-gutter-x) * .5);
-                 border: 1px solid rgb(106, 89, 89); background: white">
+                 border: 1px solid rgb(106, 89, 89); background: white;
+                 border-radius: 10px;">
                     <h4 class="">Thông tin cá nhân</h4>
                     <div class="d-flex flex-column align-item-end" style="">
                         <textarea name="stu_desc_change" id="js-textarea" cols="10" rows="10"
@@ -67,7 +68,7 @@
                     </div>
 
                 </div>
-                <div class="col-5" style="border: 1px solid rgb(106, 89, 89); background: white;">
+                <div class="col-5" style="border-radius: 10px ;border: 1px solid rgb(106, 89, 89); background: white;">
                     <h4>Kỹ năng cá nhân</h4>
                     <div class="row" style="">
                         {{-- @if (count($dataStudentRequestDetail) == 0)
@@ -144,9 +145,7 @@
                 </div>
             </div>
         </div>
-        <button class="accept" type="submit">Cập nhật</button>
     </form>
-
 @endsection
 @section('js')
 @endsection

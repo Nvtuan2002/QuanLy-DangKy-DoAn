@@ -9,6 +9,7 @@
 @endsection
 @section('css')
     <link rel="stylesheet" href="{{ asset('css/style.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/animation.css') }}">
 @endsection
 
 @section('sidebar')
@@ -49,7 +50,7 @@
             </div>
         @else
             <table class="container">
-                <tr>
+                <tr style="border-bottom: unset;">
                     <th style="text-align: center">Tên sinh viên</th>
                     <th style="text-align: center">Email</th>
                     <th style="text-align: center">MSSV</th>
@@ -63,7 +64,7 @@
                 <table class="container">
                     @foreach ($dataStudentRegis as $item)
                         <tr>
-                            <td>{{ $item->stu_name }} <a href="{{route('teacher.infoStudent',['stu_id' => $item->stu_id])}}"><i class="bi bi-box-arrow-up-right"></i></a></td>
+                            <td>{{ $item->stu_name }} </td>
                             <td>{{ $item->stu_email }}</td>
                             <td>{{ $item->MSSV }}</td>
                             <td>{{ $item->p_name }}</td>
@@ -83,6 +84,9 @@
                             <td>
                                 <button class="invite"><a
                                         href="{{ route('teacher.deleteStudent', ['stu_id' => $item->stu_id]) }}">Xóa</a></button>
+                                <button class="cancel" style="padding: 7px 10px;">
+                                    <a href="{{ route('teacher.infoStudent', ['stu_id' => $item->stu_id]) }}">Xem thông tin</i></a>
+                                </button>
                                 @if ($item->stu_leader != 1 && $item->stu_status == 4)
                                     <button class="invite"><a href="#">Chuyển nhóm</a></button>
                                 @endif

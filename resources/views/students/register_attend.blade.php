@@ -11,6 +11,7 @@
 
 @section('css')
     <link rel="stylesheet" href="{{ asset('css/style.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/animation.css') }}">
 @endsection
 
 @section('sidebar')
@@ -74,7 +75,7 @@
                     </table>
                 </div>
             @endif
-            <div class="d-flex justify-content-around">
+            <div class="d-flex justify-content-around" style="margin-top: 70px;">
                 <div class="d-flex justify-content-center mt-5">
                     <a class="cancel px-5" href="{{ route('student.reSelect') }}">Quay lại</a>
                 </div>

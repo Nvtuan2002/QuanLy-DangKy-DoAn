@@ -7,14 +7,14 @@
 }
 
 :root {
-    --header-background: linear-gradient(0deg, rgba(0, 0, 0, 0.20) 0%, rgba(0, 0, 0, 0.20) 100%), #D7E5CA;
+    --header-background: linear-gradient(94.3deg, rgba(26, 33, 64, 1) 10.9%, rgba(81, 84, 115, 1) 87.1%);
     --card-background: #D2E0FB;
     --box-valuate-background: #8EACCD;
     --request-background: linear-gradient(0deg, rgba(0, 0, 0, 0.20) 0%, rgba(0, 0, 0, 0.20) 100%), #D7E5CA;
     --cancel-background: linear-gradient(0deg, rgba(0, 0, 0, 0.20) 0%, rgba(0, 0, 0, 0.20) 100%), #D7E5CA;
-    --invite-background: #D2E0FB;
+    --invite-background: #c8b6f2;
     --accept-background: #D2E0FB;
-    --reject-background: #B42E2E;
+    --reject-background: #dd4848;
     --comeback-btn: #6c757d;
 }
 
@@ -82,12 +82,13 @@ i {
 
 .navbar {
     background: var(--header-background);
+    color: white;
 }
 
 .navbar .container-fluid .logo img {
     object-fit: cover;
     max-width: 135px;
-    /* filter: drop-shadow(2px 4px 6px black); */
+    filter: drop-shadow(1px 1px 1px white);
 }
 
 
@@ -164,13 +165,10 @@ i {
 
 /* End NavBar */
 
-body {
-    overflow: auto;
-}
-
 main {
     margin-top: 50px;
     min-height: 80vh;
+    background: var(--header-background);
 }
 
 main>img {
@@ -181,8 +179,14 @@ main>img {
     object-fit: contain;
 }
 
+.sidebar .nav li a {
+    color: #FFF0CE !important;
+}
+
 article {
-    margin-bottom: 50px;
+    background: white;
+    border-radius: 30px 0px 0px 30px;
+    background: url(https://img.freepik.com/free-vector/gray-abstract-wireframe-background_53876-99911.jpg);
 }
 
 article>div {
@@ -207,7 +211,8 @@ footer {
 }
 
 .footer {
-    background: var(--third-color, #D2E0FB);
+    /* background: var(--third-color, #D2E0FB); */
+    border-top: 1px solid;
     padding: 10px 0px;
     display: flex;
     flex-direction: column;
@@ -232,7 +237,6 @@ footer {
 }
 
 .sidebar .nav {
-    background: var(--second-color, #8EACCD);
     height: 100%;
     min-height: 70vh;
 }
@@ -246,13 +250,14 @@ footer {
 }
 
 .sidebar .nav li:hover,
-#sidebar_mobile .nav li:hover {
+#sidebar_mobile .nav li:hover,
+.sidebar .nav li:hover a {
     background-color: #F9F3CC;
+    color: black !important;
 }
 
 #sidebar_mobile {
     display: none;
-    background: var(--header-background);
     width: 10%;
     padding: 13px 0px 0px 0px;
     margin-left: 15px;
@@ -262,7 +267,11 @@ footer {
 }
 
 #sidebar_mobile .nav {
-    background: var(--second-color, #8EACCD);
+    background: var(--header-background);
+}
+
+#sidebar_mobile a {
+    color: white !important;
 }
 
 
@@ -625,12 +634,17 @@ table tr {
     display: inline-flex;
     width: 100%;
     gap: 10px;
+    border-bottom: 1px solid #8877a7;
+    padding: 15px 0px;
+}
 
+table tr:last-child {
+    border-bottom: unset;
 }
 
 table tr th,
 table tr td {
-    background: #D2E0FB;
+    background: #c8b6f2;
     text-align: start;
     padding: 10px;
     display: inline-block;
@@ -838,6 +852,13 @@ circle {
     text-align: center;
 }
 
+.register_attend table tr td:nth-child(7),
+.register_attend table tr th:nth-child(7) {
+    width: 10%;
+    height: 100%;
+    text-align: center;
+}
+
 .register_attend table tr td button {
     padding: unset;
 }
@@ -908,74 +929,96 @@ circle {
 /* End create Groúp    */
 
 /* Calendảr */
+.te_calendar table,
 .calendar table {
-    width: 100%;
+    width: 85%;
     border-collapse: collapse;
+    margin: auto;
+    padding: 0 12px;
 }
 
-.calendar table,
-th,
-td {
+.te_calendar table th td,
+.calendar table th td {
     border: 1px solid #ccc;
 }
 
-.calendar th,
-td {
+.te_calendar th td,
+.calendar th td {
     padding: 10px;
     text-align: center;
 }
 
+.te_calendar th,
 .calendar th {
     background-color: var(--invite-background)
 }
 
+.te_calendar td,
 .calendar td {
     background-color: #f7f7f7;
 }
 
+.te_calendar td:first-child,
 .calendar td:first-child {
-    background-color: var(--invite-background)
+    background-color: #f7f7f7
 }
 
-.calendar th:first-child,
-td:first-child {
-    width: 10%;
-}
-
+.calendar th:nth-child(1),
+.calendar td:nth-child(1),
 .calendar th:nth-child(2),
-td:nth-child(2),
-th:nth-child(3),
-td:nth-child(3),
-th:nth-child(4),
-td:nth-child(4),
-th:nth-child(5),
-td:nth-child(5),
-th:nth-child(6),
-td:nth-child(6),
-th:nth-child(7),
-td:nth-child(7),
-th:nth-child(8),
-td:nth-child(8) {
-    width: 12.5%;
+.calendar td:nth-child(2),
+.calendar th:nth-child(3),
+.calendar td:nth-child(3) {
+    width: 33%;
     height: 100%;
-    /* 100% / 8 */
 }
 
+.te_calendar th:nth-child(1),
+.te_calendar td:nth-child(1),
+.te_calendar th:nth-child(2),
+.te_calendar td:nth-child(2) {
+    width: 15%;
+    height: 100%;
+}
+
+.te_calendar th:nth-child(3),
+.te_calendar td:nth-child(3) {
+    width: 25%;
+    height: 100%;
+}
+
+.te_calendar th:nth-child(4),
+.te_calendar td:nth-child(4) {
+    width: 15%;
+    height: 100%;
+}
+
+.te_calendar th:nth-child(5),
+.te_calendar td:nth-child(5) {
+    width: 25%;
+    height: 100%;
+}
+
+.te_calendar,
 .calendar {
     text-align: center;
 }
-
+.te_calendar table,
 .calendar table {
     border-collapse: separate;
     border-spacing: 3px;
 }
 
+.te_calendar th,
+.te_calendar td,
 .calendar th,
 .calendar td {
     border: 1px solid #ccc;
     padding: 10px;
+    text-align: center;
 }
 
+.te_calendar input[type="datetime-local"],
 .calendar input[type="datetime-local"] {
     padding: 5px;
     background-color: var(--invite-background);
@@ -1014,7 +1057,7 @@ td:nth-child(8) {
     border: none;
     width: 100%;
     text-align: start;
-    font-size: 13px;
+    font-size: 14px;
 }
 
 .button-invisible:hover {
@@ -1318,7 +1361,7 @@ option {
 }
 
 .register_wait table tr td:nth-child(6) button:nth-child(1) {
-    background-color: #ECE3CE;
+    background-color: #6be374;
 }
 
 .register_wait table tr td:nth-child(6) button:nth-child(2) {
@@ -1581,4 +1624,5 @@ label[for="file-input"]:hover {
     border: 1px solid;
     border-radius: 8px;
     margin-bottom: 30px;
+    height: 500px;
 }

@@ -11,8 +11,7 @@
             @yield('header')
         </header>
         <main class="d-flex">
-            <img src="{{ asset('img/background-primary.png') }}">
-            <aside class="">
+            <aside class="col-md-2">
                 @yield('sidebar')
             </aside>
             <article class="col-md-10 col-sm-11">
