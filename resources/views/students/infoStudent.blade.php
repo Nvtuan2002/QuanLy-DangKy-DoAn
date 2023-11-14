@@ -17,8 +17,7 @@
 @endsection
 
 @section('content')
-    <form class="form-infoS" action="{{ route('student.updateInfoStudent') }}" method="POST" enctype="multipart/form-data">
-        @csrf
+    
         {{-- @method('PUT') --}}
         <div class="groups col-lg-10" style="margin: 0 auto; margin-top: 15px;">
             {{-- <img src="../img/background-primary.png" alt=""> --}}
@@ -156,15 +155,15 @@
                 <div class="col-lg-5 col-xl-5 col-md-6 input_info d-flex justify-content-between" style="height: 41px;">
                     <div style="width: 85%; text-align: start;">
                         <label for="" style="width: 100px;">NickName: </label>
-                        <input type="text" value="{{ $studentData->stu_nickname }}" disabled style="color: black">
+                        <input type="text" value="{{ $studentData->stu_nickname }}" disabled style="color: black" name="nick_name">
                     </div>
                     <i class="bi bi-pencil-square" role="button" id="edit-nickname"></i>
                     <i class="fa-solid fa-paper-plane" type="submit" id="send-nickname" style="display: none;"></i>
                 </div>
             </div>
         </div>
-        <button class="accept" type="submit">Cập nhật</button>
-    </form>
+        
+    
 
 @endsection
 @section('js')

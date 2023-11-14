@@ -63,7 +63,9 @@ theo thứ tự Tên file, Tiêu đề, Thời gian update, Tải xuống -->
 <!-- - chỉnh lại css các trang vừa bảo sử dụng các acccount khác nhau để xem validate -->
 
 
-
+- trnag chủ, màu mè, 
+- đặt nút quay lại vào các trang see <infostudent>
+<teacher></teacher>
 BE
 
 -file chỉnh sửa thông tin cá nhân cần làm lại

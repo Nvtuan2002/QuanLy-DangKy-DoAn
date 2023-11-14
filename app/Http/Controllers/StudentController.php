@@ -85,35 +85,17 @@ class StudentController extends Controller
         $studentData = $studentData[0];
 
         if ($request->hasFile('img_change')) {
+            
             $stu_avt_change = $request->file('img_change')->getClientOriginalName();
+            $request->file('img_change')->storeAs('public/image', $stu_avt_change);
+            $stu_desc_change = $request->stu_desc_change;
+            $stu_nickname = $request->nick_name;
+
+            dd($stu_nickname);
+
+            $this->student->updateInfo($id,$stu_desc_change,$stu_nickname,$stu_avt_change);
         }
-        $stu_desc_change = $request->stu_desc_change;
-        $stu_skill1 = $request->stu_skill1;
-        $stu_skill2 = $request->stu_skill2;
-        $stu_skill3 = $request->stu_skill3;
-        $stu_skill4 = $request->stu_skill4;
-
-        $stu_skill_detail1 = $request->stu_skill_detail1;
-        $stu_skill_detail2 = $request->stu_skill_detail2;
-        $stu_skill_detail3 = $request->stu_skill_detail3;
-        $stu_skill_detail4 = $request->stu_skill_detail4;
-
-        if (empty($stu_skill1) && empty($stu_skill2) && empty($stu_skill3) && empty($stu_skill4)) {
-            return "pleasd write down at least 1 skill";
-        } else {
-            $array = [
-                $stu_skill1 => $stu_skill_detail1,
-                $stu_skill2 => $stu_skill_detail2,
-                $stu_skill3 => $stu_skill_detail3,
-                $stu_skill4 => $stu_skill_detail4,
-            ];
-        }
-
-        dd($array);
-
-        foreach ($array as $key => $value) {
-            $this->student->createSkill($id, $key, $value);
-        }
+        
 
         // dd($array);
 

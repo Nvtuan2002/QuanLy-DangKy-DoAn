@@ -132,7 +132,7 @@
                 <div class="col-lg-5 col-xl-5 input_info d-flex justify-content-between" style="">
                     <div style="width: 85%; text-align: start;">
                         <label for="" style="width: 100px;">MSSV: </label>
-                        <input type="text" value="{{ $dataStudentRequest->stu_major }}" disabled style="color: black">
+                        <input type="text" value="{{ $dataStudentRequest->MSSV }}" disabled style="color: black">
                     </div>
                 </div>
                 <div class="col-lg-5 col-xl-5 input_info d-flex justify-content-between" style="height: 41px;">
