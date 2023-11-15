@@ -64,7 +64,7 @@
                 </ul>
 
             </div>
-            <div class="col-lg-4 col-sm-12 d-flex justify-content-end flex-column align-items-center" style="width: 280px;">
+            <div class="col-lg-4 col-sm-12 d-flex flex-column align-items-center" style="width: 280px;">
                 <p class="fw-bold" style="text-align: center;">Đánh giá của giảng viên</p>
                 @if (count($dataScoreGroup) == 0)
                     <tr>Chưa có điểm đánh giá từ giảng viên</tr>
