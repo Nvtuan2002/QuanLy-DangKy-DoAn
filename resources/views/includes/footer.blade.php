@@ -22,11 +22,11 @@
          <div class="role col-lg-4 col-md-4" style="">
              <h4>Giáo Viên</h4>
              <div class="row">
-                 <p class="t-16 col-lg-6"><a href=""><i class="bi bi-caret-right"></i>Vũ Thị Ngọc Anh</a></p>
-                 <p class="t-16 col-lg-6"><a href=""><i class="bi bi-caret-right"></i>Phạm Hoàng Giang</a></p>
-                 <p class="t-16 col-lg-6"><a href=""><i class="bi bi-caret-right"></i>Đặng thu hiền</a></p>
-                 <p class="t-16 col-lg-6"><a href=""><i class="bi bi-caret-right"></i>Hà Minh Hoàng</a></p>
-                 <p class="t-16 col-lg-6"><a href=""><i class="bi bi-caret-right"></i>Nguyễn Thành Trung</a></p>
+                 <p class="t-16 col-lg-6"><a href="" style="color: black !important;"><i class="bi bi-caret-right"></i>Vũ Thị Ngọc Anh</a></p>
+                 <p class="t-16 col-lg-6"><a href="" style="color: black !important;"><i class="bi bi-caret-right"></i>Phạm Hoàng Giang</a></p>
+                 <p class="t-16 col-lg-6"><a href="" style="color: black !important;"><i class="bi bi-caret-right"></i>Đặng thu hiền</a></p>
+                 <p class="t-16 col-lg-6"><a href="" style="color: black !important;"><i class="bi bi-caret-right"></i>Hà Minh Hoàng</a></p>
+                 <p class="t-16 col-lg-6"><a href="" style="color: black !important;"><i class="bi bi-caret-right"></i>Nguyễn Thành Trung</a></p>
              </div>
          </div>
      </div>
