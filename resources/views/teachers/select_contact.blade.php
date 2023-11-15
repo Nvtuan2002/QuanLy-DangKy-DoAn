@@ -11,7 +11,11 @@
 @section('css')
     <link rel="stylesheet" href="{{ asset('css/style.css') }}">
     <link rel="stylesheet" href="{{ asset('css/animation.css') }}">
-
+    <style>
+        table tr td:first-child {
+            width: 35% !important;
+        }
+    </style>
 @endsection
 
 @section('sidebar')
@@ -52,15 +56,19 @@
                 <table style="width: 72%">
                     @foreach ($a as $item)
                         <tr>
-                            <td style="width: 35%">{{ $item->p_name }}</td>
-                                @foreach ($dataGroup as $item2)
-                                    @if ($item->p_id == $item2->p_id)
-                                        <td class="" style="width: unset; height: 100%;"><a
-                                                href="{{ route('teacher.handleChat', ['group_id' => $item2->group_id]) }}">Nhóm
-                                                số:
-                                                {{ $item2->group_number }}</a></td>
-                                    @endif
-                                @endforeach
+                            <td style="">{{ $item->p_name }}</td>
+                            @foreach ($dataGroup as $item2)
+                                @if ($item->p_id == $item2->p_id)
+                                    <td class="d-flex flex-wrap" style="padding: unset; width: unset; height: 100%; background: unset;">
+                                            <div class="invite" style="margin: 0px 5px 10px 0px;">
+                                                <a
+                                                    href="{{ route('teacher.handleChat', ['group_id' => $item2->group_id]) }}">Nhóm
+                                                    số:
+                                                    {{ $item2->group_number }}</a>
+                                            </div>
+                                    </td>
+                                @endif
+                            @endforeach
                         </tr>
                     @endforeach
                 </table>

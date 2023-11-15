@@ -75,7 +75,7 @@ theo thứ tự Tên file, Tiêu đề, Thời gian update, Tải xuống -->
 <!-- - tạo thêm trang lịch báo cáo đơn giản sử dụng table bao gồm ngày, giờ, Link báo cáo, -->
 <!-- - lịch báo cáo phía bên teacher thì bao gồm ngày giờ, link báo cáo, nhóm báo cáo, đề tài của nhóm đấy -->
 
--select_contact fix xuống dòng nhiều nhóm
+<!-- -select_contact fix xuống dòng nhiều nhóm -->
 <!-- Bạn có chắc muốn xóa không? xóa[đỏ] cancel[xanh] -->
 <!-- Bạn có chắc muốn rời nhóm không? rời[đỏ] cancel[xanh] -->
 <!-- tạo đồ án mới thêm option + modal giống kỹ năng cá nhân -->
