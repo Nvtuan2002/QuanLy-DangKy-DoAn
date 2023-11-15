@@ -319,7 +319,7 @@ class GroupController extends Controller
         $studentData = $studentData[0];
 
         if($studentData->stu_leader == 1){
-            $this->changeStatus->leaveGroup($id);
+            $this->changeStatus->changeStatus0($id);
             $this->changeStatus->deleteGroup($studentData->group_id);
 
         }else{
@@ -327,7 +327,7 @@ class GroupController extends Controller
             $this->changeStatus->changeStatus2($id);
         }
         
-        return redirect()->route('student.groupSV');
+        return redirect()->route('student.register');
     }
 
     public function DeleteStudentFromLeader($stu_id)

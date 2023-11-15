@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Nov 12, 2023 at 06:05 PM
+-- Generation Time: Nov 15, 2023 at 05:20 PM
 -- Server version: 10.4.24-MariaDB
 -- PHP Version: 8.1.4
 
@@ -37,18 +37,17 @@ CREATE TABLE `chat` (
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL,
   `stu_id` int(11) NOT NULL,
-  `stu_name` text COLLATE utf8mb4_unicode_ci NOT NULL
+  `name` text COLLATE utf8mb4_unicode_ci NOT NULL,
+  `avt` text COLLATE utf8mb4_unicode_ci NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
 -- Dumping data for table `chat`
 --
 
-INSERT INTO `chat` (`chat_id`, `group_id`, `p_id`, `t_id`, `chat_sender`, `chat_message`, `created_at`, `updated_at`, `stu_id`, `stu_name`) VALUES
-(14, 13, 0, 0, 1, 'em chào thầy', '2023-11-12 16:55:35', NULL, 8, 'Long Hoàng'),
-(15, 13, 0, 3, 0, 'kê em', '2023-11-12 16:46:40', NULL, 0, 'Trung'),
-(16, 13, 0, 0, 1, 'kee', '2023-11-12 16:17:54', NULL, 9, 'Tuấn'),
-(17, 13, 0, 0, 1, 'kee', '2023-11-12 16:20:56', NULL, 8, 'Long');
+INSERT INTO `chat` (`chat_id`, `group_id`, `p_id`, `t_id`, `chat_sender`, `chat_message`, `created_at`, `updated_at`, `stu_id`, `name`, `avt`) VALUES
+(40, 14, 0, 3, 0, 'sạch thật rồi này', '2023-11-15 13:09:48', NULL, 0, 'Trung', 'thanhtrung.jpg'),
+(41, 14, 0, 0, 1, 'sạch gì vậy thầy', '2023-11-15 13:12:03', NULL, 10, 'Đức Mạnh', 'ducmanh.jpg');
 
 -- --------------------------------------------------------
 
@@ -70,7 +69,14 @@ CREATE TABLE `group_rate` (
 --
 
 INSERT INTO `group_rate` (`rate_id`, `group_id`, `rate_noti`, `rate_score`, `created_at`, `updated_at`) VALUES
-(7, 13, 'Nhóm này chưa đăng kí ITS 0 điểm', 0, '2023-11-12 16:37:59', NULL);
+(7, 13, 'Nhóm này chưa đăng kí ITS 0 điểm', 0, '2023-11-12 16:37:59', NULL),
+(8, 13, NULL, NULL, '2023-11-13 04:46:18', NULL),
+(9, 13, 'HMM', NULL, '2023-11-13 04:46:40', NULL),
+(10, 13, NULL, 10, '2023-11-13 04:57:00', NULL),
+(11, 16, 'Nhóm này kh update gì à', NULL, '2023-11-14 03:06:21', NULL),
+(12, 13, 'Tiến độ được đấy tiếp tục đi nhé', NULL, '2023-11-15 02:31:37', NULL),
+(13, 14, 'Nhóm này kh làm gì à', NULL, '2023-11-15 13:04:11', NULL),
+(14, 14, NULL, 0, '2023-11-15 13:04:16', NULL);
 
 -- --------------------------------------------------------
 
@@ -85,8 +91,18 @@ CREATE TABLE `meeting_calender` (
   `t_id` int(11) NOT NULL,
   `day` text COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `stime` text COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `etime` text COLLATE utf8mb4_unicode_ci DEFAULT NULL
+  `etime` text COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `link_meeting` text COLLATE utf8mb4_unicode_ci NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Dumping data for table `meeting_calender`
+--
+
+INSERT INTO `meeting_calender` (`meeting_id`, `group_id`, `p_id`, `t_id`, `day`, `stime`, `etime`, `link_meeting`) VALUES
+(2, 13, 0, 3, '16-11-2023', '07-30-00', '08-30-00', 'A9 VPK CNTT'),
+(3, 13, 0, 3, '17-11-2023', '19:32:00', '20:32:00', 'A9 VPK CNTT'),
+(4, 14, 0, 3, '22-11-2023', '09:48:00', '10:48:00', 'A9 VPK CNTT');
 
 -- --------------------------------------------------------
 
@@ -175,7 +191,8 @@ CREATE TABLE `project` (
 
 INSERT INTO `project` (`p_id`, `t_id`, `p_name`, `p_request`, `p_major`, `p_quantity`, `created_at`, `updated_at`) VALUES
 (5, 3, 'Tìm hiểu về AWS trong ứng dụng đời sống', 'Biết về SQL và Điện toán đám mây', 'CNTT', '15', NULL, NULL),
-(6, 3, 'Xe điều khiển thông minh', 'Hiểu cơ bản về AI và ứng dụng Web để điều khiên', 'CNTT', '10', NULL, NULL);
+(6, 3, 'Xe điều khiển thông minh', 'Hiểu cơ bản về AI và ứng dụng Web để điều khiên', 'CNTT', '10', NULL, NULL),
+(8, 3, 'lập trình kho hàng', 'biết về Laravel', 'CNTT', '10', NULL, NULL);
 
 -- --------------------------------------------------------
 
@@ -200,7 +217,12 @@ CREATE TABLE `storage_file` (
 INSERT INTO `storage_file` (`storage_id`, `group_id`, `file`, `created_at`, `updated_at`, `file_title`, `stu_id`) VALUES
 (6, 13, 'Câu-hỏi-3.doc', '2023-11-12 15:30:13', NULL, 'nội quy nhóm mong mọi người đọc', 8),
 (7, 13, 'Eurytheus-1 (1).docx', '2023-11-12 16:23:23', NULL, 'chào mừng thành viên mới', 8),
-(8, 13, 'pexels-eberhard-grossgasteiger-443446.jpg', '2023-11-12 16:24:16', NULL, 'đây là file đại diện của nhóm', 8);
+(8, 13, 'pexels-eberhard-grossgasteiger-443446.jpg', '2023-11-12 16:24:16', NULL, 'đây là file đại diện của nhóm', 8),
+(9, 16, 'demo.png', '2023-11-14 03:29:53', NULL, 'Chao moi nguio minh la huyen', 11),
+(10, 13, 'Bao_cao_o_an_lien_nghanh.docx', '2023-11-15 12:10:58', NULL, 'file thứ 4', 8),
+(11, 13, 'Don dang ky ITS.docx', '2023-11-15 12:11:11', NULL, 'file thứ 5', 8),
+(12, 13, 'DS-không-ĐK-học-14.11.2023.xlsx', '2023-11-15 12:11:24', NULL, 'file thứ 6', 8),
+(13, 13, 'projectmanagement (1).sql', '2023-11-15 12:11:36', NULL, 'file thứ 7', 8);
 
 -- --------------------------------------------------------
 
@@ -237,7 +259,7 @@ CREATE TABLE `student` (
 INSERT INTO `student` (`stu_id`, `stu_password`, `MSSV`, `stu_avt`, `stu_desc`, `stu_name`, `stu_phone`, `stu_major`, `stu_email`, `stu_nickname`, `stu_born`, `stu_status`, `role`, `group_id`, `created_at`, `updated_at`, `p_id`, `t_id`, `stu_leader`) VALUES
 (8, '123456', 20010909, 'longhoang.jpg', 'Chào các bạn mình là Hoàng Hải Long năm nay năm 4 đang có mong muốn làm đồ án', 'Hoàng Hải Long', 967846423, 'CNTT', '20010909@st.phenikaa-uni.edu.vn', 'Long Hoàng', '2002-09-19', '4', '0', 13, NULL, NULL, 5, 3, 1),
 (9, '123456', 20010932, 'nguyentuan.jpg', 'Chào các bạn mình là Nguyễn Viết Tuấn năm nay năm 4 đang có mong muốn làm đồ án', 'Nguyễn Viết Tuấn', 96789321, 'CNTT', '20010932@st.phenikaa-uni.edu.vn', 'Tuấn Nguyễn', '2002-09-03', '4', '0', 13, NULL, NULL, 5, 3, NULL),
-(10, '123456', 20010925, 'ducmanh.jpg', 'Chào các bạn mình là Cao Thạch Đức Mạnh năm nay năm 4 đang có mong muốn làm đồ án', 'Cao Thạch Đức Mạnh', 96785551, 'CNTT', '20010925@st.phenikaa-uni.edu.vn', 'Đức Mạnh', '2002-06-25', '2', '0', NULL, NULL, NULL, 6, 3, NULL),
+(10, '123456', 20010925, 'ducmanh.jpg', 'Chào các bạn mình là Cao Thạch Đức Mạnh năm nay năm 4 đang có mong muốn làm đồ án', 'Cao Thạch Đức Mạnh', 96785551, 'CNTT', '20010925@st.phenikaa-uni.edu.vn', 'Đức Mạnh', '2002-06-25', '4', '0', 14, NULL, NULL, 6, 3, 1),
 (11, '123456', 20010903, 'khanhhuyen.jpg', 'Chào các bạn mình là Bùi Khánh Huyền năm nay năm 4 đang có mong muốn làm đồ án', 'Bùi Khánh Huyền', 9333521, 'CNTT', '20010903@st.phenikaa-uni.edu.vn', 'Huyền Nè', '2002-03-04', '0', '0', NULL, NULL, NULL, NULL, NULL, NULL),
 (12, '123456', 20010915, 'hongngoc.jpg', 'Chào các bạn mình là Đỗ Hồng Ngọc năm nay năm 4 đang có mong muốn làm đồ án và tất cả các bạn gánh mình', 'Đỗ Hồng Ngọc', 2147483647, 'CNTT', '20010915@st.phenikaa-uni.edu.vn', 'Hong Ngoc', '2002-09-18', '0', '0', NULL, NULL, NULL, NULL, NULL, NULL);
 
@@ -266,7 +288,8 @@ CREATE TABLE `student_group` (
 --
 
 INSERT INTO `student_group` (`group_id`, `group_leader`, `group_avt`, `group_name`, `p_id`, `t_id`, `group_number`, `created_at`, `updated_at`, `group_request`, `group_quantity`) VALUES
-(13, 'Hoàng Hải Long', 'pexels-eberhard-grossgasteiger-443446.jpg', 'Nhóm chăm chỉ', 5, 3, 1, NULL, NULL, 'cần FE Dev', 3);
+(13, 'Hoàng Hải Long', 'pexels-eberhard-grossgasteiger-443446.jpg', 'Nhóm chăm chỉ', 5, 3, 1, NULL, NULL, 'cần FE Dev', 3),
+(14, 'Cao Thạch Đức Mạnh', 'pexels-veeterzy-39811.jpg', 'Nhóm vô địch', 6, 3, 1, NULL, NULL, 'Ai muốn vào nhóm đóng 100k', 3);
 
 -- --------------------------------------------------------
 
@@ -303,6 +326,7 @@ INSERT INTO `student_skill` (`stu_skill_id`, `stu_id`, `stu_skill`, `stu_skill_d
 CREATE TABLE `teacher` (
   `t_id` int(10) UNSIGNED NOT NULL,
   `t_name` text COLLATE utf8mb4_unicode_ci NOT NULL,
+  `t_nickname` text COLLATE utf8mb4_unicode_ci NOT NULL,
   `t_avt` text COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `t_password` text COLLATE utf8mb4_unicode_ci NOT NULL,
   `t_desc` text COLLATE utf8mb4_unicode_ci NOT NULL,
@@ -319,9 +343,9 @@ CREATE TABLE `teacher` (
 -- Dumping data for table `teacher`
 --
 
-INSERT INTO `teacher` (`t_id`, `t_name`, `t_avt`, `t_password`, `t_desc`, `t_phone`, `t_email`, `t_born`, `t_major`, `role`, `created_at`, `updated_at`) VALUES
-(3, 'Nguyễn Thành Trung', 'thanhtrung.jpg', '123456', 'Chào các em thầy là Trung năm nay sẽ phụ trách các em.', 91032801, 'thanhtrung@cs.phenikaa-uni.edu.vn', '1999-09-09', 'CNTT', 1, NULL, NULL),
-(4, 'Nguyễn Thị Ngọc Anh', NULL, '123456', 'Chào các em cô là Ngọc Anh năm nay sẽ phụ trách các em về mảng cơ sở dữ liệu .', 912312801, 'ngocanh@cs.phenikaa-uni.edu.vn', '1989-09-09', 'CNTT', 1, NULL, NULL);
+INSERT INTO `teacher` (`t_id`, `t_name`, `t_nickname`, `t_avt`, `t_password`, `t_desc`, `t_phone`, `t_email`, `t_born`, `t_major`, `role`, `created_at`, `updated_at`) VALUES
+(3, 'Nguyễn Thành Trung', 'Trung', 'thanhtrung.jpg', '123456', 'Chào các em thầy là Trung năm nay sẽ phụ trách các em.', 91032801, 'thanhtrung@cs.phenikaa-uni.edu.vn', '1999-09-09', 'CNTT', 1, NULL, NULL),
+(4, 'Nguyễn Thị Ngọc Anh', 'N.Anh', NULL, '123456', 'Chào các em cô là Ngọc Anh năm nay sẽ phụ trách các em về mảng cơ sở dữ liệu .', 912312801, 'ngocanh@cs.phenikaa-uni.edu.vn', '1989-09-09', 'CNTT', 1, NULL, NULL);
 
 -- --------------------------------------------------------
 
@@ -333,10 +357,19 @@ CREATE TABLE `teacher_skill` (
   `t_skill_id` int(10) UNSIGNED NOT NULL,
   `t_id` int(11) NOT NULL,
   `t_skill` text COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `t_skill_detail` int(11) NOT NULL,
   `t_ost` text COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Dumping data for table `teacher_skill`
+--
+
+INSERT INTO `teacher_skill` (`t_skill_id`, `t_id`, `t_skill`, `t_skill_detail`, `t_ost`, `created_at`, `updated_at`) VALUES
+(1, 3, 'Giỏi về AWS', 20, 'Tốt nghiệp đại học bách khoa năm 2018', NULL, NULL),
+(2, 3, NULL, 0, 'Đạt học bổng của trường đại học Úc', NULL, NULL);
 
 --
 -- Indexes for dumped tables
@@ -430,19 +463,19 @@ ALTER TABLE `teacher_skill`
 -- AUTO_INCREMENT for table `chat`
 --
 ALTER TABLE `chat`
-  MODIFY `chat_id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
+  MODIFY `chat_id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=42;
 
 --
 -- AUTO_INCREMENT for table `group_rate`
 --
 ALTER TABLE `group_rate`
-  MODIFY `rate_id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `rate_id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
 
 --
 -- AUTO_INCREMENT for table `meeting_calender`
 --
 ALTER TABLE `meeting_calender`
-  MODIFY `meeting_id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `meeting_id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT for table `member_group`
@@ -466,13 +499,13 @@ ALTER TABLE `personal_access_tokens`
 -- AUTO_INCREMENT for table `project`
 --
 ALTER TABLE `project`
-  MODIFY `p_id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `p_id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 
 --
 -- AUTO_INCREMENT for table `storage_file`
 --
 ALTER TABLE `storage_file`
-  MODIFY `storage_id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+  MODIFY `storage_id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
 
 --
 -- AUTO_INCREMENT for table `student`
@@ -484,7 +517,7 @@ ALTER TABLE `student`
 -- AUTO_INCREMENT for table `student_group`
 --
 ALTER TABLE `student_group`
-  MODIFY `group_id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
+  MODIFY `group_id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=21;
 
 --
 -- AUTO_INCREMENT for table `student_skill`
@@ -502,7 +535,7 @@ ALTER TABLE `teacher`
 -- AUTO_INCREMENT for table `teacher_skill`
 --
 ALTER TABLE `teacher_skill`
-  MODIFY `t_skill_id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT;
+  MODIFY `t_skill_id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
