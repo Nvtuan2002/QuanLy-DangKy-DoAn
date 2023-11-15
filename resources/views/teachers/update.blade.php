@@ -62,9 +62,33 @@
                     </tr>
 
                 </table>
-                <div style=";">
+                <div style="max-height: 330px; overflow: auto;">
                     <table class="container">
                         @foreach ($dataProject as $key => $item)
+                            <tr>
+                                <td>{{ $key + 1 }}</td>
+                                <td>{{ $item->p_name }}</td>
+                                <td>{{ $item->p_request }}</td>
+                                <td>{{ $item->p_major }}</td>
+                                <td>{{ $item->p_quantity }}</td>
+                                <td>
+                                    <button class="invite" style="padding: 10px 15px;" data-bs-toggle="modal"
+                                        data-bs-target="#exampleModal">
+                                        Chỉnh sửa</button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>{{ $key + 1 }}</td>
+                                <td>{{ $item->p_name }}</td>
+                                <td>{{ $item->p_request }}</td>
+                                <td>{{ $item->p_major }}</td>
+                                <td>{{ $item->p_quantity }}</td>
+                                <td>
+                                    <button class="invite" style="padding: 10px 15px;" data-bs-toggle="modal"
+                                        data-bs-target="#exampleModal">
+                                        Chỉnh sửa</button>
+                                </td>
+                            </tr>
                             <tr>
                                 <td>{{ $key + 1 }}</td>
                                 <td>{{ $item->p_name }}</td>
