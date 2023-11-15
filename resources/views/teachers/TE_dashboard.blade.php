@@ -69,8 +69,8 @@
                 <img src="{{asset('https://phenikaa-uni.edu.vn:3600/phena/vi/posts/10295597929699653797897882540504163615306412o_20210412050145.jpg')}}" class="" alt="Icon Build">
                 <div class="des d-flex flex-column align-self-start">
                     <h5 class="card-title">Giới thiệu </h5>
-                    <h5 class="card-title">Phenikaa là một trong những trường mới được thành lập trong vòng vài năm qua
-                    </h5>
+                    <p class="card-title">Phenikaa là một trong những trường mới được thành lập trong vòng vài năm qua
+                    </p>
                     <a href="">Xem chi tiết</a>
                 </div>
             </div>
@@ -78,7 +78,7 @@
                 <img src="{{asset('./img/Frame 168.png')}}" class="" alt="Icon Event">
                 <div class="des d-flex flex-column align-self-start">
                     <h5 class="card-title">Tin tức </h5>
-                    <h5 class="card-title">-Thông báo chuyển đổi điểm cho K15 </h5>
+                    <p class="card-title">-Thông báo chuyển đổi điểm cho K15 </p>
                     <a href="">Xem chi tiết</a>
                 </div>
             </div>

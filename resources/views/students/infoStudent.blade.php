@@ -28,7 +28,7 @@
             </ol>
         </nav>
         <div class="text-center">
-            <form action="{{route('student.updateInfoStudent')}}" method="POST" enctype="multipart/form-data">
+            <form action="{{ route('student.updateInfoStudent') }}" method="POST" enctype="multipart/form-data">
                 @csrf
                 <div class="info_img">
                     <input type="file" id="file-input" name="img_change" style="display: none">
@@ -46,7 +46,7 @@
         <div class="row justify-content-evenly" style="margin: 30px 0px; ">
             <div class="col-5" style="border: 1px solid rgb(106, 89, 89); background: white;">
                 <h4 class="">Thông tin cá nhân</h4>
-                <form action="{{route('student.updateInfoStudent')}}" method="POST" enctype="multipart/form-data">
+                <form action="{{ route('student.updateInfoStudent') }}" method="POST" enctype="multipart/form-data">
                     @csrf
                     <div class="d-flex flex-column align-item-end" style="">
                         <textarea name="desc" id="js-textarea" cols="10" rows="10"
@@ -100,7 +100,8 @@
                                         <input type="text" style="outline: none; width: 50%;" placeholder="Giao tiếp"
                                             name="stu_skill1">
                                         <label style="margin-right: 5px;" for="">tỷ lệ (%)</label>
-                                        <input type="text" style="outline: none; width: 20%;" name="stu_skill_detail1">
+                                        <input type="text" style="outline: none; width: 20%;"
+                                            name="stu_skill_detail1">
                                     </div>
                                 </div>
                                 <i class="bi bi-plus-circle" id="add-skill"></i>
@@ -159,21 +160,19 @@
                     <input type="text" value="{{ $studentData->stu_major }}" disabled style="color: black">
                 </div>
             </div>
-            <form action="{{route('student.updateInfoStudent')}}" method="POST" enctype="multipart/form-data">
-                @csrf
-                <div class="col-lg-5 col-xl-5 col-md-6 input_info d-flex justify-content-between" style="height: 41px;">
-                    <div style="width: 85%; text-align: start;">
-                        <label for="" style="width: 100px;">NickName: </label>
-                        <input type="text" value="{{ $studentData->stu_nickname }}" disabled style="color: black"
-                            name="nick_name">
-                    </div>
-                    <i class="bi bi-pencil-square" role="button" id="edit-nickname"></i>
-                    <button class="invite" type="submit" id="send-nickname" style="display: none; padding: 2px 15px; width: 120px;">Cập
-                        nhật</button>
+            <div class="col-lg-5 col-xl-5 col-md-6 input_info d-flex justify-content-between" style="height: 41px;">
+                <div style="width: 85%; text-align: start;">
+                    <label for="" style="width: 100px;">NickName: </label>
+                    <input type="text" value="{{ $studentData->stu_nickname }}" disabled style="color: black"
+                        name="nick_name">
                 </div>
-            </form>
+                <i class="bi bi-pencil-square" role="button" id="edit-nickname"></i>
+                <button class="invite" type="submit" id="send-nickname"
+                    style="display: none; padding: 2px 15px; width: 120px;">Cập
+                    nhật</button>
+            </div>
         </div>
-    
+
     </div>
     <div style="margin-top: 35px; text-align:center;">
         <a class="cancel" href="{{ route('student.dashboard') }}">Quay lại</a>

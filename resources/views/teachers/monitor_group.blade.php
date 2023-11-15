@@ -67,7 +67,7 @@
                         </table>
                     </div>
                 </div>
-                <div class="d-flex flex-wrap justify-content-around monitor_group" style="margin-top: 70px;">
+                <div class="d-flex flex-wrap justify-content-around monitor_group">
                     <a class="request" href="{{ route('teacher.monitor_process') }}">Quay lại</a>
                     <button class="request" id="modal_monitor">Đưa ra thông báo</button>
                     <button class="request" data-bs-toggle="modal" data-bs-target="#staticBackdrop3">Đánh giá tiến

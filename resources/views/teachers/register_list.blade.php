@@ -82,10 +82,11 @@
                                 @endif
                             </td>
                             <td>
-                                <button class="invite"><a
-                                        href="{{ route('teacher.deleteStudent', ['stu_id' => $item->stu_id]) }}">Xóa</a></button>
+                                <button class="invite" type="button" data-bs-toggle="modal"
+                                    data-bs-target="#exampleModal">Xóa</button>
                                 <button class="cancel" style="padding: 7px 10px;">
-                                    <a href="{{ route('teacher.infoStudent', ['stu_id' => $item->stu_id]) }}">Xem thông tin</i></a>
+                                    <a href="{{ route('teacher.infoStudent', ['stu_id' => $item->stu_id]) }}">Xem thông
+                                        tin</i></a>
                                 </button>
                                 @if ($item->stu_leader != 1 && $item->stu_status == 4)
                                     <button class="invite"><a href="#">Chuyển nhóm</a></button>
@@ -95,6 +96,33 @@
                     @endforeach
                 </table>
             </div>
+            <!-- Modal -->
+            <form action="" method="POST" enctype="multipart/form-data">
+                @csrf
+                <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel"
+                    aria-hidden="true">
+                    <div class="modal-dialog">
+                        <div class="modal-content" style="top: 20vh">
+                            <div class="modal-header">
+                                <h1 class="modal-title fs-5" id="exampleModalLabel">Cảnh báo!</h1>
+                                <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                    aria-label="Close"></button>
+                            </div>
+                            <div class="modal-body">
+                                <Label style="padding: 0.375rem 0px;">
+                                    bạn có chắc muốn xóa sinh viên ra khỏi đồ án ?
+                                </Label>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn comeback" data-bs-dismiss="modal">Hủy bỏ</button>
+                                <button class="btn cancel" type="button" data-bs-toggle="modal" style="background: #dd4848;"
+                                    data-bs-target="#exampleModal"><a
+                                        href="{{ route('teacher.deleteStudent', ['stu_id' => $item->stu_id]) }}">Xóa</a></button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </form>
         @endif
 
     </div>

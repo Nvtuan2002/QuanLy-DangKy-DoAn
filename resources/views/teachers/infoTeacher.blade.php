@@ -120,7 +120,7 @@
                 <i class="bi bi-pencil-square"></i>
             </div>
         </div>
-        <div style="margin-top: 75px; text-align:center;">
+        <div style="margin-top: 55px; text-align:center;">
             <a class="cancel" href="{{ route('teacher.TE_dashboard') }}">Quay lại</a>
         </div>
     </div>

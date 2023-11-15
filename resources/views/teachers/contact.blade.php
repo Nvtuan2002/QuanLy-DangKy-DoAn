@@ -90,7 +90,7 @@
                     </form>
                 </div>
                 @if (Session::has('msg'))
-                    <div>
+                    <div style="text-align: center; color: red;">
                         <ul>
                             <li>{{ Session::get('msg') }}</li>
                         </ul>

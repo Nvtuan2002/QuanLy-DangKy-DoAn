@@ -24,9 +24,6 @@
                 <li class="breadcrumb-item active" aria-current="page">Nhóm của bạn > Xem thông tin nhóm</li>
             </ol>
         </nav>
-        <div class="me-5" style="float: right;">
-            <button class="cancel mb-4 ">Rời nhóm</button>
-        </div>
         <div class="d-flex" style="clear: both;">
             <div class="p-3"
                 style="margin:0 auto; width: 60% ;box-shadow: 0px 7px 4px 0px rgba(0, 0, 0, 0.25);
@@ -56,14 +53,16 @@
                                 <ul class="row d-flex align-items-center">
                                     <img class="col-6 img" src="{{ asset('storage/image/' . $item->stu_avt) }}"
                                         alt="">
-                                    <li class="col-6">{{ $item->stu_name }}</li>
-                                    @if ($item->stu_leader != 1)
-                                        @if ($item->stu_id != $studentData->stu_id)
-                                            <span><a href="{{ route('student.leaveGroup1', ['stu_id' => $item->stu_id]) }}"><button
-                                                        class="cancel mb-4 ">xóa khỏi nhóm</button></a></span>
-                                            {{-- <a href="{{route('student.leaveGroup1',['stu_id' => $item->stu_id])}}"><button class="cancel mb-4 ">xóa khỏi nhóm</button></a> --}}
+                                    <li class="col-6">{{ $item->stu_name }}
+                                        @if ($item->stu_leader != 1)
+                                            @if ($item->stu_id != $studentData->stu_id)
+                                                <span><a
+                                                        href="{{ route('student.leaveGroup1', ['stu_id' => $item->stu_id]) }}"><button
+                                                            class="cancel mb-4 ">xóa khỏi nhóm</button></a></span>
+                                                {{-- <a href="{{route('student.leaveGroup1',['stu_id' => $item->stu_id])}}"><button class="cancel mb-4 ">xóa khỏi nhóm</button></a> --}}
+                                            @endif
                                         @endif
-                                    @endif
+                                    </li>
                                 </ul>
                             @endif
                         @endforeach

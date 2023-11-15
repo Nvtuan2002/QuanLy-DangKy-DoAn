@@ -36,7 +36,8 @@
                 @endif
             </div>
             <div class="d-flex flex-column me-5 align-items-end">
-                <a href="{{ route('student.leaveGroup') }}"><button class="cancel mb-4 ">Rời nhóm</button></a>
+                <button class="cancel" type="button" data-bs-toggle="modal" data-bs-target="#exampleModal">Rời
+                    nhóm</button>
                 {{-- <button class="cancel mb-4 ">Rời nhóm</button> --}}
             </div>
         </div>
@@ -61,17 +62,9 @@
 
                     @endif
                 </ul>
-                <div class="d-flex flex-wrap justify-content-center"
-                    style="width: 420px; gap: 20px 40px;   
-                    margin-left: 60px;
-                    margin-top: 100px;">
-                    <a class="request" href="{{ route('student.groupSV_update') }}">Cập nhật tiến độ nhóm</a>
-                    <a class="request" href="{{ route('student.groupSV_detail') }}">Xem thông tin nhóm</a>
-                    <a class="request" href="{{ route('student.groupSV_request') }}">Các yêu cầu vào nhóm</a>
-                </div>
+
             </div>
-            <div class="col-lg-4 col-sm-12 d-flex justify-content-end flex-column align-items-center"
-                style="width: 280px; height: 630px;">
+            <div class="col-lg-4 col-sm-12 d-flex justify-content-end flex-column align-items-center" style="width: 280px;">
                 <p class="fw-bold" style="text-align: center;">Đánh giá của giảng viên</p>
                 @if (count($dataScoreGroup) == 0)
                     <tr>Chưa có điểm đánh giá từ giảng viên</tr>
@@ -82,16 +75,48 @@
                             <td>Điểm đánh giá</td>
                         </tr>
                         @foreach ($dataScoreGroup as $item)
-                            
-                        <tr>
-                            <td>{{ $item->created_at }}</td>
-                            <td>{{ $item->rate_score }}</td>
-                        </tr>
+                            <tr>
+                                <td>{{ $item->created_at }}</td>
+                                <td>{{ $item->rate_score }}</td>
+                            </tr>
                         @endforeach
                 @endif
 
                 </table>
             </div>
+            <div class="d-flex flex-wrap justify-content-center"
+                style="    gap: 20px 40px;
+                margin-left: 60px;
+                margin-top: 50px;">
+                <a class="request" href="{{ route('student.groupSV_update') }}">Cập nhật tiến độ nhóm</a>
+                <a class="request" href="{{ route('student.groupSV_detail') }}">Xem thông tin nhóm</a>
+                <a class="request" href="{{ route('student.groupSV_request') }}">Các yêu cầu vào nhóm</a>
+            </div>
         </div>
+        <!-- Modal -->
+        <form action="" method="POST" enctype="multipart/form-data">
+            @csrf
+            <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                <div class="modal-dialog">
+                    <div class="modal-content" style="top: 20vh">
+                        <div class="modal-header">
+                            <h1 class="modal-title fs-5" id="exampleModalLabel">Cảnh báo!</h1>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body">
+                            <Label style="padding: 0.375rem 0px;">
+                                bạn có chắc muốn xóa sinh viên ra khỏi đồ án ?
+                            </Label>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" style="background: #6c757d;" class="btn comeback"
+                                data-bs-dismiss="modal">Hủy bỏ</button>
+                            <button class="btn cancel" type="button" data-bs-toggle="modal" style="background: #dd4848;"
+                                data-bs-target="#exampleModal"><a href="{{ route('student.leaveGroup') }}">Rời
+                                    nhóm</a></button>
+                        </div>
+                    </div>
+                </div>
+            </div>
     </div>
 @stop

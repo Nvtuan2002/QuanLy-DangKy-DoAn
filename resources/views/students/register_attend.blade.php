@@ -42,8 +42,17 @@
             border-radius: 8px;">
                 Giảng viên: {{ $dataTeacher[0]->t_name }}</h5>
             @if (count($allGroup) == 0)
-                <div>
-                    <h3>Hiện tại chưa có nhóm nào vui lòng tạo nhóm mới</h3>
+                <div id="loading-notJoin" style="margin-top: 8%;  margin-bottom: 360px">
+                    <h5>Hiện tại chưa có nhóm nào vui lòng tạo nhóm mới</h5>
+                    <div class="spinner">
+                        <span>L</span>
+                        <span>O</span>
+                        <span>A</span>
+                        <span>D</span>
+                        <span>I</span>
+                        <span>N</span>
+                        <span>G</span>
+                    </div>
                 </div>
             @else
                 <table class="container">

@@ -29,4 +29,7 @@
             <span>G</span>
         </div>
     </div>
+    <div style="text-align: center">
+        <h5 style="text-align: center" class="invite d-inline-block">Hủy yêu cầu</h5>
+    </div>
 @endsection

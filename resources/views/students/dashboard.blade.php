@@ -63,20 +63,20 @@
                     <img src="{{ asset('img/home_build_phenikaa.png') }}" class="col-lg-6 col-sm-6" alt="Icon Build">
                     <div class="des row align-self-start col-lg-6 col-sm-6">
                         <h5 class="card-title h5_dashboard">Giới thiệu </h5>
-                        <h5 class="card-title h5_dashboard">Phenikaa là một trong những trường mới được thành lập trong vòng
+                        <p class="card-title h5_dashboard">Phenikaa là một trong những trường mới được thành lập trong vòng
                             vài năm qua
-                        </h5>
+                        </p>
                     </div>
                 </div>
                 <div class="row col-xl-6 col-lg-6">
                     <img src="{{ asset('img/home_event.png') }}" class="col-lg-6 col-sm-6" alt="Icon Event">
                     <div class="des row align-self-start col-lg-6 col-sm-6">
                         <h5 class="card-title h5_dashboard">Tin tức </h5>
-                        <h5 class="card-title h5_dashboard">Chào tân 2023 chính thức khởi tranh </h5>
+                        <p class="card-title h5_dashboard">Chào tân 2023 chính thức khởi tranh </p>
                     </div>
                 </div>
             </div>
-            <div class="event row justify-content-between text-center" style="margin-top: 30px;">
+            {{-- <div class="event row justify-content-between text-center" style="margin-top: 30px;">
                 <div class="col-lg-3 col-xl-3 col-sm-6">
                     <img src="{{ asset('https://phenikaa-uni.edu.vn:3600/pu/vi/posts/thumbnail-2023-12.jpg') }}"
                         class="" alt="Icon Event">
@@ -92,6 +92,48 @@
                 <div class="col-lg-3 col-xl-3 col-sm-6">
                     <img src="{{ asset('https://phenikaa-uni.edu.vn:3600/pu/vi/posts/111.jpg') }}" class=""
                         alt="Icon Event">
+                </div>
+            </div> --}}
+            <h5 style="text-align: center; margin-top: 50px;" >Quy trình hoạt động</h5>
+            <div class="des_procedure row justify-content-between" style="margin-top: 50px;">
+                <div class="col-2 stepParent">
+                    <div class="step">1</div>
+                    <div class="des">
+                        <h5>Chọn đề tài</h5>
+                        <p>Sinh viên có thể lựa chọn đề tài/giảng viên mà mình muốn</p>
+                    </div>
+                </div>
+                <div class="col-2 stepParent">
+                    <div class="step">2</div>
+                    <div class="des">
+                        <h5>Chờ đợi sự đồng ý của giảng viên </h5>
+                        <p>Khi sinh viên gửi yêu cầu tham gia đồ án sẽ phải chờ phản hồi của giảng viên( đồng ý/ từ chối)
+                    </div>
+                    </p>
+                </div>
+                <div class="col-2 stepParent">
+                    <div class="step">3</div>
+                    <div class="des">
+                        <h5>Tham gia nhóm/ Tạo nhóm mới</h5>
+                        <p>Sau khi được tham gia đồ án, sinh viên hãy tạo nhóm hoặc tham gia nhóm đã có để có thể cập nhật
+                            tiến độ</p>
+                    </div>
+                </div>
+                <div class="col-2 stepParent">
+                    <div class="step">4</div>
+                    <div class="des">
+                        <h5>Cập nhật tiến độ của nhóm</h5>
+                        <p>Để có lộ trình lành mạch rõ ràng sinh viên nên cập nhật các file dữ liệu để giảng viên có thể
+                            đánh
+                            giá</p>
+                    </div>
+                </div>
+                <div class="col-2 stepParent">
+                    <div class="step">5</div>
+                    <div class="des">
+                        <h5>Nhận đánh giá/thông báo của giảng viên</h5>
+                        <p>Sinh viên có thể xem điểm đánh giá, thông báo, lịch họp mà giảng viên đưa cho nhóm</p>
+                    </div>
                 </div>
             </div>
         </div>

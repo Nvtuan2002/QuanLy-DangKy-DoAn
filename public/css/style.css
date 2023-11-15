@@ -78,6 +78,8 @@ i {
     font-size: 21px;
 }
 
+
+
 /* NavBar */
 
 .navbar {
@@ -338,6 +340,34 @@ ol li {
     line-height: normal;
 }
 
+.home .des_procedure {
+    justify-content: space-between;
+}
+
+.home .des_procedure .stepParent {
+    text-align: center;
+}
+
+.home .des_procedure>div>.step {
+    display: inline-block;
+    padding: 7px 15px;
+    border-radius: 50px;
+    background: #8664CD;
+    text-align: center;
+    box-shadow: 0px 7px 4px 0px rgba(0, 0, 0, 0.25);
+    font-weight: bold;
+    margin-bottom: 25px;
+}
+
+.home .des_procedure .stepParent h5 {
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+.home .des_procedure .stepParent .des {
+    text-align: start;
+}
+
 /* Home */
 
 /* GroupsSV */
@@ -362,6 +392,10 @@ ol li {
     border: none;
 }
 
+.comeback:hover {
+    background: #6c757d !important;
+}
+
 .request {
     padding: 7px 15px;
     border-radius: 15px;
@@ -376,7 +410,7 @@ ol li {
 .groups .history-update ul {
     border: 1px solid #eaeaea;
     padding-left: unset;
-    width: 550px;
+    width: 560px;
     border-radius: 5px;
 }
 
@@ -968,22 +1002,24 @@ circle {
 .calendar th:nth-child(2),
 .calendar td:nth-child(2),
 .calendar th:nth-child(3),
-.calendar td:nth-child(3) {
-    width: 33%;
+.calendar td:nth-child(3),
+.calendar th:nth-child(4),
+.calendar td:nth-child(4) {
+    width: 25%;
     height: 100%;
 }
 
 .te_calendar th:nth-child(1),
-.te_calendar td:nth-child(1),
-.te_calendar th:nth-child(2),
-.te_calendar td:nth-child(2) {
+.te_calendar td:nth-child(1) {
     width: 15%;
     height: 100%;
 }
 
+.te_calendar th:nth-child(2),
+.te_calendar td:nth-child(2),
 .te_calendar th:nth-child(3),
 .te_calendar td:nth-child(3) {
-    width: 25%;
+    width: 15%;
     height: 100%;
 }
 
@@ -995,7 +1031,13 @@ circle {
 
 .te_calendar th:nth-child(5),
 .te_calendar td:nth-child(5) {
-    width: 25%;
+    width: 20%;
+    height: 100%;
+}
+
+.te_calendar th:nth-child(6),
+.te_calendar td:nth-child(6) {
+    width: 15%;
     height: 100%;
 }
 
@@ -1003,6 +1045,7 @@ circle {
 .calendar {
     text-align: center;
 }
+
 .te_calendar table,
 .calendar table {
     border-collapse: separate;
@@ -1161,27 +1204,6 @@ circle {
     position: relative;
 }
 
-.message:before {
-    content: "";
-    position: absolute;
-    left: 0;
-    top: 0;
-    width: 0;
-    height: 0;
-    text-align: center;
-}
-
-.message:active::before {
-    content: "12:00";
-    position: absolute;
-    left: 0;
-    top: -35px;
-    width: 50px;
-    height: 32px;
-    font-size: 20px;
-    color: black;
-}
-
 select,
 option {
     cursor: pointer;
@@ -1324,7 +1346,7 @@ option {
 
 .register_wait table tr td:nth-child(3),
 .register_wait table tr th:nth-child(3) {
-    width: 15%;
+    width: 20%;
     height: 100%;
     text-align: center;
 }
@@ -1344,7 +1366,7 @@ option {
 
 .register_wait table tr td:nth-child(6),
 .register_wait table tr th:nth-child(6) {
-    width: 15%;
+    width: 10%;
     height: 100%;
     text-align: center;
 }

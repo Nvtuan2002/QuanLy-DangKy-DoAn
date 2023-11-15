@@ -48,20 +48,19 @@
 
             </select> --}}
 
-            <div class="d-flex justify-content-center align-items-center"
-                style="height: 60vh;">
+            <div class="d-flex justify-content-center align-items-center" style="height: 60vh;">
                 <table style="width: 72%">
                     @foreach ($a as $item)
                         <tr>
                             <td style="width: 35%">{{ $item->p_name }}</td>
-                            @foreach ($dataGroup as $item2)
-                                @if ($item->p_id == $item2->p_id)
-                                        <td class="" style="width: unset;"><a
+                                @foreach ($dataGroup as $item2)
+                                    @if ($item->p_id == $item2->p_id)
+                                        <td class="" style="width: unset; height: 100%;"><a
                                                 href="{{ route('teacher.handleChat', ['group_id' => $item2->group_id]) }}">Nhóm
                                                 số:
                                                 {{ $item2->group_number }}</a></td>
-                                @endif
-                            @endforeach
+                                    @endif
+                                @endforeach
                         </tr>
                     @endforeach
                 </table>
