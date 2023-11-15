@@ -46,9 +46,12 @@
                 <input class="invite" type="text" name="p_quantity"><br>
                 <label for="">Chuyên ngành: </label>
                 <input class="invite" type="text" name="p_major"><br>
+                <div  class="cancel" style="background: #c8b6f2; display: inline-block;" data-bs-toggle="modal" data-bs-target="#exampleModal"
+                    role="button">Thêm lựa chọn</div>
                 <div style="text-align:center; margin-top: 20px;">
                     <button type="submit" class="invite">Tạo đồ án</button>
                 </div>
+
             </form>
         </div>
         <div class="d-flex justify-content-around" style="clear: both">
@@ -57,4 +60,55 @@
             </div>
         </div>
     </div>
+    <!-- Modal -->
+    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content" style="top: 20vh; text-align: center;">
+                <div class="modal-header">
+                    <h1 class="modal-title fs-5" id="exampleModalLabel">Thêm file</h1>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <div style="text-align: start; margin-bottom: 10px;">
+                        {{-- <label for="requirement" style="margin-right: 6px;">Yêu cầu: </label> --}}
+                        <input style="border-radius: 5px;" class="invite mb-2" type="text" id="requirement" name="requirement"><br>
+                        <input style="border-radius: 5px;" class="invite" type="text" id="requirement" name="requirement"><br>
+                    </div>
+                </div>
+                {{-- <i class="bi bi-plus-circle" id="add-requirement"></i> --}}
+
+                <div class="modal-footer">
+                    <button type="button" class="btn comeback" data-bs-dismiss="modal">Quay lại</button>
+                    <button type="submit" class="btn request">Cập nhật</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script>
+        // const addBtn = document.getElementById('add-requirement');
+        // const modalBody = document.querySelector('.modal-body');
+
+        // addBtn.addEventListener('click', () => {
+        //     const newDiv = document.createElement('div');
+        //     newDiv.style.textAlign = 'start';
+        //     newDiv.style.marginBottom = '10px';
+
+        //     const label = document.createElement('label');
+        //     label.setAttribute('for', 'requirement');
+        //     label.textContent = 'Yêu cầu:';
+        //     label.style.marginRight = '10px';
+
+        //     const input = document.createElement('input');
+        //     input.setAttribute('type', 'text');
+        //     input.setAttribute('class', 'invite');
+        //     input.setAttribute('id', 'requirement');
+        //     input.setAttribute('name', 'requirement');
+        //     input.setAttribute('style',  'outline: none; width: 85%;');
+
+        //     newDiv.appendChild(label);
+        //     newDiv.appendChild(input);
+        //     modalBody.appendChild(newDiv);
+        // });
+    </script>
+
 @stop

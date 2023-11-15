@@ -78,7 +78,8 @@ theo thứ tự Tên file, Tiêu đề, Thời gian update, Tải xuống -->
 -select_contact fix xuống dòng nhiều nhóm
 <!-- Bạn có chắc muốn xóa không? xóa[đỏ] cancel[xanh] -->
 <!-- Bạn có chắc muốn rời nhóm không? rời[đỏ] cancel[xanh] -->
-tạo đồ án mới thêm option + modal giống kỹ năng cá nhân
+<!-- tạo đồ án mới thêm option + modal giống kỹ năng cá nhân -->
+<!-- monitor-group thêm tải xuống -->
 
 BE
 

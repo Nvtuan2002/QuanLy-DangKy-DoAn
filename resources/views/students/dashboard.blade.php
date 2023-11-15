@@ -94,7 +94,7 @@
                         alt="Icon Event">
                 </div>
             </div> --}}
-            <h5 style="text-align: center; margin-top: 50px;" >Quy trình hoạt động</h5>
+            <h4 style="text-align: center; margin-top: 50px;" >Quy trình hoạt động</h4>
             <div class="des_procedure row justify-content-between" style="margin-top: 50px;">
                 <div class="col-2 stepParent">
                     <div class="step">1</div>

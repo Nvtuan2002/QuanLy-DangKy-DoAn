@@ -40,8 +40,7 @@
                 <button class="cancel mb-4 ">Rời nhóm</button>
             </div>
         </div>
-        <div class="mx-3"
-            style="padding: 10px; height: 320px; background: #ededed; border-radius: 8px;">
+        <div class="mx-3" style="padding: 10px; height: 320px; background: #ededed; border-radius: 8px;">
             <div class="d-flex justify-content-between">
                 <p class="fw-bold">File của bạn</p>
                 <div>
@@ -102,8 +101,9 @@
 
                                 <p style="margin: unset; padding-top: 2px;">{{ $item->file_title }}</p>
                                 <p style="margin: unset; padding-top: 2px;">{{ $item->created_at }}</p>
-                                <a href="{{ route('student.dowload', ['file_name' => $item->file]) }}"><i
-                                        class="fa-solid fa-download"></i>Tải xuống</a>
+                                <a href="{{ route('student.dowload', ['file_name' => $item->file]) }}"
+                                    style="color: black !important;"><i class="fa-solid fa-download"
+                                        style="color: black !important;"></i>Tải xuống</a>
                             </div>
                         </li>
                     @endforeach
