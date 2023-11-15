@@ -30,7 +30,7 @@
                     <h5 style="margin-left: 5px;">{{ $dataGroup1[0]->group_name }}</h5>
                 </div>
                 <div class="messenger-body">
-                    @if (count($dataNameMessage) == 0)
+                    @if (count($dataMessage) == 0)
                     <div style="text-align:center">
                         <span >Chưa có tin nhắn nào với giảng viên trước đây</span>
                     </div>

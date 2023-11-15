@@ -248,12 +248,18 @@ class TeacherController extends Controller
     public function setMeeting(Request $request, $group_id)
     {
 
+        $t_id = session('t_id');
+
+
         $date_meeting = $request->date('date')->format('d-m-Y');
-        $stime_meeting = $request->date('stime')->format('H-i-s');
-        $etime_meeting = $request->date('etime')->format('H-i-s');
+        $stime_meeting = $request->date('stime')->format('H:i:s');
+        $etime_meeting = $request->date('etime')->format('H:i:s');
+        $link_meeting = $request->link;
+
+        // dd($link_meeting);
 
 
-        $this->notification->setMeeting($group_id, $date_meeting, $stime_meeting, $etime_meeting);
+        $this->notification->setMeeting($group_id, $date_meeting, $stime_meeting, $etime_meeting,$link_meeting,$t_id);
 
         return back();
         // dd($etime_meeting);
@@ -339,7 +345,11 @@ class TeacherController extends Controller
 
         $dataTeacher = $dataTeacher[0];
 
-        return view('teachers.calendar', compact('dataTeacher'));
+        $dataCalender = $this->notification->getCalenderMeetingTeacher($t_id);
+
+        // dd($dataCalender);
+
+        return view('teachers.calendar', compact('dataTeacher','dataCalender'));
     }
 
 

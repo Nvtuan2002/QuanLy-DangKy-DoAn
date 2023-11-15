@@ -51,15 +51,31 @@ class Student extends Authenticatable
             ]);
     }
 
-    public function updateInfo($stu_id,$stu_desc,$stu_nickname,$stu_avt){
+    public function updateInfoAvatar($stu_id,$stu_avt){
+        return DB::table('student')
+        ->where('stu_id',$stu_id)
+        ->update([
+            'stu-avt'=>$stu_avt,
+        ]);
+    }
+
+    public function updateInfoDesc($stu_id,$stu_desc){
         return DB::table('student')
         ->where('stu_id',$stu_id)
         ->update([
             'stu_desc'=> $stu_desc,
-            'stu_nickname'=> $stu_nickname,
-            'stu-avt'=>$stu_avt,
         ]);
     }
+
+    public function updateInfoNickname($stu_id,$stu_nickname){
+        return DB::table('student')
+        ->where('stu_id',$stu_id)
+        ->update([
+            'stu_nickname'=> $stu_nickname,
+        ]);
+    }
+
+    
 
     public function getNotiGroup($group_id)
     {

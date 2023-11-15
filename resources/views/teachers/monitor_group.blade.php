@@ -99,7 +99,7 @@
                                     <div class="mb-4">
                                         <label for="meeting-date" class="col-form-label">Địa điểm họp</label>
                                         <input type="text" class="form-control d-inline-block" style="width: 75%;"
-                                            name="date" id="meeting-date" style="outline: none;">
+                                            name="link" id="meeting-date" style="outline: none;">
                                     </div>
                                     <div class="mb-4">
                                         <label for="meeting-date" class="col-form-label">Chọn ngày họp</label>

@@ -32,21 +32,20 @@
             <table style="margin-bottom: 20px;">
                 <tr>
                     <th>Ngày họp</th>
-                    <th>Giờ báo cáo</th>
-                    <th>Link báo cáo</th>
+                    <th>Giờ bắt đầu</th>
+                    <th>Giờ kết thúc</th>
+                    <th>Địa điểm báo cáo</th>
                 </tr>
             </table>
             <table>
+                @foreach ($dataCalender as $item)
                 <tr>
-                    <td>14/11/2023</td>
-                    <td>10:40</td>
-                    <td><a href="" target="_blank">https://meet.google.com/</a></td>
+                    <td>{{$item->day}}</td>
+                    <td>{{$item->stime}}</td>
+                    <td>{{$item->etime}}</td>
+                    <td><a href="" target="_blank">{{$item->link_meeting}}</a></td>
                 </tr>
-                <tr>
-                    <td>14/11/2023</td>
-                    <td>10:40</td>
-                    <td><a href="" target="_blank">https://meet.google.com/</a></td>
-                </tr>
+                @endforeach
             </table>
         </div>
     </div>

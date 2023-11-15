@@ -84,19 +84,28 @@ class StudentController extends Controller
 
         $studentData = $studentData[0];
 
-        if ($request->hasFile('img_change')) {
+        dd($request->nick_name);
+
+        // if ($request->hasFile('img_change')) {
             
-            $stu_avt_change = $request->file('img_change')->getClientOriginalName();
-            $request->file('img_change')->storeAs('public/image', $stu_avt_change);
-            $stu_desc_change = $request->stu_desc_change;
-            $stu_nickname = $request->nick_name;
-
-            dd($stu_nickname);
-
-            $this->student->updateInfo($id,$stu_desc_change,$stu_nickname,$stu_avt_change);
-        }
+        //     $stu_avt_change = $request->file('img_change')->getClientOriginalName();
+        //     $request->file('img_change')->storeAs('public/image', $stu_avt_change);
+            
+        //     dd($stu_avt_change);
+        // }else{
+        //     $stu_desc_change = $request->desc;
+            
+        //     dd($stu_desc_change);
+            
+        // }
         
+        
+        
+        // $stu_nickname = $request->nick_name;
+        // dd($stu_nickname);
 
+        // $this->student->updateInfo($id,$stu_desc_change,$stu_nickname,);
+        
         // dd($array);
 
 
@@ -159,7 +168,11 @@ class StudentController extends Controller
 
         $studentData = $studentData[0];
 
-        return view('students.calendar', compact('studentData'));
+        $dataCalender = $this->notification->getCalenderMeeting($studentData->group_id);
+
+        // dd($dataCalender);
+
+        return view('students.calendar', compact('studentData','dataCalender'));
     }
 
     public function showChat()

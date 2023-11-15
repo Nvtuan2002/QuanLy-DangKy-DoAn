@@ -28,28 +28,34 @@
             </ol>
         </nav>
         <div class="text-center">
-            <div class="info_img">
-                <input type="file" id="file-input" name="img_change" style="display: none">
-                <label for="file-input">
-                    <img src="{{ asset('storage/image/' . $studentData->stu_avt) }}" alt="" id="image"
-                        name="stu_avt">
-                </label> <br>
-                <h5
-                    style="margin-top: 10px; background: #8EACCD; padding: 3px 3px; display:inline-block; border-radius: 5px;">
-                    {{ $studentData->stu_name }}</h5> <br>
-                <button class="invite" type="submit">Cập nhật</button>
-            </div>
+            <form action="{{route('student.updateInfoStudent')}}" method="POST" enctype="multipart/form-data">
+                @csrf
+                <div class="info_img">
+                    <input type="file" id="file-input" name="img_change" style="display: none">
+                    <label for="file-input">
+                        <img src="{{ asset('storage/image/' . $studentData->stu_avt) }}" alt="" id="image"
+                            name="stu_avt">
+                    </label> <br>
+                    <h5
+                        style="margin-top: 10px; background: #8EACCD; padding: 3px 3px; display:inline-block; border-radius: 5px;">
+                        {{ $studentData->stu_name }}</h5> <br>
+                    <button class="invite" type="submit">Cập nhật</button>
+                </div>
+            </form>
         </div>
         <div class="row justify-content-evenly" style="margin: 30px 0px; ">
             <div class="col-5" style="border: 1px solid rgb(106, 89, 89); background: white;">
                 <h4 class="">Thông tin cá nhân</h4>
-                <div class="d-flex flex-column align-item-end" style="">
-                    <textarea name="stu_desc_change" id="js-textarea" cols="10" rows="10"
-                        style="outline: none; border: none; width: 100%; height: 90px; padding: 10px; color:black" disabled>{{ $studentData->stu_desc }}</textarea>
-                    <i class="bi bi-pencil-square" role="button" id="edit-textarea" style="text-align: end;"></i>
-                    <button class="invite" type="submit" id="send-textarea"
-                        style="display: none; text-align: center; margin: 0.5rem; width: 33%;">Cập nhật</button>
-                </div>
+                <form action="{{route('student.updateInfoStudent')}}" method="POST" enctype="multipart/form-data">
+                    @csrf
+                    <div class="d-flex flex-column align-item-end" style="">
+                        <textarea name="desc" id="js-textarea" cols="10" rows="10"
+                            style="outline: none; border: none; width: 100%; height: 90px; padding: 10px; color:black" disabled>{{ $studentData->stu_desc }}</textarea>
+                        <i class="bi bi-pencil-square" role="button" id="edit-textarea" style="text-align: end;"></i>
+                        <button class="invite" type="submit" id="send-textarea"
+                            style="display: none; text-align: center; margin: 0.5rem; width: 33%;">Cập nhật</button>
+                    </div>
+                </form>
 
             </div>
             <div class="col-5" style="border: 1px solid rgb(106, 89, 89); background: white;">
@@ -153,17 +159,21 @@
                     <input type="text" value="{{ $studentData->stu_major }}" disabled style="color: black">
                 </div>
             </div>
-            <div class="col-lg-5 col-xl-5 col-md-6 input_info d-flex justify-content-between" style="height: 41px;">
-                <div style="width: 85%; text-align: start;">
-                    <label for="" style="width: 100px;">NickName: </label>
-                    <input type="text" value="{{ $studentData->stu_nickname }}" disabled style="color: black"
-                        name="nick_name">
+            <form action="{{route('student.updateInfoStudent')}}" method="POST" enctype="multipart/form-data">
+                @csrf
+                <div class="col-lg-5 col-xl-5 col-md-6 input_info d-flex justify-content-between" style="height: 41px;">
+                    <div style="width: 85%; text-align: start;">
+                        <label for="" style="width: 100px;">NickName: </label>
+                        <input type="text" value="{{ $studentData->stu_nickname }}" disabled style="color: black"
+                            name="nick_name">
+                    </div>
+                    <i class="bi bi-pencil-square" role="button" id="edit-nickname"></i>
+                    <button class="invite" type="submit" id="send-nickname" style="display: none; padding: 2px 15px; width: 120px;">Cập
+                        nhật</button>
                 </div>
-                <i class="bi bi-pencil-square" role="button" id="edit-nickname"></i>
-                <button class="invite" type="submit" id="send-nickname" style="display: none; padding: 2px 15px; width: 120px;">Cập
-                    nhật</button>
-            </div>
+            </form>
         </div>
+    
     </div>
     <div style="margin-top: 35px; text-align:center;">
         <a class="cancel" href="{{ route('student.dashboard') }}">Quay lại</a>

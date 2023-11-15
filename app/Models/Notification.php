@@ -32,27 +32,28 @@ class Notification extends Model
             ]);
     }
 
-    public function setMeeting($group_id, $date_meeting, $stime, $etime)
+    public function setMeeting($group_id, $date_meeting, $stime, $etime, $link_meeting,$t_id)
     {
         return DB::table('meeting_calender')
             ->where('group_id', $group_id)
             ->insert([
                 'group_id' => $group_id,
                 'p_id' => 0,
-                't_id' => 0,
+                't_id' => $t_id,
                 'day' => $date_meeting,
                 'stime' => $stime,
                 'etime' => $etime,
+                'link_meeting' => $link_meeting
             ]);
     }
 
     public function getDataGroupTeacher($t_id)
     {
         return DB::table('student_group')
-        ->select('group_id', 'group_number', 'project.p_id', 'project.p_name')
-        ->join('project','project.p_id','=','student_group.p_id')
-        ->where('student_group.t_id','=',$t_id)
-        ->get();
+            ->select('group_id', 'group_number', 'project.p_id', 'project.p_name')
+            ->join('project', 'project.p_id', '=', 'student_group.p_id')
+            ->where('student_group.t_id', '=', $t_id)
+            ->get();
     }
 
     public function getMessage($group_id)
@@ -79,7 +80,7 @@ class Notification extends Model
                 'group_id' => $group_id,
                 'chat_sender' => 0,
                 'chat_message' => $message,
-                'created_at' => date('Y-m-d H-s-i'),
+                'created_at' => date('Y-m-d H-i-s'),
                 't_id' => $t_id,
                 'p_id' => 0,
                 'stu_id' => 0,
@@ -95,12 +96,32 @@ class Notification extends Model
                 'group_id' => $group_id,
                 'chat_sender' => 1,
                 'chat_message' => $message,
-                'created_at' => date('Y-m-d H-s-i'),
+                'created_at' => date('Y-m-d H-i-s'),
                 't_id' => 0,
                 'p_id' => 0,
                 'stu_id' => $stu_id,
                 'name' => $stu_name,
                 'avt' => $stu_avt
             ]);
+    }
+
+    public function getCalenderMeeting($group_id)
+    {
+        return DB::table('meeting_calender')
+            ->select('*')
+            ->where('meeting_calender.group_id', '=', $group_id)
+            ->orderBy('meeting_calender.meeting_id', 'desc')
+            ->get();
+    }
+
+    public function getCalenderMeetingTeacher($t_id)
+    {
+        return DB::table('meeting_calender')
+        ->select('meeting_calender.*', 'student_group.group_number', 'project.p_name')
+        ->join('student_group','meeting_calender.group_id','=','student_group.group_id')
+        ->join('project','student_group.p_id','=','project.p_id')
+        ->where('meeting_calender.t_id','=',$t_id)
+        ->orderBy('meeting_calender.meeting_id', 'desc')
+        ->get();
     }
 }
