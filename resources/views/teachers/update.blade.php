@@ -70,25 +70,56 @@
                 </table>
                 <div style="max-height: 330px; overflow: auto;">
                     <table class="container">
+                        {{-- @if (countdataProjec($t) != 0)
+                            @foreach ($dataProject as $key => $item)
+                                <tr>
+                                    @foreach ($dataOptional as $item1)
+                                        <td>{{ $key + 1 }}</td>
+                                        <td>{{ $item->p_name }}</td>
+                                        <td>{{ $item->p_request }}</td>
+                                        <td>{{ $item->p_major }}</td>
+                                        <td>{{ $item->p_quantity }}</td>
+                                        @if ($item1->p_id == $item->p_id)
+                                            <td>{{ $item1->p_request_o }}</td>
+                                        @else
+                                            <td>Không yêu cầu</td>
+                                        @endif
+                                        <td>
+                                            <button class="invite" style="padding: 10px 15px;" data-bs-toggle="modal"
+                                                data-bs-target="#exampleModal">
+                                                Xóa</button>
+                                        </td>
+                                    @endforeach
+                                </tr>
+                            @endforeach
+                        @else --}}
                         @foreach ($dataProject as $key => $item)
-                            <tr>
-                                <td>{{ $key + 1 }}</td>
-                                <td>{{ $item->p_name }}</td>
-                                <td>{{ $item->p_request }}</td>
-                                <td>{{ $item->p_major }}</td>
-                                <td>{{ $item->p_quantity }}</td>
+                        @endforeach
+                        <tr>
+                            <td>{{ $key + 1 }}</td>
+                            <td>{{ $item->p_name }}</td>
+                            <td>{{ $item->p_request }}</td>
+                            <td>{{ $item->p_major }}</td>
+                            <td>{{ $item->p_quantity }}</td>
+                            {{-- @if (count($dataOptional) != 0)
                                 @foreach ($dataOptional as $item1)
                                     @if ($item1->p_id == $item->p_id)
                                         <td>{{ $item1->p_request_o }}</td>
-                                    @endif
+                                    @else
+                                        <td>Không yêu cầu</td>
+                                    @endif  
                                 @endforeach
-                                <td>
-                                    <button class="invite" style="padding: 10px 15px;" data-bs-toggle="modal"
-                                        data-bs-target="#exampleModal">
-                                        Xóa</button>
-                                </td>
-                            </tr>
-                        @endforeach
+                            @endif --}}
+                            <td style="background: red">
+                                <button class="invite" style=" height: 25px; background-color: red;"
+                                    data-bs-toggle="modal" data-bs-target="#exampleModal">
+                                    Xóa</button>
+                            </td>
+
+
+                        </tr>
+
+                        {{-- @endif --}}
                     </table>
                 </div>
             @endif
@@ -107,11 +138,11 @@
                         </div>
                         <div class="modal-footer">
                             <button type="button" class="btn comeback" data-bs-dismiss="modal">Hủy bỏ</button>
-                                <a href="{{route('teacher.deleteProject',['p_id'=>$item->p_id])}}">
-                                    <button class="invite" style="padding: 10px 15px;">
-                                        Xóa</button>
-                                </a>
-                                
+                            <a href="{{ route('teacher.deleteProject', ['p_id' => $item->p_id]) }}">
+                                <button class="invite" style="padding: 10px 15px;">
+                                    Xóa</button>
+                            </a>
+
                         </div>
 
 

@@ -1436,13 +1436,14 @@ option {
 }
 
 .update table tr td button {
-    width: 145px;
+    /* width: 145px; */
+    width: 100%;
     margin-bottom: 12px;
 }
 
 .update table tr td:nth-child(6) {
-    padding: unset;
-    background-color: unset;
+    padding: 10px;
+    /* background-color: unset; */
     border: unset;
 }
 

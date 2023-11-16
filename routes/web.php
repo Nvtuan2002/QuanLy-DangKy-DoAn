@@ -66,7 +66,7 @@ Route::prefix('student')->name('student.')->group(function () {
    Route::get('/leaveGroup1/{stu_id}', [GroupController::class,'DeleteStudentFromLeader'])->name('leaveGroup1');
 
 
-   Route::get('/register_create/', [GroupController::class, 'getCreateGroup'])->name('register_create');
+   Route::get('/register_create', [GroupController::class, 'getCreateGroup'])->name('register_create');
 
    Route::post('/register_create', [GroupController::class,'handleCreateGroup'])->name('handle_create');
 
@@ -80,7 +80,7 @@ Route::prefix('student')->name('student.')->group(function () {
 
    Route::get('/contact', [StudentController::class,'showChat'])->name('contact');
 
-   Route::post('/contact/', [StudentController::class,'handlePostmessage'])->name('handlePostMessage');
+   Route::post('/contact', [StudentController::class,'handlePostmessage'])->name('handlePostMessage');
 
    Route::get('/infoAllTeacher',[StudentController::class,'seeInfoAllTeacher'])->name('infoAllTeacher');
 

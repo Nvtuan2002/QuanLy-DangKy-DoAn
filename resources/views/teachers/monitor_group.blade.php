@@ -50,9 +50,8 @@
                         <table>
                             @foreach ($dataFile as $item)
                                 <tr style="">
-                                    <td>
-                                        <i class="bi bi-file-earmark-arrow-up"></i>{{ $item->file }}<i
-                                            class="fa-regular fa-circle-down"></i>
+                                    <td style="overflow-wrap: anywhere;">
+                                        <i class="bi bi-file-earmark-arrow-up"></i>{{ $item->file }}
                                     </td>
                                     <td>
                                         {{ $item->stu_name }}

@@ -23,31 +23,46 @@
                 <li class="breadcrumb-item active" aria-current="page">Lịch thống kêu báo cáo ></li>
             </ol>
         </nav>
-        <div class="calendar container">
-            <div class="select-date">
-                <p>Chọn ngày và thời gian</p>
-                <input type="datetime-local" id="currentDateTime" class="form-control"
-                    style="margin-left: 15px;width: 200px;">
+        @if (count($dataCalender) == 0)
+            <div id="loading-notJoin" style="margin-top: 10%;">
+                <h5>Bạn cần tham gia nhóm để có thể truy cập vào phần này</h5>
+                <div class="spinner">
+                    <span>L</span>
+                    <span>O</span>
+                    <span>A</span>
+                    <span>D</span>
+                    <span>I</span>
+                    <span>N</span>
+                    <span>G</span>
+                </div>
             </div>
-            <table style="margin-bottom: 20px;">
-                <tr>
-                    <th>Ngày họp</th>
-                    <th>Giờ bắt đầu</th>
-                    <th>Giờ kết thúc</th>
-                    <th>Địa điểm báo cáo</th>
-                </tr>
-            </table>
-            <table>
-                @foreach ($dataCalender as $item)
-                <tr>
-                    <td>{{$item->day}}</td>
-                    <td>{{$item->stime}}</td>
-                    <td>{{$item->etime}}</td>
-                    <td><a href="" target="_blank">{{$item->link_meeting}}</a></td>
-                </tr>
-                @endforeach
-            </table>
-        </div>
+        @else
+            <div class="calendar container">
+                <div class="select-date">
+                    {{-- <p>Chọn ngày và thời gian</p> --}}
+                    <input type="datetime-local" id="currentDateTime" class="form-control"
+                        style="margin-left: 15px;width: 200px;">
+                </div>
+                <table style="margin-bottom: 20px;">
+                    <tr>
+                        <th>Ngày họp</th>
+                        <th>Giờ bắt đầu</th>
+                        <th>Giờ kết thúc</th>
+                        <th>Địa điểm báo cáo</th>
+                    </tr>
+                </table>
+                <table>
+                    @foreach ($dataCalender as $item)
+                        <tr>
+                            <td>{{ $item->day }}</td>
+                            <td>{{ $item->stime }}</td>
+                            <td>{{ $item->etime }}</td>
+                            <td><a href="" target="_blank">{{ $item->link_meeting }}</a></td>
+                        </tr>
+                    @endforeach
+                </table>
+            </div>
+        @endif
     </div>
     <script>
         function updateCurrentDateTime() {

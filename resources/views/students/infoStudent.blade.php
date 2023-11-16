@@ -157,7 +157,7 @@
             <div class="col-lg-5 col-xl-5 col-md-6 input_info d-flex justify-content-between" style="">
                 <div style="width: 85%; text-align: start;">
                     <label for="" style="width: 100px;">MSSV: </label>
-                    <input type="text" value="{{ $studentData->stu_major }}" disabled style="color: black">
+                    <input type="text" value="{{ $studentData->MSSV }}" disabled style="color: black">
                 </div>
             </div>
             <div class="col-lg-5 col-xl-5 col-md-6 input_info d-flex justify-content-between" style="height: 41px;">
@@ -174,7 +174,7 @@
         </div>
 
     </div>
-    <div style="margin-top: 35px; text-align:center;">
+    <div style="margin: 15px 0px; text-align:center;">
         <a class="cancel" href="{{ route('student.dashboard') }}">Quay lại</a>
     </div>
 

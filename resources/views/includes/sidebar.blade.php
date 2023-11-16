@@ -21,7 +21,7 @@
         <li>
             <a href="{{ route('student.calendar') }}" class="nav-link link-body-emphasis">
                 <i class="bi bi-calendar4-range"></i>
-                Lịch thống kê báo cáo
+                Lịch họp đồ án
             </a>
         </li>
         <li>
@@ -61,7 +61,7 @@
             <li>
                 <a href="{{ route('student.calendar') }}" class="nav-link link-body-emphasis">
                     <i class="bi bi-calendar4-range"></i>
-                    Lịch thống kê báo cáo
+                    Lịch họp đồ án
                 </a>
             </li>
             <li>

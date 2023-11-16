@@ -93,11 +93,14 @@
                     @foreach ($dataFile as $item)
                         <li style="margin: unset; margin-top: calc(var(--borderWidth-thin, max(1px, 0.0625rem))*-1);">
                             <div
-                                style="display: grid; grid-template-columns: 30% 25% 20% 15%;
+                                style="display: grid; grid-template-columns: 38% 25% 20% 15%;
                              border-top: 1px solid #a19494; border-radius: 3px; 
                              padding: 5px 10px; margin: unset">
-                                <a href="{{ asset('storage/file/' . $item->file) }}" target=”_blank”> <i
-                                        class="bi bi-file-earmark-arrow-up-fill"></i>{{ $item->file }}</a>
+                                <div class="d-flex" style="margin-right: 30px;">
+                                    <i class="bi bi-file-earmark-arrow-up-fill"></i>
+                                    <a style="overflow-wrap: anywhere;" href="{{ asset('storage/file/' . $item->file) }}"
+                                        target=”_blank”> {{ $item->file }}</a>
+                                </div>
 
                                 <p style="margin: unset; padding-top: 2px;">{{ $item->file_title }}</p>
                                 <p style="margin: unset; padding-top: 2px;">{{ $item->created_at }}</p>

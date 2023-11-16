@@ -88,40 +88,37 @@
                 <div class="col-2 stepParent">
                     <div class="step">1</div>
                     <div class="des">
-                        <h5>Chọn đề tài</h5>
-                        <p>Sinh viên có thể lựa chọn đề tài/giảng viên mà mình muốn</p>
+                        <h5>Đưa ra đồ án</h5>
+                        <p>Giảng viên sẽ đưa ra đồ án cho sinh viên để sinh viên lựa chọn</p>
                     </div>
                 </div>
                 <div class="col-2 stepParent">
                     <div class="step">2</div>
                     <div class="des">
-                        <h5>Chờ đợi sự đồng ý của giảng viên </h5>
-                        <p>Khi sinh viên gửi yêu cầu tham gia đồ án sẽ phải chờ phản hồi của giảng viên( đồng ý/ từ chối)
+                        <h5>Xét duyệt sinh viên </h5>
+                        <p>Khi sinh gửi yêu cầu giảng viên có thể đồng ý hoặc từ chối sinh viên tham gia đồ án
                     </div>
                     </p>
                 </div>
                 <div class="col-2 stepParent">
                     <div class="step">3</div>
                     <div class="des">
-                        <h5>Tham gia nhóm/ Tạo nhóm mới</h5>
-                        <p>Sau khi được tham gia đồ án, sinh viên hãy tạo nhóm hoặc tham gia nhóm đã có để có thể cập nhật
-                            tiến độ</p>
+                        <h5>Theo dõi tiến trình và đánh giá</h5>
+                        <p>Sau khi sinh viên tạo nhóm giảng viên có thể theo dõi nhóm đó và đánh giá</p>
                     </div>
                 </div>
                 <div class="col-2 stepParent">
                     <div class="step">4</div>
                     <div class="des">
-                        <h5>Cập nhật tiến độ của nhóm</h5>
-                        <p>Để có lộ trình lành mạch rõ ràng sinh viên nên cập nhật các file dữ liệu để giảng viên có thể
-                            đánh
-                            giá</p>
+                        <h5>Đưa ra các thông báo và điểm số cần thiết</h5>
+                        <p>Giảng viên có thể đưa ra các thông báo, lịch họp, điểm số</p>
                     </div>
                 </div>
                 <div class="col-2 stepParent">
                     <div class="step">5</div>
                     <div class="des">
-                        <h5>Nhận đánh giá/thông báo của giảng viên</h5>
-                        <p>Sinh viên có thể xem điểm đánh giá, thông báo, lịch họp mà giảng viên đưa cho nhóm</p>
+                        <h5>Phản hồi sinh viên</h5>
+                        <p>Nếu có bất kì phản hồi từ sinh viên giảng viên có thể phản hồi ngược lại</p>
                     </div>
                 </div>
             </div>
