@@ -58,6 +58,12 @@
                         <th style="text-align: center">Yêu cầu</th>
                         <th style="text-align: center">Chuyên ngành</th>
                         <th style="text-align: center">Số lượng thành viên</th>
+                        @if (count($dataOptional) != 0)
+                            @foreach ($dataOptional as $item)
+                                <th style="text-align: center">{{ $item->p_title_o }}</th>
+                            @endforeach
+
+                        @endif
                         <th style="text-align: center">Lựa chọn</th>
                     </tr>
 
@@ -71,34 +77,15 @@
                                 <td>{{ $item->p_request }}</td>
                                 <td>{{ $item->p_major }}</td>
                                 <td>{{ $item->p_quantity }}</td>
+                                @foreach ($dataOptional as $item1)
+                                    @if ($item1->p_id == $item->p_id)
+                                        <td>{{ $item1->p_request_o }}</td>
+                                    @endif
+                                @endforeach
                                 <td>
                                     <button class="invite" style="padding: 10px 15px;" data-bs-toggle="modal"
                                         data-bs-target="#exampleModal">
-                                        Chỉnh sửa</button>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>{{ $key + 1 }}</td>
-                                <td>{{ $item->p_name }}</td>
-                                <td>{{ $item->p_request }}</td>
-                                <td>{{ $item->p_major }}</td>
-                                <td>{{ $item->p_quantity }}</td>
-                                <td>
-                                    <button class="invite" style="padding: 10px 15px;" data-bs-toggle="modal"
-                                        data-bs-target="#exampleModal">
-                                        Chỉnh sửa</button>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>{{ $key + 1 }}</td>
-                                <td>{{ $item->p_name }}</td>
-                                <td>{{ $item->p_request }}</td>
-                                <td>{{ $item->p_major }}</td>
-                                <td>{{ $item->p_quantity }}</td>
-                                <td>
-                                    <button class="invite" style="padding: 10px 15px;" data-bs-toggle="modal"
-                                        data-bs-target="#exampleModal">
-                                        Chỉnh sửa</button>
+                                        Xóa</button>
                                 </td>
                             </tr>
                         @endforeach
@@ -110,36 +97,24 @@
                 <div class="modal-dialog">
                     <div class="modal-content" style="top: 20vh">
                         <div class="modal-header">
-                            <h1 class="modal-title fs-5" id="exampleModalLabel">Thêm file</h1>
+                            <h1 class="modal-title fs-5" id="exampleModalLabel">Cảnh báo!</h1>
                             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                         </div>
                         <div class="modal-body">
-                            <div style="text-align: start; margin-bottom: 10px; padding: 10px;">
-                                <label for="" style="">Tên đề tài</label>
-                                <input type="text" class="form-control d-inline-block" style="outline: none; width: 59%;"
-                                    placeholder="">
-                            </div>
-                            <div style="text-align: start; margin-bottom: 10px; padding: 10px;">
-                                <label for="" style="">Yêu cầu</label>
-                                <input type="text" class="form-control d-inline-block" style="outline: none; width: 59%;"
-                                    placeholder="">
-                            </div>
-                            <div style="text-align: start; margin-bottom: 10px; padding: 10px;">
-                                <label for="" style="">Chuyên ngành</label>
-                                <input type="text" class="form-control d-inline-block" style="outline: none; width: 59%;"
-                                    placeholder="">
-                            </div>
-                            <div style="text-align: start; margin-bottom: 10px; padding: 10px;">
-                                <label for="" style="">Số lượng thành viên</label>
-                                <input type="text" class="form-control d-inline-block" style="outline: none; width: 59%;"
-                                    placeholder="">
-                            </div>
+                            <Label style="padding: 0.375rem 0px; width:100%">
+                                bạn có chắc chắn muốn xóa đồ án này
+                            </Label>
                         </div>
                         <div class="modal-footer">
-                            <button type="button" class="btn comeback" data-bs-dismiss="modal">Quay
-                                lại</button>
-                            <button type="submit" class="btn request">Cập nhật</button>
+                            <button type="button" class="btn comeback" data-bs-dismiss="modal">Hủy bỏ</button>
+                                <a href="{{route('teacher.deleteProject',['p_id'=>$item->p_id])}}">
+                                    <button class="invite" style="padding: 10px 15px;">
+                                        Xóa</button>
+                                </a>
+                                
                         </div>
+
+
                     </div>
                 </div>
             </div>

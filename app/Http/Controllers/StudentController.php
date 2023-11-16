@@ -130,6 +130,24 @@ class StudentController extends Controller
         return view('error.requestJoinGroup', compact('studentData'));
     }
 
+    public function cancelRequest(){
+        $id = session('id');
+
+        $this->changeStatus->changeStatus0($id);
+
+        return redirect()->route('student.register');
+    }
+
+    public function cancelRequestGroup(){
+        $id = session('id');
+
+        $this->changeStatus->changeStatus2($id);
+
+        return redirect()->route('student.register');
+    }
+
+    
+
     public function seeInfoRequest($stu_id)
     {
         $id = session('id');

@@ -46,6 +46,12 @@
                 <input class="invite" type="text" name="p_quantity"><br>
                 <label for="">Chuyên ngành: </label>
                 <input class="invite" type="text" name="p_major"><br>
+                @if (count($dataOptional) != 0)
+                @foreach ($dataOptional as $item)
+                <label for="">{{$item->p_title_o}}</label>
+                <input class="invite" type="text" name="" value="{{$item->p_request_o}}"><br>
+                @endforeach
+                @endif
                 <div  class="cancel" style="background: #c8b6f2; display: inline-block;" data-bs-toggle="modal" data-bs-target="#exampleModal"
                     role="button">Thêm lựa chọn</div>
                 <div style="text-align:center; margin-top: 20px;">
@@ -63,25 +69,28 @@
     <!-- Modal -->
     <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div class="modal-dialog">
-            <div class="modal-content" style="top: 20vh; text-align: center;">
-                <div class="modal-header">
-                    <h1 class="modal-title fs-5" id="exampleModalLabel">Thêm file</h1>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                </div>
-                <div class="modal-body">
-                    <div style="text-align: start; margin-bottom: 10px;">
-                        {{-- <label for="requirement" style="margin-right: 6px;">Yêu cầu: </label> --}}
-                        <input style="border-radius: 5px;" class="invite mb-2" type="text" id="requirement" name="requirement"><br>
-                        <input style="border-radius: 5px;" class="invite" type="text" id="requirement" name="requirement"><br>
+            <form action="{{route('teacher.handleNewOption')}}" method="POST" enctype="multipart/form-data">
+                @csrf
+                <div class="modal-content" style="top: 20vh; text-align: center;">
+                    <div class="modal-header">
+                        <h1 class="modal-title fs-5" id="exampleModalLabel">Thêm lựa chọn</h1>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <div style="text-align: start; margin-bottom: 10px;">
+                            {{-- <label for="requirement" style="margin-right: 6px;">Yêu cầu: </label> --}}
+                            <input style="border-radius: 5px;" class="invite mb-2" type="text" id="requirement" name="title_o" placeholder="Nhập tiêu đều"><br>
+                            <input style="border-radius: 5px;" class="invite" type="text" id="requirement" name="request_o" placeholder="Nhập lựa chọn"><br>
+                        </div>
+                    </div>
+                    {{-- <i class="bi bi-plus-circle" id="add-requirement"></i> --}}
+    
+                    <div class="modal-footer">
+                        <button type="button" class="btn comeback" data-bs-dismiss="modal">Quay lại</button>
+                        <button type="submit" class="btn request">Cập nhật</button>
                     </div>
                 </div>
-                {{-- <i class="bi bi-plus-circle" id="add-requirement"></i> --}}
-
-                <div class="modal-footer">
-                    <button type="button" class="btn comeback" data-bs-dismiss="modal">Quay lại</button>
-                    <button type="submit" class="btn request">Cập nhật</button>
-                </div>
-            </div>
+            </form>
         </div>
     </div>
     <script>

@@ -45,6 +45,10 @@ Route::prefix('student')->name('student.')->group(function () {
 
    Route::get('/registerProject', [TeacherController::class, 'getAllProject'])->name('register');
 
+   Route::get('/cancelRequest', [StudentController::class,'cancelRequest'])->name('cancel');
+
+   Route::get('/cancelRequestGroup', [StudentController::class,'cancelRequestGroup'])->name('cancelGroup');
+
    Route::get('/registerProject/{p_id}/{t_id}', [HandleRequest::class, 'requestJoinProject'])->name('requestJoinProject');
 
    Route::get('/register_attend', [GroupController::class, 'getAllGroup'])->name('register_attend');
@@ -112,6 +116,10 @@ Route::prefix('teacher')->name('teacher.')->group(function () {
    Route::get('/update_new', [ProjectController::class,'createNewProject'])->name('update_new');
 
    Route::post('/update', [ProjectController::class,'handleCreateProject'])->name('handleCreate');
+
+   Route::post('/update1',[ProjectController::class,'handleNewOption'])->name('handleNewOption');
+
+   Route::get('/deleteproject/{p_id}', [ProjectController::class,'deleteProject'])->name('deleteProject');
 
    Route::get('/monitor_process', [TeacherController::class,'getObserveGroup'])->name('monitor_process');
 

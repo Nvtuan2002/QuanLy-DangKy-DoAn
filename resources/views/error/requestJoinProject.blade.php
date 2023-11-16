@@ -30,6 +30,8 @@
         </div>
     </div>
     <div style="text-align: center">
-        <h5 style="text-align: center" class="invite d-inline-block">Hủy yêu cầu</h5>
+        <a href="{{route('student.cancel')}}">
+            <h5 style="text-align: center" class="invite d-inline-block">Hủy yêu cầu</h5>
+        </a>
     </div>
 @endsection
