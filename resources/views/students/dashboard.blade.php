@@ -94,17 +94,20 @@
                         alt="Icon Event">
                 </div>
             </div> --}}
-            <h4 style="text-align: center; margin-top: 50px;" >Quy trình hoạt động</h4>
+            <h4 style="text-align: center; margin-top: 50px;">Quy trình hoạt động</h4>
             <div class="des_procedure row justify-content-between" style="margin-top: 50px;">
                 <div class="col-2 stepParent">
-                    <div class="step">1</div>
+
+                    <div class="step"><a href="{{ route('student.register') }}">1</a>
+                    </div>
                     <div class="des">
                         <h5>Chọn đề tài</h5>
                         <p>Sinh viên có thể lựa chọn đề tài/giảng viên mà mình muốn</p>
                     </div>
                 </div>
                 <div class="col-2 stepParent">
-                    <div class="step">2</div>
+                    <div class="step"><a href="{{ route('student.register') }}">2</a>
+                    </div>
                     <div class="des">
                         <h5>Chờ đợi sự đồng ý của giảng viên </h5>
                         <p>Khi sinh viên gửi yêu cầu tham gia đồ án sẽ phải chờ phản hồi của giảng viên( đồng ý/ từ chối)
@@ -112,7 +115,8 @@
                     </p>
                 </div>
                 <div class="col-2 stepParent">
-                    <div class="step">3</div>
+                    <div class="step"><a href="{{ route('student.groupSV') }}">
+                            3</a></div>
                     <div class="des">
                         <h5>Tham gia nhóm/ Tạo nhóm mới</h5>
                         <p>Sau khi được tham gia đồ án, sinh viên hãy tạo nhóm hoặc tham gia nhóm đã có để có thể cập nhật
@@ -120,7 +124,7 @@
                     </div>
                 </div>
                 <div class="col-2 stepParent">
-                    <div class="step">4</div>
+                    <div class="step"><a href="{{ route('student.groupSV_update') }}">4</a></div>
                     <div class="des">
                         <h5>Cập nhật tiến độ của nhóm</h5>
                         <p>Để có lộ trình lành mạch rõ ràng sinh viên nên cập nhật các file dữ liệu để giảng viên có thể
@@ -129,7 +133,9 @@
                     </div>
                 </div>
                 <div class="col-2 stepParent">
-                    <div class="step">5</div>
+                    <div class="step"><a href="{{ route('student.groupSV') }}">5</a>
+                    </div>
+
                     <div class="des">
                         <h5>Nhận đánh giá/thông báo của giảng viên</h5>
                         <p>Sinh viên có thể xem điểm đánh giá, thông báo, lịch họp mà giảng viên đưa cho nhóm</p>
